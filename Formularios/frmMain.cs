@@ -41,10 +41,6 @@ namespace Port_manager.Formularios
             lbbienvenida.Text = $"                               ✨ Bienvenido al sistema, {UsuarioSesion.NombreUsuario} ✨      ";
             }
            
-
-            lbbienvenida.Text = $"                               ✨ Bienvenido al sistema, {UsuarioSesion.NombreUsuario} ✨      ";
-
-
         }
 
         private void btnCerrar_sesion_Click(object sender, EventArgs e)
