@@ -38,7 +38,7 @@ namespace Port_manager.Formularios
             }
             else
             {
-                lbbienvenida.Text = $"                               ✨ Bienvenido al sistema, {UsuarioSesion.NombreUsuario} ✨      ";
+            lbbienvenida.Text = $"                               ✨ Bienvenido al sistema, {UsuarioSesion.NombreUsuario} ✨      ";
             }
            
 

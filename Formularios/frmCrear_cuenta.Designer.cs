@@ -158,7 +158,7 @@
             // 
             // btnCrearcuenta
             // 
-            this.btnCrearcuenta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnCrearcuenta.BackColor = System.Drawing.Color.IndianRed;
             this.btnCrearcuenta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCrearcuenta.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCrearcuenta.Location = new System.Drawing.Point(78, 533);

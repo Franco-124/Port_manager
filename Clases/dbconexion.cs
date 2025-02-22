@@ -20,7 +20,7 @@ namespace SqlConnectiondb
         //Metodo para verificar el log in , usando getConection
         public static bool VerificarLogin(string nombre, string email, string contraseña)
         {
-            using (SqlConnection connection = GetConnection())
+            using (SqlConnection connection = GetConnection()) 
             {
                 try
                 {
@@ -70,7 +70,7 @@ namespace SqlConnectiondb
                         outputParam.Direction = ParameterDirection.Output;
                         cmd.Parameters.Add(outputParam);
 
-
+                    
                         cmd.ExecuteNonQuery(); // Ejecuta el procedimiento
 
                         int resultado = Convert.ToInt32(outputParam.Value); // Obtiene el valor del parámetro de salida
@@ -97,7 +97,7 @@ namespace SqlConnectiondb
         {
             try
             {
-                using (SqlConnection connection = GetConnection())
+                using (SqlConnection connection = GetConnection()) 
                 {
                     using (SqlCommand cmd = new SqlCommand("devolver_nombre_usuario\"", connection))
                     {
