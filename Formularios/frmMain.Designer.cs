@@ -39,7 +39,7 @@
             this.btnCerrar_sesion.BackColor = System.Drawing.Color.IndianRed;
             this.btnCerrar_sesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCerrar_sesion.ForeColor = System.Drawing.Color.Black;
-            this.btnCerrar_sesion.Location = new System.Drawing.Point(1014, 688);
+            this.btnCerrar_sesion.Location = new System.Drawing.Point(996, 665);
             this.btnCerrar_sesion.Name = "btnCerrar_sesion";
             this.btnCerrar_sesion.Size = new System.Drawing.Size(181, 37);
             this.btnCerrar_sesion.TabIndex = 0;
@@ -72,7 +72,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SteelBlue;
-            this.ClientSize = new System.Drawing.Size(1207, 746);
+            this.ClientSize = new System.Drawing.Size(1207, 726);
             this.Controls.Add(this.btnCerrar_sesion);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;

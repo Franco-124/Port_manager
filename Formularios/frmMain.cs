@@ -5,11 +5,14 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using SqlConnectiondb;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
+
+
 
 namespace Port_manager.Formularios
 {
@@ -22,6 +25,7 @@ namespace Port_manager.Formularios
 
         private void frmMain_Load(object sender, EventArgs e)
         {
+
 
             if (Regex.IsMatch(UsuarioSesion.NombreUsuario, @"^[^@\s]+@[^@\s]+\.[^@\s]+$"))
             {
@@ -37,6 +41,9 @@ namespace Port_manager.Formularios
                 lbbienvenida.Text = $"                               ✨ Bienvenido al sistema, {UsuarioSesion.NombreUsuario} ✨      ";
             }
            
+
+            lbbienvenida.Text = $"                               ✨ Bienvenido al sistema, {UsuarioSesion.NombreUsuario} ✨      ";
+
 
         }
 
