@@ -31,17 +31,19 @@
             this.btnCerrar_sesion = new System.Windows.Forms.Button();
             this.lbbienvenida = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lbDate = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnCerrar_sesion
             // 
-            this.btnCerrar_sesion.BackColor = System.Drawing.Color.IndianRed;
+            this.btnCerrar_sesion.BackColor = System.Drawing.Color.LightGray;
+            this.btnCerrar_sesion.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnCerrar_sesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCerrar_sesion.ForeColor = System.Drawing.Color.Black;
-            this.btnCerrar_sesion.Location = new System.Drawing.Point(996, 665);
+            this.btnCerrar_sesion.Location = new System.Drawing.Point(1043, 0);
             this.btnCerrar_sesion.Name = "btnCerrar_sesion";
-            this.btnCerrar_sesion.Size = new System.Drawing.Size(181, 37);
+            this.btnCerrar_sesion.Size = new System.Drawing.Size(181, 44);
             this.btnCerrar_sesion.TabIndex = 0;
             this.btnCerrar_sesion.Text = "Cerrar sesión";
             this.btnCerrar_sesion.UseVisualStyleBackColor = false;
@@ -60,20 +62,33 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.IndianRed;
+            this.panel1.Controls.Add(this.lbDate);
+            this.panel1.Controls.Add(this.btnCerrar_sesion);
             this.panel1.Controls.Add(this.lbbienvenida);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1207, 44);
+            this.panel1.Size = new System.Drawing.Size(1224, 44);
             this.panel1.TabIndex = 2;
+            // 
+            // lbDate
+            // 
+            this.lbDate.AutoSize = true;
+            this.lbDate.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbDate.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lbDate.Location = new System.Drawing.Point(931, 9);
+            this.lbDate.Name = "lbDate";
+            this.lbDate.Size = new System.Drawing.Size(106, 23);
+            this.lbDate.TabIndex = 2;
+            this.lbDate.Text = "current_date";
+            this.lbDate.Click += new System.EventHandler(this.lbDate_Click);
             // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SteelBlue;
-            this.ClientSize = new System.Drawing.Size(1207, 726);
-            this.Controls.Add(this.btnCerrar_sesion);
+            this.ClientSize = new System.Drawing.Size(1224, 726);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "frmMain";
@@ -90,5 +105,6 @@
         private System.Windows.Forms.Button btnCerrar_sesion;
         private System.Windows.Forms.Label lbbienvenida;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label lbDate;
     }
 }

@@ -25,20 +25,20 @@ namespace Port_manager.Formularios
 
         private void frmMain_Load(object sender, EventArgs e)
         {
-
+            lbDate.Text = DateTime.Now.ToString("dd/MM/yyyy");
 
             if (Regex.IsMatch(UsuarioSesion.NombreUsuario, @"^[^@\s]+@[^@\s]+\.[^@\s]+$"))
             {
                 string username = DatabaseHelper.obtener_nommbre_usuario(UsuarioSesion.NombreUsuario);
                 if (username  != null)
                 {
-                    lbbienvenida.Text = $"                               ✨ Bienvenido al sistema, {username} ✨      ";
+                    lbbienvenida.Text = $"                       ✨ Bienvenido al sistema, {username} ✨      ";
                 }
 
             }
             else
             {
-            lbbienvenida.Text = $"                               ✨ Bienvenido al sistema, {UsuarioSesion.NombreUsuario} ✨      ";
+            lbbienvenida.Text = $"                          ✨ Bienvenido al sistema, {UsuarioSesion.NombreUsuario} ✨      ";
             }
            
         }
@@ -48,6 +48,11 @@ namespace Port_manager.Formularios
             frmLogin login = new frmLogin();
             login.Show();
             this.Close();
+        }
+
+        private void lbDate_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
