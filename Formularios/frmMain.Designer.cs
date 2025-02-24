@@ -37,9 +37,9 @@
             // 
             // btnCerrar_sesion
             // 
-            this.btnCerrar_sesion.BackColor = System.Drawing.Color.LightGray;
+            this.btnCerrar_sesion.BackColor = System.Drawing.Color.Teal;
             this.btnCerrar_sesion.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnCerrar_sesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCerrar_sesion.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnCerrar_sesion.ForeColor = System.Drawing.Color.Black;
             this.btnCerrar_sesion.Location = new System.Drawing.Point(1043, 0);
             this.btnCerrar_sesion.Name = "btnCerrar_sesion";
@@ -70,15 +70,16 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1224, 44);
             this.panel1.TabIndex = 2;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // lbDate
             // 
             this.lbDate.AutoSize = true;
-            this.lbDate.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbDate.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lbDate.Location = new System.Drawing.Point(931, 9);
+            this.lbDate.Font = new System.Drawing.Font("Franklin Gothic Heavy", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbDate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.lbDate.Location = new System.Drawing.Point(901, 11);
             this.lbDate.Name = "lbDate";
-            this.lbDate.Size = new System.Drawing.Size(106, 23);
+            this.lbDate.Size = new System.Drawing.Size(114, 21);
             this.lbDate.TabIndex = 2;
             this.lbDate.Text = "current_date";
             this.lbDate.Click += new System.EventHandler(this.lbDate_Click);
@@ -90,7 +91,7 @@
             this.BackColor = System.Drawing.Color.SteelBlue;
             this.ClientSize = new System.Drawing.Size(1224, 726);
             this.Controls.Add(this.panel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "frmMain";
             this.Text = "Port manager";
             this.Load += new System.EventHandler(this.frmMain_Load);

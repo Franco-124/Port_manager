@@ -52,9 +52,10 @@ namespace Port_manager
         private void btnLogin_Click(object sender, EventArgs e)
         {
             string nombre = txtEnombre.Text;
-            string email = txtEnombre.Text;
+            string email = txtEnombre.Text; 
             string contraseña = txtPassword.Text;
 
+            
             if (string.IsNullOrWhiteSpace(nombre) || string.IsNullOrWhiteSpace(email) ||
                 string.IsNullOrWhiteSpace(contraseña))
             {
@@ -62,9 +63,20 @@ namespace Port_manager
                 return;
             }
 
+
+           
+            if (!cbkterminos.Checked)
+            {
+                MessageBox.Show("❌ Por favor, acepte los términos y condiciones.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+
+           
             if (DatabaseHelper.VerificarLogin(nombre, email, contraseña))
             {
                 MessageBox.Show("✅ Inicio de sesión exitoso.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
                 this.Hide(); // Ocultar formulario actual
                 UsuarioSesion.NombreUsuario = nombre;
                 frmMain mainForm = new frmMain();
@@ -74,6 +86,9 @@ namespace Port_manager
             {
                 MessageBox.Show("❌ Usuario o contraseña incorrectos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
+
+
         }
 
         private void btnCrear_cuenta_Click(object sender, EventArgs e)

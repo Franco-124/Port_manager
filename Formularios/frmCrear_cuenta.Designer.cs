@@ -39,7 +39,7 @@
             this.txtContraseña = new System.Windows.Forms.TextBox();
             this.btnVLogin = new System.Windows.Forms.Button();
             this.btnCrearcuenta = new System.Windows.Forms.Button();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.chkTerminoC = new System.Windows.Forms.CheckBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -68,7 +68,7 @@
             this.panel2.Controls.Add(this.txtContraseña);
             this.panel2.Controls.Add(this.btnVLogin);
             this.panel2.Controls.Add(this.btnCrearcuenta);
-            this.panel2.Controls.Add(this.checkBox1);
+            this.panel2.Controls.Add(this.chkTerminoC);
             this.panel2.Controls.Add(this.txtEmail);
             this.panel2.Controls.Add(this.txtNombre);
             this.panel2.Controls.Add(this.label1);
@@ -152,7 +152,7 @@
             this.btnVLogin.Name = "btnVLogin";
             this.btnVLogin.Size = new System.Drawing.Size(317, 31);
             this.btnVLogin.TabIndex = 7;
-            this.btnVLogin.Text = "¿Ya tienes cuenta?, inicie sesión aqui.";
+            this.btnVLogin.Text = "¿Ya tienes cuenta?, inicia sesión aqui.";
             this.btnVLogin.UseVisualStyleBackColor = false;
             this.btnVLogin.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -169,16 +169,16 @@
             this.btnCrearcuenta.UseVisualStyleBackColor = false;
             this.btnCrearcuenta.Click += new System.EventHandler(this.button1_Click);
             // 
-            // checkBox1
+            // chkTerminoC
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox1.Location = new System.Drawing.Point(78, 475);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(241, 24);
-            this.checkBox1.TabIndex = 5;
-            this.checkBox1.Text = "¿Acepta terminos y condiciones";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.chkTerminoC.AutoSize = true;
+            this.chkTerminoC.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkTerminoC.Location = new System.Drawing.Point(78, 475);
+            this.chkTerminoC.Name = "chkTerminoC";
+            this.chkTerminoC.Size = new System.Drawing.Size(241, 24);
+            this.chkTerminoC.TabIndex = 5;
+            this.chkTerminoC.Text = "¿Acepta terminos y condiciones";
+            this.chkTerminoC.UseVisualStyleBackColor = true;
             // 
             // txtEmail
             // 
@@ -235,7 +235,7 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnCrearcuenta;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox chkTerminoC;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.TextBox txtCcontraseña;

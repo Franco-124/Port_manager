@@ -74,6 +74,12 @@ namespace Port_manager.Formularios
                     return;
                 }
 
+                if (!chkTerminoC.Checked)
+                {
+                    MessageBox.Show("❌ Por favor, acepte los términos y condiciones.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
                 
                 if (DatabaseHelper.agregar_usuario_(nombre, email, contraseña))
                 {

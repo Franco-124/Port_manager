@@ -37,12 +37,12 @@
             this.btnCrear_cuenta = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.btnLogin = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.cbkterminos = new System.Windows.Forms.CheckBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.txtEnombre = new System.Windows.Forms.TextBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
             this.SuspendLayout();
@@ -63,14 +63,14 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.SteelBlue;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.checkBox1);
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.btnCrear_cuenta);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.btnLogin);
-            this.panel2.Controls.Add(this.button1);
-            this.panel2.Controls.Add(this.checkBox1);
+            this.panel2.Controls.Add(this.cbkterminos);
             this.panel2.Controls.Add(this.txtPassword);
             this.panel2.Controls.Add(this.txtEnombre);
             this.panel2.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -147,31 +147,19 @@
             this.btnLogin.UseVisualStyleBackColor = false;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
-            // button1
+            // cbkterminos
             // 
-            this.button1.BackColor = System.Drawing.Color.LightBlue;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(313, 332);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(210, 29);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "¿Recordar contraseña?";
-            this.button1.UseVisualStyleBackColor = false;
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.BackColor = System.Drawing.Color.Transparent;
-            this.checkBox1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.checkBox1.Location = new System.Drawing.Point(47, 339);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(234, 24);
-            this.checkBox1.TabIndex = 4;
-            this.checkBox1.Text = "Acepta terminos y condiciones";
-            this.checkBox1.UseVisualStyleBackColor = false;
-            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            this.cbkterminos.AutoSize = true;
+            this.cbkterminos.BackColor = System.Drawing.Color.Transparent;
+            this.cbkterminos.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbkterminos.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.cbkterminos.Location = new System.Drawing.Point(47, 339);
+            this.cbkterminos.Name = "cbkterminos";
+            this.cbkterminos.Size = new System.Drawing.Size(234, 24);
+            this.cbkterminos.TabIndex = 4;
+            this.cbkterminos.Text = "Acepta terminos y condiciones";
+            this.cbkterminos.UseVisualStyleBackColor = false;
+            this.cbkterminos.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // txtPassword
             // 
@@ -217,6 +205,17 @@
             this.label1.Text = "🌊⚓✨ \"¡Tu puerto, tu control! 🚢 Conéctate y controla con seguridad.\"";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox1.Location = new System.Drawing.Point(367, 342);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(167, 24);
+            this.checkBox1.TabIndex = 12;
+            this.checkBox1.Text = "Recordar contraseña";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
             // frmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -248,12 +247,12 @@
         private System.Windows.Forms.Button btnCrear_cuenta;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnLogin;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox cbkterminos;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }
 
