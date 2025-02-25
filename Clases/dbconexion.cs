@@ -13,7 +13,7 @@ namespace SqlConnectiondb
         //Aqui creamos la conexion a la db en sql server
         public static SqlConnection GetConnection()
         {
-            SqlConnection connection = new SqlConnection(Credentialsp.connectionString);
+            SqlConnection connection = new SqlConnection(Credentials.connectionString);
             connection.Open();
             return connection;
         }

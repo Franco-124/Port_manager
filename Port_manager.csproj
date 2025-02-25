@@ -47,7 +47,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Clases\Credentials.cs" />
-    <Compile Include="Clases\Credentialsp.cs" />
     <Compile Include="Clases\dbconexion.cs" />
     <Compile Include="Formularios\frmCrear_cuenta.cs">
       <SubType>Form</SubType>

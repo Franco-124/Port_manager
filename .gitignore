@@ -55,6 +55,11 @@ nunit-*.xml
 [Rr]eleasePS/
 dlldata.c
 
+**/Credentialsp.cs
+
+
+
+
 # Benchmark Results
 BenchmarkDotNet.Artifacts/
 
@@ -335,8 +340,7 @@ __pycache__/
 # OpenCover UI analysis results
 OpenCover/
 
-#Eliminar archivo de credenciales de la db
-**/Credentialsp.cs
+
 
 
 # Azure Stream Analytics local run output

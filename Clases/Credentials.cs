@@ -8,6 +8,6 @@ namespace Port_manager.Clases
 {
     internal class Credentials
     {
-        public static string connectionString = "Server=tu servidor;Database=Port_manager;Integrated Security=True;";
+        public static string connectionString = "Server=localhost;Database=Port_manager;Integrated Security=True;";
     }
 }
