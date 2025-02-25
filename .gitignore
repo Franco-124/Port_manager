@@ -55,7 +55,8 @@ nunit-*.xml
 [Rr]eleasePS/
 dlldata.c
 
-**/Credentialsp.cs
+**/Credentials.cs
+
 
 
 
