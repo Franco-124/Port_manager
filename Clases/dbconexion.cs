@@ -1,18 +1,19 @@
 ﻿using System;
 using System.Data;
 using System.Data.SqlClient;
+using Port_manager.Clases;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace SqlConnectiondb
 {
     class DatabaseHelper
     {
-        private static string connectionString = "Server=localhost;Database=Port_manager;Integrated Security=True;";
+        
 
         //Aqui creamos la conexion a la db en sql server
         public static SqlConnection GetConnection()
         {
-            SqlConnection connection = new SqlConnection(connectionString);
+            SqlConnection connection = new SqlConnection(Credentialsp.connectionString);
             connection.Open();
             return connection;
         }
