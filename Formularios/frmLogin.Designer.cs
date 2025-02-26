@@ -42,7 +42,7 @@
             this.txtEnombre = new System.Windows.Forms.TextBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.btnolvidocontraseña = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
             this.SuspendLayout();
@@ -63,7 +63,7 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.SteelBlue;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.checkBox1);
+            this.panel2.Controls.Add(this.btnolvidocontraseña);
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.label2);
@@ -205,16 +205,15 @@
             this.label1.Text = "🌊⚓✨ \"¡Tu puerto, tu control! 🚢 Conéctate y controla con seguridad.\"";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // checkBox1
+            // btnolvidocontraseña
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox1.Location = new System.Drawing.Point(367, 342);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(167, 24);
-            this.checkBox1.TabIndex = 12;
-            this.checkBox1.Text = "Recordar contraseña";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.btnolvidocontraseña.Location = new System.Drawing.Point(325, 339);
+            this.btnolvidocontraseña.Name = "btnolvidocontraseña";
+            this.btnolvidocontraseña.Size = new System.Drawing.Size(198, 24);
+            this.btnolvidocontraseña.TabIndex = 12;
+            this.btnolvidocontraseña.Text = "¿Olvido su contraseña?";
+            this.btnolvidocontraseña.UseVisualStyleBackColor = true;
+            this.btnolvidocontraseña.Click += new System.EventHandler(this.btnolvidocontraseña_Click);
             // 
             // frmLogin
             // 
@@ -252,7 +251,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.Button btnolvidocontraseña;
     }
 }
 

@@ -116,6 +116,14 @@ namespace Port_manager
         {
 
         }
+
+        private void btnolvidocontraseña_Click(object sender, EventArgs e)
+        {
+            frmRecuperacion frmRecuperacion = new frmRecuperacion();
+            frmRecuperacion.Show();
+            this.Hide();
+
+        }
     }
     public static class UsuarioSesion
     {
