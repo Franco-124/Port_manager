@@ -31,6 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCrear_cuenta));
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.cmbRol = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -43,8 +45,6 @@
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.cmbRol = new System.Windows.Forms.ComboBox();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -83,43 +83,66 @@
             this.panel2.TabIndex = 1;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
+            // cmbRol
+            // 
+            this.cmbRol.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.cmbRol.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbRol.FormattingEnabled = true;
+            this.cmbRol.Items.AddRange(new object[] {
+            "Usuario",
+            "Administrador"});
+            this.cmbRol.Location = new System.Drawing.Point(124, 532);
+            this.cmbRol.Name = "cmbRol";
+            this.cmbRol.Size = new System.Drawing.Size(366, 31);
+            this.cmbRol.TabIndex = 16;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(73, 532);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(40, 28);
+            this.label6.TabIndex = 15;
+            this.label6.Text = "Rol";
+            // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(72, 374);
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(72, 388);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(246, 31);
+            this.label5.Size = new System.Drawing.Size(233, 31);
             this.label5.TabIndex = 13;
             this.label5.Text = "Confirmar contraseña";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(72, 273);
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(72, 284);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(245, 31);
+            this.label4.Size = new System.Drawing.Size(236, 31);
             this.label4.TabIndex = 12;
             this.label4.Text = "Ingrese su contraseña";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(72, 174);
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(72, 192);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(196, 31);
+            this.label3.Size = new System.Drawing.Size(189, 31);
             this.label3.TabIndex = 11;
             this.label3.Text = "Ingrese su E-mail";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(72, 76);
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(72, 86);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(330, 31);
+            this.label2.Size = new System.Drawing.Size(317, 31);
             this.label2.TabIndex = 10;
             this.label2.Text = "Ingrese su nombre de usuario";
             // 
@@ -148,13 +171,13 @@
             // 
             // btnVLogin
             // 
-            this.btnVLogin.BackColor = System.Drawing.Color.Silver;
+            this.btnVLogin.BackColor = System.Drawing.Color.WhiteSmoke;
             this.btnVLogin.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnVLogin.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVLogin.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnVLogin.Location = new System.Drawing.Point(124, 670);
+            this.btnVLogin.Location = new System.Drawing.Point(78, 665);
             this.btnVLogin.Name = "btnVLogin";
-            this.btnVLogin.Size = new System.Drawing.Size(317, 31);
+            this.btnVLogin.Size = new System.Drawing.Size(412, 31);
             this.btnVLogin.TabIndex = 7;
             this.btnVLogin.Text = "¿Ya tienes cuenta?, inicia sesión aqui.";
             this.btnVLogin.UseVisualStyleBackColor = false;
@@ -179,9 +202,9 @@
             this.chkTerminoC.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkTerminoC.Location = new System.Drawing.Point(78, 475);
             this.chkTerminoC.Name = "chkTerminoC";
-            this.chkTerminoC.Size = new System.Drawing.Size(241, 24);
+            this.chkTerminoC.Size = new System.Drawing.Size(248, 24);
             this.chkTerminoC.TabIndex = 5;
-            this.chkTerminoC.Text = "¿Acepta terminos y condiciones";
+            this.chkTerminoC.Text = "¿Acepta terminos y condiciones?\r\n";
             this.chkTerminoC.UseVisualStyleBackColor = true;
             // 
             // txtEmail
@@ -209,35 +232,12 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(168, 0);
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(138, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(222, 45);
+            this.label1.Size = new System.Drawing.Size(268, 54);
             this.label1.TabIndex = 0;
             this.label1.Text = "Crear Cuenta";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(73, 532);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(43, 28);
-            this.label6.TabIndex = 15;
-            this.label6.Text = "Rol";
-            // 
-            // cmbRol
-            // 
-            this.cmbRol.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.cmbRol.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbRol.FormattingEnabled = true;
-            this.cmbRol.Items.AddRange(new object[] {
-            "Usuario",
-            "Administrador"});
-            this.cmbRol.Location = new System.Drawing.Point(124, 532);
-            this.cmbRol.Name = "cmbRol";
-            this.cmbRol.Size = new System.Drawing.Size(366, 31);
-            this.cmbRol.TabIndex = 16;
             // 
             // frmCrear_cuenta
             // 

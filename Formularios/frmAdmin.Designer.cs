@@ -1,6 +1,6 @@
 ﻿namespace Port_manager.Formularios
 {
-    partial class frmMain
+    partial class frmAdmin
     {
         /// <summary>
         /// Required designer variable.

@@ -16,9 +16,9 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace Port_manager.Formularios
 {
-    public partial class frmMain : Form
+    public partial class frmAdmin : Form
     {
-        public frmMain()
+        public frmAdmin()
         {
             InitializeComponent();
         }

@@ -79,7 +79,7 @@ namespace Port_manager
 
                 this.Hide(); // Ocultar formulario actual
                 UsuarioSesion.NombreUsuario = nombre;
-                frmMain mainForm = new frmMain();
+                frmAdmin mainForm = new frmAdmin();
                 mainForm.Show();
             }
             else

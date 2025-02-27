@@ -82,43 +82,45 @@
             // 
             // btnolvidocontraseña
             // 
-            this.btnolvidocontraseña.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnolvidocontraseña.BackColor = System.Drawing.Color.LightCyan;
+            this.btnolvidocontraseña.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnolvidocontraseña.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnolvidocontraseña.Location = new System.Drawing.Point(310, 327);
             this.btnolvidocontraseña.Name = "btnolvidocontraseña";
             this.btnolvidocontraseña.Size = new System.Drawing.Size(225, 30);
             this.btnolvidocontraseña.TabIndex = 12;
             this.btnolvidocontraseña.Text = "¿Olvido su contraseña?";
-            this.btnolvidocontraseña.UseVisualStyleBackColor = true;
+            this.btnolvidocontraseña.UseVisualStyleBackColor = false;
             this.btnolvidocontraseña.Click += new System.EventHandler(this.btnolvidocontraseña_Click);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(42, 211);
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(45, 213);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(245, 31);
+            this.label5.Size = new System.Drawing.Size(236, 31);
             this.label5.TabIndex = 11;
             this.label5.Text = "Ingrese su contraseña";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(42, 84);
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(42, 94);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(424, 31);
+            this.label4.Size = new System.Drawing.Size(407, 31);
             this.label4.TabIndex = 10;
             this.label4.Text = "Ingrese su nombre de usuario o E-mail";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label2.Location = new System.Drawing.Point(126, 3);
+            this.label2.Location = new System.Drawing.Point(122, -1);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(311, 54);
+            this.label2.Size = new System.Drawing.Size(344, 60);
             this.label2.TabIndex = 9;
             this.label2.Text = "Inicio de sesión";
             // 
@@ -139,7 +141,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(254, 509);
+            this.label3.Location = new System.Drawing.Point(258, 496);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(38, 38);
             this.label3.TabIndex = 7;
@@ -162,13 +164,13 @@
             // 
             this.cbkterminos.AutoSize = true;
             this.cbkterminos.BackColor = System.Drawing.Color.Transparent;
-            this.cbkterminos.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbkterminos.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbkterminos.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.cbkterminos.Location = new System.Drawing.Point(47, 327);
             this.cbkterminos.Name = "cbkterminos";
-            this.cbkterminos.Size = new System.Drawing.Size(245, 24);
+            this.cbkterminos.Size = new System.Drawing.Size(239, 24);
             this.cbkterminos.TabIndex = 4;
-            this.cbkterminos.Text = "Acepta terminos y condiciones";
+            this.cbkterminos.Text = "Aceptar terminos y condiciones";
             this.cbkterminos.UseVisualStyleBackColor = false;
             this.cbkterminos.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 

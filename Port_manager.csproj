@@ -60,17 +60,23 @@
     <Compile Include="Formularios\frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\frmMain.cs">
+    <Compile Include="Formularios\frmAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\frmMain.Designer.cs">
-      <DependentUpon>frmMain.cs</DependentUpon>
+    <Compile Include="Formularios\frmAdmin.Designer.cs">
+      <DependentUpon>frmAdmin.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\frmRecuperacion.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Formularios\frmRecuperacion.Designer.cs">
       <DependentUpon>frmRecuperacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmUsuario.Designer.cs">
+      <DependentUpon>frmUsuario.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -80,11 +86,14 @@
     <EmbeddedResource Include="Formularios\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\frmMain.resx">
-      <DependentUpon>frmMain.cs</DependentUpon>
+    <EmbeddedResource Include="Formularios\frmAdmin.resx">
+      <DependentUpon>frmAdmin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmRecuperacion.resx">
       <DependentUpon>frmRecuperacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmUsuario.resx">
+      <DependentUpon>frmUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
