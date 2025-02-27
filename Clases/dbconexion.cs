@@ -51,7 +51,7 @@ namespace SqlConnectiondb
         }
 
         // Método para agregar el usuario usando GetConnection()
-        public static bool agregar_usuario_(string nombre, string email, string password)
+        public static bool agregar_usuario_(string nombre, string email, string password, string rol)
         {
             try
             {
@@ -65,6 +65,7 @@ namespace SqlConnectiondb
                         cmd.Parameters.AddWithValue("@nombre", nombre);
                         cmd.Parameters.AddWithValue("@email", email);
                         cmd.Parameters.AddWithValue("@contraseña", password);
+                        cmd.Parameters.AddWithValue("@rol", rol);
 
                         // Parámetro de salida
                         SqlParameter outputParam = new SqlParameter("@resultado", SqlDbType.Int);

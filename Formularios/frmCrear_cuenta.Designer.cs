@@ -43,6 +43,8 @@
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.cmbRol = new System.Windows.Forms.ComboBox();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -54,12 +56,14 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(573, 649);
+            this.panel1.Size = new System.Drawing.Size(605, 724);
             this.panel1.TabIndex = 0;
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.CadetBlue;
+            this.panel2.Controls.Add(this.cmbRol);
+            this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.label3);
@@ -73,9 +77,9 @@
             this.panel2.Controls.Add(this.txtNombre);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel2.Location = new System.Drawing.Point(572, 0);
+            this.panel2.Location = new System.Drawing.Point(601, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(545, 649);
+            this.panel2.Size = new System.Drawing.Size(564, 724);
             this.panel2.TabIndex = 1;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
@@ -148,7 +152,7 @@
             this.btnVLogin.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnVLogin.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVLogin.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnVLogin.Location = new System.Drawing.Point(124, 606);
+            this.btnVLogin.Location = new System.Drawing.Point(124, 670);
             this.btnVLogin.Name = "btnVLogin";
             this.btnVLogin.Size = new System.Drawing.Size(317, 31);
             this.btnVLogin.TabIndex = 7;
@@ -161,7 +165,7 @@
             this.btnCrearcuenta.BackColor = System.Drawing.Color.IndianRed;
             this.btnCrearcuenta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCrearcuenta.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCrearcuenta.Location = new System.Drawing.Point(78, 533);
+            this.btnCrearcuenta.Location = new System.Drawing.Point(78, 604);
             this.btnCrearcuenta.Name = "btnCrearcuenta";
             this.btnCrearcuenta.Size = new System.Drawing.Size(412, 41);
             this.btnCrearcuenta.TabIndex = 6;
@@ -206,17 +210,40 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(166, 9);
+            this.label1.Location = new System.Drawing.Point(168, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(222, 45);
             this.label1.TabIndex = 0;
             this.label1.Text = "Crear Cuenta";
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(73, 532);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(43, 28);
+            this.label6.TabIndex = 15;
+            this.label6.Text = "Rol";
+            // 
+            // cmbRol
+            // 
+            this.cmbRol.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.cmbRol.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbRol.FormattingEnabled = true;
+            this.cmbRol.Items.AddRange(new object[] {
+            "Usuario",
+            "Administrador"});
+            this.cmbRol.Location = new System.Drawing.Point(124, 532);
+            this.cmbRol.Name = "cmbRol";
+            this.cmbRol.Size = new System.Drawing.Size(366, 31);
+            this.cmbRol.TabIndex = 16;
+            // 
             // frmCrear_cuenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1117, 649);
+            this.ClientSize = new System.Drawing.Size(1165, 724);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
@@ -245,5 +272,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ComboBox cmbRol;
     }
 }

@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLogin));
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnolvidocontraseña = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -42,7 +43,6 @@
             this.txtEnombre = new System.Windows.Forms.TextBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnolvidocontraseña = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
             this.SuspendLayout();
@@ -80,6 +80,17 @@
             this.panel2.TabIndex = 1;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
+            // btnolvidocontraseña
+            // 
+            this.btnolvidocontraseña.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnolvidocontraseña.Location = new System.Drawing.Point(310, 327);
+            this.btnolvidocontraseña.Name = "btnolvidocontraseña";
+            this.btnolvidocontraseña.Size = new System.Drawing.Size(225, 30);
+            this.btnolvidocontraseña.TabIndex = 12;
+            this.btnolvidocontraseña.Text = "¿Olvido su contraseña?";
+            this.btnolvidocontraseña.UseVisualStyleBackColor = true;
+            this.btnolvidocontraseña.Click += new System.EventHandler(this.btnolvidocontraseña_Click);
+            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -116,9 +127,9 @@
             this.btnCrear_cuenta.BackColor = System.Drawing.Color.Tomato;
             this.btnCrear_cuenta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCrear_cuenta.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCrear_cuenta.Location = new System.Drawing.Point(47, 557);
+            this.btnCrear_cuenta.Location = new System.Drawing.Point(48, 569);
             this.btnCrear_cuenta.Name = "btnCrear_cuenta";
-            this.btnCrear_cuenta.Size = new System.Drawing.Size(476, 54);
+            this.btnCrear_cuenta.Size = new System.Drawing.Size(488, 54);
             this.btnCrear_cuenta.TabIndex = 8;
             this.btnCrear_cuenta.Text = "Crear Cuenta";
             this.btnCrear_cuenta.UseVisualStyleBackColor = false;
@@ -128,7 +139,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(268, 490);
+            this.label3.Location = new System.Drawing.Point(254, 509);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(38, 38);
             this.label3.TabIndex = 7;
@@ -139,9 +150,9 @@
             this.btnLogin.BackColor = System.Drawing.Color.Tomato;
             this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogin.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogin.Location = new System.Drawing.Point(47, 405);
+            this.btnLogin.Location = new System.Drawing.Point(48, 418);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(476, 52);
+            this.btnLogin.Size = new System.Drawing.Size(488, 52);
             this.btnLogin.TabIndex = 6;
             this.btnLogin.Text = "Iniciar Sesión";
             this.btnLogin.UseVisualStyleBackColor = false;
@@ -151,11 +162,11 @@
             // 
             this.cbkterminos.AutoSize = true;
             this.cbkterminos.BackColor = System.Drawing.Color.Transparent;
-            this.cbkterminos.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbkterminos.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbkterminos.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.cbkterminos.Location = new System.Drawing.Point(47, 339);
+            this.cbkterminos.Location = new System.Drawing.Point(47, 327);
             this.cbkterminos.Name = "cbkterminos";
-            this.cbkterminos.Size = new System.Drawing.Size(234, 24);
+            this.cbkterminos.Size = new System.Drawing.Size(245, 24);
             this.cbkterminos.TabIndex = 4;
             this.cbkterminos.Text = "Acepta terminos y condiciones";
             this.cbkterminos.UseVisualStyleBackColor = false;
@@ -168,7 +179,7 @@
             this.txtPassword.Location = new System.Drawing.Point(47, 258);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
-            this.txtPassword.Size = new System.Drawing.Size(476, 38);
+            this.txtPassword.Size = new System.Drawing.Size(488, 38);
             this.txtPassword.TabIndex = 3;
             // 
             // txtEnombre
@@ -178,7 +189,7 @@
             this.txtEnombre.ForeColor = System.Drawing.Color.Black;
             this.txtEnombre.Location = new System.Drawing.Point(47, 138);
             this.txtEnombre.Name = "txtEnombre";
-            this.txtEnombre.Size = new System.Drawing.Size(476, 38);
+            this.txtEnombre.Size = new System.Drawing.Size(488, 38);
             this.txtEnombre.TabIndex = 2;
             this.txtEnombre.TextChanged += new System.EventHandler(this.txtEnombre_TextChanged);
             this.txtEnombre.Leave += new System.EventHandler(this.txtEnombre_Leave);
@@ -204,16 +215,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "🌊⚓✨ \"¡Tu puerto, tu control! 🚢 Conéctate y controla con seguridad.\"";
             this.label1.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // btnolvidocontraseña
-            // 
-            this.btnolvidocontraseña.Location = new System.Drawing.Point(325, 339);
-            this.btnolvidocontraseña.Name = "btnolvidocontraseña";
-            this.btnolvidocontraseña.Size = new System.Drawing.Size(198, 24);
-            this.btnolvidocontraseña.TabIndex = 12;
-            this.btnolvidocontraseña.Text = "¿Olvido su contraseña?";
-            this.btnolvidocontraseña.UseVisualStyleBackColor = true;
-            this.btnolvidocontraseña.Click += new System.EventHandler(this.btnolvidocontraseña_Click);
             // 
             // frmLogin
             // 

@@ -66,12 +66,6 @@
     <Compile Include="Formularios\frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\frmInicio.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formularios\frmInicio.Designer.cs">
-      <DependentUpon>frmInicio.cs</DependentUpon>
-    </Compile>
     <Compile Include="Formularios\frmRecuperacion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -88,9 +82,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\frmInicio.resx">
-      <DependentUpon>frmInicio.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmRecuperacion.resx">
       <DependentUpon>frmRecuperacion.cs</DependentUpon>

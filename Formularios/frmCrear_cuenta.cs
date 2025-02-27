@@ -43,6 +43,8 @@ namespace Port_manager.Formularios
             string email = txtEmail.Text;
             string contraseña = txtContraseña.Text;
             string confirmar_contraseña = txtCcontraseña.Text;
+            string rol = cmbRol.SelectedItem?.ToString() ?? "";
+
             try
             {
              
@@ -55,7 +57,8 @@ namespace Port_manager.Formularios
                 if (string.IsNullOrWhiteSpace(nombre) ||
                     string.IsNullOrWhiteSpace(email) ||
                     string.IsNullOrWhiteSpace(contraseña) ||
-                    string.IsNullOrWhiteSpace(confirmar_contraseña))
+                    string.IsNullOrWhiteSpace(confirmar_contraseña)
+                    || string.IsNullOrWhiteSpace(rol))
                 {
                     MessageBox.Show("❌ Por favor, rellene todos los campos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return; 
@@ -81,7 +84,7 @@ namespace Port_manager.Formularios
                 }
 
                 
-                if (DatabaseHelper.agregar_usuario_(nombre, email, contraseña))
+                if (DatabaseHelper.agregar_usuario_(nombre, email, contraseña, rol))
                 {
                     MessageBox.Show("✅ Usuario agregado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     frmLogin frm = new frmLogin();
