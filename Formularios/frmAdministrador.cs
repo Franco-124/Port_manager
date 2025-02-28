@@ -123,7 +123,21 @@ namespace Port_manager.Formularios
 
         private void frmAdministrador_Load(object sender, EventArgs e)
         {
+            lbDate.Text = DateTime.Now.ToString("dd/MM/yyyy");
 
+            if (Regex.IsMatch(UsuarioSesion.NombreUsuario, @"^[^@\s]+@[^@\s]+\.[^@\s]+$"))
+            {
+                string username = DatabaseHelper.obtener_nommbre_usuario(UsuarioSesion.NombreUsuario);
+                if (username != null)
+                {
+                    lblBienvenida.Text = $"                       {username} ";
+                }
+
+            }
+            else
+            {
+                lblBienvenida.Text = $"                          {UsuarioSesion.NombreUsuario}   ";
+            }
         }
 
         private void pnlDesktop_Paint(object sender, PaintEventArgs e)
@@ -184,21 +198,7 @@ namespace Port_manager.Formularios
 
         private void frmMain_Load(object sender, EventArgs e)
         {
-            lbDate.Text = DateTime.Now.ToString("dd/MM/yyyy");
-
-            if (Regex.IsMatch(UsuarioSesion.NombreUsuario, @"^[^@\s]+@[^@\s]+\.[^@\s]+$"))
-            {
-                string username = DatabaseHelper.obtener_nommbre_usuario(UsuarioSesion.NombreUsuario);
-                if (username != null)
-                {
-                    lblBienvenida.Text = $"                       {username} ";
-                }
-
-            }
-            else
-            {
-                lblBienvenida.Text = $"                          {UsuarioSesion.NombreUsuario}   ";
-            }
+            
 
         }
 
