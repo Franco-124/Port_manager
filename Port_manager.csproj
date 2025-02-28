@@ -33,8 +33,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="FontAwesome.Sharp, Version=6.6.0.0, Culture=neutral, PublicKeyToken=d16d1e4e568ec10f, processorArchitecture=MSIL">
+      <HintPath>packages\FontAwesome.Sharp.6.6.0\lib\net472\FontAwesome.Sharp.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -44,27 +50,52 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Clases\Credentials.cs" />
     <Compile Include="Clases\dbconexion.cs" />
+    <Compile Include="Formularios\frmAdministrador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmAdministrador.Designer.cs">
+      <DependentUpon>frmAdministrador.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmCargaDescarga.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmCargaDescarga.Designer.cs">
+      <DependentUpon>frmCargaDescarga.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmClasificacionAsignacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmClasificacionAsignacion.Designer.cs">
+      <DependentUpon>frmClasificacionAsignacion.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\frmCrear_cuenta.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Formularios\frmCrear_cuenta.Designer.cs">
       <DependentUpon>frmCrear_cuenta.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\frmGestionAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmGestionAdmin.Designer.cs">
+      <DependentUpon>frmGestionAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmIncidencias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmIncidencias.Designer.cs">
+      <DependentUpon>frmIncidencias.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Formularios\frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Formularios\frmAdmin.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formularios\frmAdmin.Designer.cs">
-      <DependentUpon>frmAdmin.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\frmRecuperacion.cs">
       <SubType>Form</SubType>
@@ -80,14 +111,14 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Formularios\frmAdministrador.resx">
+      <DependentUpon>frmAdministrador.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmCrear_cuenta.resx">
       <DependentUpon>frmCrear_cuenta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\frmAdmin.resx">
-      <DependentUpon>frmAdmin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmRecuperacion.resx">
       <DependentUpon>frmRecuperacion.cs</DependentUpon>
@@ -104,6 +135,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
