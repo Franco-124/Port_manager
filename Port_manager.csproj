@@ -61,6 +61,12 @@
     <Compile Include="Formularios\frmAdministrador.Designer.cs">
       <DependentUpon>frmAdministrador.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\frmCambiocontraseña.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmCambiocontraseña.Designer.cs">
+      <DependentUpon>frmCambiocontraseña.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\frmCargaDescarga.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -114,8 +120,23 @@
     <EmbeddedResource Include="Formularios\frmAdministrador.resx">
       <DependentUpon>frmAdministrador.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmCambiocontraseña.resx">
+      <DependentUpon>frmCambiocontraseña.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FrmCargaDescarga.resx">
+      <DependentUpon>frmCargaDescarga.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmClasificacionAsignacion.resx">
+      <DependentUpon>frmClasificacionAsignacion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmCrear_cuenta.resx">
       <DependentUpon>frmCrear_cuenta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmGestionAdmin.resx">
+      <DependentUpon>frmGestionAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmIncidencias.resx">
+      <DependentUpon>frmIncidencias.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>

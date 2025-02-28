@@ -119,6 +119,7 @@ namespace Port_manager.Formularios
         private void btnCambioContra_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color5);
+            AbrirFormularioHijo(new frmCambiocontraseña());
         }
 
         private void frmAdministrador_Load(object sender, EventArgs e)

@@ -36,7 +36,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1001, 522);
             this.Name = "frmUsuario";
-            this.Text = "frmUsuario";
+            this.Text = "Panel de Usuario";
             this.ResumeLayout(false);
 
         }

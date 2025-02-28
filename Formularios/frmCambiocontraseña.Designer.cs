@@ -1,6 +1,6 @@
 ﻿namespace Port_manager.Formularios
 {
-    partial class frmGestionAdmin
+    partial class frmCambiocontraseña
     {
         /// <summary>
         /// Required designer variable.
@@ -30,13 +30,13 @@
         {
             this.SuspendLayout();
             // 
-            // frmGestionAdmin
+            // frmCambiocontraseña
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Name = "frmGestionAdmin";
-            this.Text = "Gestión de administrador";
+            this.ClientSize = new System.Drawing.Size(820, 450);
+            this.Name = "frmCambiocontraseña";
+            this.Text = "Cambio contraseña";
             this.ResumeLayout(false);
 
         }
