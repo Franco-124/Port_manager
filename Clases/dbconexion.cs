@@ -95,19 +95,19 @@ namespace SqlConnectiondb
             }
 
         }
-        public static bool verificar_nombre_usuario(string email)
+        public static bool verificar_nombre_usuario(string nombre)
         {
             try
             {
                 using (SqlConnection connection = GetConnection()) 
                 {
-                    using (SqlCommand cmd = new SqlCommand("devolver_nombre_usuario\"", connection))
+                    using (SqlCommand cmd = new SqlCommand("verificar_nombre_usuario", connection))
                     {
                         cmd.CommandType = CommandType.StoredProcedure;
 
 
-                        cmd.Parameters.AddWithValue("@email", email);
-                        SqlParameter outputParam = new SqlParameter("@nombre_usuario", SqlDbType.Int);
+                        cmd.Parameters.AddWithValue("@nombre", nombre);
+                        SqlParameter outputParam = new SqlParameter("@existe", SqlDbType.Int);
                         outputParam.Direction = ParameterDirection.Output;
                         cmd.Parameters.Add(outputParam);
 
