@@ -136,7 +136,7 @@ namespace SqlConnectiondb
 
         }
 
-        public static string obtener_nommbre_usuario(string email)
+        public static string obtener_nombre_usuario(string email)
         {
             try
             {

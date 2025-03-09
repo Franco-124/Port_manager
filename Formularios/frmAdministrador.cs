@@ -128,7 +128,7 @@ namespace Port_manager.Formularios
 
             if (Regex.IsMatch(UsuarioSesion.NombreUsuario, @"^[^@\s]+@[^@\s]+\.[^@\s]+$"))
             {
-                string username = DatabaseHelper.obtener_nommbre_usuario(UsuarioSesion.NombreUsuario);
+                string username = DatabaseHelper.obtener_nombre_usuario(UsuarioSesion.NombreUsuario);
                 if (username != null)
                 {
                     lblBienvenida.Text = $"                       {username} ";
