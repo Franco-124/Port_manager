@@ -207,5 +207,10 @@ namespace Port_manager.Formularios
         {
 
         }
+
+        private void lbDate_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -97,6 +97,12 @@
     <Compile Include="Formularios\frmGestionAdmin.Designer.cs">
       <DependentUpon>frmGestionAdmin.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\frmGestionUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmGestionUsuario.Designer.cs">
+      <DependentUpon>frmGestionUsuario.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\frmIncidencias.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -120,6 +126,12 @@
     </Compile>
     <Compile Include="Formularios\frmRecuperacion.Designer.cs">
       <DependentUpon>frmRecuperacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmRegistroDeBuques.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmRegistroDeBuques.Designer.cs">
+      <DependentUpon>frmRegistroDeBuques.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\frmUsuario.cs">
       <SubType>Form</SubType>
