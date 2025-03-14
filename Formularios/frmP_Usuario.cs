@@ -6,10 +6,12 @@ using System.Drawing;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Media;
 using FontAwesome.Sharp;
+using SqlConnectiondb;
 using Color = System.Drawing.Color;
 
 namespace Port_manager.Formularios
@@ -116,7 +118,21 @@ namespace Port_manager.Formularios
 
         private void frmP_Usuario_Load(object sender, EventArgs e)
         {
+            lbUDate.Text = DateTime.Now.ToString("dd/MM/yyyy");
 
+            if (Regex.IsMatch(UsuarioSesion.NombreUsuario, @"^[^@\s]+@[^@\s]+\.[^@\s]+$"))
+            {
+                string username = DatabaseHelper.obtener_nombre_usuario(UsuarioSesion.NombreUsuario);
+                if (username != null)
+                {
+                    lbNombre_usuario.Text = $"                       {username} ";
+                }
+
+            }
+            else
+            {
+                    lbNombre_usuario.Text = $"                          {UsuarioSesion.NombreUsuario}   ";
+            }
         }
 
         private void btnHome_Click(object sender, EventArgs e)

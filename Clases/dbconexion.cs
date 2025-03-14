@@ -166,5 +166,47 @@ namespace SqlConnectiondb
             }
 
         }
+
+        public static string obtener_rol_current_user (string nombre_usuario, string contraseña)
+        {
+            try
+            {
+                using (SqlConnection connection = GetConnection())
+                {
+                    using (SqlCommand cmd = new SqlCommand("devolver_rol_current_user", connection))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+
+                        cmd.Parameters.AddWithValue("@nombre",nombre_usuario);
+                        cmd.Parameters.AddWithValue("@contraseña" , contraseña);
+
+                       
+                        SqlParameter outputParam = new SqlParameter("@rol", SqlDbType.VarChar, 50)
+                        {
+                            Direction = ParameterDirection.Output
+                        };
+                        cmd.Parameters.Add(outputParam);
+
+                        cmd.ExecuteNonQuery(); 
+
+                       
+                        string role = outputParam.Value.ToString();
+
+                        return string.IsNullOrEmpty(role) ? null : role;
+
+                    }
+                }
+            }
+            catch (SqlException sqlEx)
+            {
+                Console.WriteLine("❌ Error de SQL: " + sqlEx.Message);
+                return null;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("❌ Error: " + ex.Message);
+                return null;
+            }
+        }
     }
 }

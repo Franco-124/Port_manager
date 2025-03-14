@@ -72,15 +72,41 @@ namespace Port_manager
             }
 
 
-           
+
             if (DatabaseHelper.VerificarLogin(nombre, email, contraseña))
             {
                 MessageBox.Show("✅ Inicio de sesión exitoso.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                this.Hide(); // Ocultar formulario actual
+                // Obtener el rol del usuario
+                string role = DatabaseHelper.obtener_rol_current_user(nombre, contraseña);
+
+                
+
+                if (string.IsNullOrWhiteSpace(role))
+                {
+                    MessageBox.Show("❌ Error al obtener el rol del usuario.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                
                 UsuarioSesion.NombreUsuario = nombre;
-                frmAdministrador mainForm = new frmAdministrador();
-                mainForm.Show();
+                this.Hide();
+
+                //Redirijimos al panel de usuario
+                if (role.Equals("Usuario", StringComparison.OrdinalIgnoreCase))
+                {
+                    new frmP_Usuario().Show();
+                }
+                //redirijimos al panel de administrador
+                else if (role.Equals("Administrador", StringComparison.OrdinalIgnoreCase))
+                {
+                    new frmAdministrador().Show();
+                }
+                else
+                {
+                    MessageBox.Show("❌ Rol desconocido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    this.Show(); 
+                }
             }
             else
             {
