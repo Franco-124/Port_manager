@@ -22,6 +22,7 @@ namespace Port_manager.Formularios
         private IconButton currentBtn;
         private Panel leftBorderBtn;
         private Form currentChildForm;
+        private Form formatoActual;
 
         public frmP_Usuario()
         {
@@ -31,9 +32,10 @@ namespace Port_manager.Formularios
             panelMenu.Controls.Add(leftBorderBtn);
             //Form
             this.Text = string.Empty;
-            this.ControlBox = false;
+            this.ControlBox = true; // Asegúrate de que los botones de control estén visibles
             this.DoubleBuffered = true;
             this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
+            this.FormBorderStyle = FormBorderStyle.Sizable; 
         }
         //Structs
         private struct RGBColors
@@ -137,8 +139,12 @@ namespace Port_manager.Formularios
 
         private void btnHome_Click(object sender, EventArgs e)
         {
-            currentChildForm.Close();
             Reset();
+            if (formatoActual != null)
+            {
+                formatoActual.Close();
+            }
+
         }
 
         private void Reset()
@@ -164,9 +170,10 @@ namespace Port_manager.Formularios
 
         private void btnCerrarSesion_Click(object sender, EventArgs e)
         {
+            
             frmLogin login = new frmLogin();
-            login.Show();
-            this.Close();
+            login.Show();  // Muestra el formulario de inicio de sesión antes de cerrar el actual
+            this.Close();  // Cierra el formulario actual (frmAdministrador)
         }
     }
 }

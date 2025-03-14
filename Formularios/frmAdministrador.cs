@@ -22,6 +22,7 @@ namespace Port_manager.Formularios
         private IconButton currentBtn;
         private Panel leftBorderBtn;
         private Form formatoActual;
+        private Form currentChildForm;
 
         //constructores
         public frmAdministrador()
@@ -148,19 +149,24 @@ namespace Port_manager.Formularios
 
         private void AbrirFormularioHijo(Form formHijo)
         {
-            if(formatoActual!= null)
+            if (formatoActual != null)
             {
                 formatoActual.Close();
             }
+
             formatoActual = formHijo;
             formHijo.TopLevel = false;
             formHijo.FormBorderStyle = FormBorderStyle.None;
-            formHijo.Dock = DockStyle.Fill;
+            formHijo.Dock = DockStyle.Fill; // Hace que el formulario ocupe todo el panel
             pnlDesktop.Controls.Add(formHijo);
             pnlDesktop.Tag = formHijo;
             formHijo.BringToFront();
             formHijo.Show();
+
+            pnlDesktop.Refresh(); // Forzar actualización
+
             lblInicio.Text = formHijo.Text;
+
 
         }
 
@@ -169,18 +175,22 @@ namespace Port_manager.Formularios
         {
             DisableButton();
             leftBorderBtn.Visible = false;
-            if (currentBtn != null)
-            {
-                IcnHome.IconChar = currentBtn.IconChar;
-                IcnHome.IconColor = Color.White;
-            }
+            IcnHome.IconChar = IconChar.Home; // Establece el icono de inicio
+            IcnHome.IconColor = Color.White; // Establece el color del icono de inicio
             lblInicio.Text = "Inicio";
+
+
+
+
         }
 
         private void panelLogo_Click_1(object sender, EventArgs e)
         {
             Reset();
-            formatoActual.Close();
+            if (formatoActual != null)
+            {
+                formatoActual.Close();
+            }
         }
 
         private void IcnHome_Click(object sender, EventArgs e)
@@ -198,6 +208,8 @@ namespace Port_manager.Formularios
             frmLogin login = new frmLogin();
             login.Show();
             this.Close();
+            
+
         }
 
         private void frmMain_Load(object sender, EventArgs e)
@@ -218,6 +230,11 @@ namespace Port_manager.Formularios
 
         private void panelLogo_Paint(object sender, PaintEventArgs e)
         {
+            if (currentChildForm != null)
+            {
+                currentChildForm.Close();
+            }
+            Reset();
 
         }
     }

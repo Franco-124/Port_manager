@@ -147,7 +147,7 @@ namespace Port_manager
         {
             frmCambiocontraseña frmCambiocontraseña = new frmCambiocontraseña();
             frmCambiocontraseña.Show();
-            this.Hide();
+            this.Close();
 
 
         }

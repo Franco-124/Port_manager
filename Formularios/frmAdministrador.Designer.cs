@@ -314,7 +314,10 @@
             // 
             // pnlDesktop
             // 
+            this.pnlDesktop.AutoSize = true;
+            this.pnlDesktop.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.pnlDesktop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
+            this.pnlDesktop.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pnlDesktop.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlDesktop.Location = new System.Drawing.Point(293, 104);
             this.pnlDesktop.Margin = new System.Windows.Forms.Padding(4);
@@ -343,6 +346,7 @@
             this.pnlAdmin.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.IcnHome)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 

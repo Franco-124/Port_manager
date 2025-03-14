@@ -31,6 +31,7 @@ namespace Port_manager.Formularios
             frmLogin frm = new frmLogin();
             frm.Show();
             this.Hide();
+            System.Windows.Forms.Application.Exit();
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -91,7 +92,8 @@ namespace Port_manager.Formularios
                     MessageBox.Show("✅ Usuario agregado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     frmLogin frm = new frmLogin();
                     frm.Show();
-                    this.Hide();
+                    this.Close();
+                   
                 }
                 else
                 {
