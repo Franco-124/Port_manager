@@ -35,13 +35,13 @@
             this.panelLogo = new System.Windows.Forms.Panel();
             this.btnHome = new FontAwesome.Sharp.IconPictureBox();
             this.panelTitleBar = new System.Windows.Forms.Panel();
+            this.lbNombre_usuario = new System.Windows.Forms.Label();
+            this.lbUDate = new System.Windows.Forms.Label();
             this.btnCerrarSesion = new FontAwesome.Sharp.IconButton();
             this.lblTitleChildForm = new System.Windows.Forms.Label();
             this.iconCurrentChildForm = new FontAwesome.Sharp.IconPictureBox();
             this.panelShadow = new System.Windows.Forms.Panel();
             this.panelDesktop = new System.Windows.Forms.Panel();
-            this.lbUDate = new System.Windows.Forms.Label();
-            this.lbNombre_usuario = new System.Windows.Forms.Label();
             this.panelMenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnHome)).BeginInit();
@@ -58,7 +58,7 @@
             this.panelMenu.Controls.Add(this.panelLogo);
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
-            this.panelMenu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelMenu.Margin = new System.Windows.Forms.Padding(4);
             this.panelMenu.Name = "panelMenu";
             this.panelMenu.Size = new System.Drawing.Size(293, 635);
             this.panelMenu.TabIndex = 0;
@@ -76,7 +76,7 @@
             this.iconButton3.IconSize = 40;
             this.iconButton3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.iconButton3.Location = new System.Drawing.Point(0, 320);
-            this.iconButton3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.iconButton3.Margin = new System.Windows.Forms.Padding(4);
             this.iconButton3.Name = "iconButton3";
             this.iconButton3.Padding = new System.Windows.Forms.Padding(13, 0, 27, 0);
             this.iconButton3.Size = new System.Drawing.Size(293, 74);
@@ -100,7 +100,7 @@
             this.iconButton2.IconSize = 40;
             this.iconButton2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.iconButton2.Location = new System.Drawing.Point(0, 246);
-            this.iconButton2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.iconButton2.Margin = new System.Windows.Forms.Padding(4);
             this.iconButton2.Name = "iconButton2";
             this.iconButton2.Padding = new System.Windows.Forms.Padding(13, 0, 27, 0);
             this.iconButton2.Size = new System.Drawing.Size(293, 74);
@@ -124,7 +124,7 @@
             this.iconButton1.IconSize = 40;
             this.iconButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.iconButton1.Location = new System.Drawing.Point(0, 172);
-            this.iconButton1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.iconButton1.Margin = new System.Windows.Forms.Padding(4);
             this.iconButton1.Name = "iconButton1";
             this.iconButton1.Padding = new System.Windows.Forms.Padding(13, 0, 27, 0);
             this.iconButton1.Size = new System.Drawing.Size(293, 74);
@@ -140,7 +140,7 @@
             this.panelLogo.Controls.Add(this.btnHome);
             this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelLogo.Location = new System.Drawing.Point(0, 0);
-            this.panelLogo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelLogo.Margin = new System.Windows.Forms.Padding(4);
             this.panelLogo.Name = "panelLogo";
             this.panelLogo.Size = new System.Drawing.Size(293, 172);
             this.panelLogo.TabIndex = 0;
@@ -156,7 +156,7 @@
             this.btnHome.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnHome.IconSize = 171;
             this.btnHome.Location = new System.Drawing.Point(0, 0);
-            this.btnHome.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnHome.Margin = new System.Windows.Forms.Padding(4);
             this.btnHome.Name = "btnHome";
             this.btnHome.Size = new System.Drawing.Size(292, 171);
             this.btnHome.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -174,11 +174,34 @@
             this.panelTitleBar.Controls.Add(this.iconCurrentChildForm);
             this.panelTitleBar.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTitleBar.Location = new System.Drawing.Point(293, 0);
-            this.panelTitleBar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelTitleBar.Margin = new System.Windows.Forms.Padding(4);
             this.panelTitleBar.Name = "panelTitleBar";
             this.panelTitleBar.Size = new System.Drawing.Size(1008, 92);
             this.panelTitleBar.TabIndex = 1;
             this.panelTitleBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelTitleBar_MouseDown);
+            // 
+            // lbNombre_usuario
+            // 
+            this.lbNombre_usuario.AutoSize = true;
+            this.lbNombre_usuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lbNombre_usuario.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbNombre_usuario.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lbNombre_usuario.Location = new System.Drawing.Point(430, 37);
+            this.lbNombre_usuario.Name = "lbNombre_usuario";
+            this.lbNombre_usuario.Size = new System.Drawing.Size(84, 20);
+            this.lbNombre_usuario.TabIndex = 7;
+            this.lbNombre_usuario.Text = "user_name";
+            // 
+            // lbUDate
+            // 
+            this.lbUDate.AutoSize = true;
+            this.lbUDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbUDate.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lbUDate.Location = new System.Drawing.Point(711, 41);
+            this.lbUDate.Name = "lbUDate";
+            this.lbUDate.Size = new System.Drawing.Size(91, 16);
+            this.lbUDate.TabIndex = 6;
+            this.lbUDate.Text = "Current date";
             // 
             // btnCerrarSesion
             // 
@@ -193,7 +216,7 @@
             this.btnCerrarSesion.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnCerrarSesion.IconSize = 32;
             this.btnCerrarSesion.Location = new System.Drawing.Point(859, 0);
-            this.btnCerrarSesion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCerrarSesion.Margin = new System.Windows.Forms.Padding(4);
             this.btnCerrarSesion.Name = "btnCerrarSesion";
             this.btnCerrarSesion.Size = new System.Drawing.Size(149, 92);
             this.btnCerrarSesion.TabIndex = 5;
@@ -224,7 +247,7 @@
             this.iconCurrentChildForm.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconCurrentChildForm.IconSize = 42;
             this.iconCurrentChildForm.Location = new System.Drawing.Point(27, 26);
-            this.iconCurrentChildForm.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.iconCurrentChildForm.Margin = new System.Windows.Forms.Padding(4);
             this.iconCurrentChildForm.Name = "iconCurrentChildForm";
             this.iconCurrentChildForm.Size = new System.Drawing.Size(45, 42);
             this.iconCurrentChildForm.TabIndex = 0;
@@ -235,7 +258,7 @@
             this.panelShadow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(24)))), ((int)(((byte)(58)))));
             this.panelShadow.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelShadow.Location = new System.Drawing.Point(293, 92);
-            this.panelShadow.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelShadow.Margin = new System.Windows.Forms.Padding(4);
             this.panelShadow.Name = "panelShadow";
             this.panelShadow.Size = new System.Drawing.Size(1008, 11);
             this.panelShadow.TabIndex = 2;
@@ -243,36 +266,14 @@
             // panelDesktop
             // 
             this.panelDesktop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
+            this.panelDesktop.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panelDesktop.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelDesktop.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panelDesktop.Location = new System.Drawing.Point(293, 103);
-            this.panelDesktop.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelDesktop.Margin = new System.Windows.Forms.Padding(4);
             this.panelDesktop.Name = "panelDesktop";
             this.panelDesktop.Size = new System.Drawing.Size(1008, 532);
             this.panelDesktop.TabIndex = 3;
-            // 
-            // lbUDate
-            // 
-            this.lbUDate.AutoSize = true;
-            this.lbUDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbUDate.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lbUDate.Location = new System.Drawing.Point(711, 41);
-            this.lbUDate.Name = "lbUDate";
-            this.lbUDate.Size = new System.Drawing.Size(91, 16);
-            this.lbUDate.TabIndex = 6;
-            this.lbUDate.Text = "Current date";
-            // 
-            // lbNombre_usuario
-            // 
-            this.lbNombre_usuario.AutoSize = true;
-            this.lbNombre_usuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lbNombre_usuario.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbNombre_usuario.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lbNombre_usuario.Location = new System.Drawing.Point(430, 37);
-            this.lbNombre_usuario.Name = "lbNombre_usuario";
-            this.lbNombre_usuario.Size = new System.Drawing.Size(84, 20);
-            this.lbNombre_usuario.TabIndex = 7;
-            this.lbNombre_usuario.Text = "user_name";
             // 
             // frmP_Usuario
             // 
@@ -283,8 +284,8 @@
             this.Controls.Add(this.panelShadow);
             this.Controls.Add(this.panelTitleBar);
             this.Controls.Add(this.panelMenu);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmP_Usuario";
             this.Text = "Panel de Usuario";
             this.Load += new System.EventHandler(this.frmP_Usuario_Load);

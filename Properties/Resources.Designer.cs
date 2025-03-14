@@ -63,16 +63,6 @@ namespace Port_manager.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap aerial_view_cargo_ship_cargo_container_harbor {
-            get {
-                object obj = ResourceManager.GetObject("aerial-view-cargo-ship-cargo-container-harbor", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap Tema4_1_Manzanillo {
             get {
                 object obj = ResourceManager.GetObject("Tema4-1-Manzanillo", resourceCulture);

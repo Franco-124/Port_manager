@@ -7,11 +7,26 @@
     <ProjectGuid>{6A2906F2-3086-4586-B484-4A78E989225E}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>Port_manager</RootNamespace>
-    <AssemblyName>Port_manager</AssemblyName>
+    <AssemblyName>Port manager</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -31,6 +46,9 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>Port_manager.Program</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="FontAwesome.Sharp, Version=6.6.0.0, Culture=neutral, PublicKeyToken=d16d1e4e568ec10f, processorArchitecture=MSIL">
@@ -121,6 +139,12 @@
     <Compile Include="Formularios\frmP_Usuario.Designer.cs">
       <DependentUpon>frmP_Usuario.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\FrmRecuperarcontraseña.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmRecuperarcontraseña.Designer.cs">
+      <DependentUpon>FrmRecuperarcontraseña.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\frmRegistroDeBuques.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -156,6 +180,9 @@
     <EmbeddedResource Include="Formularios\frmP_Usuario.resx">
       <DependentUpon>frmP_Usuario.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FrmRecuperarcontraseña.resx">
+      <DependentUpon>FrmRecuperarcontraseña.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -184,9 +211,17 @@
     <None Include="Resources\Tema4-1-Manzanillo.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\aerial-view-cargo-ship-cargo-container-harbor.jpg" />
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 y x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <Content Include="scripts\scripts_project.sql" />
   </ItemGroup>

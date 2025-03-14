@@ -169,8 +169,11 @@ namespace Port_manager.Formularios
         {
             DisableButton();
             leftBorderBtn.Visible = false;
-            IcnHome.IconChar = currentBtn.IconChar;
-            IcnHome.IconColor = Color.White;
+            if (currentBtn != null)
+            {
+                IcnHome.IconChar = currentBtn.IconChar;
+                IcnHome.IconColor = Color.White;
+            }
             lblInicio.Text = "Inicio";
         }
 
@@ -209,6 +212,11 @@ namespace Port_manager.Formularios
         }
 
         private void lbDate_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panelLogo_Paint(object sender, PaintEventArgs e)
         {
 
         }
