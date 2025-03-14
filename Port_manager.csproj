@@ -186,5 +186,9 @@
   <ItemGroup>
     <None Include="Resources\aerial-view-cargo-ship-cargo-container-harbor.jpg" />
   </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="scripts\scripts_project.sql" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
