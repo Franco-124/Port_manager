@@ -148,3 +148,4 @@ BEGIN
     
     SET @cambiado = CASE WHEN @@ROWCOUNT > 0 THEN 1 ELSE 0 END;
 END;
+

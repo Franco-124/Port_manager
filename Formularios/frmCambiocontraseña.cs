@@ -51,6 +51,13 @@ namespace Port_manager.Formularios
             if (contraseña != UsuarioSesion.contraseña)
             {
                 MessageBox.Show("⚠ Contraseña actual incorrecta", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (nueva_contraseña == UsuarioSesion.contraseña)
+            {
+                MessageBox.Show("⚠ La nueva contraseña no puede ser igual a la actual", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
             }
 
 
