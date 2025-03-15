@@ -208,5 +208,51 @@ namespace SqlConnectiondb
                 return null;
             }
         }
+
+        //Metodo para cambiar contraseña
+        public static string cambiar_contraeña(string contraseña, string nueva_contraseña , string nombre)
+        {
+            try
+            {
+                using (SqlConnection connection = GetConnection())
+                {
+                    connection.Open(); // Asegúrate de abrir la conexión antes de ejecutar el comando
+
+                    using (SqlCommand cmd = new SqlCommand("cambiar_contraseña", connection))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+
+                        cmd.Parameters.AddWithValue("@nueva_contraseña", nueva_contraseña);
+                        cmd.Parameters.AddWithValue("@contraseña", contraseña);
+                        cmd.Parameters.AddWithValue("@nombre", nombre);
+
+                        // Agregar el parámetro de salida
+                        SqlParameter cambiadoParam = new SqlParameter("@cambiado", SqlDbType.Int)
+                        {
+                            Direction = ParameterDirection.Output
+                        };
+                        cmd.Parameters.Add(cambiadoParam);
+
+                        cmd.ExecuteNonQuery(); // Ejecutar el procedimiento almacenado
+
+                        // Obtener el valor del parámetro de salida
+                        int cambiado = (int)cambiadoParam.Value;
+
+                        return cambiado == 1 ? "Contraseña cambiada correctamente" : "No se pudo cambiar la contraseña";
+                    }
+                }
+            }
+            catch (SqlException sqlEx)
+            {
+                Console.WriteLine("❌ Error de SQL: " + sqlEx.Message);
+                return "Error de base de datos";
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("❌ Error: " + ex.Message);
+                return "Error inesperado";
+            }
+
+        }
     }
 }

@@ -31,6 +31,7 @@ namespace Port_manager.Formularios
             leftBorderBtn = new Panel();
             leftBorderBtn.Size = new System.Drawing.Size(7, 60);
             panelMenu.Controls.Add(leftBorderBtn);
+            this.Resize += frmAdministrador_Resize;
         }
 
         //colores botones
@@ -152,22 +153,33 @@ namespace Port_manager.Formularios
             if (formatoActual != null)
             {
                 formatoActual.Close();
+                pnlDesktop.Controls.Clear(); // Limpiar el panel antes de agregar el nuevo formulario
             }
 
             formatoActual = formHijo;
             formHijo.TopLevel = false;
             formHijo.FormBorderStyle = FormBorderStyle.None;
-            formHijo.Dock = DockStyle.Fill; // Hace que el formulario ocupe todo el panel
+            formHijo.Dock = DockStyle.Fill;
+            formHijo.AutoSize = true; // Permitir ajuste automático
             pnlDesktop.Controls.Add(formHijo);
             pnlDesktop.Tag = formHijo;
             formHijo.BringToFront();
             formHijo.Show();
-
-            pnlDesktop.Refresh(); // Forzar actualización
+            pnlDesktop.Refresh(); // Forzar actualización del panel
 
             lblInicio.Text = formHijo.Text;
 
 
+        }
+
+        //
+        private void frmAdministrador_Resize(object sender, EventArgs e)
+        {
+            if (formatoActual != null)
+            {
+                formatoActual.Dock = DockStyle.Fill;
+                formatoActual.Refresh();
+            }
         }
 
 

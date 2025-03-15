@@ -90,6 +90,7 @@ namespace Port_manager
 
                 
                 UsuarioSesion.NombreUsuario = nombre;
+                UsuarioSesion.contraseña = contraseña;
                 this.Hide();
 
                 //Redirijimos al panel de usuario
@@ -159,6 +160,9 @@ namespace Port_manager
     }
     public static class UsuarioSesion
     {
+      
         public static string NombreUsuario { get; set; }
+        public static string contraseña { get; set; }
+
     }
 }
