@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Data;
 using System.Data.SqlClient;
+using System.Data.SqlTypes;
 using Port_manager.Clases;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
@@ -216,7 +217,7 @@ namespace SqlConnectiondb
             {
                 using (SqlConnection connection = GetConnection())
                 {
-                    connection.Open(); // Asegúrate de abrir la conexión antes de ejecutar el comando
+                   
 
                     using (SqlCommand cmd = new SqlCommand("cambiar_contraseña", connection))
                     {
@@ -244,13 +245,13 @@ namespace SqlConnectiondb
             }
             catch (SqlException sqlEx)
             {
-                Console.WriteLine("❌ Error de SQL: " + sqlEx.Message);
-                return "Error de base de datos";
+                return "❌ Error de SQL: " + sqlEx.Message;
+                
             }
             catch (Exception ex)
             {
-                Console.WriteLine("❌ Error: " + ex.Message);
-                return "Error inesperado";
+                return "❌ Error: " + ex.Message;
+                
             }
 
         }

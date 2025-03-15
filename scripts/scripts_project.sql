@@ -53,6 +53,7 @@ END;
 
 
 
+
 select * from usuarios
 
 DELETE FROM usuarios where id_usuario  = 4
@@ -109,7 +110,7 @@ END;
 
 SELECT * FROM usuarios
 
-
+truncate table usuarios
 
 
 CREATE PROCEDURE devolver_rol_current_user
@@ -127,5 +128,23 @@ BEGIN
 END;
 
 
+DECLARE @rol_usuario VARCHAR(50);
 
 
+
+
+CREATE PROCEDURE cambiar_contraseña
+    @nueva_contraseña NVARCHAR(100),
+    @contraseña VARCHAR(100),
+    @nombre VARCHAR(150),
+    @cambiado INT OUTPUT
+AS  
+BEGIN  
+    SET NOCOUNT ON;  
+
+    UPDATE usuarios 
+    SET contraseña = @nueva_contraseña
+    WHERE contraseña = @contraseña AND nombre_usuario = @nombre;
+    
+    SET @cambiado = CASE WHEN @@ROWCOUNT > 0 THEN 1 ELSE 0 END;
+END;
