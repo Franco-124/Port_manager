@@ -31,41 +31,62 @@ namespace Port_manager.Formularios
 
         private void btnConfirmar_Click(object sender, EventArgs e)
         {
-            string contraseña = txtContraseña.Text;
-            string nueva_contraseña = txtNuevacontraseña.Text;
-            string conf_contraseña = txtCnuevacontraseña.Text;
-
-            if (string.IsNullOrWhiteSpace(contraseña) || string.IsNullOrWhiteSpace(nueva_contraseña) ||
-                string.IsNullOrWhiteSpace(conf_contraseña))
+            try
             {
-                MessageBox.Show("❌ No ha completado todos los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
+                string contraseña = txtContraseña.Text;
+                string nueva_contraseña = txtNuevacontraseña.Text;
+                string conf_contraseña = txtCnuevacontraseña.Text;
+
+                if (string.IsNullOrWhiteSpace(contraseña) || string.IsNullOrWhiteSpace(nueva_contraseña) ||
+                    string.IsNullOrWhiteSpace(conf_contraseña))
+                {
+                    MessageBox.Show("❌ No ha completado todos los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                if (nueva_contraseña != conf_contraseña)
+                {
+                    MessageBox.Show("⚠ Las contraseñas nuevas no coinciden.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                if (contraseña != UsuarioSesion.contraseña)
+                {
+                    MessageBox.Show("⚠ Contraseña actual incorrecta", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                if (nueva_contraseña == UsuarioSesion.contraseña)
+                {
+                    MessageBox.Show("⚠ La nueva contraseña no puede ser igual a la actual", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                DialogResult dialogResult = MessageBox.Show("¿Está seguro de que desea cambiar su contraseña?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (dialogResult == DialogResult.No)
+                {
+                    txtNuevacontraseña.Clear();
+                    txtCnuevacontraseña.Clear();
+                    txtContraseña.Clear();
+                    return;
+                }
+
+              
+                string result = DatabaseHelper.cambiar_contraeña(contraseña, nueva_contraseña, UsuarioSesion.NombreUsuario);
+
+                MessageBox.Show(result, "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                txtNuevacontraseña.Clear();
+                txtCnuevacontraseña.Clear();
+                txtContraseña.Clear();
+
+
             }
-            
-            if (nueva_contraseña != conf_contraseña)
+            catch (Exception ex)
             {
-                MessageBox.Show("⚠ Las contraseñas nuevas no coinciden.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
+                MessageBox.Show("❌ Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
-            if (contraseña != UsuarioSesion.contraseña)
-            {
-                MessageBox.Show("⚠ Contraseña actual incorrecta", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            if (nueva_contraseña == UsuarioSesion.contraseña)
-            {
-                MessageBox.Show("⚠ La nueva contraseña no puede ser igual a la actual", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-
-
-            // Intentar actualizar la contraseña en la base de datos
-            string result = DatabaseHelper.cambiar_contraeña(contraseña, nueva_contraseña, UsuarioSesion.NombreUsuario);
-            
-            MessageBox.Show(result, "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
+
     }
 }
