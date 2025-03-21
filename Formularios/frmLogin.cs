@@ -146,10 +146,9 @@ namespace Port_manager
 
         private void btnolvidocontraseña_Click(object sender, EventArgs e)
         {
-            frmCambiocontraseña frmCambiocontraseña = new frmCambiocontraseña();
-            frmCambiocontraseña.Show();
-            this.Close();
-           
+            FrmRecuperarcontraseña frmRecuperarcontraseña = new FrmRecuperarcontraseña();
+            frmRecuperarcontraseña.Show();
+            this.Hide();
 
         }
 
