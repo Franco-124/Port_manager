@@ -61,9 +61,6 @@
     <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Net.Mail, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>packages\System.Net.Mail.1.0.0-rtm-00002\lib\net451\System.Net.Mail.dll</HintPath>
-    </Reference>
     <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -79,6 +76,7 @@
   <ItemGroup>
     <Compile Include="Clases\Credentials.cs" />
     <Compile Include="Clases\dbconexion.cs" />
+    <Compile Include="Clases\Enviar_email.cs" />
     <Compile Include="Formularios\frmAdministrador.cs">
       <SubType>Form</SubType>
     </Compile>

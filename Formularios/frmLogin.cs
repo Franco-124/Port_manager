@@ -163,5 +163,7 @@ namespace Port_manager
         public static string NombreUsuario { get; set; }
         public static string contraseña { get; set; }
 
+        public static string email { get; set; }
+
     }
 }
