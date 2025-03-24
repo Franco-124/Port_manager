@@ -5,42 +5,45 @@ using System.Net.Mail;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace Port_manager.Clases
 {
     class Enviar_email
     {
-        static void Main(string[] args)
+        public static string EnviarCorreo(string email)
         {
             try
             {
-               
+
                 SmtpClient smtpClient = new SmtpClient("smtp.gmail.com")
                 {
-                    Port = 587, 
-                    Credentials = new NetworkCredential("johanstevenfrancoalvarez54@gmail.com", Credentials.contraseña),
-                    EnableSsl = true,
-                    UseDefaultCredentials = false
+
+                    Credentials = new NetworkCredential("johanstevenfrancoalvarez54@gmail.com",Credentials.contraseña),
+                    EnableSsl = true
                 };
 
-                
-                using (MailMessage mail = new MailMessage())
+
+                MailMessage mail = new MailMessage
                 {
-                    mail.From = new MailAddress("johanstevenfrancoalvarez54@gmail.com");
-                    mail.To.Add(UsuarioSesion.email);
-                    mail.Subject = "Correo de prueba desde C#";
-                    mail.Body = "¡Hola! Este es un correo enviado desde C# usando SMTP de Gmail.";
-                    mail.IsBodyHtml = false;
+                    From = new MailAddress("johanstevenfrancoalvarez54@gmail.com"),
+                    Subject = "Servicio de soporte Port manager",
+                    Body = "¡Hola! , Esta es su contraseña temporal : qwfwecwer@_q113",
+                    IsBodyHtml = false // Cambia a true si el contenido es HTML
+                };
 
-                    smtpClient.Send(mail);
-                }
 
+                mail.To.Add(email);
+
+                // Enviar el correo
+                smtpClient.Send(mail);
                 Console.WriteLine("Correo enviado con éxito.");
+                return "correcto";
             }
             catch (Exception ex)
             {
                 Console.WriteLine("Error al enviar el correo: " + ex.Message);
-                Console.WriteLine("Detalles: " + ex.StackTrace);
+                return "error";
             }
         }
 
