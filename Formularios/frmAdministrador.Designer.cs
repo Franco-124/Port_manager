@@ -62,7 +62,7 @@
             this.panelMenu.Controls.Add(this.panelLogo);
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
-            this.panelMenu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelMenu.Margin = new System.Windows.Forms.Padding(4);
             this.panelMenu.Name = "panelMenu";
             this.panelMenu.Size = new System.Drawing.Size(293, 702);
             this.panelMenu.TabIndex = 0;
@@ -81,7 +81,7 @@
             this.btnCambioContra.IconSize = 40;
             this.btnCambioContra.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCambioContra.Location = new System.Drawing.Point(0, 542);
-            this.btnCambioContra.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCambioContra.Margin = new System.Windows.Forms.Padding(4);
             this.btnCambioContra.Name = "btnCambioContra";
             this.btnCambioContra.Padding = new System.Windows.Forms.Padding(13, 0, 27, 0);
             this.btnCambioContra.Size = new System.Drawing.Size(293, 74);
@@ -105,7 +105,7 @@
             this.btnGestionAdb.IconSize = 40;
             this.btnGestionAdb.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnGestionAdb.Location = new System.Drawing.Point(0, 468);
-            this.btnGestionAdb.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnGestionAdb.Margin = new System.Windows.Forms.Padding(4);
             this.btnGestionAdb.Name = "btnGestionAdb";
             this.btnGestionAdb.Padding = new System.Windows.Forms.Padding(13, 0, 27, 0);
             this.btnGestionAdb.Size = new System.Drawing.Size(293, 74);
@@ -129,7 +129,7 @@
             this.btnIncidencias.IconSize = 40;
             this.btnIncidencias.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnIncidencias.Location = new System.Drawing.Point(0, 394);
-            this.btnIncidencias.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnIncidencias.Margin = new System.Windows.Forms.Padding(4);
             this.btnIncidencias.Name = "btnIncidencias";
             this.btnIncidencias.Padding = new System.Windows.Forms.Padding(13, 0, 27, 0);
             this.btnIncidencias.Size = new System.Drawing.Size(293, 74);
@@ -153,7 +153,7 @@
             this.btnCargaDescarga.IconSize = 40;
             this.btnCargaDescarga.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCargaDescarga.Location = new System.Drawing.Point(0, 320);
-            this.btnCargaDescarga.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCargaDescarga.Margin = new System.Windows.Forms.Padding(4);
             this.btnCargaDescarga.Name = "btnCargaDescarga";
             this.btnCargaDescarga.Padding = new System.Windows.Forms.Padding(13, 0, 27, 0);
             this.btnCargaDescarga.Size = new System.Drawing.Size(293, 74);
@@ -177,7 +177,7 @@
             this.btnClasificacion.IconSize = 40;
             this.btnClasificacion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnClasificacion.Location = new System.Drawing.Point(0, 246);
-            this.btnClasificacion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnClasificacion.Margin = new System.Windows.Forms.Padding(4);
             this.btnClasificacion.Name = "btnClasificacion";
             this.btnClasificacion.Padding = new System.Windows.Forms.Padding(13, 0, 27, 0);
             this.btnClasificacion.Size = new System.Drawing.Size(293, 74);
@@ -194,7 +194,7 @@
             this.panelLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelLogo.Location = new System.Drawing.Point(0, 0);
-            this.panelLogo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelLogo.Margin = new System.Windows.Forms.Padding(4);
             this.panelLogo.Name = "panelLogo";
             this.panelLogo.Size = new System.Drawing.Size(293, 246);
             this.panelLogo.TabIndex = 0;
@@ -209,7 +209,7 @@
             this.pnlTitleBar.Controls.Add(this.IcnHome);
             this.pnlTitleBar.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlTitleBar.Location = new System.Drawing.Point(293, 0);
-            this.pnlTitleBar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlTitleBar.Margin = new System.Windows.Forms.Padding(4);
             this.pnlTitleBar.Name = "pnlTitleBar";
             this.pnlTitleBar.Size = new System.Drawing.Size(1099, 92);
             this.pnlTitleBar.TabIndex = 1;
@@ -221,10 +221,10 @@
             this.pnlAdmin.Controls.Add(this.lbDate);
             this.pnlAdmin.Controls.Add(this.lblBienvenida);
             this.pnlAdmin.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pnlAdmin.Location = new System.Drawing.Point(518, 0);
-            this.pnlAdmin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlAdmin.Location = new System.Drawing.Point(298, 0);
+            this.pnlAdmin.Margin = new System.Windows.Forms.Padding(4);
             this.pnlAdmin.Name = "pnlAdmin";
-            this.pnlAdmin.Size = new System.Drawing.Size(581, 92);
+            this.pnlAdmin.Size = new System.Drawing.Size(801, 92);
             this.pnlAdmin.TabIndex = 2;
             // 
             // btnCerrarSesion
@@ -239,8 +239,8 @@
             this.btnCerrarSesion.IconColor = System.Drawing.Color.White;
             this.btnCerrarSesion.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnCerrarSesion.IconSize = 32;
-            this.btnCerrarSesion.Location = new System.Drawing.Point(432, 0);
-            this.btnCerrarSesion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCerrarSesion.Location = new System.Drawing.Point(652, 0);
+            this.btnCerrarSesion.Margin = new System.Windows.Forms.Padding(4);
             this.btnCerrarSesion.Name = "btnCerrarSesion";
             this.btnCerrarSesion.Size = new System.Drawing.Size(149, 92);
             this.btnCerrarSesion.TabIndex = 4;
@@ -255,7 +255,7 @@
             this.lbDate.AutoSize = true;
             this.lbDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbDate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.lbDate.Location = new System.Drawing.Point(261, 41);
+            this.lbDate.Location = new System.Drawing.Point(504, 30);
             this.lbDate.Name = "lbDate";
             this.lbDate.Size = new System.Drawing.Size(121, 25);
             this.lbDate.TabIndex = 3;
@@ -267,7 +267,7 @@
             this.lblBienvenida.AutoSize = true;
             this.lblBienvenida.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBienvenida.ForeColor = System.Drawing.Color.White;
-            this.lblBienvenida.Location = new System.Drawing.Point(17, 41);
+            this.lblBienvenida.Location = new System.Drawing.Point(205, 30);
             this.lblBienvenida.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblBienvenida.Name = "lblBienvenida";
             this.lblBienvenida.Size = new System.Drawing.Size(64, 25);
@@ -295,7 +295,7 @@
             this.IcnHome.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.IcnHome.IconSize = 39;
             this.IcnHome.Location = new System.Drawing.Point(32, 30);
-            this.IcnHome.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.IcnHome.Margin = new System.Windows.Forms.Padding(4);
             this.IcnHome.Name = "IcnHome";
             this.IcnHome.Size = new System.Drawing.Size(43, 39);
             this.IcnHome.TabIndex = 0;
@@ -307,7 +307,7 @@
             this.pnlShadow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(24)))), ((int)(((byte)(58)))));
             this.pnlShadow.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlShadow.Location = new System.Drawing.Point(293, 92);
-            this.pnlShadow.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlShadow.Margin = new System.Windows.Forms.Padding(4);
             this.pnlShadow.Name = "pnlShadow";
             this.pnlShadow.Size = new System.Drawing.Size(1099, 12);
             this.pnlShadow.TabIndex = 2;
@@ -320,7 +320,7 @@
             this.pnlDesktop.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pnlDesktop.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlDesktop.Location = new System.Drawing.Point(293, 104);
-            this.pnlDesktop.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlDesktop.Margin = new System.Windows.Forms.Padding(4);
             this.pnlDesktop.Name = "pnlDesktop";
             this.pnlDesktop.Size = new System.Drawing.Size(1099, 598);
             this.pnlDesktop.TabIndex = 3;
@@ -335,7 +335,7 @@
             this.Controls.Add(this.pnlShadow);
             this.Controls.Add(this.pnlTitleBar);
             this.Controls.Add(this.panelMenu);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmAdministrador";
             this.Text = "Panel de Administrador";
             this.Load += new System.EventHandler(this.frmAdministrador_Load);

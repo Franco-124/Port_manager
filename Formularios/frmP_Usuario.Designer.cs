@@ -42,11 +42,13 @@
             this.iconCurrentChildForm = new FontAwesome.Sharp.IconPictureBox();
             this.panelShadow = new System.Windows.Forms.Panel();
             this.panelDesktop = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.panelMenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnHome)).BeginInit();
             this.panelTitleBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconCurrentChildForm)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelMenu
@@ -167,11 +169,10 @@
             // panelTitleBar
             // 
             this.panelTitleBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
-            this.panelTitleBar.Controls.Add(this.lbNombre_usuario);
-            this.panelTitleBar.Controls.Add(this.lbUDate);
             this.panelTitleBar.Controls.Add(this.btnCerrarSesion);
             this.panelTitleBar.Controls.Add(this.lblTitleChildForm);
             this.panelTitleBar.Controls.Add(this.iconCurrentChildForm);
+            this.panelTitleBar.Controls.Add(this.panel1);
             this.panelTitleBar.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTitleBar.Location = new System.Drawing.Point(293, 0);
             this.panelTitleBar.Margin = new System.Windows.Forms.Padding(4);
@@ -184,22 +185,22 @@
             // 
             this.lbNombre_usuario.AutoSize = true;
             this.lbNombre_usuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lbNombre_usuario.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbNombre_usuario.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbNombre_usuario.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lbNombre_usuario.Location = new System.Drawing.Point(430, 37);
+            this.lbNombre_usuario.Location = new System.Drawing.Point(32, 35);
             this.lbNombre_usuario.Name = "lbNombre_usuario";
-            this.lbNombre_usuario.Size = new System.Drawing.Size(84, 20);
+            this.lbNombre_usuario.Size = new System.Drawing.Size(94, 23);
             this.lbNombre_usuario.TabIndex = 7;
             this.lbNombre_usuario.Text = "user_name";
             // 
             // lbUDate
             // 
             this.lbUDate.AutoSize = true;
-            this.lbUDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbUDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbUDate.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lbUDate.Location = new System.Drawing.Point(711, 41);
+            this.lbUDate.Location = new System.Drawing.Point(316, 38);
             this.lbUDate.Name = "lbUDate";
-            this.lbUDate.Size = new System.Drawing.Size(91, 16);
+            this.lbUDate.Size = new System.Drawing.Size(114, 20);
             this.lbUDate.TabIndex = 6;
             this.lbUDate.Text = "Current date";
             // 
@@ -215,10 +216,10 @@
             this.btnCerrarSesion.IconColor = System.Drawing.Color.White;
             this.btnCerrarSesion.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnCerrarSesion.IconSize = 32;
-            this.btnCerrarSesion.Location = new System.Drawing.Point(859, 0);
+            this.btnCerrarSesion.Location = new System.Drawing.Point(848, 0);
             this.btnCerrarSesion.Margin = new System.Windows.Forms.Padding(4);
             this.btnCerrarSesion.Name = "btnCerrarSesion";
-            this.btnCerrarSesion.Size = new System.Drawing.Size(149, 92);
+            this.btnCerrarSesion.Size = new System.Drawing.Size(160, 92);
             this.btnCerrarSesion.TabIndex = 5;
             this.btnCerrarSesion.Text = "Cerrar Sesión";
             this.btnCerrarSesion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -277,6 +278,15 @@
             this.panelDesktop.Size = new System.Drawing.Size(1008, 532);
             this.panelDesktop.TabIndex = 3;
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.lbUDate);
+            this.panel1.Controls.Add(this.lbNombre_usuario);
+            this.panel1.Location = new System.Drawing.Point(363, 3);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(478, 97);
+            this.panel1.TabIndex = 8;
+            // 
             // frmP_Usuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -297,6 +307,8 @@
             this.panelTitleBar.ResumeLayout(false);
             this.panelTitleBar.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconCurrentChildForm)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -318,5 +330,6 @@
         private FontAwesome.Sharp.IconButton btnCerrarSesion;
         private System.Windows.Forms.Label lbUDate;
         private System.Windows.Forms.Label lbNombre_usuario;
+        private System.Windows.Forms.Panel panel1;
     }
 }
