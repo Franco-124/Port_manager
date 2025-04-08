@@ -12,7 +12,7 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace Port_manager.Formularios
 {
-    public partial class frmCambiocontraseña: Form
+    public partial class frmCambiocontraseña : DatabaseHelper
     {
         public frmCambiocontraseña()
         {
@@ -26,7 +26,7 @@ namespace Port_manager.Formularios
 
         private void btnVolverlogin_Click(object sender, EventArgs e)
         {
-           
+
         }
 
         private void btnConfirmar_Click(object sender, EventArgs e)
@@ -71,7 +71,7 @@ namespace Port_manager.Formularios
                     return;
                 }
 
-              
+
                 string result = DatabaseHelper.cambiar_contraeña(contraseña, nueva_contraseña, UsuarioSesion.NombreUsuario);
 
                 MessageBox.Show(result, "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);

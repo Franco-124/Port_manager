@@ -11,6 +11,14 @@ namespace Port_manager.Clases
 {
     class Enviar_email
     {
+        internal SqlConnectiondb.DatabaseHelper DatabaseHelper
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
         public static string EnviarCorreo(string email)
         {
             try
@@ -19,7 +27,7 @@ namespace Port_manager.Clases
                 SmtpClient smtpClient = new SmtpClient("smtp.gmail.com")
                 {
 
-                    Credentials = new NetworkCredential("johanstevenfrancoalvarez54@gmail.com",Credentials.contraseña),
+                    Credentials = new NetworkCredential("johanstevenfrancoalvarez54@gmail.com", "kptz tpcl ldwl yyba"),
                     EnableSsl = true
                 };
 

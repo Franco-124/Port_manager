@@ -34,6 +34,62 @@ namespace Port_manager.Formularios
             this.Resize += frmAdministrador_Resize;
         }
 
+        public frmClasificacionAsignacion frmClasificacionAsignacion
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
+        public frmCargaDescarga frmCargaDescarga
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
+        public frmIncidencias frmIncidencias
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
+        public frmGestionAdmin frmGestionAdmin
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
+        public frmCambiocontraseña frmCambiocontraseña
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
+        public frmLogin frmLogin
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
+        public FrmRecuperarcontraseña FrmRecuperarcontraseña
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
         //colores botones
         private struct RGBColors
         {

@@ -9,7 +9,7 @@ namespace SqlConnectiondb
 {
     class DatabaseHelper
     {
-        
+
 
         //Aqui creamos la conexion a la db en sql server
         public static SqlConnection GetConnection()
@@ -22,7 +22,7 @@ namespace SqlConnectiondb
         //Metodo para verificar el log in , usando getConection
         public static bool VerificarLogin(string nombre, string email, string contraseña)
         {
-            using (SqlConnection connection = GetConnection()) 
+            using (SqlConnection connection = GetConnection())
             {
                 try
                 {
@@ -73,7 +73,7 @@ namespace SqlConnectiondb
                         outputParam.Direction = ParameterDirection.Output;
                         cmd.Parameters.Add(outputParam);
 
-                    
+
                         cmd.ExecuteNonQuery(); // Ejecuta el procedimiento
 
                         int resultado = Convert.ToInt32(outputParam.Value); // Obtiene el valor del parámetro de salida
@@ -100,7 +100,7 @@ namespace SqlConnectiondb
         {
             try
             {
-                using (SqlConnection connection = GetConnection()) 
+                using (SqlConnection connection = GetConnection())
                 {
                     using (SqlCommand cmd = new SqlCommand("verificar_nombre_usuario", connection))
                     {
@@ -113,7 +113,7 @@ namespace SqlConnectiondb
                         cmd.Parameters.Add(outputParam);
 
 
-                        cmd.ExecuteNonQuery(); 
+                        cmd.ExecuteNonQuery();
 
                         int resultado = Convert.ToInt32(outputParam.Value);
 
@@ -168,7 +168,7 @@ namespace SqlConnectiondb
 
         }
 
-        public static string obtener_rol_current_user (string nombre_usuario, string contraseña)
+        public static string obtener_rol_current_user(string nombre_usuario, string contraseña)
         {
             try
             {
@@ -178,19 +178,19 @@ namespace SqlConnectiondb
                     {
                         cmd.CommandType = CommandType.StoredProcedure;
 
-                        cmd.Parameters.AddWithValue("@nombre",nombre_usuario);
-                        cmd.Parameters.AddWithValue("@contraseña" , contraseña);
+                        cmd.Parameters.AddWithValue("@nombre", nombre_usuario);
+                        cmd.Parameters.AddWithValue("@contraseña", contraseña);
 
-                       
+
                         SqlParameter outputParam = new SqlParameter("@rol", SqlDbType.VarChar, 50)
                         {
                             Direction = ParameterDirection.Output
                         };
                         cmd.Parameters.Add(outputParam);
 
-                        cmd.ExecuteNonQuery(); 
+                        cmd.ExecuteNonQuery();
 
-                       
+
                         string role = outputParam.Value.ToString();
 
                         return string.IsNullOrEmpty(role) ? null : role;
@@ -211,13 +211,13 @@ namespace SqlConnectiondb
         }
 
         //Metodo para cambiar contraseña
-        public static string cambiar_contraeña(string contraseña, string nueva_contraseña , string nombre)
+        public static string cambiar_contraeña(string contraseña, string nueva_contraseña, string nombre)
         {
             try
             {
                 using (SqlConnection connection = GetConnection())
                 {
-                   
+
 
                     using (SqlCommand cmd = new SqlCommand("cambiar_contraseña", connection))
                     {
@@ -246,12 +246,12 @@ namespace SqlConnectiondb
             catch (SqlException sqlEx)
             {
                 return "❌ Error de SQL: " + sqlEx.Message;
-                
+
             }
             catch (Exception ex)
             {
                 return "❌ Error: " + ex.Message;
-                
+
             }
 
         }

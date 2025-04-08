@@ -12,11 +12,27 @@ using SqlConnectiondb;
 
 namespace Port_manager
 {
-    public partial class frmLogin : Form
+    public partial class frmLogin : DatabaseHelper
     {
         public frmLogin()
         {
             InitializeComponent();
+        }
+
+        public frmP_Usuario frmP_Usuario
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
+        public frmCrear_cuenta frmCrear_cuenta
+        {
+            get => default;
+            set
+            {
+            }
         }
 
         private void frmLogin_Load(object sender, EventArgs e)
@@ -52,10 +68,10 @@ namespace Port_manager
         private void btnLogin_Click(object sender, EventArgs e)
         {
             string nombre = txtEnombre.Text;
-            string email = txtEnombre.Text; 
+            string email = txtEnombre.Text;
             string contraseña = txtPassword.Text;
 
-            
+
             if (string.IsNullOrWhiteSpace(nombre) || string.IsNullOrWhiteSpace(email) ||
                 string.IsNullOrWhiteSpace(contraseña))
             {
@@ -64,7 +80,7 @@ namespace Port_manager
             }
 
 
-           
+
             if (!cbkterminos.Checked)
             {
                 MessageBox.Show("❌ Por favor, acepte los términos y condiciones.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -80,7 +96,7 @@ namespace Port_manager
                 // Obtener el rol del usuario
                 string role = DatabaseHelper.obtener_rol_current_user(nombre, contraseña);
 
-                
+
 
                 if (string.IsNullOrWhiteSpace(role))
                 {
@@ -88,7 +104,7 @@ namespace Port_manager
                     return;
                 }
 
-                
+
                 UsuarioSesion.NombreUsuario = nombre;
                 UsuarioSesion.contraseña = contraseña;
                 this.Hide();
@@ -106,7 +122,7 @@ namespace Port_manager
                 else
                 {
                     MessageBox.Show("❌ Rol desconocido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    this.Show(); 
+                    this.Show();
                 }
             }
             else
@@ -134,8 +150,8 @@ namespace Port_manager
 
         private void txtEnombre_Leave(object sender, EventArgs e)
         {
-           
-           
+
+
 
         }
 

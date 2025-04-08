@@ -1,0 +1,191 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Port_manager.Formularios.frmAdministrador">
+    <Position X="6.25" Y="3.5" Width="2.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <NestedTypes>
+      <Struct Name="Port_manager.Formularios.frmAdministrador.RGBColors" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Formularios\frmAdministrador.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Struct>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AJCYAAAAADAKBEQgCACEAIYqAJBAFwVCgACSmCAIUEA=</HashCode>
+      <FileName>Formularios\frmAdministrador.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="frmClasificacionAsignacion" />
+      <Property Name="frmCargaDescarga" />
+      <Property Name="frmIncidencias" />
+      <Property Name="frmGestionAdmin" />
+      <Property Name="frmCambiocontraseña" />
+      <Property Name="frmLogin" />
+      <Property Name="FrmRecuperarcontraseña" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Port_manager.Formularios.frmCambiocontraseña">
+    <Position X="14.25" Y="2.25" Width="2" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>CBAAAAAAACIYABAAAACAAAACAAAAAAAAAAAIAQAgAAA=</HashCode>
+      <FileName>Formularios\frmCambiocontraseña.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Port_manager.Formularios.frmCargaDescarga">
+    <Position X="9.5" Y="6.25" Width="1.75" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAACAAAACAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Formularios\frmCargaDescarga.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Port_manager.Formularios.frmClasificacionAsignacion">
+    <Position X="3.25" Y="5.75" Width="2.25" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAACAAAACAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Formularios\frmClasificacionAsignacion.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Port_manager.Formularios.frmCrear_cuenta">
+    <Position X="0.5" Y="5.75" Width="2.25" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAACAAABAAAACAAAAyACIAAIAEAGEAGQAgAAQ=</HashCode>
+      <FileName>Formularios\frmCrear_cuenta.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Port_manager.Formularios.frmGestionAdmin">
+    <Position X="15" Y="6.25" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAACAAAACAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Formularios\frmGestionAdmin.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Port_manager.Formularios.frmGestionUsuario">
+    <Position X="22.5" Y="3.75" Width="2" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAACAAAACAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Formularios\frmGestionUsuario.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Port_manager.Formularios.frmIncidencias">
+    <Position X="12.25" Y="6.25" Width="1.75" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>ACAAAAQAACAAARAAQACAAEBCAAAYAAAAEAAAAQAAAAA=</HashCode>
+      <FileName>Formularios\frmIncidencias.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Port_manager.frmLogin">
+    <Position X="1.75" Y="0.5" Width="2" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>ABgAAAQBACAgABEAAECAAAACIACACMAEAAAKAQBBQAA=</HashCode>
+      <FileName>Formularios\frmLogin.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="frmP_Usuario" />
+      <Property Name="frmCrear_cuenta" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Port_manager.UsuarioSesion">
+    <Position X="4.5" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAgAAACAAAAAAAAAAAAAIAAAAAAAAA=</HashCode>
+      <FileName>Formularios\frmLogin.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Port_manager.Formularios.frmP_Usuario">
+    <Position X="20" Y="2.25" Width="2" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <NestedTypes>
+      <Struct Name="Port_manager.Formularios.frmP_Usuario.RGBColors" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Formularios\frmP_Usuario.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Struct>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>EQAIIAQAICAAFEAAAKCAQIIKIBBAFgYEgAAAAYAcAAk=</HashCode>
+      <FileName>Formularios\frmP_Usuario.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="frmCambiocontraseña" />
+      <Property Name="FrmRecuperarcontraseña" />
+      <Property Name="frmRegistroDeBuques" />
+      <Property Name="frmGestionUsuario" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Port_manager.Formularios.FrmRecuperarcontraseña">
+    <Position X="10" Y="2.25" Width="2" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>ABAAAAYACCAAABBAAACAAAACAACAAIAAACAAAQAAAAA=</HashCode>
+      <FileName>Formularios\FrmRecuperarcontraseña.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Port_manager.Formularios.frmRegistroDeBuques">
+    <Position X="17" Y="3.5" Width="2.25" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAACAAAACAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Formularios\frmRegistroDeBuques.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Port_manager.Clases.Credentials">
+    <Position X="11.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAgAAAACAAAAAAAAAAAAAAAAEAAAAAA=</HashCode>
+      <FileName>Clases\Credentials.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="DatabaseHelper" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="SqlConnectiondb.DatabaseHelper">
+    <Position X="7.25" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAQAAAAAAAAABAAAAAAAAIAAAAAAABAAcAA=</HashCode>
+      <FileName>Clases\dbconexion.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Port_manager.Clases.Enviar_email">
+    <Position X="13.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAEAAAAAA=</HashCode>
+      <FileName>Clases\Enviar_email.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="DatabaseHelper" />
+    </ShowAsAssociation>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

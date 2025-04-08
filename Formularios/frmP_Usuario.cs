@@ -37,6 +37,39 @@ namespace Port_manager.Formularios
             this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
             this.FormBorderStyle = FormBorderStyle.Sizable; 
         }
+
+        public frmCambiocontraseña frmCambiocontraseña
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
+        public FrmRecuperarcontraseña FrmRecuperarcontraseña
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
+        public frmRegistroDeBuques frmRegistroDeBuques
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
+        public frmGestionUsuario frmGestionUsuario
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
         //Structs
         private struct RGBColors
         {
