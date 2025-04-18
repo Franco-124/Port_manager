@@ -11,15 +11,8 @@ namespace Port_manager.Clases
 {
     class Enviar_email
     {
-        internal SqlConnectiondb.DatabaseHelper DatabaseHelper
-        {
-            get => default;
-            set
-            {
-            }
-        }
 
-        public static string EnviarCorreo(string email)
+        public static string EnviarCorreo(string Email, string Temp_password)
         {
             try
             {
@@ -27,7 +20,7 @@ namespace Port_manager.Clases
                 SmtpClient smtpClient = new SmtpClient("smtp.gmail.com")
                 {
 
-                    Credentials = new NetworkCredential("johanstevenfrancoalvarez54@gmail.com", "kptz tpcl ldwl yyba"),
+                    Credentials = new NetworkCredential("johanstevenfrancoalvarez54@gmail.com", Credentials.contraseña),
                     EnableSsl = true
                 };
 
@@ -36,12 +29,12 @@ namespace Port_manager.Clases
                 {
                     From = new MailAddress("johanstevenfrancoalvarez54@gmail.com"),
                     Subject = "Servicio de soporte Port manager",
-                    Body = "¡Hola! , Esta es su contraseña temporal : qwfwecwer@_q113",
+                    Body = "¡Hola! , Esta es su contraseña temporal " + Temp_password,
                     IsBodyHtml = false // Cambia a true si el contenido es HTML
                 };
 
 
-                mail.To.Add(email);
+                mail.To.Add(Email);
 
                 // Enviar el correo
                 smtpClient.Send(mail);
@@ -55,5 +48,19 @@ namespace Port_manager.Clases
             }
         }
 
+    }
+
+    public static string GenerarContraseñaTemporal()
+        {
+            // Genera una contraseña temporal aleatoria
+            const string caracteres = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+            Random random = new Random();
+            char[] contraseña = new char[8];
+            for (int i = 0; i < contraseña.Length; i++)
+            {
+                contraseña[i] = caracteres[random.Next(caracteres.Length)];
+            }
+            return new string(contraseña);
+        }
     }
 }
