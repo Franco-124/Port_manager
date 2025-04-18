@@ -12,7 +12,7 @@ using SqlConnectiondb;
 
 namespace Port_manager
 {
-    public partial class frmLogin : DatabaseHelper
+    public partial class frmLogin : Form
     {
         public frmLogin()
         {
