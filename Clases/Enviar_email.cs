@@ -29,7 +29,12 @@ namespace Port_manager.Clases
                 {
                     From = new MailAddress("johanstevenfrancoalvarez54@gmail.com"),
                     Subject = "Servicio de soporte Port manager",
-                    Body = "¡Hola! , Esta es su contraseña temporal " + Temp_password,
+                    Body =
+                    "¡Hola  😊!\n\n" +
+                    "Esta es su contraseña temporal: **" + Temp_password + "**\n\n" +
+                    "Por favor, utilice esta contraseña únicamente para iniciar sesión de forma temporal. " +
+                    "Una vez haya ingresado al sistema, diríjase al apartado de \"Cambiar contraseña\" para actualizarla.\n\n" +
+                    "Gracias.  😁",
                     IsBodyHtml = false // Cambia a true si el contenido es HTML
                 };
 
