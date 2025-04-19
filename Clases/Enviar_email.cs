@@ -48,7 +48,7 @@ namespace Port_manager.Clases
             }
         }
 
-    }
+    
 
     public static string GenerarContraseñaTemporal()
         {

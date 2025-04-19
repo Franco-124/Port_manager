@@ -7,7 +7,7 @@
     <ProjectGuid>{6A2906F2-3086-4586-B484-4A78E989225E}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>Port_manager</RootNamespace>
-    <AssemblyName>Port manager</AssemblyName>
+    <AssemblyName>Portmanager</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

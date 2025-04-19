@@ -12,7 +12,7 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace Port_manager.Formularios
 {
-    public partial class frmCambiocontraseña : DatabaseHelper
+    public partial class frmCambiocontraseña : Form
     {
         public frmCambiocontraseña()
         {

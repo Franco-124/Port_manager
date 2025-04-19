@@ -149,3 +149,29 @@ BEGIN
     SET @cambiado = CASE WHEN @@ROWCOUNT > 0 THEN 1 ELSE 0 END;
 END;
 
+CREATE PROCEDURE actualizar_contraseña_temp 
+    @Temp_password NVARCHAR(100),
+    @User_name NVARCHAR(100),
+    @Email NVARCHAR(100)
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    -- Verifica si el usuario existe
+    IF EXISTS (
+        SELECT 1 FROM usuarios
+        WHERE nombre_usuario = @User_name OR email = @Email
+    )
+    BEGIN
+        -- Actualiza la contraseña con la temporal proporcionada
+        UPDATE usuarios
+        SET contraseña = @Temp_password
+        WHERE nombre_usuario = @User_name OR email = @Email;
+
+        RETURN 0; -- Éxito
+    END
+    ELSE
+    BEGIN
+        RETURN 1; -- Usuario no encontrado
+    END
+END;

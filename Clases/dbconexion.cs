@@ -255,7 +255,7 @@ namespace SqlConnectiondb
             }
 
         }
-    }
+    
 
     public static bool actualizar_contraseña(string Temp_password, string User_name, string Email)
         {
