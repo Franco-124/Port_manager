@@ -162,7 +162,7 @@ namespace Port_manager
 
         private void btnolvidocontraseña_Click(object sender, EventArgs e)
         {
-            FrmRecuperarcontraseña frmRecuperarcontraseña = new FrmRecuperarcontraseña();
+            FrmRecuperarContraseña  frmRecuperarcontraseña = new FrmRecuperarContraseña();
             frmRecuperarcontraseña.Show();
             this.Hide();
 

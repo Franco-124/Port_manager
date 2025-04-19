@@ -259,7 +259,40 @@ namespace SqlConnectiondb
 
     public static bool actualizar_contraseña(string Temp_password, string User_name, string Email)
         {
-            return true;
+            try
+            {
+                using (SqlConnection connection = GetConnection())
+                {
+                    using (SqlCommand comando = new SqlCommand("actualizar_contraseña_temp", connection))
+                    {
+                        comando.CommandType = CommandType.StoredProcedure;
+                        comando.Parameters.AddWithValue("@Temp_password", Temp_password);
+                        comando.Parameters.AddWithValue("@User_name", User_name);
+                        comando.Parameters.AddWithValue("@Email", Email);
+
+
+                        SqlParameter retorno = new SqlParameter();
+                        retorno.Direction = ParameterDirection.ReturnValue;
+                        comando.Parameters.Add(retorno);
+
+                        comando.ExecuteNonQuery();
+
+                        int resultado = (int)retorno.Value;
+
+                        if (resultado == 0)
+                            return true;
+                        else
+                            return false;
+                    }
+                }
+
+            }
+
+            catch (Exception ex)
+            {
+                Console.WriteLine("❌ Error: " + ex.Message);
+                return false;
+            }
 
         }
     }

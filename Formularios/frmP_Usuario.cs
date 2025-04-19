@@ -46,7 +46,7 @@ namespace Port_manager.Formularios
             }
         }
 
-        public FrmRecuperarcontraseña FrmRecuperarcontraseña
+        public FrmRecuperarContraseña FrmRecuperarcontraseña
         {
             get => default;
             set

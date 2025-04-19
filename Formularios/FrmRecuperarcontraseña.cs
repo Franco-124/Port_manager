@@ -12,9 +12,9 @@ using SqlConnectiondb;
 
 namespace Port_manager.Formularios
 {
-    public partial class FrmRecuperarcontraseña: Form
+    public partial class FrmRecuperarContraseña: Form
     {
-        public FrmRecuperarcontraseña()
+        public FrmRecuperarContraseña()
         {
             InitializeComponent();
         }
