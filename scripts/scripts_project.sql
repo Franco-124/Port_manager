@@ -1,4 +1,5 @@
 
+
 CREATE TABLE usuarios (
     id_usuario INT PRIMARY KEY IDENTITY(1,1),
     nombre_usuario NVARCHAR(50) NOT NULL,
@@ -6,6 +7,61 @@ CREATE TABLE usuarios (
     contraseña NVARCHAR(150) NOT NULL,
     rol NVARCHAR(50) CHECK (rol IN ('Administrador', 'Usuario')) NOT NULL DEFAULT 'Usuario'
 );
+
+CREATE TABLE Incidencias(
+	numero_incidencia INT PRIMARY KEY IDENTITY(1,1),
+	serial_buque VARCHAR(20) FOREIGN KEY REFERENCES RegistroBuque(serial_buque),
+	tipo_incidencia VARCHAR(50) NOT NULL,
+	ubicacion VARCHAR(50) NOT NULL,
+	descripcion VARCHAR(100),
+	estado VARCHAR(30) NOT NULL DEFAULT 'PENDIENTE',
+	id_usuario int FOREIGN KEY REFERENCES usuarios(id_usuario)
+);
+
+
+
+CREATE TABLE RegistroBuque (
+	serial_buque VARCHAR(20) PRIMARY KEY NOT NULL,
+	capacidad FLOAT NOT NULL,
+	tipo_carga VARCHAR(30) NOT NULL,
+	fecha_llegada DATETIME NOT NULL,
+	origen VARCHAR(20) NOT NULL,
+	id_usuario int FOREIGN KEY REFERENCES usuarios(id_usuario),
+	codigo_registro INT NOT NULL IDENTITY (1,1),
+	accion VARCHAR(30) NOT NULL,
+
+);
+
+
+CREATE TABLE Muelle (
+	id_muelle INT NOT NULL PRIMARY KEY,
+	capacidad_muelle INT NOT NULL ,
+	tipo_muelle VARCHAR(30) NOT NULL,
+	estado INT NOT NULL
+);
+
+
+CREATE TABLE muelle_buque (
+	serial_buque VARCHAR(20) NOT NULL,
+    id_muelle INT NOT NULL,
+    PRIMARY KEY (serial_buque, id_muelle),
+    FOREIGN KEY (serial_buque) REFERENCES RegistroBuque(serial_buque), 
+    FOREIGN KEY (id_muelle) REFERENCES muelle(id_muelle) 
+);
+
+
+CREATE TABLE carga_descarga (
+    id_operacion INT PRIMARY KEY IDENTITY,
+    serial_buque VARCHAR(20) NOT NULL,
+    id_muelle INT NOT NULL,
+    cantidad DECIMAL(10,2) NOT NULL,
+    fecha_operacion DATETIME NOT NULL,
+    descripcion TEXT,
+    FOREIGN KEY (serial_buque) REFERENCES RegistroBuque(serial_buque),
+    FOREIGN KEY (id_muelle) REFERENCES muelle(id_muelle)
+);
+
+
 
 
 CREATE PROCEDURE agregar_usuario
