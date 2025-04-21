@@ -16,5 +16,20 @@ namespace Port_manager.Formularios
         {
             InitializeComponent();
         }
+
+        private void LlbIncidencia_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

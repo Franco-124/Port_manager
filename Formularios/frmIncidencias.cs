@@ -26,5 +26,10 @@ namespace Port_manager.Formularios
         {
 
         }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

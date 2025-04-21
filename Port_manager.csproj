@@ -181,6 +181,9 @@
     <EmbeddedResource Include="Formularios\FrmRecuperarContraseña.resx">
       <DependentUpon>FrmRecuperarContraseña.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmRegistroDeBuques.resx">
+      <DependentUpon>frmRegistroDeBuques.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -222,6 +225,7 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\ChatGPT Image Apr 21, 2025, 02_08_43 PM.png" />
     <Content Include="scripts\scripts_project.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

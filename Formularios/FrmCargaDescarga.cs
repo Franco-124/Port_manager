@@ -16,5 +16,10 @@ namespace Port_manager.Formularios
         {
             InitializeComponent();
         }
+
+        private void frmCargaDescarga_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
