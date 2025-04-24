@@ -1,5 +1,4 @@
 
-
 CREATE TABLE usuarios (
     id_usuario INT PRIMARY KEY IDENTITY(1,1),
     nombre_usuario NVARCHAR(50) NOT NULL,
@@ -41,23 +40,6 @@ CREATE TABLE IngresoBuque (
     capacidad FLOAT NOT NULL,
     
 )
-
-
-CREATE TABLE Muelle (
-	id_muelle INT NOT NULL PRIMARY KEY,
-	capacidad_muelle INT NOT NULL ,
-	tipo_muelle VARCHAR(30) NOT NULL,
-	estado INT NOT NULL
-);
-
-
-CREATE TABLE muelle_buque (
-	codigo_registro INT NOT NULL,
-    id_muelle INT NOT NULL,
-    PRIMARY KEY (codigo_registro, id_muelle),
-    FOREIGN KEY (codigo_registro) REFERENCES RegistroLlegadaBuque(codigo_registro), 
-    FOREIGN KEY (id_muelle) REFERENCES muelle(id_muelle) 
-);
 
 
 
