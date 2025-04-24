@@ -33,7 +33,7 @@ namespace Port_manager.Formularios
             origen = origen.Trim();
 
 
-            if (string.IsNullOrEmpty(serial_buque) || string.IsNullOrEmpty(capitan) || string.IsNullOrEmpty(empresa) || string.IsNullOrEmpty(origen) || string.IsNullOrEmpty(capacidad))
+            if (string.IsNullOrEmpty(serial_buque) || string.IsNullOrEmpty(capitan) || string.IsNullOrEmpty(empresa) || string.IsNullOrEmpty(origen) )
             {
                 MessageBox.Show("Por favor, complete todos los campos.");
                 return;

@@ -142,7 +142,7 @@ namespace Port_manager.Formularios
         private void iconButton2_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color2);
-            OpenChildForm(new frmIngresoBuque());
+            OpenChildForm(new frmIngresoBuque()); 
         }
 
         private void iconButton3_Click(object sender, EventArgs e)
