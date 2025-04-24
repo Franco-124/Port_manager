@@ -31,5 +31,10 @@ namespace Port_manager.Formularios
         {
 
         }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

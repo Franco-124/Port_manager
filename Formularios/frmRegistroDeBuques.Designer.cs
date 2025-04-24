@@ -39,17 +39,16 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dateLlegada = new System.Windows.Forms.DateTimePicker();
             this.txtSerial = new System.Windows.Forms.TextBox();
-            this.numericUpDown = new System.Windows.Forms.NumericUpDown();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.cmbCarga = new System.Windows.Forms.ComboBox();
+            this.cmbResponsable = new System.Windows.Forms.ComboBox();
             this.txtOrigen = new System.Windows.Forms.TextBox();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.btnGuardar = new FontAwesome.Sharp.IconButton();
             this.btnCancelar = new FontAwesome.Sharp.IconButton();
+            this.txtCarga = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -172,16 +171,16 @@
             this.label8.TabIndex = 12;
             this.label8.Text = "Propósito de arribo ⚙️";
             // 
-            // dateTimePicker1
+            // dateLlegada
             // 
-            this.dateTimePicker1.CalendarForeColor = System.Drawing.SystemColors.Window;
-            this.dateTimePicker1.CalendarMonthBackground = System.Drawing.SystemColors.WindowFrame;
-            this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(583, 118);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 24);
-            this.dateTimePicker1.TabIndex = 13;
+            this.dateLlegada.CalendarForeColor = System.Drawing.SystemColors.Window;
+            this.dateLlegada.CalendarMonthBackground = System.Drawing.SystemColors.WindowFrame;
+            this.dateLlegada.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateLlegada.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateLlegada.Location = new System.Drawing.Point(583, 118);
+            this.dateLlegada.Name = "dateLlegada";
+            this.dateLlegada.Size = new System.Drawing.Size(200, 24);
+            this.dateLlegada.TabIndex = 13;
             // 
             // txtSerial
             // 
@@ -194,40 +193,29 @@
             this.txtSerial.Size = new System.Drawing.Size(152, 17);
             this.txtSerial.TabIndex = 14;
             // 
-            // numericUpDown
+            // cmbCarga
             // 
-            this.numericUpDown.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(60)))));
-            this.numericUpDown.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.numericUpDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numericUpDown.ForeColor = System.Drawing.SystemColors.Window;
-            this.numericUpDown.Location = new System.Drawing.Point(221, 175);
-            this.numericUpDown.Name = "numericUpDown";
-            this.numericUpDown.Size = new System.Drawing.Size(152, 20);
-            this.numericUpDown.TabIndex = 15;
+            this.cmbCarga.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(60)))));
+            this.cmbCarga.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmbCarga.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbCarga.ForeColor = System.Drawing.SystemColors.Window;
+            this.cmbCarga.FormattingEnabled = true;
+            this.cmbCarga.Location = new System.Drawing.Point(221, 228);
+            this.cmbCarga.Name = "cmbCarga";
+            this.cmbCarga.Size = new System.Drawing.Size(152, 26);
+            this.cmbCarga.TabIndex = 16;
             // 
-            // comboBox1
+            // cmbResponsable
             // 
-            this.comboBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(60)))));
-            this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.ForeColor = System.Drawing.SystemColors.Window;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(221, 228);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(152, 26);
-            this.comboBox1.TabIndex = 16;
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(60)))));
-            this.comboBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox2.ForeColor = System.Drawing.SystemColors.Window;
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(221, 282);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(152, 26);
-            this.comboBox2.TabIndex = 17;
+            this.cmbResponsable.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(60)))));
+            this.cmbResponsable.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmbResponsable.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbResponsable.ForeColor = System.Drawing.SystemColors.Window;
+            this.cmbResponsable.FormattingEnabled = true;
+            this.cmbResponsable.Location = new System.Drawing.Point(221, 282);
+            this.cmbResponsable.Name = "cmbResponsable";
+            this.cmbResponsable.Size = new System.Drawing.Size(152, 26);
+            this.cmbResponsable.TabIndex = 17;
             // 
             // txtOrigen
             // 
@@ -281,21 +269,33 @@
             this.btnCancelar.Text = "Cancelar ⛔";
             this.btnCancelar.UseVisualStyleBackColor = false;
             // 
+            // txtCarga
+            // 
+            this.txtCarga.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(60)))));
+            this.txtCarga.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtCarga.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCarga.ForeColor = System.Drawing.SystemColors.Window;
+            this.txtCarga.Location = new System.Drawing.Point(221, 178);
+            this.txtCarga.Name = "txtCarga";
+            this.txtCarga.Size = new System.Drawing.Size(152, 17);
+            this.txtCarga.TabIndex = 22;
+            this.txtCarga.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
             // frmRegistroDeBuques
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
             this.ClientSize = new System.Drawing.Size(808, 446);
+            this.Controls.Add(this.txtCarga);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.comboBox3);
             this.Controls.Add(this.txtOrigen);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.numericUpDown);
+            this.Controls.Add(this.cmbResponsable);
+            this.Controls.Add(this.cmbCarga);
             this.Controls.Add(this.txtSerial);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.dateLlegada);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label4);
@@ -308,7 +308,6 @@
             this.Text = "frmRegistroDeBuques";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -326,15 +325,15 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dateLlegada;
         private System.Windows.Forms.TextBox txtSerial;
-        private System.Windows.Forms.NumericUpDown numericUpDown;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox cmbCarga;
+        private System.Windows.Forms.ComboBox cmbResponsable;
         private System.Windows.Forms.TextBox txtOrigen;
         private System.Windows.Forms.ComboBox comboBox3;
         private FontAwesome.Sharp.IconButton btnGuardar;
         private FontAwesome.Sharp.IconButton btnCancelar;
         private System.Windows.Forms.TextBox txtRegistro;
+        private System.Windows.Forms.TextBox txtCarga;
     }
 }
