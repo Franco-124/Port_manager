@@ -29,14 +29,15 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txtRegistro = new System.Windows.Forms.TextBox();
             this.lblRegistro = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.txtSerial = new System.Windows.Forms.TextBox();
@@ -47,7 +48,6 @@
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.btnGuardar = new FontAwesome.Sharp.IconButton();
             this.btnCancelar = new FontAwesome.Sharp.IconButton();
-            this.txtRegistro = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown)).BeginInit();
             this.SuspendLayout();
@@ -62,17 +62,37 @@
             this.panel1.Size = new System.Drawing.Size(808, 56);
             this.panel1.TabIndex = 0;
             // 
+            // txtRegistro
+            // 
+            this.txtRegistro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
+            this.txtRegistro.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtRegistro.Location = new System.Drawing.Point(146, 18);
+            this.txtRegistro.Name = "txtRegistro";
+            this.txtRegistro.Size = new System.Drawing.Size(49, 13);
+            this.txtRegistro.TabIndex = 12;
+            // 
             // lblRegistro
             // 
             this.lblRegistro.AutoSize = true;
             this.lblRegistro.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRegistro.ForeColor = System.Drawing.Color.White;
-            this.lblRegistro.Location = new System.Drawing.Point(319, 9);
+            this.lblRegistro.Location = new System.Drawing.Point(251, 9);
             this.lblRegistro.Name = "lblRegistro";
-            this.lblRegistro.Size = new System.Drawing.Size(226, 29);
+            this.lblRegistro.Size = new System.Drawing.Size(346, 29);
             this.lblRegistro.TabIndex = 1;
-            this.lblRegistro.Text = "Registro de Buques";
+            this.lblRegistro.Text = "Registro de llegada de Buques";
             this.lblRegistro.Click += new System.EventHandler(this.LlbIncidencia_Click);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.White;
+            this.label7.Location = new System.Drawing.Point(22, 18);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(97, 13);
+            this.label7.TabIndex = 11;
+            this.label7.Text = "Codigo de Registro";
             // 
             // label5
             // 
@@ -140,17 +160,6 @@
             this.label6.TabIndex = 10;
             this.label6.Text = "Usuario Responsable 👤";
             this.label6.Click += new System.EventHandler(this.label6_Click);
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(22, 18);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(97, 13);
-            this.label7.TabIndex = 11;
-            this.label7.Text = "Codigo de Registro";
             // 
             // label8
             // 
@@ -271,15 +280,6 @@
             this.btnCancelar.TabIndex = 21;
             this.btnCancelar.Text = "Cancelar ⛔";
             this.btnCancelar.UseVisualStyleBackColor = false;
-            // 
-            // txtRegistro
-            // 
-            this.txtRegistro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
-            this.txtRegistro.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtRegistro.Location = new System.Drawing.Point(146, 18);
-            this.txtRegistro.Name = "txtRegistro";
-            this.txtRegistro.Size = new System.Drawing.Size(49, 13);
-            this.txtRegistro.TabIndex = 12;
             // 
             // frmRegistroDeBuques
             // 

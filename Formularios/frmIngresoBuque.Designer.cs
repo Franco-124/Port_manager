@@ -1,6 +1,6 @@
 ﻿namespace Port_manager.Formularios
 {
-    partial class frmGestionAdmin
+    partial class frmIngresoBuque
     {
         /// <summary>
         /// Required designer variable.
@@ -30,13 +30,14 @@
         {
             this.SuspendLayout();
             // 
-            // frmGestionAdmin
+            // frmIngresoBuque
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
             this.ClientSize = new System.Drawing.Size(808, 446);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.Name = "frmGestionAdmin";
+            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Name = "frmIngresoBuque";
             this.Text = "Gestión de administrador";
             this.ResumeLayout(false);
 

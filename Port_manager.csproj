@@ -107,11 +107,11 @@
     <Compile Include="Formularios\frmCrear_cuenta.Designer.cs">
       <DependentUpon>frmCrear_cuenta.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\frmGestionAdmin.cs">
+    <Compile Include="Formularios\frmIngresoBuque.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\frmGestionAdmin.Designer.cs">
-      <DependentUpon>frmGestionAdmin.cs</DependentUpon>
+    <Compile Include="Formularios\frmIngresoBuque.Designer.cs">
+      <DependentUpon>frmIngresoBuque.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\frmGestionUsuario.cs">
       <SubType>Form</SubType>
@@ -166,8 +166,11 @@
     <EmbeddedResource Include="Formularios\frmCrear_cuenta.resx">
       <DependentUpon>frmCrear_cuenta.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\frmGestionAdmin.resx">
-      <DependentUpon>frmGestionAdmin.cs</DependentUpon>
+    <EmbeddedResource Include="Formularios\frmIngresoBuque.resx">
+      <DependentUpon>frmIngresoBuque.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmGestionUsuario.resx">
+      <DependentUpon>frmGestionUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmIncidencias.resx">
       <DependentUpon>frmIncidencias.cs</DependentUpon>

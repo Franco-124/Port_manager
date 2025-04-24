@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Port_manager.Formularios
 {
-    public partial class frmGestionAdmin: Form
+    public partial class frmIngresoBuque: Form
     {
-        public frmGestionAdmin()
+        public frmIngresoBuque()
         {
             InitializeComponent();
         }

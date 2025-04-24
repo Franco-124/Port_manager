@@ -58,7 +58,7 @@ namespace Port_manager.Formularios
             }
         }
 
-        public frmGestionAdmin frmGestionAdmin
+        public frmIngresoBuque frmGestionAdmin
         {
             get => default;
             set
@@ -171,7 +171,7 @@ namespace Port_manager.Formularios
         private void btnGestionAdb_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color4);
-            AbrirFormularioHijo(new frmGestionAdmin());
+            AbrirFormularioHijo(new frmGestionUsuario());
         }
 
         private void btnCambioContra_Click(object sender, EventArgs e)
