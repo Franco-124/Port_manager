@@ -7,7 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using System.Windows.Controls;
 using System.Windows.Forms;
+using Port_manager.Clases;
 using SqlConnectiondb;
 
 namespace Port_manager.Formularios
@@ -46,7 +48,8 @@ namespace Port_manager.Formularios
             string email = txtEmail.Text;
             string contraseña = txtContraseña.Text;
             string confirmar_contraseña = txtCcontraseña.Text;
-            string rol = cmbRol.SelectedItem?.ToString() ?? "";
+            string codigo_admin = txtCodigo.Text;
+            string rol= cmbRol_user.SelectedItem?.ToString();
 
             try
             {
@@ -56,7 +59,8 @@ namespace Port_manager.Formularios
                 contraseña = contraseña.Trim();
                 confirmar_contraseña = confirmar_contraseña.Trim();
 
-             
+
+
                 if (string.IsNullOrWhiteSpace(nombre) ||
                     string.IsNullOrWhiteSpace(email) ||
                     string.IsNullOrWhiteSpace(contraseña) ||
@@ -86,14 +90,18 @@ namespace Port_manager.Formularios
                     return;
                 }
 
-                
+                if (codigo_admin != Credentials.admin_code)
+                {
+                    MessageBox.Show("❌ No tenes permiso mamahuevo.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
                 if (DatabaseHelper.agregar_usuario_(nombre, email, contraseña, rol))
                 {
                     MessageBox.Show("✅ Usuario agregado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     frmLogin frm = new frmLogin();
                     frm.Show();
                     this.Close();
-                   
+
                 }
                 else
                 {
@@ -136,6 +144,20 @@ namespace Port_manager.Formularios
             }
 
 
+        }
+
+        private void cmbRol_user_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string rol = cmbRol_user.SelectedItem?.ToString();
+            if (rol.Equals("Usuario", StringComparison.OrdinalIgnoreCase))
+            {
+                txtCodigo.Visible = false;
+                return; 
+            }
+            else
+            {
+                txtCodigo.Visible = true;
+            }
         }
     }
 }
