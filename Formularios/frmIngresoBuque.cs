@@ -45,6 +45,7 @@ namespace Port_manager.Formularios
                 MessageBox.Show("Buque ingresado correctamente.");
                 txtSerial.Clear();
                 txtCapacidad.Clear();
+                txtCapitan.Clear();
                 txtEmpresa.Clear();
                 txtOrigen.Clear();
             }

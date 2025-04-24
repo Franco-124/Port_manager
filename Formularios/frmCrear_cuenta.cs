@@ -90,11 +90,15 @@ namespace Port_manager.Formularios
                     return;
                 }
 
-                if (codigo_admin != Credentials.admin_code)
+                if(rol == "Administrador")
                 {
-                    MessageBox.Show("❌ No tenes permiso mamahuevo.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
+                    if (codigo_admin != Credentials.admin_code)
+                    {
+                        MessageBox.Show("❌ No tenes permiso mamahuevo.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
                 }
+                
                 if (DatabaseHelper.agregar_usuario_(nombre, email, contraseña, rol))
                 {
                     MessageBox.Show("✅ Usuario agregado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
