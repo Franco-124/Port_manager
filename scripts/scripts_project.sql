@@ -10,7 +10,7 @@ CREATE TABLE usuarios (
 
 CREATE TABLE Incidencias(
 	numero_incidencia INT PRIMARY KEY IDENTITY(1,1),
-	serial_buque VARCHAR(20) FOREIGN KEY REFERENCES RegistroBuque(serial_buque),
+	serial_buque VARCHAR(20) FOREIGN KEY REFERENCES IngresoBuque(serial_buque),
 	tipo_incidencia VARCHAR(50) NOT NULL,
 	ubicacion VARCHAR(50) NOT NULL,
 	descripcion VARCHAR(100),
@@ -19,18 +19,28 @@ CREATE TABLE Incidencias(
 );
 
 
+select * from usuarios
 
-CREATE TABLE RegistroBuque (
-	serial_buque VARCHAR(20) PRIMARY KEY NOT NULL,
+CREATE TABLE RegistroLlegadaBuque (
+	codigo_registro INT NOT NULL IDENTITY (1,1),
 	capacidad FLOAT NOT NULL,
 	tipo_carga VARCHAR(30) NOT NULL,
 	fecha_llegada DATETIME NOT NULL,
 	origen VARCHAR(20) NOT NULL,
 	id_usuario int FOREIGN KEY REFERENCES usuarios(id_usuario),
-	codigo_registro INT NOT NULL IDENTITY (1,1),
 	accion VARCHAR(30) NOT NULL,
 
 );
+
+CREATE TABLE IngresoBuque ( 
+    serial_buque VARCHAR(20) PRIMARY KEY NOT NULL,
+    capitan VARCHAR(50) NOT NULL,
+    empresa VARCHAR(50) NOT NULL,
+    origen VARCHAR(50) NOT NULL,
+    fecha_ingreso DATETIME NOT NULL,
+    capacidad FLOAT NOT NULL,
+    
+)
 
 
 CREATE TABLE Muelle (
@@ -42,23 +52,11 @@ CREATE TABLE Muelle (
 
 
 CREATE TABLE muelle_buque (
-	serial_buque VARCHAR(20) NOT NULL,
+	codigo_registro INT NOT NULL,
     id_muelle INT NOT NULL,
-    PRIMARY KEY (serial_buque, id_muelle),
-    FOREIGN KEY (serial_buque) REFERENCES RegistroBuque(serial_buque), 
+    PRIMARY KEY (codigo_registro, id_muelle),
+    FOREIGN KEY (codigo_registro) REFERENCES RegistroLlegadaBuque(codigo_registro), 
     FOREIGN KEY (id_muelle) REFERENCES muelle(id_muelle) 
-);
-
-
-CREATE TABLE carga_descarga (
-    id_operacion INT PRIMARY KEY IDENTITY,
-    serial_buque VARCHAR(20) NOT NULL,
-    id_muelle INT NOT NULL,
-    cantidad DECIMAL(10,2) NOT NULL,
-    fecha_operacion DATETIME NOT NULL,
-    descripcion TEXT,
-    FOREIGN KEY (serial_buque) REFERENCES RegistroBuque(serial_buque),
-    FOREIGN KEY (id_muelle) REFERENCES muelle(id_muelle)
 );
 
 
@@ -233,3 +231,25 @@ BEGIN
 END;
 
 
+CREATE PROCEDURE agregar_buque
+    @serial_buque VARCHAR(100), 
+    @capitan VARCHAR(100),
+    @empresa VARCHAR(100),
+    @origen VARCHAR(50),  
+	@fecha_ingreso DATETIME,
+	@capacidad FLOAT,
+    @resultado INT OUTPUT 
+AS
+BEGIN
+    SET NOCOUNT ON;
+    BEGIN TRY
+        
+        INSERT INTO IngresoBuque(serial_buque, capitan, empresa, origen, fecha_ingreso, capacidad)
+        VALUES (@serial_buque, @capitan, @empresa, @origen, @fecha_ingreso, @capacidad);
+        
+        SET @resultado = 1;  -- Éxito
+    END TRY
+    BEGIN CATCH
+        SET @resultado = 0;  -- Error
+    END CATCH
+END;

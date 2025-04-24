@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using SqlConnectiondb;
 
 namespace Port_manager.Formularios
 {
@@ -15,6 +16,43 @@ namespace Port_manager.Formularios
         public frmIngresoBuque()
         {
             InitializeComponent();
+        }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            string serial_buque = txtSerial.Text;
+            string capitan = txtCapacidad.Text;
+            string empresa = txtEmpresa.Text;
+            string origen = txtOrigen.Text;
+            DateTime fecha_ingreso = dateIngreso.Value;
+            double capacidad = Convert.ToDouble(txtCapacidad.Text);
+
+            serial_buque = serial_buque.Trim();
+            capitan = capitan.Trim();
+            empresa = empresa.Trim();
+            origen = origen.Trim();
+
+
+            if (string.IsNullOrEmpty(serial_buque) || string.IsNullOrEmpty(capitan) || string.IsNullOrEmpty(empresa) || string.IsNullOrEmpty(origen) || string.IsNullOrEmpty(capacidad))
+            {
+                MessageBox.Show("Por favor, complete todos los campos.");
+                return;
+            }
+
+
+            if (DatabaseHelper.agregar_buque(serial_buque, capitan, empresa, origen, fecha_ingreso, capacidad))
+            {
+                MessageBox.Show("Buque ingresado correctamente.");
+                txtSerial.Clear();
+                txtCapacidad.Clear();
+                txtEmpresa.Clear();
+                txtOrigen.Clear();
+            }
+            else
+            {
+                MessageBox.Show("Error al ingresar el buque. Por favor, inténtelo de nuevo.");
+
+            }
         }
     }
 }

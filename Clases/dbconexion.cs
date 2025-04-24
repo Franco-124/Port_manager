@@ -255,9 +255,9 @@ namespace SqlConnectiondb
             }
 
         }
-    
 
-    public static bool actualizar_contraseña(string Temp_password, string User_name, string Email)
+
+        public static bool actualizar_contraseña(string Temp_password, string User_name, string Email)
         {
             try
             {
@@ -295,5 +295,46 @@ namespace SqlConnectiondb
             }
 
         }
+
+
+
+        public static bool agregar_buque(string serial_buque, string capitan, string empresa, string origen, DateTime fecha_ingreso, double capacidad)
+        {
+            try
+            {
+                using (SqlConnection connection = GetConnection())
+                {
+                    using (SqlCommand cmd = new SqlCommand("agregar_buque", connection))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+
+                        cmd.Parameters.AddWithValue("@serial_buque", serial_buque);
+                        cmd.Parameters.AddWithValue("@capitan", capitan);
+                        cmd.Parameters.AddWithValue("@empresa", empresa); // <-- corregido
+                        cmd.Parameters.AddWithValue("@origen", origen);
+                        cmd.Parameters.AddWithValue("@fecha_ingreso", fecha_ingreso);
+                        cmd.Parameters.AddWithValue("@capacidad", capacidad);
+
+                        SqlParameter outputParam = new SqlParameter("@resultado", SqlDbType.Int)
+                        {
+                            Direction = ParameterDirection.Output
+                        };
+                        cmd.Parameters.Add(outputParam);
+
+                        cmd.ExecuteNonQuery();
+
+                        int resultado = Convert.ToInt32(outputParam.Value);
+                        return resultado == 1;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("❌ Error: " + ex.Message);
+                return false;
+            }
+        }
+
+
     }
 }
