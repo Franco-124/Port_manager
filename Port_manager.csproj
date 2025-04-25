@@ -107,6 +107,36 @@
     <Compile Include="Formularios\frmCrear_cuenta.Designer.cs">
       <DependentUpon>frmCrear_cuenta.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\frmInformeBuque.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmInformeBuque.Designer.cs">
+      <DependentUpon>frmInformeBuque.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmInformeBuqueUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmInformeBuqueUsuario.Designer.cs">
+      <DependentUpon>frmInformeBuqueUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmInformeIncidencias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmInformeIncidencias.Designer.cs">
+      <DependentUpon>frmInformeIncidencias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FrmInformeMuelle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmInformeMuelle.Designer.cs">
+      <DependentUpon>FrmInformeMuelle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmInformePendientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmInformePendientes.Designer.cs">
+      <DependentUpon>frmInformePendientes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\frmIngresoBuque.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -165,6 +195,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmCrear_cuenta.resx">
       <DependentUpon>frmCrear_cuenta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmInformeBuque.resx">
+      <DependentUpon>frmInformeBuque.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmInformeBuqueUsuario.resx">
+      <DependentUpon>frmInformeBuqueUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmInformeIncidencias.resx">
+      <DependentUpon>frmInformeIncidencias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FrmInformeMuelle.resx">
+      <DependentUpon>FrmInformeMuelle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmInformePendientes.resx">
+      <DependentUpon>frmInformePendientes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmIngresoBuque.resx">
       <DependentUpon>frmIngresoBuque.cs</DependentUpon>

@@ -45,9 +45,9 @@
             this.cmbResponsable = new System.Windows.Forms.ComboBox();
             this.txtOrigen = new System.Windows.Forms.TextBox();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.btnGuardar = new FontAwesome.Sharp.IconButton();
-            this.btnCancelar = new FontAwesome.Sharp.IconButton();
             this.txtCarga = new System.Windows.Forms.TextBox();
+            this.btnCancelar = new FontAwesome.Sharp.IconButton();
+            this.btnGuardar = new FontAwesome.Sharp.IconButton();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -133,7 +133,7 @@
             this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(411, 118);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(146, 18);
+            this.label3.Size = new System.Drawing.Size(145, 18);
             this.label3.TabIndex = 8;
             this.label3.Text = "Fecha de Llegada 📅";
             // 
@@ -155,7 +155,7 @@
             this.label6.ForeColor = System.Drawing.Color.White;
             this.label6.Location = new System.Drawing.Point(33, 283);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(173, 18);
+            this.label6.Size = new System.Drawing.Size(170, 18);
             this.label6.TabIndex = 10;
             this.label6.Text = "Usuario Responsable 👤";
             this.label6.Click += new System.EventHandler(this.label6_Click);
@@ -240,20 +240,17 @@
             this.comboBox3.Size = new System.Drawing.Size(200, 26);
             this.comboBox3.TabIndex = 19;
             // 
-            // btnGuardar
+            // txtCarga
             // 
-            this.btnGuardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(168)))), ((int)(((byte)(83)))));
-            this.btnGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGuardar.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.btnGuardar.IconColor = System.Drawing.Color.Black;
-            this.btnGuardar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnGuardar.Location = new System.Drawing.Point(285, 372);
-            this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(96, 36);
-            this.btnGuardar.TabIndex = 20;
-            this.btnGuardar.Text = "Guardar 💾";
-            this.btnGuardar.UseVisualStyleBackColor = false;
-            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
+            this.txtCarga.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(60)))));
+            this.txtCarga.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtCarga.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCarga.ForeColor = System.Drawing.SystemColors.Window;
+            this.txtCarga.Location = new System.Drawing.Point(221, 178);
+            this.txtCarga.Name = "txtCarga";
+            this.txtCarga.Size = new System.Drawing.Size(152, 17);
+            this.txtCarga.TabIndex = 22;
+            this.txtCarga.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // btnCancelar
             // 
@@ -269,17 +266,20 @@
             this.btnCancelar.Text = "Cancelar ⛔";
             this.btnCancelar.UseVisualStyleBackColor = false;
             // 
-            // txtCarga
+            // btnGuardar
             // 
-            this.txtCarga.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(60)))));
-            this.txtCarga.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtCarga.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCarga.ForeColor = System.Drawing.SystemColors.Window;
-            this.txtCarga.Location = new System.Drawing.Point(221, 178);
-            this.txtCarga.Name = "txtCarga";
-            this.txtCarga.Size = new System.Drawing.Size(152, 17);
-            this.txtCarga.TabIndex = 22;
-            this.txtCarga.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.btnGuardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(168)))), ((int)(((byte)(83)))));
+            this.btnGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardar.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.btnGuardar.IconColor = System.Drawing.Color.Black;
+            this.btnGuardar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnGuardar.Location = new System.Drawing.Point(285, 372);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(96, 36);
+            this.btnGuardar.TabIndex = 20;
+            this.btnGuardar.Text = "Guardar 💾";
+            this.btnGuardar.UseVisualStyleBackColor = false;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // frmRegistroDeBuques
             // 
@@ -305,7 +305,7 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.panel1);
             this.Name = "frmRegistroDeBuques";
-            this.Text = "frmRegistroDeBuques";
+            this.Text = "Registro de Buques";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);

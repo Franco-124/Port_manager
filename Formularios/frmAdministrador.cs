@@ -32,6 +32,7 @@ namespace Port_manager.Formularios
             leftBorderBtn.Size = new System.Drawing.Size(7, 60);
             panelMenu.Controls.Add(leftBorderBtn);
             this.Resize += frmAdministrador_Resize;
+            inicial();
         }
 
         public frmClasificacionAsignacion frmClasificacionAsignacion
@@ -40,6 +41,25 @@ namespace Port_manager.Formularios
             set
             {
             }
+        }
+
+        void inicial()
+        {
+            pnlInformes.Visible = false;
+        }
+
+        void ocultarSubmenu()
+        {
+            if(pnlInformes.Visible == true)
+            {
+                pnlInformes.Visible = false;
+            }
+        }
+
+        void mostrarSubmenu(Panel submenu)
+        {
+            ocultarSubmenu();
+            submenu.Visible = true;
         }
 
         public frmCargaDescarga frmCargaDescarga
@@ -99,6 +119,7 @@ namespace Port_manager.Formularios
             public static Color color4 = Color.FromArgb(39, 174, 96);   // Verde suave (Gestión de Administrador)
             public static Color color5 = Color.FromArgb(243, 156, 18);  // Amarillo oro (Cambio de contraseña)
 
+
         }
 
         //metodos
@@ -154,32 +175,34 @@ namespace Port_manager.Formularios
         {
             ActivateButton(sender, RGBColors.color1);
             AbrirFormularioHijo(new frmClasificacionAsignacion());
+            ocultarSubmenu();
         }
 
         private void btnCargaDescarga_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color2);
             AbrirFormularioHijo(new frmCargaDescarga());
+            ocultarSubmenu();
         }
 
         private void btnIncidencias_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color3);
             AbrirFormularioHijo(new frmIncidencias());
+            ocultarSubmenu();
         }
 
         private void btnGestionAdb_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color4);
-            AbrirFormularioHijo(new frmGestionUsuario());
+            mostrarSubmenu(pnlInformes);
         }
-
+        // NO USAR ESTE PRIVATE VOID-----------------------------------------------//
         private void btnCambioContra_Click(object sender, EventArgs e)
         {
-            ActivateButton(sender, RGBColors.color5);
-            AbrirFormularioHijo(new frmCambiocontraseña());
+            
         }
-
+        //------------------------------------------------------------------------//
         private void frmAdministrador_Load(object sender, EventArgs e)
         {
             lbDate.Text = DateTime.Now.ToString("dd/MM/yyyy");
@@ -303,7 +326,37 @@ namespace Port_manager.Formularios
                 currentChildForm.Close();
             }
             Reset();
+        }
 
+        private void btnInformeUsuario_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender, RGBColors.color3);
+            AbrirFormularioHijo(new frmGestionUsuario());
+        }
+
+        private void btnInformeMuelles_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender, RGBColors.color3);
+            AbrirFormularioHijo(new FrmInformeMuelle());
+        }
+
+        private void btnInformePendientes_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender, RGBColors.color3);
+            AbrirFormularioHijo(new frmInformePendientes());
+        }
+
+        private void btnInformeBuques_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender, RGBColors.color3);
+            AbrirFormularioHijo(new frmInformeBuque());
+        }
+
+        private void btnCambioContra_Click_1(object sender, EventArgs e)
+        {
+            ActivateButton(sender, RGBColors.color5);
+            AbrirFormularioHijo(new frmCambiocontraseña());
+            ocultarSubmenu();
         }
     }
 }

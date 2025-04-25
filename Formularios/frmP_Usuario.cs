@@ -35,9 +35,28 @@ namespace Port_manager.Formularios
             this.ControlBox = true; // Asegúrate de que los botones de control estén visibles
             this.DoubleBuffered = true;
             this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
-            this.FormBorderStyle = FormBorderStyle.Sizable; 
+            this.FormBorderStyle = FormBorderStyle.Sizable;
+            inicial();
         }
 
+        void inicial()
+        {
+            pnlInformes.Visible = false;
+        }
+
+        void ocultarSubmenu()
+        {
+            if (pnlInformes.Visible == true)
+            {
+                pnlInformes.Visible = false;
+            }
+        }
+
+        void mostrarSubmenu(Panel submenu)
+        {
+            ocultarSubmenu();
+            submenu.Visible = true;
+        }
         public frmCambiocontraseña frmCambiocontraseña
         {
             get => default;
@@ -137,20 +156,21 @@ namespace Port_manager.Formularios
         {
             ActivateButton(sender, RGBColors.color1);
             OpenChildForm(new frmRegistroDeBuques());
+            ocultarSubmenu();
         }
 
         private void iconButton2_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color2);
-            OpenChildForm(new frmIngresoBuque()); 
+            OpenChildForm(new frmIngresoBuque());
+            ocultarSubmenu();
         }
-
+        // NO USAR ESTE PRIVATE VOID-----------------------------------------------//
         private void iconButton3_Click(object sender, EventArgs e)
         {
-            ActivateButton(sender, RGBColors.color3);
-            OpenChildForm(new frmCambiocontraseña());
+           
         }
-
+        //------------------------------------------------------------------------//
         private void frmP_Usuario_Load(object sender, EventArgs e)
         {
             lbUDate.Text = DateTime.Now.ToString("dd/MM/yyyy");
@@ -207,6 +227,32 @@ namespace Port_manager.Formularios
             frmLogin login = new frmLogin();
             login.Show();  // Muestra el formulario de inicio de sesión antes de cerrar el actual
             this.Close();  // Cierra el formulario actual (frmAdministrador)
+        }
+
+        private void iconButton3_Click_1(object sender, EventArgs e)
+        {
+            ActivateButton(sender, RGBColors.color3);
+            OpenChildForm(new frmCambiocontraseña());
+            ocultarSubmenu();
+        }
+
+        //Boton de informes
+        private void btnGestionAdb_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender, RGBColors.color2);
+            mostrarSubmenu(pnlInformes);
+        }
+
+        private void btnInformeIncidencias_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender, RGBColors.color1);
+            OpenChildForm(new frmInformeIncidencias());
+        }
+
+        private void btnInformeBuque_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender, RGBColors.color1);
+            OpenChildForm(new frmInformeBuqueUsuario());
         }
     }
 }

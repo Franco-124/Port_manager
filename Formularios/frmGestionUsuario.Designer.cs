@@ -28,116 +28,101 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblRegistro = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.serial_buque = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.capitan = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.empresa = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.origen = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fecha_ingreso = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.capacidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dtgUsuarios = new System.Windows.Forms.DataGridView();
+            this.id_usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombre_usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgUsuarios)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.Controls.Add(this.lblRegistro);
+            this.panel1.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1067, 69);
+            this.panel1.Size = new System.Drawing.Size(800, 56);
             this.panel1.TabIndex = 0;
             // 
             // lblRegistro
             // 
             this.lblRegistro.AutoSize = true;
+            this.lblRegistro.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.lblRegistro.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRegistro.ForeColor = System.Drawing.Color.White;
-            this.lblRegistro.Location = new System.Drawing.Point(389, 17);
-            this.lblRegistro.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblRegistro.Location = new System.Drawing.Point(292, 14);
             this.lblRegistro.Name = "lblRegistro";
-            this.lblRegistro.Size = new System.Drawing.Size(286, 36);
+            this.lblRegistro.Size = new System.Drawing.Size(229, 29);
             this.lblRegistro.TabIndex = 3;
-            this.lblRegistro.Text = "Gestion de Usuarios";
+            this.lblRegistro.Text = "Informe de Usuarios";
             // 
-            // dataGridView1
+            // dtgUsuarios
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(60)))));
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.serial_buque,
-            this.capitan,
-            this.empresa,
-            this.origen,
-            this.fecha_ingreso,
-            this.capacidad});
-            this.dataGridView1.Location = new System.Drawing.Point(107, 136);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.Size = new System.Drawing.Size(830, 330);
-            this.dataGridView1.TabIndex = 1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtgUsuarios.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            this.dtgUsuarios.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(60)))));
+            this.dtgUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgUsuarios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.id_usuario,
+            this.nombre_usuario,
+            this.email,
+            this.rol});
+            this.dtgUsuarios.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.dtgUsuarios.Location = new System.Drawing.Point(45, 116);
+            this.dtgUsuarios.Name = "dtgUsuarios";
+            this.dtgUsuarios.RowHeadersVisible = false;
+            this.dtgUsuarios.RowHeadersWidth = 51;
+            this.dtgUsuarios.Size = new System.Drawing.Size(713, 268);
+            this.dtgUsuarios.TabIndex = 1;
             // 
-            // serial_buque
+            // id_usuario
             // 
-            this.serial_buque.HeaderText = "Serial";
-            this.serial_buque.MinimumWidth = 6;
-            this.serial_buque.Name = "serial_buque";
-            this.serial_buque.Width = 125;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.id_usuario.DefaultCellStyle = dataGridViewCellStyle4;
+            this.id_usuario.HeaderText = "ID";
+            this.id_usuario.Name = "id_usuario";
+            this.id_usuario.Width = 60;
             // 
-            // capitan
+            // nombre_usuario
             // 
-            this.capitan.HeaderText = "Capitan";
-            this.capitan.MinimumWidth = 6;
-            this.capitan.Name = "capitan";
-            this.capitan.Width = 125;
+            this.nombre_usuario.HeaderText = "Usuario";
+            this.nombre_usuario.Name = "nombre_usuario";
+            this.nombre_usuario.Width = 250;
             // 
-            // empresa
+            // email
             // 
-            this.empresa.HeaderText = "Empresa";
-            this.empresa.MinimumWidth = 6;
-            this.empresa.Name = "empresa";
-            this.empresa.Width = 125;
+            this.email.HeaderText = "Email";
+            this.email.Name = "email";
+            this.email.Width = 250;
             // 
-            // origen
+            // rol
             // 
-            this.origen.HeaderText = "Origen";
-            this.origen.MinimumWidth = 6;
-            this.origen.Name = "origen";
-            this.origen.Width = 125;
-            // 
-            // fecha_ingreso
-            // 
-            this.fecha_ingreso.HeaderText = "Fecha de Ingreso";
-            this.fecha_ingreso.MinimumWidth = 6;
-            this.fecha_ingreso.Name = "fecha_ingreso";
-            this.fecha_ingreso.Width = 200;
-            // 
-            // capacidad
-            // 
-            this.capacidad.HeaderText = "Capacidad";
-            this.capacidad.MinimumWidth = 6;
-            this.capacidad.Name = "capacidad";
-            this.capacidad.Width = 125;
+            this.rol.HeaderText = "Rol";
+            this.rol.Name = "rol";
+            this.rol.Width = 150;
             // 
             // frmGestionUsuario
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
-            this.ClientSize = new System.Drawing.Size(1067, 554);
-            this.Controls.Add(this.dataGridView1);
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.dtgUsuarios);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmGestionUsuario";
-            this.Text = "frmGestionUsuario";
+            this.Text = "Usuarios Registrados";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgUsuarios)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -146,12 +131,10 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lblRegistro;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn serial_buque;
-        private System.Windows.Forms.DataGridViewTextBoxColumn capitan;
-        private System.Windows.Forms.DataGridViewTextBoxColumn empresa;
-        private System.Windows.Forms.DataGridViewTextBoxColumn origen;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fecha_ingreso;
-        private System.Windows.Forms.DataGridViewTextBoxColumn capacidad;
+        private System.Windows.Forms.DataGridView dtgUsuarios;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id_usuario;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombre_usuario;
+        private System.Windows.Forms.DataGridViewTextBoxColumn email;
+        private System.Windows.Forms.DataGridViewTextBoxColumn rol;
     }
 }
