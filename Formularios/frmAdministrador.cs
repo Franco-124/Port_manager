@@ -31,6 +31,7 @@ namespace Port_manager.Formularios
             leftBorderBtn = new Panel();
             leftBorderBtn.Size = new System.Drawing.Size(7, 60);
             panelMenu.Controls.Add(leftBorderBtn);
+            pnlInformes.Controls.Add(leftBorderBtn);
             this.Resize += frmAdministrador_Resize;
             inicial();
         }
@@ -194,7 +195,7 @@ namespace Port_manager.Formularios
 
         private void btnGestionAdb_Click(object sender, EventArgs e)
         {
-            ActivateButton(sender, RGBColors.color4);
+            ActivateButton(sender, RGBColors.color4);           
             mostrarSubmenu(pnlInformes);
         }
         // NO USAR ESTE PRIVATE VOID-----------------------------------------------//

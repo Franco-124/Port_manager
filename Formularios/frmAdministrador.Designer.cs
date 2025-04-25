@@ -30,6 +30,12 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAdministrador));
             this.panelMenu = new System.Windows.Forms.Panel();
+            this.btnCambioContra = new FontAwesome.Sharp.IconButton();
+            this.pnlInformes = new System.Windows.Forms.Panel();
+            this.btnInformeBuques = new FontAwesome.Sharp.IconButton();
+            this.btnInformePendientes = new FontAwesome.Sharp.IconButton();
+            this.btnInformeMuelles = new FontAwesome.Sharp.IconButton();
+            this.btnInformeUsuario = new FontAwesome.Sharp.IconButton();
             this.btnGestionAdb = new FontAwesome.Sharp.IconButton();
             this.btnIncidencias = new FontAwesome.Sharp.IconButton();
             this.btnCargaDescarga = new FontAwesome.Sharp.IconButton();
@@ -44,17 +50,11 @@
             this.IcnHome = new FontAwesome.Sharp.IconPictureBox();
             this.pnlShadow = new System.Windows.Forms.Panel();
             this.pnlDesktop = new System.Windows.Forms.Panel();
-            this.pnlInformes = new System.Windows.Forms.Panel();
-            this.btnInformeUsuario = new FontAwesome.Sharp.IconButton();
-            this.btnInformeMuelles = new FontAwesome.Sharp.IconButton();
-            this.btnInformePendientes = new FontAwesome.Sharp.IconButton();
-            this.btnInformeBuques = new FontAwesome.Sharp.IconButton();
-            this.btnCambioContra = new FontAwesome.Sharp.IconButton();
             this.panelMenu.SuspendLayout();
+            this.pnlInformes.SuspendLayout();
             this.pnlTitleBar.SuspendLayout();
             this.pnlAdmin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.IcnHome)).BeginInit();
-            this.pnlInformes.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelMenu
@@ -73,6 +73,133 @@
             this.panelMenu.Size = new System.Drawing.Size(220, 674);
             this.panelMenu.TabIndex = 0;
             this.panelMenu.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // btnCambioContra
+            // 
+            this.btnCambioContra.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnCambioContra.FlatAppearance.BorderSize = 0;
+            this.btnCambioContra.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCambioContra.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCambioContra.ForeColor = System.Drawing.Color.White;
+            this.btnCambioContra.IconChar = FontAwesome.Sharp.IconChar.Key;
+            this.btnCambioContra.IconColor = System.Drawing.Color.White;
+            this.btnCambioContra.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnCambioContra.IconSize = 40;
+            this.btnCambioContra.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCambioContra.Location = new System.Drawing.Point(0, 605);
+            this.btnCambioContra.Name = "btnCambioContra";
+            this.btnCambioContra.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
+            this.btnCambioContra.Size = new System.Drawing.Size(220, 60);
+            this.btnCambioContra.TabIndex = 7;
+            this.btnCambioContra.Text = "Cambio de Contraseña";
+            this.btnCambioContra.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCambioContra.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnCambioContra.UseVisualStyleBackColor = true;
+            this.btnCambioContra.Click += new System.EventHandler(this.btnCambioContra_Click_1);
+            // 
+            // pnlInformes
+            // 
+            this.pnlInformes.Controls.Add(this.btnInformeBuques);
+            this.pnlInformes.Controls.Add(this.btnInformePendientes);
+            this.pnlInformes.Controls.Add(this.btnInformeMuelles);
+            this.pnlInformes.Controls.Add(this.btnInformeUsuario);
+            this.pnlInformes.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlInformes.Location = new System.Drawing.Point(0, 440);
+            this.pnlInformes.Name = "pnlInformes";
+            this.pnlInformes.Size = new System.Drawing.Size(220, 165);
+            this.pnlInformes.TabIndex = 6;
+            // 
+            // btnInformeBuques
+            // 
+            this.btnInformeBuques.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnInformeBuques.FlatAppearance.BorderSize = 0;
+            this.btnInformeBuques.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnInformeBuques.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInformeBuques.ForeColor = System.Drawing.Color.White;
+            this.btnInformeBuques.IconChar = FontAwesome.Sharp.IconChar.Folder;
+            this.btnInformeBuques.IconColor = System.Drawing.Color.White;
+            this.btnInformeBuques.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnInformeBuques.IconSize = 30;
+            this.btnInformeBuques.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnInformeBuques.Location = new System.Drawing.Point(0, 160);
+            this.btnInformeBuques.Name = "btnInformeBuques";
+            this.btnInformeBuques.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
+            this.btnInformeBuques.Size = new System.Drawing.Size(220, 40);
+            this.btnInformeBuques.TabIndex = 8;
+            this.btnInformeBuques.Text = "Buques Registrados";
+            this.btnInformeBuques.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnInformeBuques.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnInformeBuques.UseVisualStyleBackColor = true;
+            this.btnInformeBuques.Click += new System.EventHandler(this.btnInformeBuques_Click);
+            // 
+            // btnInformePendientes
+            // 
+            this.btnInformePendientes.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnInformePendientes.FlatAppearance.BorderSize = 0;
+            this.btnInformePendientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnInformePendientes.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInformePendientes.ForeColor = System.Drawing.Color.White;
+            this.btnInformePendientes.IconChar = FontAwesome.Sharp.IconChar.Folder;
+            this.btnInformePendientes.IconColor = System.Drawing.Color.White;
+            this.btnInformePendientes.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnInformePendientes.IconSize = 30;
+            this.btnInformePendientes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnInformePendientes.Location = new System.Drawing.Point(0, 120);
+            this.btnInformePendientes.Name = "btnInformePendientes";
+            this.btnInformePendientes.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
+            this.btnInformePendientes.Size = new System.Drawing.Size(220, 40);
+            this.btnInformePendientes.TabIndex = 7;
+            this.btnInformePendientes.Text = "Carga y Descarga";
+            this.btnInformePendientes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnInformePendientes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnInformePendientes.UseVisualStyleBackColor = true;
+            this.btnInformePendientes.Click += new System.EventHandler(this.btnInformePendientes_Click);
+            // 
+            // btnInformeMuelles
+            // 
+            this.btnInformeMuelles.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnInformeMuelles.FlatAppearance.BorderSize = 0;
+            this.btnInformeMuelles.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnInformeMuelles.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInformeMuelles.ForeColor = System.Drawing.Color.White;
+            this.btnInformeMuelles.IconChar = FontAwesome.Sharp.IconChar.Folder;
+            this.btnInformeMuelles.IconColor = System.Drawing.Color.White;
+            this.btnInformeMuelles.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnInformeMuelles.IconSize = 30;
+            this.btnInformeMuelles.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnInformeMuelles.Location = new System.Drawing.Point(0, 60);
+            this.btnInformeMuelles.Name = "btnInformeMuelles";
+            this.btnInformeMuelles.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
+            this.btnInformeMuelles.Size = new System.Drawing.Size(220, 60);
+            this.btnInformeMuelles.TabIndex = 6;
+            this.btnInformeMuelles.Text = "Disponibilidad Muelles";
+            this.btnInformeMuelles.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnInformeMuelles.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnInformeMuelles.UseVisualStyleBackColor = true;
+            this.btnInformeMuelles.Click += new System.EventHandler(this.btnInformeMuelles_Click);
+            // 
+            // btnInformeUsuario
+            // 
+            this.btnInformeUsuario.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnInformeUsuario.FlatAppearance.BorderSize = 0;
+            this.btnInformeUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnInformeUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInformeUsuario.ForeColor = System.Drawing.Color.White;
+            this.btnInformeUsuario.IconChar = FontAwesome.Sharp.IconChar.Folder;
+            this.btnInformeUsuario.IconColor = System.Drawing.Color.White;
+            this.btnInformeUsuario.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnInformeUsuario.IconSize = 30;
+            this.btnInformeUsuario.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnInformeUsuario.Location = new System.Drawing.Point(0, 0);
+            this.btnInformeUsuario.Name = "btnInformeUsuario";
+            this.btnInformeUsuario.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
+            this.btnInformeUsuario.Size = new System.Drawing.Size(220, 60);
+            this.btnInformeUsuario.TabIndex = 5;
+            this.btnInformeUsuario.Text = "Usuarios Registrados";
+            this.btnInformeUsuario.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnInformeUsuario.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnInformeUsuario.UseVisualStyleBackColor = true;
+            this.btnInformeUsuario.Click += new System.EventHandler(this.btnInformeUsuario_Click);
             // 
             // btnGestionAdb
             // 
@@ -295,133 +422,6 @@
             this.pnlDesktop.TabIndex = 3;
             this.pnlDesktop.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlDesktop_Paint);
             // 
-            // pnlInformes
-            // 
-            this.pnlInformes.Controls.Add(this.btnInformeBuques);
-            this.pnlInformes.Controls.Add(this.btnInformePendientes);
-            this.pnlInformes.Controls.Add(this.btnInformeMuelles);
-            this.pnlInformes.Controls.Add(this.btnInformeUsuario);
-            this.pnlInformes.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlInformes.Location = new System.Drawing.Point(0, 440);
-            this.pnlInformes.Name = "pnlInformes";
-            this.pnlInformes.Size = new System.Drawing.Size(220, 165);
-            this.pnlInformes.TabIndex = 6;
-            // 
-            // btnInformeUsuario
-            // 
-            this.btnInformeUsuario.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnInformeUsuario.FlatAppearance.BorderSize = 0;
-            this.btnInformeUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnInformeUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnInformeUsuario.ForeColor = System.Drawing.Color.White;
-            this.btnInformeUsuario.IconChar = FontAwesome.Sharp.IconChar.Folder;
-            this.btnInformeUsuario.IconColor = System.Drawing.Color.White;
-            this.btnInformeUsuario.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnInformeUsuario.IconSize = 30;
-            this.btnInformeUsuario.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnInformeUsuario.Location = new System.Drawing.Point(0, 0);
-            this.btnInformeUsuario.Name = "btnInformeUsuario";
-            this.btnInformeUsuario.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
-            this.btnInformeUsuario.Size = new System.Drawing.Size(220, 40);
-            this.btnInformeUsuario.TabIndex = 5;
-            this.btnInformeUsuario.Text = "Usuarios Registrados";
-            this.btnInformeUsuario.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnInformeUsuario.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnInformeUsuario.UseVisualStyleBackColor = true;
-            this.btnInformeUsuario.Click += new System.EventHandler(this.btnInformeUsuario_Click);
-            // 
-            // btnInformeMuelles
-            // 
-            this.btnInformeMuelles.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnInformeMuelles.FlatAppearance.BorderSize = 0;
-            this.btnInformeMuelles.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnInformeMuelles.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnInformeMuelles.ForeColor = System.Drawing.Color.White;
-            this.btnInformeMuelles.IconChar = FontAwesome.Sharp.IconChar.Folder;
-            this.btnInformeMuelles.IconColor = System.Drawing.Color.White;
-            this.btnInformeMuelles.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnInformeMuelles.IconSize = 30;
-            this.btnInformeMuelles.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnInformeMuelles.Location = new System.Drawing.Point(0, 40);
-            this.btnInformeMuelles.Name = "btnInformeMuelles";
-            this.btnInformeMuelles.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
-            this.btnInformeMuelles.Size = new System.Drawing.Size(220, 40);
-            this.btnInformeMuelles.TabIndex = 6;
-            this.btnInformeMuelles.Text = "Disponibilidad Muelles";
-            this.btnInformeMuelles.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnInformeMuelles.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnInformeMuelles.UseVisualStyleBackColor = true;
-            this.btnInformeMuelles.Click += new System.EventHandler(this.btnInformeMuelles_Click);
-            // 
-            // btnInformePendientes
-            // 
-            this.btnInformePendientes.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnInformePendientes.FlatAppearance.BorderSize = 0;
-            this.btnInformePendientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnInformePendientes.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnInformePendientes.ForeColor = System.Drawing.Color.White;
-            this.btnInformePendientes.IconChar = FontAwesome.Sharp.IconChar.Folder;
-            this.btnInformePendientes.IconColor = System.Drawing.Color.White;
-            this.btnInformePendientes.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnInformePendientes.IconSize = 30;
-            this.btnInformePendientes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnInformePendientes.Location = new System.Drawing.Point(0, 80);
-            this.btnInformePendientes.Name = "btnInformePendientes";
-            this.btnInformePendientes.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
-            this.btnInformePendientes.Size = new System.Drawing.Size(220, 40);
-            this.btnInformePendientes.TabIndex = 7;
-            this.btnInformePendientes.Text = "Carga y Descarga";
-            this.btnInformePendientes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnInformePendientes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnInformePendientes.UseVisualStyleBackColor = true;
-            this.btnInformePendientes.Click += new System.EventHandler(this.btnInformePendientes_Click);
-            // 
-            // btnInformeBuques
-            // 
-            this.btnInformeBuques.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnInformeBuques.FlatAppearance.BorderSize = 0;
-            this.btnInformeBuques.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnInformeBuques.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnInformeBuques.ForeColor = System.Drawing.Color.White;
-            this.btnInformeBuques.IconChar = FontAwesome.Sharp.IconChar.Folder;
-            this.btnInformeBuques.IconColor = System.Drawing.Color.White;
-            this.btnInformeBuques.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnInformeBuques.IconSize = 30;
-            this.btnInformeBuques.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnInformeBuques.Location = new System.Drawing.Point(0, 120);
-            this.btnInformeBuques.Name = "btnInformeBuques";
-            this.btnInformeBuques.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
-            this.btnInformeBuques.Size = new System.Drawing.Size(220, 40);
-            this.btnInformeBuques.TabIndex = 8;
-            this.btnInformeBuques.Text = "Buques Registrados";
-            this.btnInformeBuques.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnInformeBuques.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnInformeBuques.UseVisualStyleBackColor = true;
-            this.btnInformeBuques.Click += new System.EventHandler(this.btnInformeBuques_Click);
-            // 
-            // btnCambioContra
-            // 
-            this.btnCambioContra.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnCambioContra.FlatAppearance.BorderSize = 0;
-            this.btnCambioContra.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCambioContra.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCambioContra.ForeColor = System.Drawing.Color.White;
-            this.btnCambioContra.IconChar = FontAwesome.Sharp.IconChar.Key;
-            this.btnCambioContra.IconColor = System.Drawing.Color.White;
-            this.btnCambioContra.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnCambioContra.IconSize = 40;
-            this.btnCambioContra.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCambioContra.Location = new System.Drawing.Point(0, 605);
-            this.btnCambioContra.Name = "btnCambioContra";
-            this.btnCambioContra.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
-            this.btnCambioContra.Size = new System.Drawing.Size(220, 60);
-            this.btnCambioContra.TabIndex = 7;
-            this.btnCambioContra.Text = "Cambio de Contraseña";
-            this.btnCambioContra.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCambioContra.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnCambioContra.UseVisualStyleBackColor = true;
-            this.btnCambioContra.Click += new System.EventHandler(this.btnCambioContra_Click_1);
-            // 
             // frmAdministrador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -435,12 +435,12 @@
             this.Text = "Panel de Administrador";
             this.Load += new System.EventHandler(this.frmAdministrador_Load);
             this.panelMenu.ResumeLayout(false);
+            this.pnlInformes.ResumeLayout(false);
             this.pnlTitleBar.ResumeLayout(false);
             this.pnlTitleBar.PerformLayout();
             this.pnlAdmin.ResumeLayout(false);
             this.pnlAdmin.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.IcnHome)).EndInit();
-            this.pnlInformes.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 

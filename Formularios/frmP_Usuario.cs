@@ -30,6 +30,7 @@ namespace Port_manager.Formularios
             leftBorderBtn = new Panel();
             leftBorderBtn.Size = new Size(7, 60);
             panelMenu.Controls.Add(leftBorderBtn);
+            pnlInformes.Controls.Add(leftBorderBtn); // Añadir leftBorderBtn al panel de informes
             //Form
             this.Text = string.Empty;
             this.ControlBox = true; // Asegúrate de que los botones de control estén visibles
@@ -253,6 +254,11 @@ namespace Port_manager.Formularios
         {
             ActivateButton(sender, RGBColors.color1);
             OpenChildForm(new frmInformeBuqueUsuario());
+        }
+
+        private void lblTitleChildForm_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
