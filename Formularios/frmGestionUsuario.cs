@@ -22,17 +22,17 @@ namespace Port_manager.Formularios
         }
 
         
-
+        //Metodo para cargar valores al Datagrid de informe de usuarios.
         public void cargar_datos()
         {
             string consulta = "select id_usuario, nombre_usuario, email, rol from usuarios";
-            using (SqlConnection conexion = DatabaseHelper.GetConnection()) // Aquí usas tu método
+            using (SqlConnection conexion = DatabaseHelper.GetConnection()) 
             {
                 SqlDataAdapter adaptador = new SqlDataAdapter(consulta, conexion);
                 DataTable tabla = new DataTable();
                 adaptador.Fill(tabla);
 
-                dtgUsuarios.AutoGenerateColumns = false; // Muy importante antes de asignar el DataSource
+                dtgUsuarios.AutoGenerateColumns = false; 
                 dtgUsuarios.DataSource = tabla;
 
                 
