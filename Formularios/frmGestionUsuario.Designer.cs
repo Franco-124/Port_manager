@@ -45,7 +45,7 @@
             this.panel1.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1067, 69);
             this.panel1.TabIndex = 0;
@@ -72,11 +72,11 @@
             this.email,
             this.rol});
             this.dtgUsuarios.GridColor = System.Drawing.SystemColors.ButtonFace;
-            this.dtgUsuarios.Location = new System.Drawing.Point(31, 86);
+            this.dtgUsuarios.Location = new System.Drawing.Point(74, 190);
             this.dtgUsuarios.Name = "dtgUsuarios";
             this.dtgUsuarios.RowHeadersWidth = 51;
             this.dtgUsuarios.RowTemplate.Height = 24;
-            this.dtgUsuarios.Size = new System.Drawing.Size(959, 285);
+            this.dtgUsuarios.Size = new System.Drawing.Size(913, 257);
             this.dtgUsuarios.TabIndex = 1;
             // 
             // id_usuario
@@ -115,7 +115,7 @@
             this.ClientSize = new System.Drawing.Size(1067, 554);
             this.Controls.Add(this.dtgUsuarios);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmGestionUsuario";
             this.Text = "Usuarios Registrados";
             this.panel1.ResumeLayout(false);

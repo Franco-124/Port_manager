@@ -32,13 +32,26 @@ namespace Port_manager.Formularios
             empresa = empresa.Trim();
             origen = origen.Trim();
 
-
-            if (string.IsNullOrEmpty(serial_buque) || string.IsNullOrEmpty(capitan) || string.IsNullOrEmpty(empresa) || string.IsNullOrEmpty(origen) )
+            if (string.IsNullOrEmpty(serial_buque) || string.IsNullOrEmpty(capitan) ||
+                string.IsNullOrEmpty(empresa) || string.IsNullOrEmpty(origen))
             {
                 MessageBox.Show("Por favor, complete todos los campos.");
                 return;
             }
 
+            // Validar que la capacidad sea un número positivo
+            if (capacidad <= 0)
+            {
+                MessageBox.Show("La capacidad debe ser un número mayor a 0.");
+                return;
+            }
+
+            // Validar que la fecha de ingreso no sea en el futuro
+            if (fecha_ingreso > DateTime.Now)
+            {
+                MessageBox.Show("La fecha de ingreso no puede ser una fecha futura.");
+                return;
+            }
 
             if (DatabaseHelper.agregar_buque(serial_buque, capitan, empresa, origen, fecha_ingreso, capacidad))
             {
@@ -52,7 +65,6 @@ namespace Port_manager.Formularios
             else
             {
                 MessageBox.Show("Error al ingresar el buque. Por favor, inténtelo de nuevo.");
-
             }
         }
     }
