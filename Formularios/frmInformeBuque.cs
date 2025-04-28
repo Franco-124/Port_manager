@@ -19,6 +19,7 @@ namespace Port_manager.Formularios
             InitializeComponent();
             cargar_datos();
         }
+
         public void cargar_datos()
         {
             string consulta = "select serial_buque,capitan,empresa,origen,fecha_ingreso,capacidad from ingresoBuque";

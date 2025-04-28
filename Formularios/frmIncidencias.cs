@@ -91,5 +91,13 @@ namespace Port_manager.Formularios
         {
             CargarSerialBarco();
         }
+
+        public frmInformeIncidencias frmInformeIncidencias
+        {
+            get => default;
+            set
+            {
+            }
+        }
     }
 }

@@ -359,5 +359,21 @@ namespace Port_manager.Formularios
             AbrirFormularioHijo(new frmCambiocontraseña());
             ocultarSubmenu();
         }
+
+        public frmInformeBuque frmInformeBuque
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
+        public frmInformePendientes frmInformePendientes
+        {
+            get => default;
+            set
+            {
+            }
+        }
     }
 }

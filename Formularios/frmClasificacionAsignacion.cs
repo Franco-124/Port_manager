@@ -16,5 +16,13 @@ namespace Port_manager.Formularios
         {
             InitializeComponent();
         }
+
+        public FrmInformeMuelle FrmInformeMuelle
+        {
+            get => default;
+            set
+            {
+            }
+        }
     }
 }

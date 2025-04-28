@@ -18,6 +18,22 @@ namespace Port_manager.Formularios
             InitializeComponent();
         }
 
+        public frmInformeBuqueUsuario frmInformeBuqueUsuario
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
+        public frmInformeBuque frmInformeBuque
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             string serial_buque = txtSerial.Text;

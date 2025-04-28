@@ -35,6 +35,7 @@
             this.nombre_usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.email = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.rol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnImprimir = new FontAwesome.Sharp.IconButton();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgUsuarios)).BeginInit();
             this.SuspendLayout();
@@ -65,6 +66,7 @@
             // 
             // dtgUsuarios
             // 
+            this.dtgUsuarios.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(60)))));
             this.dtgUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgUsuarios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id_usuario,
@@ -72,7 +74,7 @@
             this.email,
             this.rol});
             this.dtgUsuarios.GridColor = System.Drawing.SystemColors.ButtonFace;
-            this.dtgUsuarios.Location = new System.Drawing.Point(74, 190);
+            this.dtgUsuarios.Location = new System.Drawing.Point(78, 133);
             this.dtgUsuarios.Name = "dtgUsuarios";
             this.dtgUsuarios.RowHeadersWidth = 51;
             this.dtgUsuarios.RowTemplate.Height = 24;
@@ -107,12 +109,26 @@
             this.rol.Name = "rol";
             this.rol.Width = 150;
             // 
+            // btnImprimir
+            // 
+            this.btnImprimir.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.btnImprimir.IconColor = System.Drawing.Color.Black;
+            this.btnImprimir.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnImprimir.Location = new System.Drawing.Point(78, 443);
+            this.btnImprimir.Name = "btnImprimir";
+            this.btnImprimir.Size = new System.Drawing.Size(114, 43);
+            this.btnImprimir.TabIndex = 2;
+            this.btnImprimir.Text = "Imprimir";
+            this.btnImprimir.UseVisualStyleBackColor = true;
+            this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
+            // 
             // frmGestionUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
             this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.Controls.Add(this.btnImprimir);
             this.Controls.Add(this.dtgUsuarios);
             this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -134,5 +150,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn nombre_usuario;
         private System.Windows.Forms.DataGridViewTextBoxColumn email;
         private System.Windows.Forms.DataGridViewTextBoxColumn rol;
+        private FontAwesome.Sharp.IconButton btnImprimir;
     }
 }

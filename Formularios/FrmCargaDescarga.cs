@@ -17,6 +17,14 @@ namespace Port_manager.Formularios
             InitializeComponent();
         }
 
+        public frmInformePendientes frmInformePendientes
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
         private void frmCargaDescarga_Load(object sender, EventArgs e)
         {
 

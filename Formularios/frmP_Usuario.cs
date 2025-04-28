@@ -58,13 +58,6 @@ namespace Port_manager.Formularios
             ocultarSubmenu();
             submenu.Visible = true;
         }
-        public frmCambiocontraseña frmCambiocontraseña
-        {
-            get => default;
-            set
-            {
-            }
-        }
 
         public FrmRecuperarContraseña FrmRecuperarcontraseña
         {
@@ -259,6 +252,38 @@ namespace Port_manager.Formularios
         private void lblTitleChildForm_Click(object sender, EventArgs e)
         {
 
+        }
+
+        public frmInformeBuqueUsuario frmInformeBuqueUsuario
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
+        public frmInformeIncidencias frmInformeIncidencias
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
+        public frmIngresoBuque frmIngresoBuque
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
+        public frmCambiocontraseña frmCambiocontraseña
+        {
+            get => default;
+            set
+            {
+            }
         }
     }
 }
