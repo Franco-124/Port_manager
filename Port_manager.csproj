@@ -77,6 +77,7 @@
     <Compile Include="Clases\Credentials.cs" />
     <Compile Include="Clases\dbconexion.cs" />
     <Compile Include="Clases\Enviar_email.cs" />
+    <Compile Include="Clases\Metodos.cs" />
     <Compile Include="Formularios\frmAdministrador.cs">
       <SubType>Form</SubType>
     </Compile>

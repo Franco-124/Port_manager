@@ -13,12 +13,13 @@ CREATE TABLE Incidencias(
 	ubicacion VARCHAR(50) NOT NULL,
 	descripcion VARCHAR(100),
 	estado VARCHAR(30) NOT NULL DEFAULT 'PENDIENTE',
+    nombre_admin VARCHAR(100) NOT NULL,
 	id_usuario int FOREIGN KEY REFERENCES usuarios(id_usuario)
 );
 
 
 select * from usuarios
-ALTER TABLE Incidencias ADD nombre_admin VARCHAR(100);
+
 CREATE TABLE RegistroLlegadaBuque (
 	codigo_registro INT NOT NULL IDENTITY (1,1),
 	capacidad FLOAT NOT NULL,

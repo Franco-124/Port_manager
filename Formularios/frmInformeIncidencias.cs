@@ -23,7 +23,7 @@ namespace Port_manager.Formularios
 
         public void cargar_datos()
         {
-            string consulta = "select serial_buque,capitan,empresa,origen,fecha_ingreso,capacidad from ingresoBuque";
+            string consulta = "select numero_incidencia, serial_buque, tipo_incidencia, ubicacion, descripcion, estado, from Incidencias";
             using (SqlConnection conexion = DatabaseHelper.GetConnection())
             {
                 SqlDataAdapter adaptador = new SqlDataAdapter(consulta, conexion);
@@ -35,15 +35,12 @@ namespace Port_manager.Formularios
 
                 dtgIncidencias.DataSource = tabla;
 
-                dtgIncidencias.Columns["serial_buque"].DataPropertyName = "serial_buque";
-                dtgIncidencias.Columns["capitan"].DataPropertyName = "capitan";
-                dtgIncidencias.Columns["empresa"].DataPropertyName = "empresa";
-                dtgIncidencias.Columns["origen"].DataPropertyName = "origen";
-                dtgIncidencias.Columns["fecha_ingreso"].DataPropertyName = "fecha_ingreso";
-                dtgIncidencias.Columns["capacidad"].DataPropertyName = "capacidad";
-
-
-
+                dtgIncidencias.Columns["numero_incidencia"].DataPropertyName = "numero_incidencia";
+                dtgIncidencias.Columns["serial_buque"].DataPropertyName = "buque";
+                dtgIncidencias.Columns["tipo_incidencia"].DataPropertyName = "tipo_incidencia";
+                dtgIncidencias.Columns["ubicacion"].DataPropertyName = "ubicacion";
+                dtgIncidencias.Columns["descripcion"].DataPropertyName = "descripcion";
+                dtgIncidencias.Columns["estado"].DataPropertyName = "estado";
             }
         }
     }
