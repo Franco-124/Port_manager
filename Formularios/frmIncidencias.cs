@@ -24,12 +24,10 @@ namespace Port_manager.Formularios
 
         void CargarSerialBarco()
         {
-            if (datosSerialCargados) return; // No cargar de nuevo si ya se cargaron
-
             cmbSerialBarco.Items.Clear();
             try
             {
-                string consulta = "SELECT TOP 2 serial_buque FROM IngresoBuque";
+                string consulta = "SELECT serial_buque FROM IngresoBuque";
                 using (SqlConnection conexion = DatabaseHelper.GetConnection())
                 {
                     using (SqlCommand cmd = new SqlCommand(consulta, conexion))
@@ -43,8 +41,6 @@ namespace Port_manager.Formularios
                         }
                     }
                 }
-
-                datosSerialCargados = true; // Marcar como cargado
             }
             catch (Exception ex)
             {
@@ -59,7 +55,7 @@ namespace Port_manager.Formularios
 
             public ComboBoxItem(string serial_buque)
             {
-                Serial_Buque = Serial_Buque;
+                Serial_Buque = serial_buque;
             }
             public override string ToString()
             {
