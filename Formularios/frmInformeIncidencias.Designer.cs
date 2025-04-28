@@ -32,7 +32,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblBuques = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.dtgBuque = new System.Windows.Forms.DataGridView();
+            this.dtgIncidencias = new System.Windows.Forms.DataGridView();
             this.serial_buque = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.capitan = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.empresa = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -41,7 +41,7 @@
             this.capacidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgBuque)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgIncidencias)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -67,7 +67,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
-            this.panel1.Controls.Add(this.dtgBuque);
+            this.panel1.Controls.Add(this.dtgIncidencias);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -75,26 +75,26 @@
             this.panel1.Size = new System.Drawing.Size(800, 450);
             this.panel1.TabIndex = 2;
             // 
-            // dtgBuque
+            // dtgIncidencias
             // 
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtgBuque.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dtgBuque.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(60)))));
-            this.dtgBuque.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgBuque.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dtgIncidencias.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dtgIncidencias.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(60)))));
+            this.dtgIncidencias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgIncidencias.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.serial_buque,
             this.capitan,
             this.empresa,
             this.origen,
             this.fecha_ingreso,
             this.capacidad});
-            this.dtgBuque.Location = new System.Drawing.Point(40, 107);
-            this.dtgBuque.Name = "dtgBuque";
-            this.dtgBuque.RowHeadersVisible = false;
-            this.dtgBuque.RowHeadersWidth = 51;
-            this.dtgBuque.Size = new System.Drawing.Size(718, 268);
-            this.dtgBuque.TabIndex = 3;
+            this.dtgIncidencias.Location = new System.Drawing.Point(40, 107);
+            this.dtgIncidencias.Name = "dtgIncidencias";
+            this.dtgIncidencias.RowHeadersVisible = false;
+            this.dtgIncidencias.RowHeadersWidth = 51;
+            this.dtgIncidencias.Size = new System.Drawing.Size(718, 268);
+            this.dtgIncidencias.TabIndex = 3;
             // 
             // serial_buque
             // 
@@ -149,7 +149,7 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dtgBuque)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgIncidencias)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -159,7 +159,7 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label lblBuques;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.DataGridView dtgBuque;
+        private System.Windows.Forms.DataGridView dtgIncidencias;
         private System.Windows.Forms.DataGridViewTextBoxColumn serial_buque;
         private System.Windows.Forms.DataGridViewTextBoxColumn capitan;
         private System.Windows.Forms.DataGridViewTextBoxColumn empresa;

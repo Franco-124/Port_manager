@@ -48,9 +48,8 @@
             this.panel2.Controls.Add(this.lblBuques);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1282, 69);
+            this.panel2.Size = new System.Drawing.Size(962, 56);
             this.panel2.TabIndex = 2;
             // 
             // lblBuques
@@ -58,10 +57,9 @@
             this.lblBuques.AutoSize = true;
             this.lblBuques.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBuques.ForeColor = System.Drawing.Color.White;
-            this.lblBuques.Location = new System.Drawing.Point(384, 11);
-            this.lblBuques.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblBuques.Location = new System.Drawing.Point(361, 9);
             this.lblBuques.Name = "lblBuques";
-            this.lblBuques.Size = new System.Drawing.Size(313, 36);
+            this.lblBuques.Size = new System.Drawing.Size(254, 29);
             this.lblBuques.TabIndex = 3;
             this.lblBuques.Text = "Información del Buque";
             // 
@@ -72,9 +70,8 @@
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1282, 554);
+            this.panel1.Size = new System.Drawing.Size(962, 450);
             this.panel1.TabIndex = 2;
             // 
             // dtgBuque
@@ -88,11 +85,12 @@
             this.fecha_ingreso,
             this.capacidad});
             this.dtgBuque.GridColor = System.Drawing.SystemColors.ButtonFace;
-            this.dtgBuque.Location = new System.Drawing.Point(42, 177);
+            this.dtgBuque.Location = new System.Drawing.Point(15, 143);
+            this.dtgBuque.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dtgBuque.Name = "dtgBuque";
             this.dtgBuque.RowHeadersWidth = 51;
             this.dtgBuque.RowTemplate.Height = 24;
-            this.dtgBuque.Size = new System.Drawing.Size(1167, 257);
+            this.dtgBuque.Size = new System.Drawing.Size(929, 209);
             this.dtgBuque.TabIndex = 3;
             // 
             // serial_buque
@@ -139,11 +137,10 @@
             // 
             // frmInformeBuqueUsuario
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1282, 554);
+            this.ClientSize = new System.Drawing.Size(962, 450);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmInformeBuqueUsuario";
             this.Text = "Datos de Buques";
             this.panel2.ResumeLayout(false);

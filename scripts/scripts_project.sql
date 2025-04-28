@@ -18,7 +18,7 @@ CREATE TABLE Incidencias(
 
 
 select * from usuarios
-
+ALTER TABLE Incidencias ADD nombre_admin VARCHAR(100);
 CREATE TABLE RegistroLlegadaBuque (
 	codigo_registro INT NOT NULL IDENTITY (1,1),
 	capacidad FLOAT NOT NULL,
@@ -37,6 +37,7 @@ CREATE TABLE IngresoBuque (
     origen VARCHAR(50) NOT NULL,
     fecha_ingreso DATETIME NOT NULL,
     capacidad FLOAT NOT NULL,
+    id_usuario int FOREIGN KEY REFERENCES usuarios(id_usuario)
     
 )
 
@@ -237,18 +238,33 @@ CREATE PROCEDURE agregar_buque
     @origen VARCHAR(50),  
 	@fecha_ingreso DATETIME,
 	@capacidad FLOAT,
+	@id_usuario INT,
     @resultado INT OUTPUT 
 AS
 BEGIN
     SET NOCOUNT ON;
     BEGIN TRY
         
-        INSERT INTO IngresoBuque(serial_buque, capitan, empresa, origen, fecha_ingreso, capacidad)
-        VALUES (@serial_buque, @capitan, @empresa, @origen, @fecha_ingreso, @capacidad);
+        INSERT INTO IngresoBuque(serial_buque, capitan, empresa, origen, fecha_ingreso, capacidad, id_usuario)
+        VALUES (@serial_buque, @capitan, @empresa, @origen, @fecha_ingreso, @capacidad, @id_usuario);
         
         SET @resultado = 1;  -- Éxito
     END TRY
     BEGIN CATCH
         SET @resultado = 0;  -- Error
     END CATCH
+END;
+
+CREATE PROCEDURE devolver_id_usuario
+    @nombre VARCHAR(100),
+    @contraseña VARCHAR(150),
+    @id_usuario int OUTPUT
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    SELECT @id_usuario = id_usuario 
+    FROM usuarios
+    WHERE nombre_usuario = @nombre
+      AND contraseña =  @contraseña;
 END;

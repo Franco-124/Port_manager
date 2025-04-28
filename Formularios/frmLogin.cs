@@ -87,7 +87,8 @@ namespace Port_manager
                 return;
             }
 
-
+            int id_usuario = DatabaseHelper.obtener_id_usuario(nombre, contraseña);
+            UsuarioSesion.id_usuario = id_usuario;
 
             if (DatabaseHelper.VerificarLogin(nombre, email, contraseña))
             {
@@ -180,6 +181,8 @@ namespace Port_manager
         public static string contraseña { get; set; }
 
         public static string email { get; set; }
+
+        public static int id_usuario { get; set; }
 
     }
 }

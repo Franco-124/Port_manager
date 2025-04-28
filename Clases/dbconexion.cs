@@ -298,7 +298,7 @@ namespace SqlConnectiondb
 
 
 
-        public static bool agregar_buque(string serial_buque, string capitan, string empresa, string origen, DateTime fecha_ingreso, double capacidad)
+        public static bool agregar_buque(string serial_buque, string capitan, string empresa, string origen, DateTime fecha_ingreso, double capacidad, int id_usuario)
         {
             try
             {
@@ -314,6 +314,7 @@ namespace SqlConnectiondb
                         cmd.Parameters.AddWithValue("@origen", origen);
                         cmd.Parameters.AddWithValue("@fecha_ingreso", fecha_ingreso);
                         cmd.Parameters.AddWithValue("@capacidad", capacidad);
+                        cmd.Parameters.AddWithValue("@id_usuario", id_usuario);
 
                         SqlParameter outputParam = new SqlParameter("@resultado", SqlDbType.Int)
                         {
@@ -332,6 +333,48 @@ namespace SqlConnectiondb
             {
                 Console.WriteLine("❌ Error: " + ex.Message);
                 return false;
+            }
+        }
+
+        public static int obtener_id_usuario (string nombre_usuario, string contraseña)
+        {
+            try
+            {
+                using (SqlConnection connection = GetConnection())
+                {
+                    using (SqlCommand cmd = new SqlCommand("devolver_id_usuario", connection))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+
+                        cmd.Parameters.AddWithValue("@nombre", nombre_usuario);
+                        cmd.Parameters.AddWithValue("@contraseña", contraseña);
+
+
+                        SqlParameter outputParam = new SqlParameter("@id_usuario", SqlDbType.Int)
+                        {
+                            Direction = ParameterDirection.Output
+                        };
+                        cmd.Parameters.Add(outputParam);
+
+                        cmd.ExecuteNonQuery();
+
+
+                        int id_usuario = Convert.ToInt32(outputParam.Value);
+
+                        return id_usuario;
+
+                    }
+                }
+            }
+            catch (SqlException sqlEx)
+            {
+                Console.WriteLine("❌ Error de SQL: " + sqlEx.Message);
+                return 0;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("❌ Error: " + ex.Message);
+                return 0;
             }
         }
 

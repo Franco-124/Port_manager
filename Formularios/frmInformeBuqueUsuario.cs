@@ -22,7 +22,7 @@ namespace Port_manager.Formularios
 
         public void cargar_datos()
         {
-            string consulta = "select serial_buque,capitan,empresa,origen,fecha_ingreso,capacidad from ingresoBuque";
+            string consulta = $"select serial_buque,capitan,empresa,origen,fecha_ingreso,capacidad from ingresoBuque where id_usuario = {UsuarioSesion.id_usuario}";
             using (SqlConnection conexion = DatabaseHelper.GetConnection())
             {
                 SqlDataAdapter adaptador = new SqlDataAdapter(consulta, conexion);

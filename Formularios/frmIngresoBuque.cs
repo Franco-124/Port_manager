@@ -53,7 +53,7 @@ namespace Port_manager.Formularios
                 return;
             }
 
-            if (DatabaseHelper.agregar_buque(serial_buque, capitan, empresa, origen, fecha_ingreso, capacidad))
+            if (DatabaseHelper.agregar_buque(serial_buque, capitan, empresa, origen, fecha_ingreso, capacidad, UsuarioSesion.id_usuario))
             {
                 MessageBox.Show("Buque ingresado correctamente.");
                 txtSerial.Clear();
