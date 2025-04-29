@@ -30,12 +30,12 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.dtgPendientes = new System.Windows.Forms.DataGridView();
-            this.lblPendientes = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.serial_buque = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.id_muelle = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.accion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tipo_carga = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.lblPendientes = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgPendientes)).BeginInit();
             this.panel2.SuspendLayout();
@@ -61,32 +61,12 @@
             this.id_muelle,
             this.accion,
             this.tipo_carga});
-            this.dtgPendientes.Location = new System.Drawing.Point(45, 123);
+            this.dtgPendientes.Location = new System.Drawing.Point(50, 99);
             this.dtgPendientes.Name = "dtgPendientes";
             this.dtgPendientes.RowHeadersVisible = false;
             this.dtgPendientes.RowHeadersWidth = 51;
-            this.dtgPendientes.Size = new System.Drawing.Size(723, 268);
+            this.dtgPendientes.Size = new System.Drawing.Size(721, 268);
             this.dtgPendientes.TabIndex = 3;
-            // 
-            // lblPendientes
-            // 
-            this.lblPendientes.AutoSize = true;
-            this.lblPendientes.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPendientes.ForeColor = System.Drawing.Color.White;
-            this.lblPendientes.Location = new System.Drawing.Point(154, 9);
-            this.lblPendientes.Name = "lblPendientes";
-            this.lblPendientes.Size = new System.Drawing.Size(511, 29);
-            this.lblPendientes.TabIndex = 3;
-            this.lblPendientes.Text = "Informe de Pendientes por Cargar y Descargar";
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.lblPendientes);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(810, 56);
-            this.panel2.TabIndex = 2;
             // 
             // serial_buque
             // 
@@ -111,6 +91,26 @@
             this.tipo_carga.HeaderText = "Tipo de carga";
             this.tipo_carga.Name = "tipo_carga";
             this.tipo_carga.Width = 180;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.lblPendientes);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(810, 56);
+            this.panel2.TabIndex = 2;
+            // 
+            // lblPendientes
+            // 
+            this.lblPendientes.AutoSize = true;
+            this.lblPendientes.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPendientes.ForeColor = System.Drawing.Color.White;
+            this.lblPendientes.Location = new System.Drawing.Point(154, 9);
+            this.lblPendientes.Name = "lblPendientes";
+            this.lblPendientes.Size = new System.Drawing.Size(511, 29);
+            this.lblPendientes.TabIndex = 3;
+            this.lblPendientes.Text = "Informe de Pendientes por Cargar y Descargar";
             // 
             // frmInformePendientes
             // 

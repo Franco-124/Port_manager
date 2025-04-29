@@ -24,5 +24,13 @@ namespace Port_manager.Formularios
             {
             }
         }
+
+        public Frm_Operaciones.frmAsignacionMuelleUsuario frmAsignacionMuelleUsuario
+        {
+            get => default;
+            set
+            {
+            }
+        }
     }
 }

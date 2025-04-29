@@ -11,6 +11,13 @@ namespace Port_manager.Clases
 {
     class Enviar_email
     {
+        internal SqlConnectiondb.DatabaseHelper DatabaseHelper
+        {
+            get => default;
+            set
+            {
+            }
+        }
 
         public static string EnviarCorreo(string Email, string Temp_password)
         {

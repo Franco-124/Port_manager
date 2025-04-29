@@ -72,6 +72,7 @@ namespace Port_manager.Formularios
             //Cambiar el color del texto a azul grisáceo.
             ObjWord.Selection.Font.Color = Word.WdColor.wdColorBlueGray;
             ObjWord.Selection.Font.Size = 14;
+            
             ObjWord.Selection.TypeParagraph();//salto de linea
                                               //Centrar el texto del párrafo en la página.
             ObjWord.Selection.ParagraphFormat.Alignment = Word.WdParagraphAlignment.wdAlignParagraphCenter;

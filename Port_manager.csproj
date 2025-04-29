@@ -83,159 +83,168 @@
     <Compile Include="Clases\dbconexion.cs" />
     <Compile Include="Clases\Enviar_email.cs" />
     <Compile Include="Clases\Metodos.cs" />
-    <Compile Include="Formularios\frmAdministrador.cs">
+    <Compile Include="Formularios\Frm Autenticaciones\frmAdministrador.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\frmAdministrador.Designer.cs">
+    <Compile Include="Formularios\Frm Autenticaciones\frmAdministrador.Designer.cs">
       <DependentUpon>frmAdministrador.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\frmCambiocontraseña.cs">
+    <Compile Include="Formularios\Frm Autenticaciones\frmCambiocontraseña.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\frmCambiocontraseña.Designer.cs">
+    <Compile Include="Formularios\Frm Autenticaciones\frmCambiocontraseña.Designer.cs">
       <DependentUpon>frmCambiocontraseña.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\frmCargaDescarga.cs">
+    <Compile Include="Formularios\Frm Operaciones\frmAsignacionMuelleUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\frmCargaDescarga.Designer.cs">
+    <Compile Include="Formularios\Frm Operaciones\frmAsignacionMuelleUsuario.Designer.cs">
+      <DependentUpon>frmAsignacionMuelleUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Frm Operaciones\frmCargaDescarga.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Frm Operaciones\frmCargaDescarga.Designer.cs">
       <DependentUpon>frmCargaDescarga.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\frmClasificacionAsignacion.cs">
+    <Compile Include="Formularios\Frm Operaciones\frmClasificacionAsignacion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\frmClasificacionAsignacion.Designer.cs">
+    <Compile Include="Formularios\Frm Operaciones\frmClasificacionAsignacion.Designer.cs">
       <DependentUpon>frmClasificacionAsignacion.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\frmCrear_cuenta.cs">
+    <Compile Include="Formularios\Frm Autenticaciones\frmCrear_cuenta.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\frmCrear_cuenta.Designer.cs">
+    <Compile Include="Formularios\Frm Autenticaciones\frmCrear_cuenta.Designer.cs">
       <DependentUpon>frmCrear_cuenta.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\frmInformeBuque.cs">
+    <Compile Include="Formularios\Frm Informes\frmInformeBuque.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\frmInformeBuque.Designer.cs">
+    <Compile Include="Formularios\Frm Informes\frmInformeBuque.Designer.cs">
       <DependentUpon>frmInformeBuque.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\frmInformeBuqueUsuario.cs">
+    <Compile Include="Formularios\Frm Informes\frmInformeBuqueUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\frmInformeBuqueUsuario.Designer.cs">
+    <Compile Include="Formularios\Frm Informes\frmInformeBuqueUsuario.Designer.cs">
       <DependentUpon>frmInformeBuqueUsuario.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\frmInformeIncidencias.cs">
+    <Compile Include="Formularios\Frm Informes\frmInformeIncidencias.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\frmInformeIncidencias.Designer.cs">
+    <Compile Include="Formularios\Frm Informes\frmInformeIncidencias.Designer.cs">
       <DependentUpon>frmInformeIncidencias.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\FrmInformeMuelle.cs">
+    <Compile Include="Formularios\Frm Informes\FrmInformeMuelle.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\FrmInformeMuelle.Designer.cs">
+    <Compile Include="Formularios\Frm Informes\FrmInformeMuelle.Designer.cs">
       <DependentUpon>FrmInformeMuelle.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\frmInformePendientes.cs">
+    <Compile Include="Formularios\Frm Informes\frmInformePendientes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\frmInformePendientes.Designer.cs">
+    <Compile Include="Formularios\Frm Informes\frmInformePendientes.Designer.cs">
       <DependentUpon>frmInformePendientes.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\frmIngresoBuque.cs">
+    <Compile Include="Formularios\Frm Operaciones\frmIngresoBuque.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\frmIngresoBuque.Designer.cs">
+    <Compile Include="Formularios\Frm Operaciones\frmIngresoBuque.Designer.cs">
       <DependentUpon>frmIngresoBuque.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\frmGestionUsuario.cs">
+    <Compile Include="Formularios\Frm Informes\frmGestionUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\frmGestionUsuario.Designer.cs">
+    <Compile Include="Formularios\Frm Informes\frmGestionUsuario.Designer.cs">
       <DependentUpon>frmGestionUsuario.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\frmIncidencias.cs">
+    <Compile Include="Formularios\Frm Operaciones\frmIncidencias.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\frmIncidencias.Designer.cs">
+    <Compile Include="Formularios\Frm Operaciones\frmIncidencias.Designer.cs">
       <DependentUpon>frmIncidencias.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\frmLogin.cs">
+    <Compile Include="Formularios\Frm Autenticaciones\frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\frmLogin.Designer.cs">
+    <Compile Include="Formularios\Frm Autenticaciones\frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\frmP_Usuario.cs">
+    <Compile Include="Formularios\Frm Autenticaciones\frmP_Usuario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\frmP_Usuario.Designer.cs">
+    <Compile Include="Formularios\Frm Autenticaciones\frmP_Usuario.Designer.cs">
       <DependentUpon>frmP_Usuario.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\FrmRecuperarContraseña.cs">
+    <Compile Include="Formularios\Frm Autenticaciones\FrmRecuperarContraseña.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\FrmRecuperarContraseña.Designer.cs">
+    <Compile Include="Formularios\Frm Autenticaciones\FrmRecuperarContraseña.Designer.cs">
       <DependentUpon>FrmRecuperarContraseña.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\frmRegistroDeBuques.cs">
+    <Compile Include="Formularios\Frm Operaciones\frmRegistroDeBuques.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\frmRegistroDeBuques.Designer.cs">
+    <Compile Include="Formularios\Frm Operaciones\frmRegistroDeBuques.Designer.cs">
       <DependentUpon>frmRegistroDeBuques.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Formularios\frmAdministrador.resx">
+    <EmbeddedResource Include="Formularios\Frm Autenticaciones\frmAdministrador.resx">
       <DependentUpon>frmAdministrador.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\frmCambiocontraseña.resx">
+    <EmbeddedResource Include="Formularios\Frm Autenticaciones\frmCambiocontraseña.resx">
       <DependentUpon>frmCambiocontraseña.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\FrmCargaDescarga.resx">
+    <EmbeddedResource Include="Formularios\Frm Operaciones\frmAsignacionMuelleUsuario.resx">
+      <DependentUpon>frmAsignacionMuelleUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Frm Operaciones\FrmCargaDescarga.resx">
       <DependentUpon>frmCargaDescarga.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\frmClasificacionAsignacion.resx">
+    <EmbeddedResource Include="Formularios\Frm Operaciones\frmClasificacionAsignacion.resx">
       <DependentUpon>frmClasificacionAsignacion.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\frmCrear_cuenta.resx">
+    <EmbeddedResource Include="Formularios\Frm Autenticaciones\frmCrear_cuenta.resx">
       <DependentUpon>frmCrear_cuenta.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\frmInformeBuque.resx">
+    <EmbeddedResource Include="Formularios\Frm Informes\frmInformeBuque.resx">
       <DependentUpon>frmInformeBuque.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\frmInformeBuqueUsuario.resx">
+    <EmbeddedResource Include="Formularios\Frm Informes\frmInformeBuqueUsuario.resx">
       <DependentUpon>frmInformeBuqueUsuario.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\frmInformeIncidencias.resx">
+    <EmbeddedResource Include="Formularios\Frm Informes\frmInformeIncidencias.resx">
       <DependentUpon>frmInformeIncidencias.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\FrmInformeMuelle.resx">
+    <EmbeddedResource Include="Formularios\Frm Informes\FrmInformeMuelle.resx">
       <DependentUpon>FrmInformeMuelle.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\frmInformePendientes.resx">
+    <EmbeddedResource Include="Formularios\Frm Informes\frmInformePendientes.resx">
       <DependentUpon>frmInformePendientes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\frmIngresoBuque.resx">
+    <EmbeddedResource Include="Formularios\Frm Operaciones\frmIngresoBuque.resx">
       <DependentUpon>frmIngresoBuque.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\frmGestionUsuario.resx">
+    <EmbeddedResource Include="Formularios\Frm Informes\frmGestionUsuario.resx">
       <DependentUpon>frmGestionUsuario.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\frmIncidencias.resx">
+    <EmbeddedResource Include="Formularios\Frm Operaciones\frmIncidencias.resx">
       <DependentUpon>frmIncidencias.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\frmLogin.resx">
+    <EmbeddedResource Include="Formularios\Frm Autenticaciones\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\frmP_Usuario.resx">
+    <EmbeddedResource Include="Formularios\Frm Autenticaciones\frmP_Usuario.resx">
       <DependentUpon>frmP_Usuario.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\FrmRecuperarContraseña.resx">
+    <EmbeddedResource Include="Formularios\Frm Autenticaciones\FrmRecuperarContraseña.resx">
       <DependentUpon>FrmRecuperarContraseña.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\frmRegistroDeBuques.resx">
+    <EmbeddedResource Include="Formularios\Frm Operaciones\frmRegistroDeBuques.resx">
       <DependentUpon>frmRegistroDeBuques.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -281,6 +290,7 @@
   <ItemGroup>
     <None Include="Resources\ChatGPT Image Apr 21, 2025, 02_08_43 PM.png" />
     <Content Include="Microsoft.Office.Interop.Word.dll" />
+    <None Include="Resources\Leonardo_Phoenix_10_Vista_area_esquemtica_de_un_puerto_martimo_3.jpg" />
     <Content Include="scripts\scripts_project.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

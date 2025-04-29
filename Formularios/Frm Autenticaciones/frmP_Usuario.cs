@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Media;
 using FontAwesome.Sharp;
+using Port_manager.Formularios.Frm_Operaciones;
 using SqlConnectiondb;
 using Color = System.Drawing.Color;
 
@@ -279,6 +280,20 @@ namespace Port_manager.Formularios
         }
 
         public frmCambiocontraseña frmCambiocontraseña
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
+        private void btnClasificacion_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender, RGBColors.color1);
+            OpenChildForm(new frmAsignacionMuelleUsuario());
+        }
+
+        public frmAsignacionMuelleUsuario frmAsignacionMuelleUsuario
         {
             get => default;
             set

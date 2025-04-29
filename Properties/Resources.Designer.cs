@@ -73,6 +73,16 @@ namespace Port_manager.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Leonardo_Phoenix_10_Vista_area_esquemtica_de_un_puerto_martimo_3 {
+            get {
+                object obj = ResourceManager.GetObject("Leonardo_Phoenix_10_Vista_area_esquemtica_de_un_puerto_martimo_3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Tema4_1_Manzanillo {
             get {
                 object obj = ResourceManager.GetObject("Tema4-1-Manzanillo", resourceCulture);
