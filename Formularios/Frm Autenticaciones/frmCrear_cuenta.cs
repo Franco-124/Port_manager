@@ -33,7 +33,7 @@ namespace Port_manager.Formularios
             frmLogin frm = new frmLogin();
             frm.Show();
             this.Hide();
-            System.Windows.Forms.Application.Exit();
+            
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
