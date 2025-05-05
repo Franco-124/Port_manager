@@ -61,7 +61,7 @@
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.SteelBlue;
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Controls.Add(this.btnolvidocontraseña);
             this.panel2.Controls.Add(this.label5);
@@ -82,7 +82,7 @@
             // 
             // btnolvidocontraseña
             // 
-            this.btnolvidocontraseña.BackColor = System.Drawing.Color.LightCyan;
+            this.btnolvidocontraseña.BackColor = System.Drawing.Color.FloralWhite;
             this.btnolvidocontraseña.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnolvidocontraseña.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnolvidocontraseña.Location = new System.Drawing.Point(310, 327);
@@ -97,6 +97,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label5.Location = new System.Drawing.Point(45, 213);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(236, 31);
@@ -107,6 +108,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label4.Location = new System.Drawing.Point(42, 94);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(407, 31);
@@ -117,8 +119,8 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label2.Location = new System.Drawing.Point(122, -1);
+            this.label2.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label2.Location = new System.Drawing.Point(142, 13);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(335, 59);
             this.label2.TabIndex = 9;
@@ -126,7 +128,7 @@
             // 
             // btnCrear_cuenta
             // 
-            this.btnCrear_cuenta.BackColor = System.Drawing.Color.Tomato;
+            this.btnCrear_cuenta.BackColor = System.Drawing.Color.White;
             this.btnCrear_cuenta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCrear_cuenta.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCrear_cuenta.Location = new System.Drawing.Point(48, 569);
@@ -141,6 +143,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label3.Location = new System.Drawing.Point(258, 496);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(38, 38);
@@ -149,7 +152,7 @@
             // 
             // btnLogin
             // 
-            this.btnLogin.BackColor = System.Drawing.Color.Tomato;
+            this.btnLogin.BackColor = System.Drawing.Color.White;
             this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogin.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogin.Location = new System.Drawing.Point(48, 418);
@@ -165,7 +168,7 @@
             this.cbkterminos.AutoSize = true;
             this.cbkterminos.BackColor = System.Drawing.Color.Transparent;
             this.cbkterminos.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbkterminos.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.cbkterminos.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.cbkterminos.Location = new System.Drawing.Point(47, 327);
             this.cbkterminos.Name = "cbkterminos";
             this.cbkterminos.Size = new System.Drawing.Size(239, 24);
@@ -198,7 +201,7 @@
             // 
             // panel4
             // 
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
             this.panel4.Controls.Add(this.label1);
             this.panel4.Location = new System.Drawing.Point(-1, 0);
             this.panel4.Name = "panel4";
@@ -208,7 +211,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
             this.label1.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Transparent;
             this.label1.Location = new System.Drawing.Point(32, 9);
