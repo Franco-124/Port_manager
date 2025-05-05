@@ -113,11 +113,13 @@ namespace Port_manager
                 //Redirijimos al panel de usuario
                 if (role.Equals("Usuario", StringComparison.OrdinalIgnoreCase))
                 {
+                    MessageBox.Show("Bienvenido al sistema " + nombre);
                     new frmP_Usuario().Show();
                 }
                 //redirijimos al panel de administrador
                 else if (role.Equals("Administrador", StringComparison.OrdinalIgnoreCase))
                 {
+                    MessageBox.Show("Bienvenido al sistema " + nombre);
                     new frmAdministrador().Show();
                 }
                 else
