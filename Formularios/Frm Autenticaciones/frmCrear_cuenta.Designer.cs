@@ -31,6 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCrear_cuenta));
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.txtCodigo = new System.Windows.Forms.TextBox();
+            this.lbVerificacion = new System.Windows.Forms.Label();
             this.cmbRol_user = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -45,8 +47,6 @@
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.txtCodigo = new System.Windows.Forms.TextBox();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -58,14 +58,14 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(605, 724);
+            this.panel1.Size = new System.Drawing.Size(611, 724);
             this.panel1.TabIndex = 0;
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.CadetBlue;
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
             this.panel2.Controls.Add(this.txtCodigo);
-            this.panel2.Controls.Add(this.label7);
+            this.panel2.Controls.Add(this.lbVerificacion);
             this.panel2.Controls.Add(this.cmbRol_user);
             this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.label5);
@@ -81,15 +81,35 @@
             this.panel2.Controls.Add(this.txtNombre);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel2.Location = new System.Drawing.Point(608, 0);
+            this.panel2.Location = new System.Drawing.Point(617, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(564, 724);
             this.panel2.TabIndex = 1;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
+            // txtCodigo
+            // 
+            this.txtCodigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCodigo.Location = new System.Drawing.Point(260, 574);
+            this.txtCodigo.Name = "txtCodigo";
+            this.txtCodigo.PasswordChar = '*';
+            this.txtCodigo.Size = new System.Drawing.Size(225, 30);
+            this.txtCodigo.TabIndex = 18;
+            // 
+            // lbVerificacion
+            // 
+            this.lbVerificacion.AutoSize = true;
+            this.lbVerificacion.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbVerificacion.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lbVerificacion.Location = new System.Drawing.Point(69, 581);
+            this.lbVerificacion.Name = "lbVerificacion";
+            this.lbVerificacion.Size = new System.Drawing.Size(179, 23);
+            this.lbVerificacion.TabIndex = 17;
+            this.lbVerificacion.Text = "Codigo de verificación";
+            // 
             // cmbRol_user
             // 
-            this.cmbRol_user.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.cmbRol_user.BackColor = System.Drawing.Color.White;
             this.cmbRol_user.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbRol_user.FormattingEnabled = true;
             this.cmbRol_user.Items.AddRange(new object[] {
@@ -105,6 +125,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label6.Location = new System.Drawing.Point(68, 521);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(40, 28);
@@ -115,6 +136,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label5.Location = new System.Drawing.Point(72, 388);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(233, 31);
@@ -125,6 +147,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label4.Location = new System.Drawing.Point(72, 284);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(236, 31);
@@ -135,6 +158,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label3.Location = new System.Drawing.Point(72, 192);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(189, 31);
@@ -145,6 +169,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label2.Location = new System.Drawing.Point(72, 86);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(317, 31);
@@ -177,8 +202,7 @@
             // btnVLogin
             // 
             this.btnVLogin.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.btnVLogin.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnVLogin.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVLogin.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVLogin.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnVLogin.Location = new System.Drawing.Point(73, 681);
             this.btnVLogin.Name = "btnVLogin";
@@ -190,9 +214,9 @@
             // 
             // btnCrearcuenta
             // 
-            this.btnCrearcuenta.BackColor = System.Drawing.Color.IndianRed;
-            this.btnCrearcuenta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCrearcuenta.BackColor = System.Drawing.Color.DarkSlateGray;
             this.btnCrearcuenta.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCrearcuenta.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btnCrearcuenta.Location = new System.Drawing.Point(73, 625);
             this.btnCrearcuenta.Name = "btnCrearcuenta";
             this.btnCrearcuenta.Size = new System.Drawing.Size(412, 41);
@@ -205,6 +229,7 @@
             // 
             this.chkTerminoC.AutoSize = true;
             this.chkTerminoC.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkTerminoC.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.chkTerminoC.Location = new System.Drawing.Point(78, 475);
             this.chkTerminoC.Name = "chkTerminoC";
             this.chkTerminoC.Size = new System.Drawing.Size(248, 24);
@@ -238,36 +263,18 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label1.Location = new System.Drawing.Point(138, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(268, 54);
             this.label1.TabIndex = 0;
             this.label1.Text = "Crear Cuenta";
             // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(69, 586);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(179, 23);
-            this.label7.TabIndex = 17;
-            this.label7.Text = "Codigo de verificación";
-            // 
-            // txtCodigo
-            // 
-            this.txtCodigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCodigo.Location = new System.Drawing.Point(259, 581);
-            this.txtCodigo.Name = "txtCodigo";
-            this.txtCodigo.PasswordChar = '*';
-            this.txtCodigo.Size = new System.Drawing.Size(225, 30);
-            this.txtCodigo.TabIndex = 18;
-            // 
             // frmCrear_cuenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1172, 724);
+            this.ClientSize = new System.Drawing.Size(1181, 724);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
@@ -299,6 +306,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox cmbRol_user;
         private System.Windows.Forms.TextBox txtCodigo;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label lbVerificacion;
     }
 }

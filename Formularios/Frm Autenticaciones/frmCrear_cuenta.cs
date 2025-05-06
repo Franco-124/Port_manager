@@ -94,7 +94,7 @@ namespace Port_manager.Formularios
                 {
                     if (codigo_admin != Credentials.admin_code)
                     {
-                        MessageBox.Show("❌ No tenes permiso mamahuevo.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("❌Codigo incorrecto o no tienes permisos para crear cuenta de administrador", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
                     }
                 }
@@ -156,10 +156,12 @@ namespace Port_manager.Formularios
             if (rol.Equals("Usuario", StringComparison.OrdinalIgnoreCase))
             {
                 txtCodigo.Visible = false;
+                lbVerificacion.Visible = false;
                 return; 
             }
             else
             {
+                lbVerificacion.Visible = true;
                 txtCodigo.Visible = true;
             }
         }

@@ -76,13 +76,13 @@
             this.panel2.ForeColor = System.Drawing.SystemColors.ControlText;
             this.panel2.Location = new System.Drawing.Point(587, 59);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(608, 691);
+            this.panel2.Size = new System.Drawing.Size(608, 703);
             this.panel2.TabIndex = 1;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // btnolvidocontraseña
             // 
-            this.btnolvidocontraseña.BackColor = System.Drawing.Color.FloralWhite;
+            this.btnolvidocontraseña.BackColor = System.Drawing.Color.White;
             this.btnolvidocontraseña.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnolvidocontraseña.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnolvidocontraseña.Location = new System.Drawing.Point(310, 327);
@@ -179,7 +179,7 @@
             // 
             // txtPassword
             // 
-            this.txtPassword.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.txtPassword.BackColor = System.Drawing.Color.White;
             this.txtPassword.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPassword.Location = new System.Drawing.Point(47, 258);
             this.txtPassword.Name = "txtPassword";
@@ -189,7 +189,7 @@
             // 
             // txtEnombre
             // 
-            this.txtEnombre.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.txtEnombre.BackColor = System.Drawing.Color.White;
             this.txtEnombre.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEnombre.ForeColor = System.Drawing.Color.Black;
             this.txtEnombre.Location = new System.Drawing.Point(47, 138);
@@ -230,7 +230,7 @@
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "frmLogin";
             this.Text = "Port manager";
             this.Load += new System.EventHandler(this.frmLogin_Load);
