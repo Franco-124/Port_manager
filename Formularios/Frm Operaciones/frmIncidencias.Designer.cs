@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label6 = new System.Windows.Forms.Label();
-            this.lblNumeroIncidencia = new System.Windows.Forms.Label();
+            this.lbl6 = new System.Windows.Forms.Label();
+            this.txtNumeroIncidencia = new System.Windows.Forms.Label();
             this.LlbIncidencia = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.cmbSerialBarco = new System.Windows.Forms.ComboBox();
@@ -51,8 +51,8 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.lblNumeroIncidencia);
+            this.panel1.Controls.Add(this.lbl6);
+            this.panel1.Controls.Add(this.txtNumeroIncidencia);
             this.panel1.Controls.Add(this.LlbIncidencia);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -60,26 +60,26 @@
             this.panel1.Size = new System.Drawing.Size(822, 56);
             this.panel1.TabIndex = 0;
             // 
-            // label6
+            // lbl6
             // 
-            this.label6.AutoSize = true;
-            this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(12, 18);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(110, 13);
-            this.label6.TabIndex = 2;
-            this.label6.Text = "Numero de incidencia";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
+            this.lbl6.AutoSize = true;
+            this.lbl6.ForeColor = System.Drawing.Color.White;
+            this.lbl6.Location = new System.Drawing.Point(12, 18);
+            this.lbl6.Name = "lbl6";
+            this.lbl6.Size = new System.Drawing.Size(110, 13);
+            this.lbl6.TabIndex = 2;
+            this.lbl6.Text = "Numero de incidencia";
+            this.lbl6.Click += new System.EventHandler(this.label6_Click);
             // 
-            // lblNumeroIncidencia
+            // txtNumeroIncidencia
             // 
-            this.lblNumeroIncidencia.AutoSize = true;
-            this.lblNumeroIncidencia.ForeColor = System.Drawing.Color.White;
-            this.lblNumeroIncidencia.Location = new System.Drawing.Point(127, 18);
-            this.lblNumeroIncidencia.Name = "lblNumeroIncidencia";
-            this.lblNumeroIncidencia.Size = new System.Drawing.Size(14, 13);
-            this.lblNumeroIncidencia.TabIndex = 1;
-            this.lblNumeroIncidencia.Text = "#";
+            this.txtNumeroIncidencia.AutoSize = true;
+            this.txtNumeroIncidencia.ForeColor = System.Drawing.Color.White;
+            this.txtNumeroIncidencia.Location = new System.Drawing.Point(127, 18);
+            this.txtNumeroIncidencia.Name = "txtNumeroIncidencia";
+            this.txtNumeroIncidencia.Size = new System.Drawing.Size(14, 13);
+            this.txtNumeroIncidencia.TabIndex = 1;
+            this.txtNumeroIncidencia.Text = "#";
             // 
             // LlbIncidencia
             // 
@@ -113,6 +113,7 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(822, 390);
             this.panel2.TabIndex = 1;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // cmbSerialBarco
             // 
@@ -135,6 +136,9 @@
             this.cmbEstado.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbEstado.ForeColor = System.Drawing.SystemColors.Window;
             this.cmbEstado.FormattingEnabled = true;
+            this.cmbEstado.Items.AddRange(new object[] {
+            "Pendiente",
+            "En Progreso"});
             this.cmbEstado.Location = new System.Drawing.Point(617, 104);
             this.cmbEstado.Name = "cmbEstado";
             this.cmbEstado.Size = new System.Drawing.Size(162, 26);
@@ -147,6 +151,13 @@
             this.cmbTipo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbTipo.ForeColor = System.Drawing.SystemColors.Window;
             this.cmbTipo.FormattingEnabled = true;
+            this.cmbTipo.Items.AddRange(new object[] {
+            "Operativa",
+            "Seguridad",
+            "Logistica",
+            "Mecanica",
+            "Ambiental",
+            "Legal"});
             this.cmbTipo.Location = new System.Drawing.Point(617, 37);
             this.cmbTipo.Name = "cmbTipo";
             this.cmbTipo.Size = new System.Drawing.Size(162, 26);
@@ -171,6 +182,14 @@
             this.cmbUbicacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbUbicacion.ForeColor = System.Drawing.SystemColors.Window;
             this.cmbUbicacion.FormattingEnabled = true;
+            this.cmbUbicacion.Items.AddRange(new object[] {
+            "Entrada",
+            "Zona A",
+            "Zona B",
+            "Zona C",
+            "Zona D",
+            "Zona E",
+            "Zona F"});
             this.cmbUbicacion.Location = new System.Drawing.Point(216, 97);
             this.cmbUbicacion.Name = "cmbUbicacion";
             this.cmbUbicacion.Size = new System.Drawing.Size(181, 26);
@@ -188,6 +207,7 @@
             this.btnGuardar.TabIndex = 6;
             this.btnGuardar.Text = "Guardar 💾";
             this.btnGuardar.UseVisualStyleBackColor = false;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // btnCamcelar
             // 
@@ -230,7 +250,7 @@
             this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(46, 105);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(93, 18);
+            this.label3.Size = new System.Drawing.Size(100, 18);
             this.label3.TabIndex = 2;
             this.label3.Text = "Ubicación  📍";
             // 
@@ -265,7 +285,7 @@
             this.ClientSize = new System.Drawing.Size(822, 446);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmIncidencias";
             this.Text = "Registro de incidencias";
             this.Load += new System.EventHandler(this.frmIncidencias_Load);
@@ -282,7 +302,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label LlbIncidencia;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label lblNumeroIncidencia;
+        private System.Windows.Forms.Label txtNumeroIncidencia;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Button btnCamcelar;
         private System.Windows.Forms.Label label5;
@@ -291,7 +311,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cmbUbicacion;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lbl6;
         private System.Windows.Forms.TextBox txtDescripcion;
         private System.Windows.Forms.ComboBox cmbEstado;
         private System.Windows.Forms.ComboBox cmbTipo;

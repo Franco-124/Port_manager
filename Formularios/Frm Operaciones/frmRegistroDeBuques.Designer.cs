@@ -40,14 +40,14 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.dateLlegada = new System.Windows.Forms.DateTimePicker();
-            this.txtSerial = new System.Windows.Forms.TextBox();
             this.cmbCarga = new System.Windows.Forms.ComboBox();
-            this.cmbResponsable = new System.Windows.Forms.ComboBox();
             this.txtOrigen = new System.Windows.Forms.TextBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.txtCarga = new System.Windows.Forms.TextBox();
+            this.cmbArribo = new System.Windows.Forms.ComboBox();
+            this.txtCapacidad = new System.Windows.Forms.TextBox();
             this.btnCancelar = new FontAwesome.Sharp.IconButton();
             this.btnGuardar = new FontAwesome.Sharp.IconButton();
+            this.cmbSerialBarco = new System.Windows.Forms.ComboBox();
+            this.txtResponsable = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -133,7 +133,7 @@
             this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(411, 118);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(145, 18);
+            this.label3.Size = new System.Drawing.Size(146, 18);
             this.label3.TabIndex = 8;
             this.label3.Text = "Fecha de Llegada 📅";
             // 
@@ -155,7 +155,7 @@
             this.label6.ForeColor = System.Drawing.Color.White;
             this.label6.Location = new System.Drawing.Point(33, 283);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(170, 18);
+            this.label6.Size = new System.Drawing.Size(173, 18);
             this.label6.TabIndex = 10;
             this.label6.Text = "Usuario Responsable 👤";
             this.label6.Click += new System.EventHandler(this.label6_Click);
@@ -182,17 +182,6 @@
             this.dateLlegada.Size = new System.Drawing.Size(200, 24);
             this.dateLlegada.TabIndex = 13;
             // 
-            // txtSerial
-            // 
-            this.txtSerial.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(60)))));
-            this.txtSerial.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtSerial.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSerial.ForeColor = System.Drawing.SystemColors.Window;
-            this.txtSerial.Location = new System.Drawing.Point(221, 116);
-            this.txtSerial.Name = "txtSerial";
-            this.txtSerial.Size = new System.Drawing.Size(152, 17);
-            this.txtSerial.TabIndex = 14;
-            // 
             // cmbCarga
             // 
             this.cmbCarga.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(60)))));
@@ -200,22 +189,17 @@
             this.cmbCarga.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbCarga.ForeColor = System.Drawing.SystemColors.Window;
             this.cmbCarga.FormattingEnabled = true;
+            this.cmbCarga.Items.AddRange(new object[] {
+            "Graneleros",
+            "Petroleros",
+            "Porta Contenedores",
+            "Vehiculos",
+            "Frigorificos",
+            "Carga General"});
             this.cmbCarga.Location = new System.Drawing.Point(221, 228);
             this.cmbCarga.Name = "cmbCarga";
             this.cmbCarga.Size = new System.Drawing.Size(152, 26);
             this.cmbCarga.TabIndex = 16;
-            // 
-            // cmbResponsable
-            // 
-            this.cmbResponsable.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(60)))));
-            this.cmbResponsable.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cmbResponsable.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbResponsable.ForeColor = System.Drawing.SystemColors.Window;
-            this.cmbResponsable.FormattingEnabled = true;
-            this.cmbResponsable.Location = new System.Drawing.Point(221, 282);
-            this.cmbResponsable.Name = "cmbResponsable";
-            this.cmbResponsable.Size = new System.Drawing.Size(152, 26);
-            this.cmbResponsable.TabIndex = 17;
             // 
             // txtOrigen
             // 
@@ -228,29 +212,32 @@
             this.txtOrigen.Size = new System.Drawing.Size(200, 17);
             this.txtOrigen.TabIndex = 18;
             // 
-            // comboBox3
+            // cmbArribo
             // 
-            this.comboBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(60)))));
-            this.comboBox3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox3.ForeColor = System.Drawing.SystemColors.Window;
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(583, 229);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(200, 26);
-            this.comboBox3.TabIndex = 19;
+            this.cmbArribo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(60)))));
+            this.cmbArribo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmbArribo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbArribo.ForeColor = System.Drawing.SystemColors.Window;
+            this.cmbArribo.FormattingEnabled = true;
+            this.cmbArribo.Items.AddRange(new object[] {
+            "Cargar",
+            "Descargar"});
+            this.cmbArribo.Location = new System.Drawing.Point(583, 229);
+            this.cmbArribo.Name = "cmbArribo";
+            this.cmbArribo.Size = new System.Drawing.Size(200, 26);
+            this.cmbArribo.TabIndex = 19;
             // 
-            // txtCarga
+            // txtCapacidad
             // 
-            this.txtCarga.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(60)))));
-            this.txtCarga.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtCarga.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCarga.ForeColor = System.Drawing.SystemColors.Window;
-            this.txtCarga.Location = new System.Drawing.Point(221, 178);
-            this.txtCarga.Name = "txtCarga";
-            this.txtCarga.Size = new System.Drawing.Size(152, 17);
-            this.txtCarga.TabIndex = 22;
-            this.txtCarga.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.txtCapacidad.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(60)))));
+            this.txtCapacidad.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtCapacidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCapacidad.ForeColor = System.Drawing.SystemColors.Window;
+            this.txtCapacidad.Location = new System.Drawing.Point(221, 178);
+            this.txtCapacidad.Name = "txtCapacidad";
+            this.txtCapacidad.Size = new System.Drawing.Size(152, 17);
+            this.txtCapacidad.TabIndex = 22;
+            this.txtCapacidad.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // btnCancelar
             // 
@@ -281,20 +268,44 @@
             this.btnGuardar.UseVisualStyleBackColor = false;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
+            // cmbSerialBarco
+            // 
+            this.cmbSerialBarco.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(60)))));
+            this.cmbSerialBarco.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmbSerialBarco.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbSerialBarco.ForeColor = System.Drawing.SystemColors.Window;
+            this.cmbSerialBarco.FormattingEnabled = true;
+            this.cmbSerialBarco.Location = new System.Drawing.Point(221, 110);
+            this.cmbSerialBarco.Name = "cmbSerialBarco";
+            this.cmbSerialBarco.Size = new System.Drawing.Size(152, 26);
+            this.cmbSerialBarco.TabIndex = 23;
+            this.cmbSerialBarco.SelectedIndexChanged += new System.EventHandler(this.cmbSerial_SelectedIndexChanged);
+            // 
+            // txtResponsable
+            // 
+            this.txtResponsable.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(60)))));
+            this.txtResponsable.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtResponsable.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtResponsable.ForeColor = System.Drawing.SystemColors.Window;
+            this.txtResponsable.Location = new System.Drawing.Point(221, 284);
+            this.txtResponsable.Name = "txtResponsable";
+            this.txtResponsable.Size = new System.Drawing.Size(152, 17);
+            this.txtResponsable.TabIndex = 24;
+            // 
             // frmRegistroDeBuques
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
             this.ClientSize = new System.Drawing.Size(808, 446);
-            this.Controls.Add(this.txtCarga);
+            this.Controls.Add(this.txtResponsable);
+            this.Controls.Add(this.cmbSerialBarco);
+            this.Controls.Add(this.txtCapacidad);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnGuardar);
-            this.Controls.Add(this.comboBox3);
+            this.Controls.Add(this.cmbArribo);
             this.Controls.Add(this.txtOrigen);
-            this.Controls.Add(this.cmbResponsable);
             this.Controls.Add(this.cmbCarga);
-            this.Controls.Add(this.txtSerial);
             this.Controls.Add(this.dateLlegada);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label6);
@@ -306,6 +317,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "frmRegistroDeBuques";
             this.Text = "Registro de Buques";
+            this.Load += new System.EventHandler(this.frmRegistroDeBuques_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -326,14 +338,14 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.DateTimePicker dateLlegada;
-        private System.Windows.Forms.TextBox txtSerial;
         private System.Windows.Forms.ComboBox cmbCarga;
-        private System.Windows.Forms.ComboBox cmbResponsable;
         private System.Windows.Forms.TextBox txtOrigen;
-        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.ComboBox cmbArribo;
         private FontAwesome.Sharp.IconButton btnGuardar;
         private FontAwesome.Sharp.IconButton btnCancelar;
         private System.Windows.Forms.TextBox txtRegistro;
-        private System.Windows.Forms.TextBox txtCarga;
+        private System.Windows.Forms.TextBox txtCapacidad;
+        private System.Windows.Forms.ComboBox cmbSerialBarco;
+        private System.Windows.Forms.TextBox txtResponsable;
     }
 }

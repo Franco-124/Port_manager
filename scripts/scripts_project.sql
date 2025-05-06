@@ -60,7 +60,64 @@ CREATE TABLE muelle_buque (
 );
 
 
+--NUEVO
+CREATE PROCEDURE Registro_Incidencia    
+    @serial_buque VARCHAR(20), 
+    @ubicacion VARCHAR(50),
+    @descripcion VARCHAR(100),
+    @tipo_incidencia VARCHAR(50), 
+    @estado VARCHAR(30),
+    @nombre_admin VARCHAR(100),
+    @id_usuario INT,
+    @resultado INT OUTPUT  
+AS
+BEGIN
+    SET NOCOUNT ON;
+    BEGIN TRY
+        INSERT INTO Incidencias (
+             serial_buque, tipo_incidencia, 
+            ubicacion, descripcion, estado, nombre_admin, id_usuario
+        )
+        VALUES (
+             @serial_buque, @tipo_incidencia, 
+            @ubicacion, @descripcion, @estado, @nombre_admin, @id_usuario
+        );
+        
+        SET @resultado = 1;  -- Éxito
+    END TRY
+    BEGIN CATCH
+        SET @resultado = 0;  -- Error
+    END CATCH
+END;
 
+
+CREATE PROCEDURE Registro_llegada_buque    
+    @capacidad float, 
+    @tipo_carga VARCHAR(30),    
+    @fecha_llegada DATETIME, 
+    @origen VARCHAR(20),    
+    @id_usuario INT,
+	@accion VARCHAR(30),
+    @resultado INT OUTPUT  
+AS
+BEGIN
+    SET NOCOUNT ON;
+    BEGIN TRY
+        INSERT INTO RegistroLlegadaBuque(
+             capacidad, tipo_carga, 
+            fecha_llegada, origen, id_usuario, accion
+        )
+        VALUES (
+             @capacidad, @tipo_carga, 
+             @fecha_llegada, @origen, @id_usuario,@accion
+        );
+        
+        SET @resultado = 1;  -- Éxito
+    END TRY
+    BEGIN CATCH
+        SET @resultado = 0;  -- Error
+    END CATCH
+END;
 
 
 CREATE PROCEDURE agregar_usuario

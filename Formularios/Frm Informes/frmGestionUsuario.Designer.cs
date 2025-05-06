@@ -46,9 +46,8 @@
             this.panel1.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1067, 69);
+            this.panel1.Size = new System.Drawing.Size(800, 56);
             this.panel1.TabIndex = 0;
             // 
             // lblRegistro
@@ -57,10 +56,9 @@
             this.lblRegistro.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.lblRegistro.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRegistro.ForeColor = System.Drawing.Color.White;
-            this.lblRegistro.Location = new System.Drawing.Point(389, 17);
-            this.lblRegistro.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblRegistro.Location = new System.Drawing.Point(292, 14);
             this.lblRegistro.Name = "lblRegistro";
-            this.lblRegistro.Size = new System.Drawing.Size(282, 36);
+            this.lblRegistro.Size = new System.Drawing.Size(229, 29);
             this.lblRegistro.TabIndex = 3;
             this.lblRegistro.Text = "Informe de Usuarios";
             // 
@@ -74,12 +72,14 @@
             this.email,
             this.rol});
             this.dtgUsuarios.GridColor = System.Drawing.SystemColors.ButtonFace;
-            this.dtgUsuarios.Location = new System.Drawing.Point(78, 133);
+            this.dtgUsuarios.Location = new System.Drawing.Point(58, 108);
+            this.dtgUsuarios.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dtgUsuarios.Name = "dtgUsuarios";
             this.dtgUsuarios.RowHeadersWidth = 51;
             this.dtgUsuarios.RowTemplate.Height = 24;
-            this.dtgUsuarios.Size = new System.Drawing.Size(913, 257);
+            this.dtgUsuarios.Size = new System.Drawing.Size(685, 209);
             this.dtgUsuarios.TabIndex = 1;
+            this.dtgUsuarios.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgUsuarios_CellContentClick);
             // 
             // id_usuario
             // 
@@ -114,9 +114,10 @@
             this.btnImprimir.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnImprimir.IconColor = System.Drawing.Color.Black;
             this.btnImprimir.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnImprimir.Location = new System.Drawing.Point(78, 443);
+            this.btnImprimir.Location = new System.Drawing.Point(58, 360);
+            this.btnImprimir.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnImprimir.Name = "btnImprimir";
-            this.btnImprimir.Size = new System.Drawing.Size(114, 43);
+            this.btnImprimir.Size = new System.Drawing.Size(86, 35);
             this.btnImprimir.TabIndex = 2;
             this.btnImprimir.Text = "Imprimir";
             this.btnImprimir.UseVisualStyleBackColor = true;
@@ -124,14 +125,13 @@
             // 
             // frmGestionUsuario
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
-            this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btnImprimir);
             this.Controls.Add(this.dtgUsuarios);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmGestionUsuario";
             this.Text = "Usuarios Registrados";
             this.panel1.ResumeLayout(false);

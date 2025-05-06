@@ -23,7 +23,7 @@ namespace Port_manager.Formularios
 
         public void cargar_datos()
         {
-            string consulta = "select numero_incidencia, serial_buque, tipo_incidencia, ubicacion, descripcion, estado from Incidencias";
+            string consulta = "select numero_incidencia, serial_buque, tipo_incidencia, ubicacion, descripcion,  estado, nombre_admin from Incidencias";
             using (SqlConnection conexion = DatabaseHelper.GetConnection())
             {
                 SqlDataAdapter adaptador = new SqlDataAdapter(consulta, conexion);
@@ -36,12 +36,28 @@ namespace Port_manager.Formularios
                 dtgIncidencias.DataSource = tabla;
 
                 dtgIncidencias.Columns["numero_incidencia"].DataPropertyName = "numero_incidencia";
-                dtgIncidencias.Columns["serial_buque"].DataPropertyName = "buque";
+                dtgIncidencias.Columns["serial_buque"].DataPropertyName = "serial_buque";
                 dtgIncidencias.Columns["tipo_incidencia"].DataPropertyName = "tipo_incidencia";
                 dtgIncidencias.Columns["ubicacion"].DataPropertyName = "ubicacion";
                 dtgIncidencias.Columns["descripcion"].DataPropertyName = "descripcion";
                 dtgIncidencias.Columns["estado"].DataPropertyName = "estado";
+                dtgIncidencias.Columns["nombre_admin"].DataPropertyName = "nombre_admin";
             }
+        }
+
+        private void dtgIncidencias_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void dtgIncidencias_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

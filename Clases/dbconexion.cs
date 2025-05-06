@@ -2,6 +2,7 @@
 using System.Data;
 using System.Data.SqlClient;
 using System.Data.SqlTypes;
+using System.Windows;
 using Port_manager.Clases;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
@@ -336,7 +337,7 @@ namespace SqlConnectiondb
             }
         }
 
-        public static int obtener_id_usuario (string nombre_usuario, string contraseña)
+        public static int obtener_id_usuario(string nombre_usuario, string contraseña)
         {
             try
             {
@@ -379,5 +380,105 @@ namespace SqlConnectiondb
         }
 
 
+        public static bool agregar_Incidencia(string serial_buque, string ubicacion, string descripcion, string tipo_incidencia, string estado, string nombre_admin, int id_usuario)
+        {
+            try
+            {
+
+
+                using (SqlConnection connection = GetConnection()) // 👈 Reutilizando GetConnection()
+                {
+                    using (SqlCommand cmd = new SqlCommand("Registro_Incidencia", connection))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+
+                        // Parámetros de entrada
+
+                        cmd.Parameters.AddWithValue("@serial_buque", serial_buque);
+                        cmd.Parameters.AddWithValue("@ubicacion", ubicacion);
+                        cmd.Parameters.AddWithValue("@descripcion", descripcion);
+                        cmd.Parameters.AddWithValue("@tipo_incidencia", tipo_incidencia);
+                        cmd.Parameters.AddWithValue("@estado", estado);
+                        cmd.Parameters.AddWithValue("@nombre_admin", nombre_admin);
+                        cmd.Parameters.AddWithValue("@id_usuario", id_usuario);
+
+                        // Parámetro de salida
+                        SqlParameter outputParam = new SqlParameter("@resultado", SqlDbType.Int);
+                        outputParam.Direction = ParameterDirection.Output;
+                        cmd.Parameters.Add(outputParam);
+
+
+                        cmd.ExecuteNonQuery(); // Ejecuta el procedimiento
+
+                        int resultado = Convert.ToInt32(outputParam.Value); // Obtiene el valor del parámetro de salida
+                        
+                        return resultado == 1;
+
+                    }
+                }
+
+            }
+            catch (SqlException sqlEx)
+            {
+                Console.WriteLine("❌ Error de SQL: " + sqlEx.Message);
+                return false;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("❌ Error: " + ex.Message);
+                return false;
+            }
+        }
+
+
+        public static bool Registro_llegada_buque(float capacidad, string tipo_carga, DateTime fecha_llegada, string origen, int id_usuario, string accion)
+        {
+           
+
+                using (SqlConnection connection = GetConnection()) // 👈 Reutilizando GetConnection()
+                {
+                    using (SqlCommand cmd = new SqlCommand("Registro_llegada_buque", connection))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+
+                        // Parámetros de entrada
+
+                        cmd.Parameters.AddWithValue("@capacidad", capacidad);
+                        cmd.Parameters.AddWithValue("@tipo_carga", tipo_carga);
+                        cmd.Parameters.AddWithValue("@fecha_llegada", fecha_llegada);
+                        cmd.Parameters.AddWithValue("@origen", origen);
+                        cmd.Parameters.AddWithValue("@id_usuario", id_usuario);
+                        cmd.Parameters.AddWithValue("@accion", accion);
+                        
+
+                        // Parámetro de salida
+                        SqlParameter outputParam = new SqlParameter("@resultado", SqlDbType.Int);
+                        outputParam.Direction = ParameterDirection.Output;
+                        cmd.Parameters.Add(outputParam);
+
+
+                        cmd.ExecuteNonQuery(); // Ejecuta el procedimiento
+
+                        int resultado = Convert.ToInt32(outputParam.Value); // Obtiene el valor del parámetro de salida
+
+                        return resultado == 1;
+
+                    }
+                }
+
+            }
+            //catch (SqlException sqlEx)
+            //{
+            //    Console.WriteLine("❌ Error de SQL: " + sqlEx.Message);
+            //    return false;
+            //}
+            //catch (Exception ex)
+            //{
+            //    Console.WriteLine("❌ Error: " + ex.Message);
+            //    return false;
+            //}
+
+        }
     }
-}
+
+

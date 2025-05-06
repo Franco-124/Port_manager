@@ -117,5 +117,10 @@ namespace Port_manager.Formularios
 
             ObjWord.Visible = true;
         }
+
+        private void dtgUsuarios_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

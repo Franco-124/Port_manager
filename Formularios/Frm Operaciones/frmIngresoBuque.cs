@@ -83,5 +83,10 @@ namespace Port_manager.Formularios
                 MessageBox.Show("Error al ingresar el buque. Por favor, inténtelo de nuevo.");
             }
         }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

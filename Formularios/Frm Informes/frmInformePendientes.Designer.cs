@@ -49,7 +49,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(810, 451);
+            this.panel1.Size = new System.Drawing.Size(933, 451);
             this.panel1.TabIndex = 0;
             // 
             // dtgPendientes
@@ -65,7 +65,7 @@
             this.dtgPendientes.Name = "dtgPendientes";
             this.dtgPendientes.RowHeadersVisible = false;
             this.dtgPendientes.RowHeadersWidth = 51;
-            this.dtgPendientes.Size = new System.Drawing.Size(721, 268);
+            this.dtgPendientes.Size = new System.Drawing.Size(836, 281);
             this.dtgPendientes.TabIndex = 3;
             // 
             // serial_buque
@@ -98,7 +98,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(810, 56);
+            this.panel2.Size = new System.Drawing.Size(933, 56);
             this.panel2.TabIndex = 2;
             // 
             // lblPendientes
@@ -116,7 +116,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(810, 451);
+            this.ClientSize = new System.Drawing.Size(933, 451);
             this.Controls.Add(this.panel1);
             this.Name = "frmInformePendientes";
             this.Text = "Carga y Descarga";
