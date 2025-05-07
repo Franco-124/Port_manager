@@ -153,7 +153,32 @@ namespace Port_manager.Formularios
             }
         }
 
-        
+        void CargarCapacidadBuque()
+        {
+            cmbSerialBarco.Items.Clear();
+            try
+            {
+                string consulta = "SELECT capacidad FROM IngresoBuque";
+                using (SqlConnection conexion = DatabaseHelper.GetConnection())
+                {
+                    using (SqlCommand cmd = new SqlCommand(consulta, conexion))
+                    {
+                        using (SqlDataReader reader = cmd.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                               txtCapacidad.Text = reader["capacidad"].ToString();
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al cargar el serial de los buques: " + ex.Message);
+            }
+        }
+
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
@@ -169,12 +194,35 @@ namespace Port_manager.Formularios
         {
             txtResponsable.Text = UsuarioSesion.NombreUsuario;
             txtResponsable.Enabled = false;
+            txtCapacidad.Enabled = false;
+            CargarCapacidadBuque();
             CargarSerialBarco();
         }
 
         private void cmbResponsable_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void txtResponsable_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+
+            txtCapacidad.Clear();
+            cmbArribo.SelectedIndex = -1;
+            cmbCarga.SelectedIndex = -1;
+            cmbSerialBarco.SelectedIndex = -1;
+            txtOrigen.Clear();
+
+        }
+
+        private void iconButton1_Click(object sender, EventArgs e)
+        {
+          
         }
     }
 }

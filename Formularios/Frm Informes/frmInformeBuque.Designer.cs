@@ -28,8 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnImprimir = new FontAwesome.Sharp.IconButton();
+            this.dtpFecha = new System.Windows.Forms.DateTimePicker();
+            this.label1 = new System.Windows.Forms.Label();
             this.dtgBuque = new System.Windows.Forms.DataGridView();
             this.serial_buque = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.capitan = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -39,9 +42,7 @@
             this.capacidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblBuques = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.btnImprimir = new FontAwesome.Sharp.IconButton();
+            this.btnMostrarDatos = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgBuque)).BeginInit();
             this.panel2.SuspendLayout();
@@ -50,22 +51,61 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
+            this.panel1.Controls.Add(this.btnMostrarDatos);
             this.panel1.Controls.Add(this.btnImprimir);
-            this.panel1.Controls.Add(this.dateTimePicker1);
+            this.panel1.Controls.Add(this.dtpFecha);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.dtgBuque);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(840, 450);
+            this.panel1.Size = new System.Drawing.Size(1120, 554);
             this.panel1.TabIndex = 1;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // btnImprimir
+            // 
+            this.btnImprimir.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.btnImprimir.IconColor = System.Drawing.Color.Black;
+            this.btnImprimir.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnImprimir.Location = new System.Drawing.Point(20, 486);
+            this.btnImprimir.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnImprimir.Name = "btnImprimir";
+            this.btnImprimir.Size = new System.Drawing.Size(115, 43);
+            this.btnImprimir.TabIndex = 6;
+            this.btnImprimir.Text = "Imprimir";
+            this.btnImprimir.UseVisualStyleBackColor = true;
+            this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
+            // 
+            // dtpFecha
+            // 
+            this.dtpFecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFecha.Location = new System.Drawing.Point(101, 89);
+            this.dtpFecha.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtpFecha.Name = "dtpFecha";
+            this.dtpFecha.Size = new System.Drawing.Size(265, 22);
+            this.dtpFecha.TabIndex = 5;
+            this.dtpFecha.ValueChanged += new System.EventHandler(this.dtpFecha_ValueChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label1.Location = new System.Drawing.Point(16, 91);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(58, 20);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Filtrar:";
             // 
             // dtgBuque
             // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtgBuque.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtgBuque.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dtgBuque.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(60)))));
             this.dtgBuque.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgBuque.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -75,11 +115,12 @@
             this.origen,
             this.fecha_ingreso,
             this.capacidad});
-            this.dtgBuque.Location = new System.Drawing.Point(12, 109);
+            this.dtgBuque.Location = new System.Drawing.Point(19, 153);
+            this.dtgBuque.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dtgBuque.Name = "dtgBuque";
             this.dtgBuque.RowHeadersVisible = false;
             this.dtgBuque.RowHeadersWidth = 51;
-            this.dtgBuque.Size = new System.Drawing.Size(816, 268);
+            this.dtgBuque.Size = new System.Drawing.Size(1088, 292);
             this.dtgBuque.TabIndex = 3;
             // 
             // serial_buque
@@ -129,8 +170,9 @@
             this.panel2.Controls.Add(this.lblBuques);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(840, 56);
+            this.panel2.Size = new System.Drawing.Size(1120, 69);
             this.panel2.TabIndex = 2;
             // 
             // lblBuques
@@ -138,52 +180,33 @@
             this.lblBuques.AutoSize = true;
             this.lblBuques.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBuques.ForeColor = System.Drawing.Color.White;
-            this.lblBuques.Location = new System.Drawing.Point(242, 9);
+            this.lblBuques.Location = new System.Drawing.Point(323, 11);
+            this.lblBuques.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblBuques.Name = "lblBuques";
-            this.lblBuques.Size = new System.Drawing.Size(371, 29);
+            this.lblBuques.Size = new System.Drawing.Size(458, 36);
             this.lblBuques.TabIndex = 3;
             this.lblBuques.Text = "Informe de Buques Administrador";
             // 
-            // label1
+            // btnMostrarDatos
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label1.Location = new System.Drawing.Point(12, 72);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(43, 16);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Filtrar:";
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(73, 72);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker1.TabIndex = 5;
-            // 
-            // btnImprimir
-            // 
-            this.btnImprimir.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.btnImprimir.IconColor = System.Drawing.Color.Black;
-            this.btnImprimir.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnImprimir.Location = new System.Drawing.Point(15, 395);
-            this.btnImprimir.Margin = new System.Windows.Forms.Padding(2);
-            this.btnImprimir.Name = "btnImprimir";
-            this.btnImprimir.Size = new System.Drawing.Size(86, 35);
-            this.btnImprimir.TabIndex = 6;
-            this.btnImprimir.Text = "Imprimir";
-            this.btnImprimir.UseVisualStyleBackColor = true;
+            this.btnMostrarDatos.Location = new System.Drawing.Point(186, 486);
+            this.btnMostrarDatos.Name = "btnMostrarDatos";
+            this.btnMostrarDatos.Size = new System.Drawing.Size(134, 43);
+            this.btnMostrarDatos.TabIndex = 7;
+            this.btnMostrarDatos.Text = "Mostrar Todos";
+            this.btnMostrarDatos.UseVisualStyleBackColor = true;
+            this.btnMostrarDatos.Click += new System.EventHandler(this.btnMostrarDatos_Click);
             // 
             // frmInformeBuque
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(840, 450);
+            this.ClientSize = new System.Drawing.Size(1120, 554);
             this.Controls.Add(this.panel1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmInformeBuque";
             this.Text = "Buques Registrados";
+            this.Load += new System.EventHandler(this.frmInformeBuque_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgBuque)).EndInit();
@@ -205,8 +228,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn capacidad;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label lblBuques;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dtpFecha;
         private System.Windows.Forms.Label label1;
         private FontAwesome.Sharp.IconButton btnImprimir;
+        private System.Windows.Forms.Button btnMostrarDatos;
     }
 }

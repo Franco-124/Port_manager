@@ -31,7 +31,6 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblBuques = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnImprimir = new FontAwesome.Sharp.IconButton();
             this.dtgIncidencias = new System.Windows.Forms.DataGridView();
             this.numero_incidencia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.serial_buque = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -40,6 +39,7 @@
             this.descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombre_admin = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnImprimir = new FontAwesome.Sharp.IconButton();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgIncidencias)).BeginInit();
@@ -50,8 +50,9 @@
             this.panel2.Controls.Add(this.lblBuques);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(845, 56);
+            this.panel2.Size = new System.Drawing.Size(1127, 69);
             this.panel2.TabIndex = 2;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
@@ -60,9 +61,10 @@
             this.lblBuques.AutoSize = true;
             this.lblBuques.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBuques.ForeColor = System.Drawing.Color.White;
-            this.lblBuques.Location = new System.Drawing.Point(303, 9);
+            this.lblBuques.Location = new System.Drawing.Point(404, 11);
+            this.lblBuques.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblBuques.Name = "lblBuques";
-            this.lblBuques.Size = new System.Drawing.Size(255, 29);
+            this.lblBuques.Size = new System.Drawing.Size(313, 36);
             this.lblBuques.TabIndex = 3;
             this.lblBuques.Text = "Informe de Incidencias";
             // 
@@ -74,23 +76,10 @@
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(845, 450);
+            this.panel1.Size = new System.Drawing.Size(1127, 554);
             this.panel1.TabIndex = 2;
-            // 
-            // btnImprimir
-            // 
-            this.btnImprimir.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.btnImprimir.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.btnImprimir.IconColor = System.Drawing.Color.Black;
-            this.btnImprimir.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnImprimir.Location = new System.Drawing.Point(0, 400);
-            this.btnImprimir.Margin = new System.Windows.Forms.Padding(2);
-            this.btnImprimir.Name = "btnImprimir";
-            this.btnImprimir.Size = new System.Drawing.Size(845, 50);
-            this.btnImprimir.TabIndex = 3;
-            this.btnImprimir.Text = "Imprimir";
-            this.btnImprimir.UseVisualStyleBackColor = true;
             // 
             // dtgIncidencias
             // 
@@ -109,53 +98,78 @@
             this.descripcion,
             this.estado,
             this.nombre_admin});
-            this.dtgIncidencias.Location = new System.Drawing.Point(12, 97);
+            this.dtgIncidencias.Location = new System.Drawing.Point(16, 119);
+            this.dtgIncidencias.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dtgIncidencias.Name = "dtgIncidencias";
-            this.dtgIncidencias.Size = new System.Drawing.Size(821, 265);
+            this.dtgIncidencias.RowHeadersWidth = 51;
+            this.dtgIncidencias.Size = new System.Drawing.Size(1095, 326);
             this.dtgIncidencias.TabIndex = 4;
             this.dtgIncidencias.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgIncidencias_CellContentClick_1);
             // 
             // numero_incidencia
             // 
             this.numero_incidencia.HeaderText = "Numero Incidencia";
+            this.numero_incidencia.MinimumWidth = 6;
             this.numero_incidencia.Name = "numero_incidencia";
             // 
             // serial_buque
             // 
             this.serial_buque.HeaderText = "Serial Buque";
+            this.serial_buque.MinimumWidth = 6;
             this.serial_buque.Name = "serial_buque";
             // 
             // tipo_Incidencia
             // 
             this.tipo_Incidencia.HeaderText = "Incidencia";
+            this.tipo_Incidencia.MinimumWidth = 6;
             this.tipo_Incidencia.Name = "tipo_Incidencia";
             // 
             // ubicacion
             // 
             this.ubicacion.HeaderText = "Ubicacion";
+            this.ubicacion.MinimumWidth = 6;
             this.ubicacion.Name = "ubicacion";
             // 
             // descripcion
             // 
             this.descripcion.HeaderText = "Descripcion";
+            this.descripcion.MinimumWidth = 6;
             this.descripcion.Name = "descripcion";
             // 
             // estado
             // 
             this.estado.HeaderText = "Estado";
+            this.estado.MinimumWidth = 6;
             this.estado.Name = "estado";
             // 
             // nombre_admin
             // 
             this.nombre_admin.HeaderText = "Nombre Administrador";
+            this.nombre_admin.MinimumWidth = 6;
             this.nombre_admin.Name = "nombre_admin";
+            // 
+            // btnImprimir
+            // 
+            this.btnImprimir.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btnImprimir.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.btnImprimir.IconColor = System.Drawing.Color.Black;
+            this.btnImprimir.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnImprimir.Location = new System.Drawing.Point(0, 492);
+            this.btnImprimir.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnImprimir.Name = "btnImprimir";
+            this.btnImprimir.Size = new System.Drawing.Size(1127, 62);
+            this.btnImprimir.TabIndex = 3;
+            this.btnImprimir.Text = "Imprimir";
+            this.btnImprimir.UseVisualStyleBackColor = true;
+            this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
             // 
             // frmInformeIncidencias
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(845, 450);
+            this.ClientSize = new System.Drawing.Size(1127, 554);
             this.Controls.Add(this.panel1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmInformeIncidencias";
             this.Text = "Estado de Incidencias";
             this.panel2.ResumeLayout(false);

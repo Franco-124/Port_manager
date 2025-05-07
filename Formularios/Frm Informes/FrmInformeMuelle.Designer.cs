@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.btnImprimir = new FontAwesome.Sharp.IconButton();
+            this.label1 = new System.Windows.Forms.Label();
             this.dtgMuelles = new System.Windows.Forms.DataGridView();
             this.id_muelle = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.capacidad_muelle = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -36,9 +39,6 @@
             this.estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblMuelles = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.btnImprimir = new FontAwesome.Sharp.IconButton();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgMuelles)).BeginInit();
             this.panel2.SuspendLayout();
@@ -54,9 +54,45 @@
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(800, 450);
+            this.panel1.Size = new System.Drawing.Size(1067, 554);
             this.panel1.TabIndex = 1;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(264, 87);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(185, 24);
+            this.comboBox1.TabIndex = 8;
+            // 
+            // btnImprimir
+            // 
+            this.btnImprimir.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.btnImprimir.IconColor = System.Drawing.Color.Black;
+            this.btnImprimir.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnImprimir.Location = new System.Drawing.Point(125, 497);
+            this.btnImprimir.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnImprimir.Name = "btnImprimir";
+            this.btnImprimir.Size = new System.Drawing.Size(115, 43);
+            this.btnImprimir.TabIndex = 7;
+            this.btnImprimir.Text = "Imprimir";
+            this.btnImprimir.UseVisualStyleBackColor = true;
+            this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label1.Location = new System.Drawing.Point(121, 89);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(115, 20);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Filtrar Estado:";
             // 
             // dtgMuelles
             // 
@@ -67,34 +103,39 @@
             this.capacidad_muelle,
             this.tipo_muelle,
             this.estado});
-            this.dtgMuelles.Location = new System.Drawing.Point(94, 112);
+            this.dtgMuelles.Location = new System.Drawing.Point(125, 138);
+            this.dtgMuelles.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dtgMuelles.Name = "dtgMuelles";
             this.dtgMuelles.RowHeadersVisible = false;
             this.dtgMuelles.RowHeadersWidth = 51;
-            this.dtgMuelles.Size = new System.Drawing.Size(624, 268);
+            this.dtgMuelles.Size = new System.Drawing.Size(832, 330);
             this.dtgMuelles.TabIndex = 3;
             // 
             // id_muelle
             // 
             this.id_muelle.HeaderText = "ID Muelle";
+            this.id_muelle.MinimumWidth = 6;
             this.id_muelle.Name = "id_muelle";
             this.id_muelle.Width = 120;
             // 
             // capacidad_muelle
             // 
             this.capacidad_muelle.HeaderText = "Capacidad del Muelle";
+            this.capacidad_muelle.MinimumWidth = 6;
             this.capacidad_muelle.Name = "capacidad_muelle";
             this.capacidad_muelle.Width = 180;
             // 
             // tipo_muelle
             // 
             this.tipo_muelle.HeaderText = "Tipo de Muelle";
+            this.tipo_muelle.MinimumWidth = 6;
             this.tipo_muelle.Name = "tipo_muelle";
             this.tipo_muelle.Width = 180;
             // 
             // estado
             // 
             this.estado.HeaderText = "Estado";
+            this.estado.MinimumWidth = 6;
             this.estado.Name = "estado";
             this.estado.Width = 140;
             // 
@@ -103,8 +144,9 @@
             this.panel2.Controls.Add(this.lblMuelles);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(800, 56);
+            this.panel2.Size = new System.Drawing.Size(1067, 69);
             this.panel2.TabIndex = 2;
             // 
             // lblMuelles
@@ -112,50 +154,20 @@
             this.lblMuelles.AutoSize = true;
             this.lblMuelles.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMuelles.ForeColor = System.Drawing.Color.White;
-            this.lblMuelles.Location = new System.Drawing.Point(183, 9);
+            this.lblMuelles.Location = new System.Drawing.Point(244, 11);
+            this.lblMuelles.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblMuelles.Name = "lblMuelles";
-            this.lblMuelles.Size = new System.Drawing.Size(414, 29);
+            this.lblMuelles.Size = new System.Drawing.Size(504, 36);
             this.lblMuelles.TabIndex = 3;
             this.lblMuelles.Text = "Informe de Disponibilidad de Muelles";
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label1.Location = new System.Drawing.Point(91, 72);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(89, 16);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "Filtrar Estado:";
-            // 
-            // btnImprimir
-            // 
-            this.btnImprimir.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.btnImprimir.IconColor = System.Drawing.Color.Black;
-            this.btnImprimir.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnImprimir.Location = new System.Drawing.Point(94, 404);
-            this.btnImprimir.Margin = new System.Windows.Forms.Padding(2);
-            this.btnImprimir.Name = "btnImprimir";
-            this.btnImprimir.Size = new System.Drawing.Size(86, 35);
-            this.btnImprimir.TabIndex = 7;
-            this.btnImprimir.Text = "Imprimir";
-            this.btnImprimir.UseVisualStyleBackColor = true;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(198, 71);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(140, 21);
-            this.comboBox1.TabIndex = 8;
-            // 
             // FrmInformeMuelle
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1067, 554);
             this.Controls.Add(this.panel1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FrmInformeMuelle";
             this.Text = "Disponibilidad Muelles";
             this.panel1.ResumeLayout(false);

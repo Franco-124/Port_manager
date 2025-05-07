@@ -9,7 +9,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using SqlConnectiondb;
-
+using Word = Microsoft.Office.Interop.Word;
+using System.IO;
 namespace Port_manager.Formularios
 {
     public partial class frmInformeBuqueUsuario : Form

@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using SqlConnectiondb;
 using Word = Microsoft.Office.Interop.Word;
-
+using System.IO;
 namespace Port_manager.Formularios
 {
     public partial class frmGestionUsuario : Form
@@ -47,75 +47,107 @@ namespace Port_manager.Formularios
 
         private void btnImprimir_Click(object sender, EventArgs e)
         {
-            //permite no pasar un valor explícito y que Word use el valor predeterminado
             object ObjMiss = System.Reflection.Missing.Value;
-            //ObjWord es una nueva instancia de Microsoft Word.
             Word.Application ObjWord = new Word.Application();
-            //Se crea un nuevo documento de Word en blanco.
             Word.Document ObjDoc = ObjWord.Documents.Add(ref ObjMiss);
-            //Activa el documento recién creado
             ObjDoc.Activate();
 
-            Word.Section section = ObjDoc.Sections[1];
-            Word.HeaderFooter header = section.Headers[Word.WdHeaderFooterIndex.wdHeaderFooterPrimary];
+            // Fuente general
+            ObjWord.Selection.Font.Name = "Calibri";
 
-            // Insertar imagen en el encabezado
-            Word.InlineShape logo = ObjWord.Selection.InlineShapes.AddPicture(@"C:\Users\Lenovo\Downloads\Universidad de Antioquia.jpg");
-
-            // Redimensionar el logo
-            logo.Width = 80; // Ancho
-            logo.Height = 50; // Alto
-
-            // alinear a la derecha
-            ObjWord.Selection.ParagraphFormat.Alignment = Word.WdParagraphAlignment.wdAlignParagraphRight;
-
-            //Cambiar el color del texto a azul grisáceo.
-            ObjWord.Selection.Font.Color = Word.WdColor.wdColorBlueGray;
-            ObjWord.Selection.Font.Size = 14;
-            
-            ObjWord.Selection.TypeParagraph();//salto de linea
-                                              //Centrar el texto del párrafo en la página.
+            // Título principal
+            ObjWord.Selection.Font.Size = 20;
+            ObjWord.Selection.Font.Bold = 1;
             ObjWord.Selection.ParagraphFormat.Alignment = Word.WdParagraphAlignment.wdAlignParagraphCenter;
-            ObjWord.Selection.TypeText("Informe de Usuario");
-
-            ObjWord.Selection.TypeParagraph();
-            ObjWord.Selection.TypeParagraph();
-            ObjWord.Selection.ParagraphFormat.Alignment = Word.WdParagraphAlignment.wdAlignParagraphLeft;
-            ObjWord.Selection.Font.Color = Word.WdColor.wdColorBlack;           
-            ObjWord.Selection.TypeParagraph();
+            ObjWord.Selection.TypeText("Informe de Usuarios");
             ObjWord.Selection.TypeParagraph();
 
-            int filas = dtgUsuarios.Rows.Count; // creamos el numero de filas
-            int columnas = 4; // ISBN, Titulo, Fecha Entrega
+            // Fecha de impresión
+            ObjWord.Selection.Font.Size = 12;
+            ObjWord.Selection.Font.Bold = 0;
+            ObjWord.Selection.TypeText("Fecha de impresión: " + DateTime.Now.ToString("dddd, dd MMMM yyyy"));
+            ObjWord.Selection.TypeParagraph();
+            ObjWord.Selection.TypeParagraph();
 
-            // Crear la tabla
+            // Tabla
+            int filas = dtgUsuarios.Rows.Count;
+            int columnas = 4;
+
             Word.Table tabla = ObjDoc.Tables.Add(ObjWord.Selection.Range, filas, columnas, ref ObjMiss, ref ObjMiss);
-
-            // Formato de tabla
             tabla.Borders.Enable = 1;
-            tabla.Range.Font.Size = 10;
+            tabla.Range.Font.Size = 11;
+            tabla.Range.Font.Name = "Calibri";
 
-            // Agregar encabezados
-            tabla.Cell(1, 1).Range.Text = "ID";
-            tabla.Cell(1, 2).Range.Text = "Usuario";
-            tabla.Cell(1, 3).Range.Text = "Email";
-            tabla.Cell(1, 4).Range.Text = "Rol";
-
-            tabla.Rows[1].Range.Bold = 1;
-            tabla.Rows[1].Range.ParagraphFormat.Alignment = Word.WdParagraphAlignment.wdAlignParagraphCenter;
-
-            // Agregamos datos del DataGridView
-            for (int i = 0; i < filas - 1; i++) // Restamos 1 porque la última fila del DataGridView está vacía
+            string[] encabezados = { "ID", "Usuario", "Email", "Rol" };
+            for (int col = 0; col < columnas; col++)
             {
-                //El signo de interrogación se usa para evitar errores por si no hay nada en la celda
-                tabla.Cell(i + 2, 1).Range.Text = dtgUsuarios.Rows[i].Cells[0].Value?.ToString() ?? "";
-                tabla.Cell(i + 2, 2).Range.Text = dtgUsuarios.Rows[i].Cells[1].Value?.ToString() ?? "";
-                tabla.Cell(i + 2, 3).Range.Text = dtgUsuarios.Rows[i].Cells[2].Value?.ToString() ?? "";
-                tabla.Cell(i + 2, 4).Range.Text = dtgUsuarios.Rows[i].Cells[3].Value?.ToString() ?? "";
-
+                tabla.Cell(1, col + 1).Range.Text = encabezados[col];
+                tabla.Cell(1, col + 1).Range.Shading.BackgroundPatternColor = Word.WdColor.wdColorGray25;
+                tabla.Cell(1, col + 1).Range.Bold = 1;
+                tabla.Cell(1, col + 1).Range.ParagraphFormat.Alignment = Word.WdParagraphAlignment.wdAlignParagraphCenter;
             }
 
-            ObjWord.Visible = true;
+            for (int i = 0; i < filas - 1; i++)
+            {
+                for (int j = 0; j < columnas; j++)
+                {
+                    string texto = dtgUsuarios.Rows[i].Cells[j].Value?.ToString() ?? "";
+                    tabla.Cell(i + 2, j + 1).Range.Text = texto;
+                    tabla.Cell(i + 2, j + 1).Range.ParagraphFormat.Alignment = Word.WdParagraphAlignment.wdAlignParagraphLeft;
+                }
+
+                if (i % 2 == 0)
+                {
+                    for (int j = 0; j < columnas; j++)
+                    {
+                        tabla.Cell(i + 2, j + 1).Shading.BackgroundPatternColor = Word.WdColor.wdColorGray10;
+                    }
+                }
+            }
+
+            // Espacio antes del cierre
+            ObjWord.Selection.MoveDown(Word.WdUnits.wdLine, filas + 5);
+            ObjWord.Selection.TypeParagraph();
+            ObjWord.Selection.TypeParagraph();
+
+            // Texto final
+            ObjWord.Selection.Font.Italic = 1;
+            ObjWord.Selection.Font.Size = 12;
+            ObjWord.Selection.ParagraphFormat.Alignment = Word.WdParagraphAlignment.wdAlignParagraphCenter;
+            ObjWord.Selection.TypeText("Expedido por la compañía Dock Master ®");
+
+            // Exportar a PDF
+            try
+            {
+                string fileName = $"Informe_Usuarios_{DateTime.Now:yyyyMMdd_HHmm}.pdf";
+                string pdfPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), fileName);
+
+                ObjDoc.ExportAsFixedFormat(
+                    pdfPath,
+                    Word.WdExportFormat.wdExportFormatPDF,
+                    OpenAfterExport: true,
+                    OptimizeFor: Word.WdExportOptimizeFor.wdExportOptimizeForPrint,
+                    Range: Word.WdExportRange.wdExportAllDocument,
+                    From: 0,
+                    To: 0,
+                    Item: Word.WdExportItem.wdExportDocumentContent,
+                    IncludeDocProps: true,
+                    KeepIRM: true,
+                    CreateBookmarks: Word.WdExportCreateBookmarks.wdExportCreateWordBookmarks,
+                    DocStructureTags: true,
+                    BitmapMissingFonts: true,
+                    UseISO19005_1: false
+                );
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al exportar PDF: " + ex.Message);
+            }
+            finally
+            {
+                ObjDoc.Close(false);
+                ObjWord.Quit(false);
+            }
         }
 
         private void dtgUsuarios_CellContentClick(object sender, DataGridViewCellEventArgs e)
