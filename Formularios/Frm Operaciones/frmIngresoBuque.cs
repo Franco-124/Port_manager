@@ -38,7 +38,7 @@ namespace Port_manager.Formularios
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             string serial_buque = txtSerial.Text;
-            string capitan = txtCapacidad.Text;
+            string capitan = txtCapitan.Text;
             string empresa = txtEmpresa.Text;
             string origen = txtOrigen.Text;
             DateTime fecha_ingreso = dateIngreso.Value;
@@ -245,6 +245,16 @@ namespace Port_manager.Formularios
         {
             string serial = txtSerial.Text.Trim();
             CargarDatosPorSerial(serial);
+        }
+
+        private void txtCapitan_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void frmIngresoBuque_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
