@@ -70,7 +70,7 @@
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(220, 674);
+            this.panelMenu.Size = new System.Drawing.Size(220, 664);
             this.panelMenu.TabIndex = 0;
             this.panelMenu.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -314,7 +314,7 @@
             this.pnlTitleBar.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlTitleBar.Location = new System.Drawing.Point(220, 0);
             this.pnlTitleBar.Name = "pnlTitleBar";
-            this.pnlTitleBar.Size = new System.Drawing.Size(824, 75);
+            this.pnlTitleBar.Size = new System.Drawing.Size(974, 75);
             this.pnlTitleBar.TabIndex = 1;
             this.pnlTitleBar.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlTitleBar_Paint);
             // 
@@ -324,7 +324,7 @@
             this.pnlAdmin.Controls.Add(this.lbDate);
             this.pnlAdmin.Controls.Add(this.lblBienvenida);
             this.pnlAdmin.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pnlAdmin.Location = new System.Drawing.Point(223, 0);
+            this.pnlAdmin.Location = new System.Drawing.Point(373, 0);
             this.pnlAdmin.Name = "pnlAdmin";
             this.pnlAdmin.Size = new System.Drawing.Size(601, 75);
             this.pnlAdmin.TabIndex = 2;
@@ -406,7 +406,7 @@
             this.pnlShadow.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlShadow.Location = new System.Drawing.Point(220, 75);
             this.pnlShadow.Name = "pnlShadow";
-            this.pnlShadow.Size = new System.Drawing.Size(824, 10);
+            this.pnlShadow.Size = new System.Drawing.Size(974, 10);
             this.pnlShadow.TabIndex = 2;
             // 
             // pnlDesktop
@@ -418,7 +418,7 @@
             this.pnlDesktop.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlDesktop.Location = new System.Drawing.Point(220, 85);
             this.pnlDesktop.Name = "pnlDesktop";
-            this.pnlDesktop.Size = new System.Drawing.Size(824, 589);
+            this.pnlDesktop.Size = new System.Drawing.Size(974, 579);
             this.pnlDesktop.TabIndex = 3;
             this.pnlDesktop.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlDesktop_Paint);
             // 
@@ -426,7 +426,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1044, 674);
+            this.ClientSize = new System.Drawing.Size(1194, 664);
             this.Controls.Add(this.pnlDesktop);
             this.Controls.Add(this.pnlShadow);
             this.Controls.Add(this.pnlTitleBar);
