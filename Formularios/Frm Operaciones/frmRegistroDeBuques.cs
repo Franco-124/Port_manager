@@ -155,7 +155,7 @@ namespace Port_manager.Formularios
 
         void CargarCapacidadBuque()
         {
-            cmbSerialBarco.Items.Clear();
+            
             try
             {
                 string consulta = "SELECT capacidad FROM IngresoBuque";
@@ -168,6 +168,32 @@ namespace Port_manager.Formularios
                             while (reader.Read())
                             {
                                txtCapacidad.Text = reader["capacidad"].ToString();
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al cargar el serial de los buques: " + ex.Message);
+            }
+        }
+
+        void CargarOrigenBuque()
+        {
+            
+            try
+            {
+                string consulta = "SELECT origen FROM IngresoBuque";
+                using (SqlConnection conexion = DatabaseHelper.GetConnection())
+                {
+                    using (SqlCommand cmd = new SqlCommand(consulta, conexion))
+                    {
+                        using (SqlDataReader reader = cmd.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                txtOrigen.Text = reader["origen"].ToString();
                             }
                         }
                     }
@@ -197,6 +223,7 @@ namespace Port_manager.Formularios
             txtCapacidad.Enabled = false;
             CargarCapacidadBuque();
             CargarSerialBarco();
+            CargarOrigenBuque();
         }
 
         private void cmbResponsable_SelectedIndexChanged(object sender, EventArgs e)
