@@ -15,6 +15,7 @@ namespace Port_manager.Formularios
     public partial class frmRegistroDeBuques : Form
     {
         int contador = 0;
+        
         public frmRegistroDeBuques()
         {
             InitializeComponent();
@@ -153,21 +154,35 @@ namespace Port_manager.Formularios
             }
         }
 
-        void CargarCapacidadBuque()
+        void CargarCapacidadBuque(String serial)
         {
-            
             try
             {
-                string consulta = "SELECT capacidad FROM IngresoBuque";
+                // Validar que el serial no esté vacío
+                if (string.IsNullOrEmpty(serial))
+                {
+                    txtCapacidad.Clear();
+                    return;
+                }
+                // Consulta para obtener la capacidad del buque según el serial
+                string consulta = "SELECT capacidad FROM IngresoBuque WHERE serial_buque = @serial_buque";
+
                 using (SqlConnection conexion = DatabaseHelper.GetConnection())
                 {
                     using (SqlCommand cmd = new SqlCommand(consulta, conexion))
                     {
+                        cmd.Parameters.AddWithValue("@serial_buque", serial);
+
                         using (SqlDataReader reader = cmd.ExecuteReader())
                         {
-                            while (reader.Read())
+                            if (reader.Read())
                             {
-                               txtCapacidad.Text = reader["capacidad"].ToString();
+                                txtCapacidad.Text = reader["capacidad"].ToString();
+                            }
+                            else
+                            {
+                                txtCapacidad.Clear();
+                                MessageBox.Show("No se encontró capacidad para el serial seleccionado.");
                             }
                         }
                     }
@@ -175,37 +190,49 @@ namespace Port_manager.Formularios
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al cargar el serial de los buques: " + ex.Message);
+                MessageBox.Show("Error al cargar la capacidad del buque: " + ex.Message);
             }
         }
 
-        void CargarOrigenBuque()
+        void CargarOrigenBuque(String serial)
         {
-            
             try
             {
-                string consulta = "SELECT origen FROM IngresoBuque";
+                // Validar que el serial no esté vacío
+                if (string.IsNullOrEmpty(serial))
+                {
+                    txtOrigen.Clear();
+                    return;
+                }
+                // Consulta para obtener el origen del buque según el serial
+                string consulta = "SELECT origen FROM IngresoBuque WHERE serial_buque = @serial_buque";
+
                 using (SqlConnection conexion = DatabaseHelper.GetConnection())
                 {
                     using (SqlCommand cmd = new SqlCommand(consulta, conexion))
                     {
+                        cmd.Parameters.AddWithValue("@serial_buque", serial);
+
                         using (SqlDataReader reader = cmd.ExecuteReader())
                         {
-                            while (reader.Read())
+                            if (reader.Read())
                             {
                                 txtOrigen.Text = reader["origen"].ToString();
                             }
+                            else
+                            {
+                                txtOrigen.Clear();
+                                MessageBox.Show("No se encontró origen para el serial seleccionado.");
+                            }
                         }
                     }
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al cargar el serial de los buques: " + ex.Message);
+                MessageBox.Show("Error al cargar el origen del buque: " + ex.Message);
             }
         }
-
-
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
@@ -213,17 +240,26 @@ namespace Port_manager.Formularios
 
         private void cmbSerial_SelectedIndexChanged(object sender, EventArgs e)
         {
+            // Obtener el serial seleccionado
+            string serialSeleccionado = (cmbSerialBarco.SelectedItem as frmRegistroDeBuques.ComboBoxItem)?.ToString();
 
+            // Cargar la capacidad y el origen del buque según el serial seleccionado
+            CargarCapacidadBuque(serialSeleccionado);
+            CargarOrigenBuque(serialSeleccionado);
+            txtResponsable.Text = UsuarioSesion.NombreUsuario;
         }
 
         private void frmRegistroDeBuques_Load(object sender, EventArgs e)
         {
-            txtResponsable.Text = UsuarioSesion.NombreUsuario;
             txtResponsable.Enabled = false;
             txtCapacidad.Enabled = false;
-            CargarCapacidadBuque();
+            txtOrigen.Enabled = false;
+
+            // Cargar los seriales en el ComboBox
             CargarSerialBarco();
-            CargarOrigenBuque();
+
+            // Asociar el evento al ComboBox
+            cmbSerialBarco.SelectedIndexChanged += cmbSerial_SelectedIndexChanged;
         }
 
         private void cmbResponsable_SelectedIndexChanged(object sender, EventArgs e)
@@ -243,6 +279,7 @@ namespace Port_manager.Formularios
             cmbArribo.SelectedIndex = -1;
             cmbCarga.SelectedIndex = -1;
             cmbSerialBarco.SelectedIndex = -1;
+            txtResponsable.Clear();
             txtOrigen.Clear();
 
         }
