@@ -99,6 +99,7 @@ CREATE PROCEDURE Registro_llegada_buque
     @origen VARCHAR(20),    
     @id_usuario INT,
 	@accion VARCHAR(30),
+	@serial_buque VARCHAR(20),
     @resultado INT OUTPUT  
 AS
 BEGIN
@@ -106,18 +107,17 @@ BEGIN
     BEGIN TRY
         INSERT INTO RegistroLlegadaBuque(
              capacidad, tipo_carga, 
-            fecha_llegada, origen, id_usuario, accion
+            fecha_llegada, origen, id_usuario, accion, serial_buque
         )
         VALUES (
              @capacidad, @tipo_carga, 
-             @fecha_llegada, @origen, @id_usuario,@accion
+             @fecha_llegada, @origen, @id_usuario,@accion, @serial_buque
         );
-        
         SET @resultado = 1;  -- Éxito
     END TRY
     BEGIN CATCH
         SET @resultado = 0;  -- Error
-    END CATCH
+    END CATCH
 END;
 
 
