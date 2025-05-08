@@ -67,7 +67,7 @@
             this.txtRegistro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
             this.txtRegistro.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtRegistro.ForeColor = System.Drawing.Color.White;
-            this.txtRegistro.Location = new System.Drawing.Point(195, 22);
+            this.txtRegistro.Location = new System.Drawing.Point(235, 24);
             this.txtRegistro.Margin = new System.Windows.Forms.Padding(4);
             this.txtRegistro.Name = "txtRegistro";
             this.txtRegistro.Size = new System.Drawing.Size(65, 15);

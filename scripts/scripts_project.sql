@@ -89,7 +89,8 @@ BEGIN
         SET @resultado = 0;  -- Error
     END CATCH
 END;
-
+ALTER TABLE RegistroLlegadaBuque
+ADD serial_buque VARCHAR(20) FOREIGN KEY REFERENCES IngresoBuque(serial_buque);
 
 CREATE PROCEDURE Registro_llegada_buque    
     @capacidad float, 

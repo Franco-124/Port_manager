@@ -139,7 +139,7 @@ namespace Port_manager.Formularios
 
 
 
-            if (DatabaseHelper.Registro_llegada_buque(capacidad, tipo_carga, fecha, origen,UsuarioSesion.id_usuario,accion))
+            if (DatabaseHelper.Registro_llegada_buque(capacidad, tipo_carga, fecha, origen,UsuarioSesion.id_usuario,accion, serial_buque))
             {
                 MessageBox.Show("Ingresado correctamente.");
                 NroRegistro();
