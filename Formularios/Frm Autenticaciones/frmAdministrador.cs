@@ -11,6 +11,7 @@ using System.Windows;
 using System.Windows.Forms;
 using System.Windows.Media;
 using FontAwesome.Sharp;
+using Port_manager.Formularios.Frm_Informes;
 using SqlConnectiondb;
 using Color = System.Drawing.Color;
 
@@ -374,6 +375,13 @@ namespace Port_manager.Formularios
             set
             {
             }
+        }
+
+        private void iconButton1_Click(object sender, EventArgs e)
+        {
+
+            ActivateButton(sender, RGBColors.color3);
+            AbrirFormularioHijo(new frmAdminCharts());
         }
     }
 }
