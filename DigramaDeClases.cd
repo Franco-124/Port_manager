@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="Port_manager.Formularios.frmAdministrador">
-    <Position X="6.25" Y="3.5" Width="2.5" />
+    <Position X="5.75" Y="5" Width="2.5" />
     <Compartments>
       <Compartment Name="Fields" Collapsed="true" />
     </Compartments>
@@ -13,7 +13,7 @@
       </Struct>
     </NestedTypes>
     <TypeIdentifier>
-      <HashCode>AJjYAAAAADEKBESgCACEAIYqCJTAFwVCigCSmCAIUMA=</HashCode>
+      <HashCode>AJjYAEAAADEKBESgCACEAIYqCJTAFwVCigCSmCAMUMA=</HashCode>
       <FileName>Formularios\Frm Autenticaciones\frmAdministrador.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -38,12 +38,24 @@
     </TypeIdentifier>
   </Class>
   <Class Name="Port_manager.Formularios.frmCargaDescarga">
-    <Position X="9.5" Y="6.25" Width="1.75" />
+    <Position X="8.75" Y="6.25" Width="1.75" />
     <Compartments>
       <Compartment Name="Fields" Collapsed="true" />
     </Compartments>
+    <NestedTypes>
+      <Class Name="Port_manager.Formularios.frmCargaDescarga.Zona" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Formularios\Frm Operaciones\frmCargaDescarga.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+      <Class Name="Port_manager.Formularios.frmCargaDescarga.ComboBoxItem" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Formularios\Frm Operaciones\frmCargaDescarga.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+    </NestedTypes>
     <TypeIdentifier>
-      <HashCode>AAgAAAAAADEAEZACABCAAAECAAAAAAAAAAAAgQAAQAA=</HashCode>
+      <HashCode>ACgAEAQAACMAEJYwMBCACAEjAAAAAAAAAAAAAQgAQgA=</HashCode>
       <FileName>Formularios\Frm Operaciones\frmCargaDescarga.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -56,7 +68,7 @@
       <Compartment Name="Fields" Collapsed="true" />
     </Compartments>
     <TypeIdentifier>
-      <HashCode>AABAIAEAACAAkAAAAACCQCACAAAAAAAAAAAAAYAARAA=</HashCode>
+      <HashCode>AABAIAEAACAgkAAAAACCQCACAAAAAAAAAAAAAYAARAA=</HashCode>
       <FileName>Formularios\Frm Operaciones\frmClasificacionAsignacion.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -70,7 +82,7 @@
       <Compartment Name="Fields" Collapsed="true" />
     </Compartments>
     <TypeIdentifier>
-      <HashCode>ABAAAEAAACAAQBAAAACAABAyACIAAIAEAGEAGQAgAAQ=</HashCode>
+      <HashCode>ABAAAkAAACAAQBAAAACAABAyACIAAIAEAGEAGQAgAAQ=</HashCode>
       <FileName>Formularios\Frm Autenticaciones\frmCrear_cuenta.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -80,7 +92,7 @@
       <Compartment Name="Fields" Collapsed="true" />
     </Compartments>
     <TypeIdentifier>
-      <HashCode>AAAAAAAAACAAAAAiAACAAAACIAAAAAAAAAAAAQAAQQA=</HashCode>
+      <HashCode>AAAAAAAAACAAQAAiAACAAAACIAAAAAAAAAAAAQAAQQA=</HashCode>
       <FileName>Formularios\Frm Informes\frmGestionUsuario.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -97,7 +109,7 @@
       </Class>
     </NestedTypes>
     <TypeIdentifier>
-      <HashCode>JAAAAAQAACIAIJAgQBCACEECAAAAAAAAAMAAAQgAAAA=</HashCode>
+      <HashCode>ZBAAAAQAECIAKJAkRBCACAECAAAAAAAAAMAAAQgAAAA=</HashCode>
       <FileName>Formularios\Frm Operaciones\frmIncidencias.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -126,7 +138,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="Port_manager.Formularios.frmP_Usuario">
-    <Position X="20" Y="2.25" Width="2" />
+    <Position X="20.25" Y="2.25" Width="2" />
     <Compartments>
       <Compartment Name="Fields" Collapsed="true" />
     </Compartments>
@@ -167,8 +179,15 @@
     <Compartments>
       <Compartment Name="Fields" Collapsed="true" />
     </Compartments>
+    <NestedTypes>
+      <Class Name="Port_manager.Formularios.frmRegistroDeBuques.ComboBoxItem" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Formularios\Frm Operaciones\frmRegistroDeBuques.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+    </NestedTypes>
     <TypeIdentifier>
-      <HashCode>AAAAAAQAAiAADZAQQACgAAESAAAAAAAAgAAAAQAAYAA=</HashCode>
+      <HashCode>IAAAAAQAIiMADJAEAACgQAEyAALAAAAAQAAAAQAEYAE=</HashCode>
       <FileName>Formularios\Frm Operaciones\frmRegistroDeBuques.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -188,7 +207,7 @@
   <Class Name="SqlConnectiondb.DatabaseHelper">
     <Position X="7.5" Y="0.5" Width="2" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAQAAAAAAAAABEAAAAACAIAABAAAABAAcAA=</HashCode>
+      <HashCode>AAAAAAAAAAQIAAAAAIAABEAAAAACAIAABAAAABAAcAA=</HashCode>
       <FileName>Clases\dbconexion.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -203,12 +222,12 @@
     </ShowAsAssociation>
   </Class>
   <Class Name="Port_manager.Formularios.frmInformeBuque">
-    <Position X="9.5" Y="9.5" Width="1.75" />
+    <Position X="10.25" Y="9.5" Width="1.75" />
     <Compartments>
       <Compartment Name="Fields" Collapsed="true" />
     </Compartments>
     <TypeIdentifier>
-      <HashCode>AAAAgAAQACAAABACAACAgACCAgAAAAAKAAAAAQAAAQA=</HashCode>
+      <HashCode>ABAAgSAQACAAABAAAACQgACCIgAAgAAKAAAIAQAAAQA=</HashCode>
       <FileName>Formularios\Frm Informes\frmInformeBuque.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -223,12 +242,12 @@
     </TypeIdentifier>
   </Class>
   <Class Name="Port_manager.Formularios.frmInformeIncidencias">
-    <Position X="22.5" Y="7" Width="2" />
+    <Position X="23" Y="7.5" Width="2" />
     <Compartments>
       <Compartment Name="Fields" Collapsed="true" />
     </Compartments>
     <TypeIdentifier>
-      <HashCode>AAAACAAAACAAAAAggAGAgACCAAAAAAAIAAAAgQAAAQA=</HashCode>
+      <HashCode>ADAACAAAACAAAAAggAGAgACCIAAAAAAIQAAggQAAAQA=</HashCode>
       <FileName>Formularios\Frm Informes\frmInformeIncidencias.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -238,7 +257,7 @@
       <Compartment Name="Fields" Collapsed="true" />
     </Compartments>
     <TypeIdentifier>
-      <HashCode>AIAACAAAAKgAABAQAACADAACAAAAAAAAAAAAAQAAAAA=</HashCode>
+      <HashCode>AIAACAAAAKgAABAQAACADAACIAAAAAAAAAAAAQAAAAA=</HashCode>
       <FileName>Formularios\Frm Informes\FrmInformeMuelle.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -248,17 +267,17 @@
       <Compartment Name="Fields" Collapsed="true" />
     </Compartments>
     <TypeIdentifier>
-      <HashCode>AAAAJAAAACAAACAAAACAiAACAAAAAAAAIAAAAQAAAAA=</HashCode>
+      <HashCode>AAAAJAAAACAAACAAAACAiAACIAAAAAAAIAAAAQAAAAA=</HashCode>
       <FileName>Formularios\Frm Informes\frmInformePendientes.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Port_manager.Formularios.frmIngresoBuque">
-    <Position X="22.5" Y="2.25" Width="1.75" />
+    <Position X="22.5" Y="1.5" Width="1.75" />
     <Compartments>
       <Compartment Name="Fields" Collapsed="true" />
     </Compartments>
     <TypeIdentifier>
-      <HashCode>AAAAIAAAACAACZAICAChAAEiAAAAAAAAAQAAAQAAQAA=</HashCode>
+      <HashCode>EBAAIAAAACAACZAKCAChAAEiwABAACAAgQAAAQAAQAA=</HashCode>
       <FileName>Formularios\Frm Operaciones\frmIngresoBuque.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -274,6 +293,13 @@
     <TypeIdentifier>
       <HashCode>AABAIAEAACAAkAAAAACAQCACAAAAAAAAAAAAAYAAQAA=</HashCode>
       <FileName>Formularios\Frm Operaciones\frmAsignacionMuelleUsuario.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Port_manager.Formularios.Frm_Informes.frmAdminCharts" Collapsed="true">
+    <Position X="6.25" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAGAAAAAAAACAAAICAIAAAAAAAAAEgAAAAAA=</HashCode>
+      <FileName>Formularios\Frm Informes\frmAdminCharts.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />
