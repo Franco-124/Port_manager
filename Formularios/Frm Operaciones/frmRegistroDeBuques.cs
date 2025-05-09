@@ -125,7 +125,13 @@ namespace Port_manager.Formularios
             cmbCarga.SelectedIndex = -1;
             cmbSerialBarco.SelectedIndex = -1;
             txtOrigen.Clear();
-            
+
+            if (string.IsNullOrEmpty(serial_buque))
+            {
+                MessageBox.Show("Debe seleccionar un serial de buque válido.");
+                return;
+            }
+
 
 
 
