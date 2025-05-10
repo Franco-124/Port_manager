@@ -71,13 +71,16 @@ namespace Port_manager.Formularios
         {
             try
             {
-                // Consulta para obtener los seriales de los barcos
+                // Consulta para obtener los seriales de los barcos filtrados por usuario
                 string consulta = "SELECT serial_buque FROM IngresoBuque";
 
                 using (SqlConnection conexion = DatabaseHelper.GetConnection())
                 {
                     using (SqlCommand cmd = new SqlCommand(consulta, conexion))
                     {
+                        // Agregar el parámetro para filtrar por usuario
+                     
+
                         using (SqlDataReader reader = cmd.ExecuteReader())
                         {
                             cmbSerialBarco.Items.Clear();
@@ -95,7 +98,6 @@ namespace Port_manager.Formularios
                 MessageBox.Show("Error al cargar los seriales de los barcos: " + ex.Message);
             }
         }
-
 
         private void FiltrarZonasDesdeBaseDatos(int capacidadBarco, string tipoCargaBarco)
         {
