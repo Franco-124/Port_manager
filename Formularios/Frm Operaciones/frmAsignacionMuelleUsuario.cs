@@ -20,11 +20,23 @@ namespace Port_manager.Formularios.Frm_Operaciones
             InitializeComponent();
             toolTipZonas = new ToolTip();
             CargarInfoZonas();
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+
         }
 
         private void frmAsignacionMuelleUsuario_Load(object sender, EventArgs e)
         {
+            // Asegúrate de que estos botones existen en el formulario
+            pictureBox1.Controls.Add(btnZonaA);
+            pictureBox1.Controls.Add(btnZonaB);
+            pictureBox1.Controls.Add(btnZonaC);
+            pictureBox1.Controls.Add(btnZonaD);
+            pictureBox1.Controls.Add(btnZonaE);
+            pictureBox1.Controls.Add(btnZonaF);
+            pictureBox1.Controls.Add(btnZonaG);
 
+            ReubicarBotones(); // Ajustar posiciones iniciales// Asegúrate de que estos botones existen en el formulario
         }
 
 
@@ -83,7 +95,47 @@ namespace Port_manager.Formularios.Frm_Operaciones
             }
         }
 
+        private void ReubicarBotones()
+        {
+            int baseWidth = 900;
+            int baseHeight = 407;
 
+            float scaleX = (float)pictureBox1.Width / baseWidth;
+            float scaleY = (float)pictureBox1.Height / baseHeight;
 
+            btnZonaA.Left = (int)(290 * scaleX);
+            btnZonaA.Top = (int)(24 * scaleY);
+
+            btnZonaB.Left = (int)(400 * scaleX);
+            btnZonaB.Top = (int)(113 * scaleY);
+
+            btnZonaC.Left = (int)(520 * scaleX);
+            btnZonaC.Top = (int)(113 * scaleY);
+
+            btnZonaD.Left = (int)(650 * scaleX);
+            btnZonaD.Top = (int)(113 * scaleY);
+
+            btnZonaE.Left = (int)(160 * scaleX);
+            btnZonaE.Top = (int)(232 * scaleY);
+
+            btnZonaF.Left = (int)(400 * scaleX);
+            btnZonaF.Top = (int)(232 * scaleY);
+
+            btnZonaG.Left = (int)(650 * scaleX);
+            btnZonaG.Top = (int)(232 * scaleY);
+
+            buttonEntrada.Left = (int)(160 * scaleX);
+            buttonEntrada.Top = (int)(42 * scaleY);
+        }
+
+        private void frmAsignacionMuelleUsuario_Resize(object sender, EventArgs e)
+        {
+            ReubicarBotones();
+        }
+
+        private void pictureBox1_Resize(object sender, EventArgs e)
+        {
+            ReubicarBotones();
+        }
     }
 }

@@ -32,7 +32,7 @@
             this.iconButton9 = new FontAwesome.Sharp.IconButton();
             this.lblRegistro = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.iconButton8 = new FontAwesome.Sharp.IconButton();
+            this.buttonEntrada = new FontAwesome.Sharp.IconButton();
             this.btnZonaF = new FontAwesome.Sharp.IconButton();
             this.btnZonaE = new FontAwesome.Sharp.IconButton();
             this.btnZonaG = new FontAwesome.Sharp.IconButton();
@@ -40,8 +40,10 @@
             this.btnZonaC = new FontAwesome.Sharp.IconButton();
             this.btnZonaB = new FontAwesome.Sharp.IconButton();
             this.btnZonaA = new FontAwesome.Sharp.IconButton();
+            this.pictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -61,7 +63,7 @@
             this.iconButton9.IconColor = System.Drawing.Color.Black;
             this.iconButton9.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButton9.Location = new System.Drawing.Point(0, 0);
-            this.iconButton9.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.iconButton9.Margin = new System.Windows.Forms.Padding(2);
             this.iconButton9.Name = "iconButton9";
             this.iconButton9.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.iconButton9.Size = new System.Drawing.Size(134, 56);
@@ -84,7 +86,7 @@
             // 
             this.panel2.BackgroundImage = global::Port_manager.Properties.Resources.Leonardo_Phoenix_10_Vista_area_esquemtica_de_un_puerto_martimo_3;
             this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel2.Controls.Add(this.iconButton8);
+            this.panel2.Controls.Add(this.buttonEntrada);
             this.panel2.Controls.Add(this.btnZonaF);
             this.panel2.Controls.Add(this.btnZonaE);
             this.panel2.Controls.Add(this.btnZonaG);
@@ -92,6 +94,7 @@
             this.panel2.Controls.Add(this.btnZonaC);
             this.panel2.Controls.Add(this.btnZonaB);
             this.panel2.Controls.Add(this.btnZonaA);
+            this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 56);
@@ -99,17 +102,17 @@
             this.panel2.Size = new System.Drawing.Size(808, 390);
             this.panel2.TabIndex = 2;
             // 
-            // iconButton8
+            // buttonEntrada
             // 
-            this.iconButton8.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.iconButton8.IconColor = System.Drawing.Color.Black;
-            this.iconButton8.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton8.Location = new System.Drawing.Point(143, 42);
-            this.iconButton8.Name = "iconButton8";
-            this.iconButton8.Size = new System.Drawing.Size(75, 23);
-            this.iconButton8.TabIndex = 7;
-            this.iconButton8.Text = "ENTRADA";
-            this.iconButton8.UseVisualStyleBackColor = true;
+            this.buttonEntrada.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.buttonEntrada.IconColor = System.Drawing.Color.Black;
+            this.buttonEntrada.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.buttonEntrada.Location = new System.Drawing.Point(143, 42);
+            this.buttonEntrada.Name = "buttonEntrada";
+            this.buttonEntrada.Size = new System.Drawing.Size(75, 23);
+            this.buttonEntrada.TabIndex = 7;
+            this.buttonEntrada.Text = "ENTRADA";
+            this.buttonEntrada.UseVisualStyleBackColor = true;
             // 
             // btnZonaF
             // 
@@ -195,6 +198,22 @@
             this.btnZonaA.Text = "Zona A";
             this.btnZonaA.UseVisualStyleBackColor = true;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox1.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.pictureBox1.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.pictureBox1.IconColor = System.Drawing.SystemColors.ControlText;
+            this.pictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.pictureBox1.IconSize = 390;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(808, 390);
+            this.pictureBox1.TabIndex = 9;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Resize += new System.EventHandler(this.pictureBox1_Resize);
+            // 
             // frmClasificacionAsignacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -204,13 +223,15 @@
             this.ClientSize = new System.Drawing.Size(808, 446);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmClasificacionAsignacion";
             this.Text = "Clasificación y asignación";
             this.Load += new System.EventHandler(this.frmClasificacionAsignacion_Load);
+            this.Resize += new System.EventHandler(this.frmClasificacionAsignacion_Resize);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -221,7 +242,7 @@
         private System.Windows.Forms.Label lblRegistro;
         private System.Windows.Forms.Panel panel2;
         private FontAwesome.Sharp.IconButton btnZonaA;
-        private FontAwesome.Sharp.IconButton iconButton8;
+        private FontAwesome.Sharp.IconButton buttonEntrada;
         private FontAwesome.Sharp.IconButton btnZonaF;
         private FontAwesome.Sharp.IconButton btnZonaE;
         private FontAwesome.Sharp.IconButton btnZonaG;
@@ -229,5 +250,6 @@
         private FontAwesome.Sharp.IconButton btnZonaC;
         private FontAwesome.Sharp.IconButton btnZonaB;
         private FontAwesome.Sharp.IconButton iconButton9;
+        private FontAwesome.Sharp.IconPictureBox pictureBox1;
     }
 }
