@@ -60,7 +60,7 @@
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.lblRegistro);
             this.panel1.Location = new System.Drawing.Point(0, 1);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1093, 69);
             this.panel1.TabIndex = 0;
@@ -69,8 +69,9 @@
             // 
             this.txtOperacion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
             this.txtOperacion.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtOperacion.Location = new System.Drawing.Point(149, 25);
-            this.txtOperacion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtOperacion.ForeColor = System.Drawing.Color.White;
+            this.txtOperacion.Location = new System.Drawing.Point(176, 26);
+            this.txtOperacion.Margin = new System.Windows.Forms.Padding(4);
             this.txtOperacion.Name = "txtOperacion";
             this.txtOperacion.Size = new System.Drawing.Size(65, 15);
             this.txtOperacion.TabIndex = 13;
@@ -92,7 +93,7 @@
             this.lblRegistro.AutoSize = true;
             this.lblRegistro.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRegistro.ForeColor = System.Drawing.Color.White;
-            this.lblRegistro.Location = new System.Drawing.Point(240, 10);
+            this.lblRegistro.Location = new System.Drawing.Point(249, 10);
             this.lblRegistro.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblRegistro.Name = "lblRegistro";
             this.lblRegistro.Size = new System.Drawing.Size(599, 36);
@@ -182,12 +183,13 @@
             this.btnCancelar.IconColor = System.Drawing.Color.Black;
             this.btnCancelar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnCancelar.Location = new System.Drawing.Point(593, 455);
-            this.btnCancelar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(4);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(134, 44);
             this.btnCancelar.TabIndex = 23;
             this.btnCancelar.Text = "Cancelar ⛔";
             this.btnCancelar.UseVisualStyleBackColor = false;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnGuardar
             // 
@@ -197,12 +199,13 @@
             this.btnGuardar.IconColor = System.Drawing.Color.Black;
             this.btnGuardar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnGuardar.Location = new System.Drawing.Point(379, 455);
-            this.btnGuardar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnGuardar.Margin = new System.Windows.Forms.Padding(4);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(130, 44);
             this.btnGuardar.TabIndex = 22;
             this.btnGuardar.Text = "Guardar 💾";
             this.btnGuardar.UseVisualStyleBackColor = false;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // txtDescripcion
             // 
@@ -211,7 +214,7 @@
             this.txtDescripcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDescripcion.ForeColor = System.Drawing.SystemColors.Window;
             this.txtDescripcion.Location = new System.Drawing.Point(265, 318);
-            this.txtDescripcion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtDescripcion.Margin = new System.Windows.Forms.Padding(4);
             this.txtDescripcion.Multiline = true;
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(210, 85);
@@ -224,7 +227,7 @@
             this.dtTimePicker.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtTimePicker.Location = new System.Drawing.Point(832, 113);
-            this.dtTimePicker.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtTimePicker.Margin = new System.Windows.Forms.Padding(4);
             this.dtTimePicker.Name = "dtTimePicker";
             this.dtTimePicker.Size = new System.Drawing.Size(234, 29);
             this.dtTimePicker.TabIndex = 27;

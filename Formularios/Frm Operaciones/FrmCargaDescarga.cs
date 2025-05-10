@@ -14,9 +14,11 @@ namespace Port_manager.Formularios
 {
     public partial class frmCargaDescarga: Form
     {
+        int contador = 0;
         public frmCargaDescarga()
         {
             InitializeComponent();
+            NroOperacion();
         }
 
         public frmInformePendientes frmInformePendientes
@@ -95,29 +97,59 @@ namespace Port_manager.Formularios
         }
 
 
-        private void FiltrarZonas(int capacidadBarco, string tipoCargaBarco)
+        private void FiltrarZonasDesdeBaseDatos(int capacidadBarco, string tipoCargaBarco)
         {
-            cmbMuelle.Items.Clear(); // Limpiar el ComboBox antes de cargar las zonas filtradas
-
-            foreach (var zona in zonas)
+            try
             {
-                // Verificar si la zona cumple con los criterios
-                if (zona.Capacidad >= capacidadBarco && zona.TipoCarga == tipoCargaBarco)
+                // Consulta SQL para obtener las zonas disponibles
+                string consulta = @"
+            SELECT id_muelle, capacidad_muelle, tipo_muelle
+            FROM Muelle
+            WHERE capacidad_muelle >= @capacidadBarco
+              AND tipo_muelle = @tipoCargaBarco
+              AND estado = 0"; // Solo muelles disponibles
+
+                using (SqlConnection conexion = DatabaseHelper.GetConnection())
                 {
-                    cmbMuelle.Items.Add(zona); // Agregar el objeto Zona al ComboBox
+                    using (SqlCommand cmd = new SqlCommand(consulta, conexion))
+                    {
+                        // Agregar parámetros a la consulta
+                        cmd.Parameters.AddWithValue("@capacidadBarco", capacidadBarco);
+                        cmd.Parameters.AddWithValue("@tipoCargaBarco", tipoCargaBarco);
+
+                        using (SqlDataReader reader = cmd.ExecuteReader())
+                        {
+                            cmbMuelle.Items.Clear(); // Limpiar el ComboBox antes de cargar las zonas
+
+                            while (reader.Read())
+                            {
+                                // Crear un objeto Zona con los datos obtenidos
+                                Zona zona = new Zona(
+                                    reader["id_muelle"].ToString(),
+                                    reader["tipo_muelle"].ToString(),
+                                    Convert.ToInt32(reader["capacidad_muelle"])
+                                );
+
+                                cmbMuelle.Items.Add(zona); // Agregar la zona al ComboBox
+                            }
+                        }
+                    }
+                }
+
+                if (cmbMuelle.Items.Count == 0)
+                {
+                    MessageBox.Show("No hay zonas disponibles para el barco seleccionado.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
-
-            if (cmbMuelle.Items.Count == 0)
+            catch (Exception ex)
             {
-                MessageBox.Show("No hay zonas disponibles para el barco seleccionado.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Error al filtrar las zonas: " + ex.Message);
             }
         }
 
         private void frmCargaDescarga_Load(object sender, EventArgs e)
         {
-            // Inicializar las zonas
-            InicializarZonas();
+           
 
             // Cargar los seriales de los barcos en el ComboBox
             CargarSerialesBarcos();
@@ -159,23 +191,7 @@ namespace Port_manager.Formularios
             }
         }
 
-        private List<Zona> zonas;
-
-        private void InicializarZonas()
-        {
-            zonas = new List<Zona>
-    {
-        new Zona("Zona A", "Graneleros", 300),
-        new Zona("Zona B", "Petroleros", 350),
-        new Zona("Zona C", "Porta Contenedores", 200),
-        new Zona("Zona D", "Vehiculos", 320),
-        new Zona("Zona E", "Vehiculos", 380),
-        new Zona("Zona F", "Frigorificos", 380),
-        new Zona("Zona G", "Carga General", 250)
-    };
-        }
-
-
+     
         private void cmbSerialBarco_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cmbSerialBarco.SelectedItem != null)
@@ -188,8 +204,8 @@ namespace Port_manager.Formularios
                 // Obtener la capacidad y el tipo de carga del barco
                 var (capacidadBarco, tipoCargaBarco) = ObtenerDatosBarco(serialBuque);
 
-                // Filtrar las zonas según la capacidad y el tipo de carga del barco
-                FiltrarZonas(capacidadBarco, tipoCargaBarco);
+                // Filtrar las zonas desde la base de datos
+                FiltrarZonasDesdeBaseDatos(capacidadBarco, tipoCargaBarco);
             }
         }
 
@@ -252,6 +268,101 @@ namespace Port_manager.Formularios
                 MessageBox.Show("Error al cargar la acción del buque: " + ex.Message);
             }
         }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            string serial_buque = cmbSerialBarco.SelectedItem?.ToString();
+            float capacidad = txtCapacidad.Text == "" ? 0 : float.Parse(txtCapacidad.Text);
+            string id_muelle  = cmbMuelle.SelectedItem?.ToString();
+            string descripcion = txtDescripcion.Text;
+            DateTime fecha_operacion = dtTimePicker.Value;
+            string tipo_carga = txtTipocarga.Text;
+            string accion = txtAccion.Text;
+
+
+
+            txtCapacidad.Clear();
+            cmbMuelle.SelectedIndex = -1;
+            cmbSerialBarco.SelectedIndex = -1;
+            txtTipocarga.Clear();
+            txtAccion.Clear();
+            txtDescripcion.Clear();
+
+            if (string.IsNullOrEmpty(serial_buque))
+            {
+                MessageBox.Show("Debe seleccionar un serial de buque válido.");
+                return;
+            }
+
+
+
+
+            if (string.IsNullOrEmpty(serial_buque) || string.IsNullOrEmpty(descripcion) || string.IsNullOrEmpty(tipo_carga) || string.IsNullOrEmpty(accion))
+            {
+                MessageBox.Show("Por favor, complete todos los campos.");
+
+                return;
+            }
+
+
+
+
+            if (DatabaseHelper.agregar_operacion_registro(serial_buque, id_muelle, descripcion, fecha_operacion ,capacidad, tipo_carga, accion))
+            {
+                MessageBox.Show("Operación Ingresada correctamente.");
+                NroOperacion();
+
+            }
+
+
+            else
+            {
+                MessageBox.Show("Error al ingresar operación. Por favor, inténtelo de nuevo.");
+            }
+        }
+        void NroOperacion()
+        {
+            try
+            {
+                // Consulta para contar las filas en la tabla Incidencias
+                string consulta = "SELECT COUNT(*) FROM Registro_Operacion";
+
+                using (SqlConnection conexion = DatabaseHelper.GetConnection()) // Obtener la conexión
+                {
+
+
+                    using (SqlCommand cmd = new SqlCommand(consulta, conexion))
+                    {
+                        // Ejecutar la consulta y obtener el número de filas
+                        int numeroFilas = (int)cmd.ExecuteScalar();
+
+                        // Incrementar el contador
+                        contador = numeroFilas + 1;
+
+                        // Actualizar el texto del label
+                        txtOperacion.Text = contador.ToString();
+
+                    }
+
+                }
+
+            }
+            catch (Exception ex)
+            {
+                // Manejar errores y mostrar un mensaje
+                MessageBox.Show("Error al obtener el número de incidencia: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            txtCapacidad.Clear();
+            cmbMuelle.SelectedIndex = -1;
+            cmbSerialBarco.SelectedIndex = -1;
+            txtTipocarga.Clear();
+            txtAccion.Clear();
+            txtDescripcion.Clear();
+        }
     }
-    
+
 }
