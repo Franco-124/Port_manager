@@ -21,15 +21,7 @@ namespace Port_manager.Formularios
             NroOperacion();
         }
 
-        public frmInformePendientes frmInformePendientes
-        {
-            get => default;
-            set
-            {
-            }
-        }
-
-
+       
         private (int capacidad, string tipoCarga) ObtenerDatosBarco(string serialBuque)
         {
             try
@@ -109,7 +101,7 @@ namespace Port_manager.Formularios
             FROM Muelle
             WHERE capacidad_muelle >= @capacidadBarco
               AND tipo_muelle = @tipoCargaBarco
-              AND estado = disponible"; // Solo muelles disponibles
+              AND estado = 'disponible'"; // Solo muelles disponibles
 
                 using (SqlConnection conexion = DatabaseHelper.GetConnection())
                 {
