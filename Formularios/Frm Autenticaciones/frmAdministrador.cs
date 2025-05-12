@@ -344,8 +344,7 @@ namespace Port_manager.Formularios
 
         private void btnInformePendientes_Click(object sender, EventArgs e)
         {
-            ActivateButton(sender, RGBColors.color3);
-            AbrirFormularioHijo(new frmInformePendientes());
+          
         }
 
         private void btnInformeBuques_Click(object sender, EventArgs e)
@@ -369,14 +368,7 @@ namespace Port_manager.Formularios
             }
         }
 
-        public frmInformePendientes frmInformePendientes
-        {
-            get => default;
-            set
-            {
-            }
-        }
-
+  
         private void iconButton1_Click(object sender, EventArgs e)
         {
 
