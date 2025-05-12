@@ -28,13 +28,15 @@ namespace Port_manager.Formularios
             cmbSerialBarco.Items.Clear();
             try
             {
-                string consulta = "SELECT serial_buque FROM IngresoBuque";
+                string consulta = @"SELECT serial_buque FROM IngresoBuque where id_usuario=@id_usuario";
                 using (SqlConnection conexion = DatabaseHelper.GetConnection())
                 {
                     using (SqlCommand cmd = new SqlCommand(consulta, conexion))
                     {
+                        cmd.Parameters.AddWithValue("@id_usuario", UsuarioSesion.id_usuario);
                         using (SqlDataReader reader = cmd.ExecuteReader())
                         {
+
                             while (reader.Read())
                             {
                                 cmbSerialBarco.Items.Add(new ComboBoxItem(reader["serial_buque"].ToString()));
@@ -125,7 +127,13 @@ namespace Port_manager.Formularios
             cmbCarga.SelectedIndex = -1;
             cmbSerialBarco.SelectedIndex = -1;
             txtOrigen.Clear();
-            
+
+            if (string.IsNullOrEmpty(serial_buque))
+            {
+                MessageBox.Show("Debe seleccionar un serial de buque válido.");
+                return;
+            }
+
 
 
 

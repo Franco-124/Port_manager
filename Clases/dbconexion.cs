@@ -483,6 +483,58 @@ namespace SqlConnectiondb
             }
         }
 
+        public static bool agregar_operacion_registro(string serial_buque, string id_muelle,string descripcion, DateTime fecha_operacion,float capacidad, string tipo_carga, string accion)
+        {
+            try
+            {
+
+
+                using (SqlConnection connection = GetConnection()) // 👈 Reutilizando GetConnection()
+                {
+
+                    using (SqlCommand cmd = new SqlCommand("agregar_operacion_registro", connection))
+                    {
+
+                        // Parámetros de entrada
+                        cmd.CommandType = CommandType.StoredProcedure;
+
+                        cmd.Parameters.AddWithValue("@serial_buque", serial_buque);
+                        cmd.Parameters.AddWithValue("@id_muelle", id_muelle);
+                        cmd.Parameters.AddWithValue("@descripcion", descripcion);
+                        cmd.Parameters.AddWithValue("@fecha_operacion", fecha_operacion);
+                        cmd.Parameters.AddWithValue("@capacidad", capacidad);
+                        cmd.Parameters.AddWithValue("@tipo_carga", tipo_carga);
+                        cmd.Parameters.AddWithValue("@accion", accion);
+
+
+                        // Parámetro de salida
+                        SqlParameter outputParam = new SqlParameter("@resultado", SqlDbType.Int);
+                        outputParam.Direction = ParameterDirection.Output;
+                        cmd.Parameters.Add(outputParam);
+
+
+                        cmd.ExecuteNonQuery(); // Ejecuta el procedimiento
+
+                        int resultado = Convert.ToInt32(outputParam.Value); // Obtiene el valor del parámetro de salida
+
+                        return resultado == 1;
+
+                    }
+                }
+
+            }
+            catch (SqlException sqlEx)
+            {
+                Console.WriteLine("❌ Error de SQL: " + sqlEx.Message);
+                return false;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("❌ Error: " + ex.Message);
+                return false;
+            }
+        }
+
     }
 }
 

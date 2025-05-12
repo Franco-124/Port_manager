@@ -46,5 +46,10 @@ namespace Port_manager.Formularios
 
             }
         }
+
+        private void frmInformeBuqueUsuario_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

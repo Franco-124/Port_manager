@@ -21,14 +21,15 @@ CREATE TABLE Incidencias(
 select * from usuarios
 
 CREATE TABLE RegistroLlegadaBuque (
-	codigo_registro INT NOT NULL IDENTITY (1,1),
+	codigo_registro INT PRIMARY KEY NOT NULL IDENTITY (1,1),
 	capacidad FLOAT NOT NULL,
 	tipo_carga VARCHAR(30) NOT NULL,
 	fecha_llegada DATETIME NOT NULL,
 	origen VARCHAR(20) NOT NULL,
 	id_usuario int FOREIGN KEY REFERENCES usuarios(id_usuario),
 	accion VARCHAR(30) NOT NULL,
-
+	serial_buque VARCHAR(20) FOREIGN KEY REFERENCES IngresoBuque(serial_buque),
+ 
 );
 
 CREATE TABLE IngresoBuque ( 
@@ -44,7 +45,7 @@ CREATE TABLE IngresoBuque (
 
 
 CREATE TABLE Muelle (
-	id_muelle INT NOT NULL PRIMARY KEY,
+	id_muelle VARCHAR(30) NOT NULL PRIMARY KEY,
 	capacidad_muelle INT NOT NULL ,
 	tipo_muelle VARCHAR(30) NOT NULL,
 	estado INT NOT NULL
@@ -53,12 +54,24 @@ CREATE TABLE Muelle (
 
 CREATE TABLE muelle_buque (
 	codigo_registro INT NOT NULL,
-    id_muelle INT NOT NULL,
+    id_muelle VARCHAR(30) NOT NULL,
     PRIMARY KEY (codigo_registro, id_muelle),
     FOREIGN KEY (codigo_registro) REFERENCES RegistroLlegadaBuque(codigo_registro), 
     FOREIGN KEY (id_muelle) REFERENCES muelle(id_muelle) 
 );
 
+
+--NUEVO
+CREATE TABLE Registro_Operacion(
+	id_operacion INT NOT NULL PRIMARY KEY IDENTITY (1,1),
+	serial_buque VARCHAR(20) FOREIGN KEY REFERENCES IngresoBuque(serial_buque),
+	id_muelle VARCHAR(30) FOREIGN KEY REFERENCES Muelle(id_muelle),
+	descripcion VARCHAR(150) NOT NULL,
+	fecha_operacion DATETIME NOT NULL,
+	capacidad FLOAT NOT NULL,
+	tipo_carga VARCHAR(30) NOT NULL,
+	accion VARCHAR(30) NOT NULL
+);
 
 --NUEVO
 CREATE PROCEDURE Registro_Incidencia    
@@ -89,6 +102,8 @@ BEGIN
         SET @resultado = 0;  -- Error
     END CATCH
 END;
+
+
 ALTER TABLE RegistroLlegadaBuque
 ADD serial_buque VARCHAR(20) FOREIGN KEY REFERENCES IngresoBuque(serial_buque);
 
@@ -327,3 +342,44 @@ BEGIN
     WHERE nombre_usuario = @nombre
       AND contraseña =  @contraseña;
 END;
+
+
+--NUEVO PROCEDURE 09/05/2025
+CREATE PROCEDURE agregar_operacion_registro
+    @serial_buque VARCHAR(20), 
+    @id_muelle VARCHAR(30),
+    @descripcion VARCHAR(150),
+    @fecha_operacion DATETIME, 
+    @capacidad FLOAT,
+    @tipo_carga VARCHAR(30),
+    @accion VARCHAR(30),
+    @resultado INT OUTPUT  
+AS
+BEGIN
+    SET NOCOUNT ON;
+    BEGIN TRY
+        INSERT INTO Registro_Operacion(serial_buque, id_muelle, descripcion, fecha_operacion,
+		capacidad, tipo_carga, accion    
+        )
+        VALUES (
+		@serial_buque, @id_muelle, @descripcion, @fecha_operacion,
+		@capacidad, @tipo_carga, @accion
+            
+        );
+        
+        SET @resultado = 1;  -- Éxito
+    END TRY
+    BEGIN CATCH
+        SET @resultado = 0;  -- Error
+    END CATCH
+END;
+
+---SCRIPTS DE MUELLE
+
+INSERT INTO Muelle(id_muelle, capacidad_muelle, tipo_muelle, estado)  VALUES ('Zona A', 650, 'Graneleros', 0)
+INSERT INTO Muelle(id_muelle, capacidad_muelle, tipo_muelle, estado)  VALUES ('Zona B', 750, 'Petroleros', 0)
+INSERT INTO Muelle(id_muelle, capacidad_muelle, tipo_muelle, estado)  VALUES ('Zona C', 600, 'Porta Contenedores', 0)
+INSERT INTO Muelle(id_muelle, capacidad_muelle, tipo_muelle, estado)  VALUES ('Zona D', 600, 'Porta Contenedores', 0)
+INSERT INTO Muelle(id_muelle, capacidad_muelle, tipo_muelle, estado)  VALUES ('Zona E', 550, 'Vehiculos', 0)
+INSERT INTO Muelle(id_muelle, capacidad_muelle, tipo_muelle, estado)  VALUES ('Zona F', 450, 'Frigorificos', 0)
+INSERT INTO Muelle(id_muelle, capacidad_muelle, tipo_muelle, estado)  VALUES ('Zona G', 480, 'Carga General', 0)

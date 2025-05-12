@@ -31,6 +31,8 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblBuques = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnGuardar = new System.Windows.Forms.Button();
+            this.btnCamcelar = new System.Windows.Forms.Button();
             this.dtgBuque = new System.Windows.Forms.DataGridView();
             this.serial_buque = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.capitan = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -38,8 +40,6 @@
             this.origen = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fecha_ingreso = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.capacidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnGuardar = new System.Windows.Forms.Button();
-            this.btnCamcelar = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgBuque)).BeginInit();
@@ -77,6 +77,31 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(962, 450);
             this.panel1.TabIndex = 2;
+            // 
+            // btnGuardar
+            // 
+            this.btnGuardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(168)))), ((int)(((byte)(83)))));
+            this.btnGuardar.FlatAppearance.BorderSize = 3;
+            this.btnGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
+            this.btnGuardar.ForeColor = System.Drawing.Color.Black;
+            this.btnGuardar.Location = new System.Drawing.Point(346, 382);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(97, 42);
+            this.btnGuardar.TabIndex = 8;
+            this.btnGuardar.Text = "Guardar 💾";
+            this.btnGuardar.UseVisualStyleBackColor = false;
+            // 
+            // btnCamcelar
+            // 
+            this.btnCamcelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(115)))), ((int)(((byte)(232)))));
+            this.btnCamcelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
+            this.btnCamcelar.ForeColor = System.Drawing.Color.Black;
+            this.btnCamcelar.Location = new System.Drawing.Point(510, 383);
+            this.btnCamcelar.Name = "btnCamcelar";
+            this.btnCamcelar.Size = new System.Drawing.Size(93, 41);
+            this.btnCamcelar.TabIndex = 7;
+            this.btnCamcelar.Text = "Cancelar ⛔";
+            this.btnCamcelar.UseVisualStyleBackColor = false;
             // 
             // dtgBuque
             // 
@@ -140,31 +165,6 @@
             this.capacidad.Name = "capacidad";
             this.capacidad.Width = 125;
             // 
-            // btnGuardar
-            // 
-            this.btnGuardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(168)))), ((int)(((byte)(83)))));
-            this.btnGuardar.FlatAppearance.BorderSize = 3;
-            this.btnGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
-            this.btnGuardar.ForeColor = System.Drawing.Color.Black;
-            this.btnGuardar.Location = new System.Drawing.Point(346, 382);
-            this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(97, 42);
-            this.btnGuardar.TabIndex = 8;
-            this.btnGuardar.Text = "Guardar 💾";
-            this.btnGuardar.UseVisualStyleBackColor = false;
-            // 
-            // btnCamcelar
-            // 
-            this.btnCamcelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(115)))), ((int)(((byte)(232)))));
-            this.btnCamcelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
-            this.btnCamcelar.ForeColor = System.Drawing.Color.Black;
-            this.btnCamcelar.Location = new System.Drawing.Point(510, 383);
-            this.btnCamcelar.Name = "btnCamcelar";
-            this.btnCamcelar.Size = new System.Drawing.Size(93, 41);
-            this.btnCamcelar.TabIndex = 7;
-            this.btnCamcelar.Text = "Cancelar ⛔";
-            this.btnCamcelar.UseVisualStyleBackColor = false;
-            // 
             // frmInformeBuqueUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -173,6 +173,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "frmInformeBuqueUsuario";
             this.Text = "Datos de Buques";
+            this.Load += new System.EventHandler(this.frmInformeBuqueUsuario_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);

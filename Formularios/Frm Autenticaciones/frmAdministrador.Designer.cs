@@ -32,6 +32,7 @@
             this.panelMenu = new System.Windows.Forms.Panel();
             this.btnCambioContra = new FontAwesome.Sharp.IconButton();
             this.pnlInformes = new System.Windows.Forms.Panel();
+            this.btnGraficos = new FontAwesome.Sharp.IconButton();
             this.btnInformeBuques = new FontAwesome.Sharp.IconButton();
             this.btnInformePendientes = new FontAwesome.Sharp.IconButton();
             this.btnInformeMuelles = new FontAwesome.Sharp.IconButton();
@@ -70,7 +71,7 @@
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(220, 664);
+            this.panelMenu.Size = new System.Drawing.Size(220, 726);
             this.panelMenu.TabIndex = 0;
             this.panelMenu.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -86,7 +87,7 @@
             this.btnCambioContra.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnCambioContra.IconSize = 40;
             this.btnCambioContra.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCambioContra.Location = new System.Drawing.Point(0, 605);
+            this.btnCambioContra.Location = new System.Drawing.Point(0, 660);
             this.btnCambioContra.Name = "btnCambioContra";
             this.btnCambioContra.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
             this.btnCambioContra.Size = new System.Drawing.Size(220, 60);
@@ -99,6 +100,7 @@
             // 
             // pnlInformes
             // 
+            this.pnlInformes.Controls.Add(this.btnGraficos);
             this.pnlInformes.Controls.Add(this.btnInformeBuques);
             this.pnlInformes.Controls.Add(this.btnInformePendientes);
             this.pnlInformes.Controls.Add(this.btnInformeMuelles);
@@ -106,8 +108,31 @@
             this.pnlInformes.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlInformes.Location = new System.Drawing.Point(0, 440);
             this.pnlInformes.Name = "pnlInformes";
-            this.pnlInformes.Size = new System.Drawing.Size(220, 165);
+            this.pnlInformes.Size = new System.Drawing.Size(220, 220);
             this.pnlInformes.TabIndex = 6;
+            // 
+            // btnGraficos
+            // 
+            this.btnGraficos.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnGraficos.FlatAppearance.BorderSize = 0;
+            this.btnGraficos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGraficos.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGraficos.ForeColor = System.Drawing.Color.White;
+            this.btnGraficos.IconChar = FontAwesome.Sharp.IconChar.Folder;
+            this.btnGraficos.IconColor = System.Drawing.Color.White;
+            this.btnGraficos.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnGraficos.IconSize = 30;
+            this.btnGraficos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnGraficos.Location = new System.Drawing.Point(0, 160);
+            this.btnGraficos.Name = "btnGraficos";
+            this.btnGraficos.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
+            this.btnGraficos.Size = new System.Drawing.Size(220, 40);
+            this.btnGraficos.TabIndex = 9;
+            this.btnGraficos.Text = "Graficos";
+            this.btnGraficos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnGraficos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnGraficos.UseVisualStyleBackColor = true;
+            this.btnGraficos.Click += new System.EventHandler(this.iconButton1_Click);
             // 
             // btnInformeBuques
             // 
@@ -418,7 +443,7 @@
             this.pnlDesktop.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlDesktop.Location = new System.Drawing.Point(220, 85);
             this.pnlDesktop.Name = "pnlDesktop";
-            this.pnlDesktop.Size = new System.Drawing.Size(974, 579);
+            this.pnlDesktop.Size = new System.Drawing.Size(974, 641);
             this.pnlDesktop.TabIndex = 3;
             this.pnlDesktop.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlDesktop_Paint);
             // 
@@ -426,7 +451,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1194, 664);
+            this.ClientSize = new System.Drawing.Size(1194, 726);
             this.Controls.Add(this.pnlDesktop);
             this.Controls.Add(this.pnlShadow);
             this.Controls.Add(this.pnlTitleBar);
@@ -470,5 +495,6 @@
         private FontAwesome.Sharp.IconButton btnInformeUsuario;
         private FontAwesome.Sharp.IconButton btnInformeBuques;
         private FontAwesome.Sharp.IconButton btnCambioContra;
+        private FontAwesome.Sharp.IconButton btnGraficos;
     }
 }
