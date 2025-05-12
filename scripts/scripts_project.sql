@@ -387,3 +387,6 @@ INSERT INTO Muelle(id_muelle, capacidad_muelle, tipo_muelle, estado)  VALUES ('Z
 -------------NEW CHANGE
 ALTER TABLE Muelle
 ALTER COLUMN estado VARCHAR(30) not null
+
+
+update Muelle set estado = 'disponible'
