@@ -140,7 +140,7 @@
             this.ClientSize = new System.Drawing.Size(1032, 598);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Name = "frmAdminCharts";
-            this.Text = "frmAdminCharts";
+            this.Text = "Graficos";
             this.Load += new System.EventHandler(this.frmAdminCharts_Load);
             this.flowLayoutPanel1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
