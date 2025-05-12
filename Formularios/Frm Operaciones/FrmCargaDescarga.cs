@@ -109,7 +109,7 @@ namespace Port_manager.Formularios
             FROM Muelle
             WHERE capacidad_muelle >= @capacidadBarco
               AND tipo_muelle = @tipoCargaBarco
-              AND estado = 0"; // Solo muelles disponibles
+              AND estado = disponible"; // Solo muelles disponibles
 
                 using (SqlConnection conexion = DatabaseHelper.GetConnection())
                 {

@@ -383,3 +383,7 @@ INSERT INTO Muelle(id_muelle, capacidad_muelle, tipo_muelle, estado)  VALUES ('Z
 INSERT INTO Muelle(id_muelle, capacidad_muelle, tipo_muelle, estado)  VALUES ('Zona E', 550, 'Vehiculos', 0)
 INSERT INTO Muelle(id_muelle, capacidad_muelle, tipo_muelle, estado)  VALUES ('Zona F', 450, 'Frigorificos', 0)
 INSERT INTO Muelle(id_muelle, capacidad_muelle, tipo_muelle, estado)  VALUES ('Zona G', 480, 'Carga General', 0)
+
+-------------NEW CHANGE
+ALTER TABLE Muelle
+ALTER COLUMN estado VARCHAR(30) not null
