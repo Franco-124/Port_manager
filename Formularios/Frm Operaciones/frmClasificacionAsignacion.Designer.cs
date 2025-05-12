@@ -63,7 +63,7 @@
             this.btnDespacho.IconColor = System.Drawing.Color.Black;
             this.btnDespacho.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnDespacho.Location = new System.Drawing.Point(0, 0);
-            this.btnDespacho.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnDespacho.Margin = new System.Windows.Forms.Padding(2);
             this.btnDespacho.Name = "btnDespacho";
             this.btnDespacho.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btnDespacho.Size = new System.Drawing.Size(134, 56);
@@ -224,7 +224,7 @@
             this.ClientSize = new System.Drawing.Size(808, 446);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmClasificacionAsignacion";
             this.Text = "Clasificación y asignación";
             this.Load += new System.EventHandler(this.frmClasificacionAsignacion_Load);

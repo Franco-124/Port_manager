@@ -87,7 +87,8 @@
             this.chartTipoIncidencia.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
             this.chartTipoIncidencia.Legends.Add(legend1);
-            this.chartTipoIncidencia.Location = new System.Drawing.Point(3, 73);
+            this.chartTipoIncidencia.Location = new System.Drawing.Point(10, 80);
+            this.chartTipoIncidencia.Margin = new System.Windows.Forms.Padding(10);
             this.chartTipoIncidencia.Name = "chartTipoIncidencia";
             series1.ChartArea = "ChartArea1";
             series1.Legend = "Legend1";
@@ -104,7 +105,8 @@
             this.chartUsuariosPorRol.ChartAreas.Add(chartArea2);
             legend2.Name = "Legend1";
             this.chartUsuariosPorRol.Legends.Add(legend2);
-            this.chartUsuariosPorRol.Location = new System.Drawing.Point(398, 73);
+            this.chartUsuariosPorRol.Location = new System.Drawing.Point(419, 80);
+            this.chartUsuariosPorRol.Margin = new System.Windows.Forms.Padding(10);
             this.chartUsuariosPorRol.Name = "chartUsuariosPorRol";
             series2.ChartArea = "ChartArea1";
             series2.Legend = "Legend1";
@@ -121,7 +123,8 @@
             this.chartLineaTendencia.ChartAreas.Add(chartArea3);
             legend3.Name = "Legend1";
             this.chartLineaTendencia.Legends.Add(legend3);
-            this.chartLineaTendencia.Location = new System.Drawing.Point(3, 327);
+            this.chartLineaTendencia.Location = new System.Drawing.Point(10, 348);
+            this.chartLineaTendencia.Margin = new System.Windows.Forms.Padding(10);
             this.chartLineaTendencia.Name = "chartLineaTendencia";
             series3.ChartArea = "ChartArea1";
             series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
@@ -141,6 +144,7 @@
             this.Controls.Add(this.flowLayoutPanel1);
             this.Name = "frmAdminCharts";
             this.Text = "Graficos";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmAdminCharts_Load);
             this.flowLayoutPanel1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
