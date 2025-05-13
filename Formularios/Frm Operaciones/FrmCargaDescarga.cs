@@ -28,10 +28,10 @@ namespace Port_manager.Formularios
             {
                 // Consulta para obtener la capacidad y el tipo de carga del barco
                 string consulta = @"
-            SELECT rl.capacidad, rl.tipo_carga
-            FROM RegistroLlegadaBuque rl
-            JOIN IngresoBuque ib ON rl.origen = ib.origen
-            WHERE ib.serial_buque = @serial_buque";
+                SELECT rl.capacidad, rl.tipo_carga
+                FROM RegistroLlegadaBuque rl
+                JOIN IngresoBuque ib ON rl.origen = ib.origen
+                WHERE ib.serial_buque = @serial_buque";
 
                 using (SqlConnection conexion = DatabaseHelper.GetConnection())
                 {
@@ -97,11 +97,11 @@ namespace Port_manager.Formularios
             {
                 // Consulta SQL para obtener las zonas disponibles
                 string consulta = @"
-            SELECT id_muelle, capacidad_muelle, tipo_muelle
-            FROM Muelle
-            WHERE capacidad_muelle >= @capacidadBarco
-              AND tipo_muelle = @tipoCargaBarco
-              AND estado = 'disponible'"; // Solo muelles disponibles
+                SELECT id_muelle, capacidad_muelle, tipo_muelle
+                FROM Muelle
+                WHERE capacidad_muelle >= @capacidadBarco
+                AND tipo_muelle = @tipoCargaBarco
+                AND estado = 'disponible'"; // Solo muelles disponibles
 
                 using (SqlConnection conexion = DatabaseHelper.GetConnection())
                 {
@@ -297,9 +297,9 @@ namespace Port_manager.Formularios
             try
             {
                 string consultaCapacidadBuque = @"
-        SELECT capacidad
-        FROM IngresoBuque
-        WHERE serial_buque = @serial_buque";
+                SELECT capacidad
+                FROM IngresoBuque
+                WHERE serial_buque = @serial_buque";
 
                 using (SqlConnection conexion = DatabaseHelper.GetConnection())
                 {
@@ -330,9 +330,14 @@ namespace Port_manager.Formularios
                 try
                 {
                     string consultaActualizarCapacidad = @"
-            UPDATE Muelle
-            SET capacidad_muelle = capacidad_muelle - @capacidadBuque
-            WHERE id_muelle = @idMuelle";
+                    UPDATE Muelle
+                    SET 
+                        capacidad_muelle = capacidad_muelle - @capacidadBuque,
+                        estado = CASE 
+                                    WHEN (capacidad_muelle - @capacidadBuque) <= 99 THEN 'ocupado'
+                                    ELSE 'disponible'
+                                 END
+                    WHERE id_muelle = @idMuelle";
 
                     using (SqlConnection conexion = DatabaseHelper.GetConnection())
                     {
@@ -362,8 +367,8 @@ namespace Port_manager.Formularios
                 try
                 {
                     string consultaEliminarRegistro = @"
-            DELETE FROM RegistroLlegadaBuque
-            WHERE serial_buque = @serial_buque";
+                    DELETE FROM RegistroLlegadaBuque
+                    WHERE serial_buque = @serial_buque";
 
                     using (SqlConnection conexion = DatabaseHelper.GetConnection())
                     {
@@ -372,14 +377,6 @@ namespace Port_manager.Formularios
                             cmd.Parameters.AddWithValue("@serial_buque", serial_buque);
 
                             int filasEliminadas = cmd.ExecuteNonQuery();
-                            if (filasEliminadas > 0)
-                            {
-                                MessageBox.Show("Registro del buque eliminado correctamente de RegistroLlegadaBuque.");
-                            }
-                            else
-                            {
-                                MessageBox.Show("No se encontró el registro del buque para eliminar.");
-                            }
                         }
                     }
                 }
@@ -396,9 +393,8 @@ namespace Port_manager.Formularios
             {
                 MessageBox.Show("Error al ingresar operación. Por favor, inténtelo de nuevo.");
             }
+            
         }
-
-
 
         void NroOperacion()
         {
@@ -430,7 +426,7 @@ namespace Port_manager.Formularios
             catch (Exception ex)
             {
                 // Manejar errores y mostrar un mensaje
-                MessageBox.Show("Error al obtener el número de incidencia: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error al obtener el número de registro de operación: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

@@ -43,7 +43,7 @@ namespace Port_manager.Formularios
 
         private void frmClasificacionAsignacion_Load(object sender, EventArgs e)
         {
-            // Asegúrate de que estos botones existen en el formulario
+            
             pictureBox1.Controls.Add(btnZonaA);
             pictureBox1.Controls.Add(btnZonaB);
             pictureBox1.Controls.Add(btnZonaC);
@@ -52,7 +52,7 @@ namespace Port_manager.Formularios
             pictureBox1.Controls.Add(btnZonaF);
             pictureBox1.Controls.Add(btnZonaG);
 
-            ReubicarBotones(); // Ajustar posiciones iniciales// Asegúrate de que estos botones existen en el formulario
+            ReubicarBotones(); // Ajustar posiciones iniciales
         }
 
 
@@ -105,7 +105,32 @@ namespace Port_manager.Formularios
                     btn.Text = $"Zona {letra}";
                     btn.BackColor = Color.LightGray;
 
-                    if (zonasAgrupadas.ContainsKey(idMuelle))
+                    // Consultar el estado del muelle
+                    string estadoMuelle = "";
+                    try
+                    {
+                        using (SqlConnection conn = DatabaseHelper.GetConnection())
+                        {
+                            string consultaEstado = "SELECT estado FROM Muelle WHERE id_muelle = @idMuelle";
+                            using (SqlCommand cmd = new SqlCommand(consultaEstado, conn))
+                            {
+                                cmd.Parameters.AddWithValue("@idMuelle", idMuelle);
+                                object result = cmd.ExecuteScalar();
+                                if (result != null)
+                                    estadoMuelle = result.ToString();
+                            }
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        // Si hay error, dejar el color por defecto y continuar
+                    }
+
+                    if (estadoMuelle == "ocupado")
+                    {
+                        btn.BackColor = Color.Red;
+                    }
+                    else if (zonasAgrupadas.ContainsKey(idMuelle))
                     {
                         string tooltipText = string.Join("\n\n", zonasAgrupadas[idMuelle]);
                         toolTipZonas.SetToolTip(btn, tooltipText);
@@ -245,9 +270,9 @@ namespace Port_manager.Formularios
                 try
                 {
                     string consultaCapacidadBuque = @"
-            SELECT capacidad
-            FROM IngresoBuque
-            WHERE serial_buque = @serial_buque";
+                    SELECT capacidad
+                    FROM IngresoBuque
+                    WHERE serial_buque = @serial_buque";
 
                     using (SqlConnection conexion = DatabaseHelper.GetConnection())
                     {
@@ -280,8 +305,8 @@ namespace Port_manager.Formularios
                 try
                 {
                     string consultaEliminarRegistro = @"
-            DELETE FROM Registro_Operacion
-            WHERE serial_buque = @serial_buque";
+                    DELETE FROM Registro_Operacion
+                    WHERE serial_buque = @serial_buque";
 
                     using (SqlConnection conexion = DatabaseHelper.GetConnection())
                     {
@@ -311,9 +336,9 @@ namespace Port_manager.Formularios
                 try
                 {
                     string consultaActualizarCapacidad = @"
-            UPDATE Muelle
-            SET capacidad_muelle = capacidad_muelle + @capacidadBuque
-            WHERE id_muelle = @id_muelle";
+                    UPDATE Muelle
+                    SET capacidad_muelle = capacidad_muelle +          @capacidadBuque
+                    WHERE id_muelle = @id_muelle";
 
                     using (SqlConnection conexion = DatabaseHelper.GetConnection())
                     {
@@ -325,6 +350,24 @@ namespace Port_manager.Formularios
                             if (filasAfectadas > 0)
                             {
                                 MessageBox.Show("Capacidad del muelle restablecida correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                // Actualizar el estado del muelle a 'disponible'
+                                try
+                                {
+                                    string consultaActualizarEstado = @"
+                                    UPDATE Muelle
+                                    SET estado = 'disponible'
+                                    WHERE id_muelle = @id_muelle";
+
+                                    using (SqlCommand cmdEstado = new SqlCommand(consultaActualizarEstado, conexion))
+                                    {
+                                        cmdEstado.Parameters.AddWithValue("@id_muelle", idMuelleSeleccionado);
+                                        cmdEstado.ExecuteNonQuery();
+                                    }
+                                }
+                                catch (Exception exEstado)
+                                {
+                                    MessageBox.Show("Error al actualizar el estado del muelle: " + exEstado.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                }
                             }
                             else
                             {

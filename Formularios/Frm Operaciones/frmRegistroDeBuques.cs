@@ -128,6 +128,21 @@ namespace Port_manager.Formularios
             cmbSerialBarco.SelectedIndex = -1;
             txtOrigen.Clear();
 
+            string consulta = "SELECT serial_buque FROM RegistroLlegadaBuque WHERE serial_buque = @serial_buque";
+            using (SqlConnection conexion = DatabaseHelper.GetConnection())
+            {
+                using (SqlCommand cmd = new SqlCommand(consulta, conexion))
+                {
+                    cmd.Parameters.AddWithValue("@serial_buque", serial_buque);
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    if (reader.HasRows)
+                    {
+                        MessageBox.Show("El serial de buque ya ha sido registrado.");
+                        return;
+                    }
+                }
+            }
+
             if (string.IsNullOrEmpty(serial_buque))
             {
                 MessageBox.Show("Debe seleccionar un serial de buque válido.");
