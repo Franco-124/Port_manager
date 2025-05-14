@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnMostrar = new System.Windows.Forms.Button();
             this.cmbEstado = new System.Windows.Forms.ComboBox();
             this.btnImprimir = new FontAwesome.Sharp.IconButton();
             this.label1 = new System.Windows.Forms.Label();
@@ -39,7 +40,6 @@
             this.estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblMuelles = new System.Windows.Forms.Label();
-            this.btnMostrar = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgMuelles)).BeginInit();
             this.panel2.SuspendLayout();
@@ -61,6 +61,19 @@
             this.panel1.Size = new System.Drawing.Size(1067, 554);
             this.panel1.TabIndex = 1;
             // 
+            // btnMostrar
+            // 
+            this.btnMostrar.BackColor = System.Drawing.Color.IndianRed;
+            this.btnMostrar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnMostrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMostrar.Location = new System.Drawing.Point(509, 497);
+            this.btnMostrar.Name = "btnMostrar";
+            this.btnMostrar.Size = new System.Drawing.Size(121, 43);
+            this.btnMostrar.TabIndex = 9;
+            this.btnMostrar.Text = "Mostrar";
+            this.btnMostrar.UseVisualStyleBackColor = false;
+            this.btnMostrar.Click += new System.EventHandler(this.btnMostrar_Click);
+            // 
             // cmbEstado
             // 
             this.cmbEstado.FormattingEnabled = true;
@@ -76,16 +89,19 @@
             // 
             // btnImprimir
             // 
+            this.btnImprimir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btnImprimir.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnImprimir.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnImprimir.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnImprimir.IconColor = System.Drawing.Color.Black;
             this.btnImprimir.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnImprimir.Location = new System.Drawing.Point(125, 497);
+            this.btnImprimir.Location = new System.Drawing.Point(344, 497);
             this.btnImprimir.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnImprimir.Name = "btnImprimir";
             this.btnImprimir.Size = new System.Drawing.Size(115, 43);
             this.btnImprimir.TabIndex = 7;
             this.btnImprimir.Text = "Imprimir";
-            this.btnImprimir.UseVisualStyleBackColor = true;
+            this.btnImprimir.UseVisualStyleBackColor = false;
             this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
             // 
             // label1
@@ -109,12 +125,12 @@
             this.capacidad_muelle,
             this.tipo_muelle,
             this.estado});
-            this.dtgMuelles.Location = new System.Drawing.Point(125, 138);
+            this.dtgMuelles.Location = new System.Drawing.Point(98, 136);
             this.dtgMuelles.Margin = new System.Windows.Forms.Padding(4);
             this.dtgMuelles.Name = "dtgMuelles";
             this.dtgMuelles.RowHeadersVisible = false;
             this.dtgMuelles.RowHeadersWidth = 51;
-            this.dtgMuelles.Size = new System.Drawing.Size(832, 330);
+            this.dtgMuelles.Size = new System.Drawing.Size(874, 330);
             this.dtgMuelles.TabIndex = 3;
             // 
             // id_muelle
@@ -166,16 +182,6 @@
             this.lblMuelles.Size = new System.Drawing.Size(504, 36);
             this.lblMuelles.TabIndex = 3;
             this.lblMuelles.Text = "Informe de Disponibilidad de Muelles";
-            // 
-            // btnMostrar
-            // 
-            this.btnMostrar.Location = new System.Drawing.Point(264, 497);
-            this.btnMostrar.Name = "btnMostrar";
-            this.btnMostrar.Size = new System.Drawing.Size(121, 43);
-            this.btnMostrar.TabIndex = 9;
-            this.btnMostrar.Text = "Mostrar";
-            this.btnMostrar.UseVisualStyleBackColor = true;
-            this.btnMostrar.Click += new System.EventHandler(this.btnMostrar_Click);
             // 
             // FrmInformeMuelle
             // 

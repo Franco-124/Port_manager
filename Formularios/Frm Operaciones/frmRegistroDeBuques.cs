@@ -137,8 +137,9 @@ namespace Port_manager.Formularios
                     SqlDataReader reader = cmd.ExecuteReader();
                     if (reader.HasRows)
                     {
-                        MessageBox.Show("El serial de buque ya ha sido registrado.");
+                        MessageBox.Show("❌ la llegada de este buque ya ha sido registrada.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
+                       
                     }
                 }
             }
@@ -152,7 +153,7 @@ namespace Port_manager.Formularios
 
 
 
-            if (string.IsNullOrEmpty(serial_buque) || string.IsNullOrEmpty(origen))                
+            if (string.IsNullOrEmpty(serial_buque) || string.IsNullOrEmpty(origen) || string.IsNullOrEmpty(responsable))                
             {
                 MessageBox.Show("Por favor, complete todos los campos.");
                 
@@ -173,7 +174,7 @@ namespace Port_manager.Formularios
 
             else
             {
-                MessageBox.Show("Error al ingresar. Por favor, inténtelo de nuevo.");
+                MessageBox.Show("❌ la llegada de este buque ya ha sido registrada o hubo un error en el sistema", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

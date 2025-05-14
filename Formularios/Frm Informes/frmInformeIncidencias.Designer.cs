@@ -50,8 +50,9 @@
             this.panel2.Controls.Add(this.lblBuques);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(845, 56);
+            this.panel2.Size = new System.Drawing.Size(1127, 69);
             this.panel2.TabIndex = 2;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
@@ -60,22 +61,24 @@
             this.lblBuques.AutoSize = true;
             this.lblBuques.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBuques.ForeColor = System.Drawing.Color.White;
-            this.lblBuques.Location = new System.Drawing.Point(303, 9);
+            this.lblBuques.Location = new System.Drawing.Point(404, 11);
+            this.lblBuques.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblBuques.Name = "lblBuques";
-            this.lblBuques.Size = new System.Drawing.Size(255, 29);
+            this.lblBuques.Size = new System.Drawing.Size(313, 36);
             this.lblBuques.TabIndex = 3;
             this.lblBuques.Text = "Informe de Incidencias";
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
-            this.panel1.Controls.Add(this.dtgIncidencias);
             this.panel1.Controls.Add(this.btnImprimir);
+            this.panel1.Controls.Add(this.dtgIncidencias);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(845, 450);
+            this.panel1.Size = new System.Drawing.Size(1127, 554);
             this.panel1.TabIndex = 2;
             // 
             // dtgIncidencias
@@ -95,10 +98,11 @@
             this.descripcion,
             this.estado,
             this.nombre_admin});
-            this.dtgIncidencias.Location = new System.Drawing.Point(12, 97);
+            this.dtgIncidencias.Location = new System.Drawing.Point(16, 119);
+            this.dtgIncidencias.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dtgIncidencias.Name = "dtgIncidencias";
             this.dtgIncidencias.RowHeadersWidth = 51;
-            this.dtgIncidencias.Size = new System.Drawing.Size(821, 265);
+            this.dtgIncidencias.Size = new System.Drawing.Size(1095, 326);
             this.dtgIncidencias.TabIndex = 4;
             this.dtgIncidencias.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgIncidencias_CellContentClick_1);
             // 
@@ -146,25 +150,28 @@
             // 
             // btnImprimir
             // 
-            this.btnImprimir.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btnImprimir.BackColor = System.Drawing.Color.Tomato;
+            this.btnImprimir.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnImprimir.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnImprimir.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnImprimir.IconColor = System.Drawing.Color.Black;
             this.btnImprimir.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnImprimir.Location = new System.Drawing.Point(0, 404);
-            this.btnImprimir.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnImprimir.Location = new System.Drawing.Point(16, 468);
+            this.btnImprimir.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnImprimir.Name = "btnImprimir";
-            this.btnImprimir.Size = new System.Drawing.Size(845, 46);
+            this.btnImprimir.Size = new System.Drawing.Size(235, 57);
             this.btnImprimir.TabIndex = 3;
             this.btnImprimir.Text = "Imprimir";
-            this.btnImprimir.UseVisualStyleBackColor = true;
+            this.btnImprimir.UseVisualStyleBackColor = false;
             this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
             // 
             // frmInformeIncidencias
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(845, 450);
+            this.ClientSize = new System.Drawing.Size(1127, 554);
             this.Controls.Add(this.panel1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmInformeIncidencias";
             this.Text = "Estado de Incidencias";
             this.panel2.ResumeLayout(false);

@@ -59,8 +59,9 @@ namespace Port_manager.Formularios
         private DataTable ObtenerInfoZonas()
         {
             string query = @"
-        SELECT id_muelle, serial_buque, tipo_carga, capacidad, accion, descripcion, fecha_operacion
-        FROM Registro_Operacion";
+            SELECT ro.id_muelle, ro.serial_buque, ro.tipo_carga, ib.capacidad, ro.accion, ro.descripcion, ro.fecha_operacion
+            FROM Registro_Operacion ro
+            JOIN IngresoBuque ib ON ro.serial_buque = ib.serial_buque";
 
             using (SqlConnection conn = DatabaseHelper.GetConnection())
             using (SqlDataAdapter da = new SqlDataAdapter(query, conn))
@@ -129,6 +130,15 @@ namespace Port_manager.Formularios
                     if (estadoMuelle == "ocupado")
                     {
                         btn.BackColor = Color.Red;
+                        if (zonasAgrupadas.ContainsKey(idMuelle))
+                        {
+                            string tooltipText = string.Join("\n\n", zonasAgrupadas[idMuelle]);
+                            toolTipZonas.SetToolTip(btn, tooltipText);
+                        }
+                        else
+                        {
+                            toolTipZonas.SetToolTip(btn, "Sin información registrada.");
+                        }
                     }
                     else if (zonasAgrupadas.ContainsKey(idMuelle))
                     {

@@ -58,16 +58,16 @@
             this.flowLayoutPanel1.Controls.Add(this.chartLineaTendencia);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(4);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(1409, 795);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(1467, 888);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
             // panel1
             // 
             this.panel1.Controls.Add(this.lblGrafico);
             this.panel1.Location = new System.Drawing.Point(4, 4);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1372, 79);
             this.panel1.TabIndex = 3;
@@ -97,7 +97,7 @@
             series1.Legend = "Legend1";
             series1.Name = "Series1";
             this.chartTipoIncidencia.Series.Add(series1);
-            this.chartTipoIncidencia.Size = new System.Drawing.Size(519, 305);
+            this.chartTipoIncidencia.Size = new System.Drawing.Size(519, 377);
             this.chartTipoIncidencia.TabIndex = 0;
             this.chartTipoIncidencia.Text = "chart1";
             this.chartTipoIncidencia.Click += new System.EventHandler(this.chart1_Click);
@@ -115,7 +115,7 @@
             series2.Legend = "Legend1";
             series2.Name = "Series1";
             this.chartUsuariosPorRol.Series.Add(series2);
-            this.chartUsuariosPorRol.Size = new System.Drawing.Size(675, 302);
+            this.chartUsuariosPorRol.Size = new System.Drawing.Size(686, 377);
             this.chartUsuariosPorRol.TabIndex = 1;
             this.chartUsuariosPorRol.Text = "chart2";
             this.chartUsuariosPorRol.Click += new System.EventHandler(this.chartUsuariosPorRol_Click);
@@ -126,7 +126,7 @@
             this.chartLineaTendencia.ChartAreas.Add(chartArea3);
             legend3.Name = "Legend1";
             this.chartLineaTendencia.Legends.Add(legend3);
-            this.chartLineaTendencia.Location = new System.Drawing.Point(13, 428);
+            this.chartLineaTendencia.Location = new System.Drawing.Point(13, 500);
             this.chartLineaTendencia.Margin = new System.Windows.Forms.Padding(13, 12, 13, 12);
             this.chartLineaTendencia.Name = "chartLineaTendencia";
             series3.ChartArea = "ChartArea1";
@@ -134,7 +134,7 @@
             series3.Legend = "Legend1";
             series3.Name = "Series1";
             this.chartLineaTendencia.Series.Add(series3);
-            this.chartLineaTendencia.Size = new System.Drawing.Size(700, 318);
+            this.chartLineaTendencia.Size = new System.Drawing.Size(625, 352);
             this.chartLineaTendencia.TabIndex = 2;
             this.chartLineaTendencia.Text = "chart1";
             // 
@@ -143,9 +143,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
-            this.ClientSize = new System.Drawing.Size(1409, 795);
+            this.ClientSize = new System.Drawing.Size(1467, 888);
             this.Controls.Add(this.flowLayoutPanel1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmAdminCharts";
             this.Text = "Graficos";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

@@ -59,7 +59,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1077, 69);
+            this.panel1.Size = new System.Drawing.Size(1214, 69);
             this.panel1.TabIndex = 0;
             // 
             // txtRegistro
@@ -260,7 +260,8 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.BackColor = System.Drawing.Color.Yellow;
+            this.btnCancelar.BackColor = System.Drawing.Color.Red;
+            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnCancelar.IconColor = System.Drawing.Color.Black;
@@ -268,7 +269,7 @@
             this.btnCancelar.Location = new System.Drawing.Point(648, 458);
             this.btnCancelar.Margin = new System.Windows.Forms.Padding(4);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(132, 44);
+            this.btnCancelar.Size = new System.Drawing.Size(158, 44);
             this.btnCancelar.TabIndex = 21;
             this.btnCancelar.Text = "Cancelar ⛔";
             this.btnCancelar.UseVisualStyleBackColor = false;
@@ -277,14 +278,15 @@
             // btnGuardar
             // 
             this.btnGuardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(168)))), ((int)(((byte)(83)))));
+            this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardar.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnGuardar.IconColor = System.Drawing.Color.Black;
             this.btnGuardar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnGuardar.Location = new System.Drawing.Point(443, 458);
+            this.btnGuardar.Location = new System.Drawing.Point(403, 458);
             this.btnGuardar.Margin = new System.Windows.Forms.Padding(4);
             this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(128, 44);
+            this.btnGuardar.Size = new System.Drawing.Size(154, 44);
             this.btnGuardar.TabIndex = 20;
             this.btnGuardar.Text = "Guardar 💾";
             this.btnGuardar.UseVisualStyleBackColor = false;

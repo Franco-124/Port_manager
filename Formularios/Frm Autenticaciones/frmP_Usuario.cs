@@ -218,10 +218,13 @@ namespace Port_manager.Formularios
 
         private void btnCerrarSesion_Click(object sender, EventArgs e)
         {
-            
+
+            this.Hide();
             frmLogin login = new frmLogin();
-            login.Show();  // Muestra el formulario de inicio de sesión antes de cerrar el actual
-            this.Close();  // Cierra el formulario actual (frmAdministrador)
+            login.StartPosition = FormStartPosition.CenterScreen;
+            login.Size = new System.Drawing.Size(1005, 720); // Cambiado de System.Windows.Size a System.Drawing.Size  
+            login.Show();
+            this.Close();
         }
 
         private void iconButton3_Click_1(object sender, EventArgs e)
