@@ -83,7 +83,7 @@
             this.btnolvidocontraseña.BackColor = System.Drawing.Color.White;
             this.btnolvidocontraseña.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnolvidocontraseña.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnolvidocontraseña.Location = new System.Drawing.Point(352, 355);
+            this.btnolvidocontraseña.Location = new System.Drawing.Point(412, 355);
             this.btnolvidocontraseña.Name = "btnolvidocontraseña";
             this.btnolvidocontraseña.Size = new System.Drawing.Size(225, 30);
             this.btnolvidocontraseña.TabIndex = 12;
@@ -131,7 +131,7 @@
             this.btnCrear_cuenta.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCrear_cuenta.Location = new System.Drawing.Point(85, 621);
             this.btnCrear_cuenta.Name = "btnCrear_cuenta";
-            this.btnCrear_cuenta.Size = new System.Drawing.Size(488, 54);
+            this.btnCrear_cuenta.Size = new System.Drawing.Size(552, 54);
             this.btnCrear_cuenta.TabIndex = 8;
             this.btnCrear_cuenta.Text = "Crear Cuenta";
             this.btnCrear_cuenta.UseVisualStyleBackColor = false;
@@ -142,7 +142,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label3.Location = new System.Drawing.Point(286, 552);
+            this.label3.Location = new System.Drawing.Point(343, 550);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(38, 38);
             this.label3.TabIndex = 7;
@@ -155,7 +155,7 @@
             this.btnLogin.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogin.Location = new System.Drawing.Point(85, 472);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(488, 52);
+            this.btnLogin.Size = new System.Drawing.Size(552, 52);
             this.btnLogin.TabIndex = 6;
             this.btnLogin.Text = "Iniciar Sesión";
             this.btnLogin.UseVisualStyleBackColor = false;
@@ -182,7 +182,7 @@
             this.txtPassword.Location = new System.Drawing.Point(85, 279);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
-            this.txtPassword.Size = new System.Drawing.Size(488, 38);
+            this.txtPassword.Size = new System.Drawing.Size(552, 38);
             this.txtPassword.TabIndex = 3;
             // 
             // txtEnombre
@@ -192,7 +192,7 @@
             this.txtEnombre.ForeColor = System.Drawing.Color.Black;
             this.txtEnombre.Location = new System.Drawing.Point(85, 142);
             this.txtEnombre.Name = "txtEnombre";
-            this.txtEnombre.Size = new System.Drawing.Size(488, 38);
+            this.txtEnombre.Size = new System.Drawing.Size(552, 38);
             this.txtEnombre.TabIndex = 2;
             this.txtEnombre.TextChanged += new System.EventHandler(this.txtEnombre_TextChanged);
             this.txtEnombre.Leave += new System.EventHandler(this.txtEnombre_Leave);
