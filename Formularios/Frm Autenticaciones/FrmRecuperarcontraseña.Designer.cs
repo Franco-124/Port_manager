@@ -37,13 +37,13 @@
             this.label6 = new System.Windows.Forms.Label();
             this.txtNombre_usuario = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.btnIniciarSesion = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.btnEnviar = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.txtEmail = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.btnIniciarSesion = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -127,10 +127,10 @@
             // 
             // txtNombre_usuario
             // 
-            this.txtNombre_usuario.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNombre_usuario.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNombre_usuario.Location = new System.Drawing.Point(98, 202);
             this.txtNombre_usuario.Name = "txtNombre_usuario";
-            this.txtNombre_usuario.Size = new System.Drawing.Size(484, 31);
+            this.txtNombre_usuario.Size = new System.Drawing.Size(484, 34);
             this.txtNombre_usuario.TabIndex = 10;
             // 
             // label5
@@ -143,6 +143,21 @@
             this.label5.Size = new System.Drawing.Size(450, 23);
             this.label5.TabIndex = 9;
             this.label5.Text = "¿Aun recuerda su contraseña?, vuelva al inicio de sesión";
+            // 
+            // btnIniciarSesion
+            // 
+            this.btnIniciarSesion.BackColor = System.Drawing.Color.White;
+            this.btnIniciarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnIniciarSesion.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnIniciarSesion.ForeColor = System.Drawing.Color.Black;
+            this.btnIniciarSesion.Location = new System.Drawing.Point(98, 388);
+            this.btnIniciarSesion.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnIniciarSesion.Name = "btnIniciarSesion";
+            this.btnIniciarSesion.Size = new System.Drawing.Size(484, 34);
+            this.btnIniciarSesion.TabIndex = 8;
+            this.btnIniciarSesion.Text = "Iniciar sesión";
+            this.btnIniciarSesion.UseVisualStyleBackColor = false;
+            this.btnIniciarSesion.Click += new System.EventHandler(this.btnIniciarSesion_Click);
             // 
             // label3
             // 
@@ -185,12 +200,23 @@
             // txtEmail
             // 
             this.txtEmail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEmail.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmail.Location = new System.Drawing.Point(98, 91);
             this.txtEmail.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(484, 30);
+            this.txtEmail.Size = new System.Drawing.Size(484, 34);
             this.txtEmail.TabIndex = 0;
+            // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.panel6.Controls.Add(this.label7);
+            this.panel6.ForeColor = System.Drawing.Color.White;
+            this.panel6.Location = new System.Drawing.Point(98, 467);
+            this.panel6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(527, 99);
+            this.panel6.TabIndex = 7;
             // 
             // label7
             // 
@@ -205,32 +231,6 @@
     "e sesión, diríjase a la pestaña \'Cambiar contraseña\' \r\npara establecer una nueva" +
     " por razones de seguridad.\"";
             this.label7.Click += new System.EventHandler(this.label4_Click_1);
-            // 
-            // panel6
-            // 
-            this.panel6.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.panel6.Controls.Add(this.label7);
-            this.panel6.ForeColor = System.Drawing.Color.White;
-            this.panel6.Location = new System.Drawing.Point(98, 467);
-            this.panel6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(527, 99);
-            this.panel6.TabIndex = 7;
-            // 
-            // btnIniciarSesion
-            // 
-            this.btnIniciarSesion.BackColor = System.Drawing.Color.White;
-            this.btnIniciarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnIniciarSesion.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnIniciarSesion.ForeColor = System.Drawing.Color.Black;
-            this.btnIniciarSesion.Location = new System.Drawing.Point(98, 388);
-            this.btnIniciarSesion.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnIniciarSesion.Name = "btnIniciarSesion";
-            this.btnIniciarSesion.Size = new System.Drawing.Size(484, 34);
-            this.btnIniciarSesion.TabIndex = 8;
-            this.btnIniciarSesion.Text = "Iniciar sesión";
-            this.btnIniciarSesion.UseVisualStyleBackColor = false;
-            this.btnIniciarSesion.Click += new System.EventHandler(this.btnIniciarSesion_Click);
             // 
             // FrmRecuperarContraseña
             // 

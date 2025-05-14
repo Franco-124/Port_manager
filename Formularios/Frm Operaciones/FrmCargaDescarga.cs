@@ -21,25 +21,17 @@ namespace Port_manager.Formularios
             NroOperacion();
         }
 
-        public frmInformePendientes frmInformePendientes
-        {
-            get => default;
-            set
-            {
-            }
-        }
-
-
+       
         private (int capacidad, string tipoCarga) ObtenerDatosBarco(string serialBuque)
         {
             try
             {
                 // Consulta para obtener la capacidad y el tipo de carga del barco
                 string consulta = @"
-            SELECT rl.capacidad, rl.tipo_carga
-            FROM RegistroLlegadaBuque rl
-            JOIN IngresoBuque ib ON rl.origen = ib.origen
-            WHERE ib.serial_buque = @serial_buque";
+                SELECT rl.capacidad, rl.tipo_carga
+                FROM RegistroLlegadaBuque rl
+                JOIN IngresoBuque ib ON rl.origen = ib.origen
+                WHERE ib.serial_buque = @serial_buque";
 
                 using (SqlConnection conexion = DatabaseHelper.GetConnection())
                 {
@@ -72,7 +64,7 @@ namespace Port_manager.Formularios
             try
             {
                 // Consulta para obtener los seriales de los barcos filtrados por usuario
-                string consulta = "SELECT serial_buque FROM IngresoBuque";
+                string consulta = "SELECT serial_buque FROM RegistroLlegadaBuque";
 
                 using (SqlConnection conexion = DatabaseHelper.GetConnection())
                 {
@@ -105,11 +97,11 @@ namespace Port_manager.Formularios
             {
                 // Consulta SQL para obtener las zonas disponibles
                 string consulta = @"
-            SELECT id_muelle, capacidad_muelle, tipo_muelle
-            FROM Muelle
-            WHERE capacidad_muelle >= @capacidadBarco
-              AND tipo_muelle = @tipoCargaBarco
-              AND estado = 0"; // Solo muelles disponibles
+                SELECT id_muelle, capacidad_muelle, tipo_muelle
+                FROM Muelle
+                WHERE capacidad_muelle >= @capacidadBarco
+                AND tipo_muelle = @tipoCargaBarco
+                AND estado = 'disponible'"; // Solo muelles disponibles
 
                 using (SqlConnection conexion = DatabaseHelper.GetConnection())
                 {
@@ -274,14 +266,12 @@ namespace Port_manager.Formularios
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             string serial_buque = cmbSerialBarco.SelectedItem?.ToString();
-            float capacidad = txtCapacidad.Text == "" ? 0 : float.Parse(txtCapacidad.Text);
-            string id_muelle  = cmbMuelle.SelectedItem?.ToString();
+            float capacidadMuelle = txtCapacidad.Text == "" ? 0 : float.Parse(txtCapacidad.Text);
+            string id_muelle = cmbMuelle.SelectedItem?.ToString();
             string descripcion = txtDescripcion.Text;
             DateTime fecha_operacion = dtTimePicker.Value;
             string tipo_carga = txtTipocarga.Text;
             string accion = txtAccion.Text;
-
-
 
             txtCapacidad.Clear();
             cmbMuelle.SelectedIndex = -1;
@@ -296,32 +286,116 @@ namespace Port_manager.Formularios
                 return;
             }
 
-
-
-
             if (string.IsNullOrEmpty(serial_buque) || string.IsNullOrEmpty(descripcion) || string.IsNullOrEmpty(tipo_carga) || string.IsNullOrEmpty(accion))
             {
                 MessageBox.Show("Por favor, complete todos los campos.");
-
                 return;
             }
 
-
-
-
-            if (DatabaseHelper.agregar_operacion_registro(serial_buque, id_muelle, descripcion, fecha_operacion ,capacidad, tipo_carga, accion))
+            // Obtener la capacidad del buque desde la base de datos
+            float capacidadBuque = 0;
+            try
             {
-                MessageBox.Show("Operación Ingresada correctamente.");
-                NroOperacion();
+                string consultaCapacidadBuque = @"
+                SELECT capacidad
+                FROM IngresoBuque
+                WHERE serial_buque = @serial_buque";
 
+                using (SqlConnection conexion = DatabaseHelper.GetConnection())
+                {
+                    using (SqlCommand cmd = new SqlCommand(consultaCapacidadBuque, conexion))
+                    {
+                        cmd.Parameters.AddWithValue("@serial_buque", serial_buque);
+
+                        using (SqlDataReader reader = cmd.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                capacidadBuque = Convert.ToSingle(reader["capacidad"]);
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al obtener la capacidad del buque: " + ex.Message);
+                return;
             }
 
+            // Guardar la operación en la base de datos
+            if (DatabaseHelper.agregar_operacion_registro(serial_buque, id_muelle, descripcion, fecha_operacion, capacidadMuelle, tipo_carga, accion))
+            {
+                // Restar la capacidad del buque a la capacidad del muelle
+                try
+                {
+                    string consultaActualizarCapacidad = @"
+                    UPDATE Muelle
+                    SET 
+                        capacidad_muelle = capacidad_muelle - @capacidadBuque,
+                        estado = CASE 
+                                    WHEN (capacidad_muelle - @capacidadBuque) <= 99 THEN 'ocupado'
+                                    ELSE 'disponible'
+                                 END
+                    WHERE id_muelle = @idMuelle";
 
+                    using (SqlConnection conexion = DatabaseHelper.GetConnection())
+                    {
+                        using (SqlCommand cmd = new SqlCommand(consultaActualizarCapacidad, conexion))
+                        {
+                            cmd.Parameters.AddWithValue("@capacidadBuque", capacidadBuque);
+                            cmd.Parameters.AddWithValue("@idMuelle", id_muelle);
+
+                            int filasAfectadas = cmd.ExecuteNonQuery();
+                            if (filasAfectadas > 0)
+                            {
+                                MessageBox.Show("Capacidad del muelle actualizada correctamente.");
+                            }
+                            else
+                            {
+                                MessageBox.Show("No se pudo actualizar la capacidad del muelle.");
+                            }
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al actualizar la capacidad del muelle: " + ex.Message);
+                }
+
+                // Eliminar el registro del buque en la tabla RegistroLlegadaBuque
+                try
+                {
+                    string consultaEliminarRegistro = @"
+                    DELETE FROM RegistroLlegadaBuque
+                    WHERE serial_buque = @serial_buque";
+
+                    using (SqlConnection conexion = DatabaseHelper.GetConnection())
+                    {
+                        using (SqlCommand cmd = new SqlCommand(consultaEliminarRegistro, conexion))
+                        {
+                            cmd.Parameters.AddWithValue("@serial_buque", serial_buque);
+
+                            int filasEliminadas = cmd.ExecuteNonQuery();
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al eliminar el registro del buque: " + ex.Message);
+                }
+
+                MessageBox.Show("Operación ingresada correctamente.");
+                NroOperacion();
+                CargarSerialesBarcos();
+            }
             else
             {
                 MessageBox.Show("Error al ingresar operación. Por favor, inténtelo de nuevo.");
             }
+            
         }
+
         void NroOperacion()
         {
             try
@@ -352,7 +426,7 @@ namespace Port_manager.Formularios
             catch (Exception ex)
             {
                 // Manejar errores y mostrar un mensaje
-                MessageBox.Show("Error al obtener el número de incidencia: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error al obtener el número de registro de operación: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

@@ -149,12 +149,6 @@
     <Compile Include="Formularios\Frm Informes\FrmInformeMuelle.Designer.cs">
       <DependentUpon>FrmInformeMuelle.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Frm Informes\frmInformePendientes.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formularios\Frm Informes\frmInformePendientes.Designer.cs">
-      <DependentUpon>frmInformePendientes.cs</DependentUpon>
-    </Compile>
     <Compile Include="Formularios\Frm Operaciones\frmIngresoBuque.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -231,9 +225,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Frm Informes\FrmInformeMuelle.resx">
       <DependentUpon>FrmInformeMuelle.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\Frm Informes\frmInformePendientes.resx">
-      <DependentUpon>frmInformePendientes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Frm Operaciones\frmIngresoBuque.resx">
       <DependentUpon>frmIngresoBuque.cs</DependentUpon>

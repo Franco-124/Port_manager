@@ -58,7 +58,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(611, 724);
+            this.panel1.Size = new System.Drawing.Size(611, 792);
             this.panel1.TabIndex = 0;
             // 
             // panel2
@@ -80,32 +80,33 @@
             this.panel2.Controls.Add(this.txtEmail);
             this.panel2.Controls.Add(this.txtNombre);
             this.panel2.Controls.Add(this.label1);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel2.Location = new System.Drawing.Point(617, 0);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel2.Location = new System.Drawing.Point(611, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(564, 724);
+            this.panel2.Size = new System.Drawing.Size(591, 792);
             this.panel2.TabIndex = 1;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // txtCodigo
             // 
             this.txtCodigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCodigo.Location = new System.Drawing.Point(260, 574);
+            this.txtCodigo.Location = new System.Drawing.Point(393, 576);
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.PasswordChar = '*';
-            this.txtCodigo.Size = new System.Drawing.Size(225, 30);
+            this.txtCodigo.Size = new System.Drawing.Size(175, 30);
             this.txtCodigo.TabIndex = 18;
             // 
             // lbVerificacion
             // 
             this.lbVerificacion.AutoSize = true;
-            this.lbVerificacion.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbVerificacion.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbVerificacion.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.lbVerificacion.Location = new System.Drawing.Point(69, 581);
             this.lbVerificacion.Name = "lbVerificacion";
-            this.lbVerificacion.Size = new System.Drawing.Size(179, 23);
+            this.lbVerificacion.Size = new System.Drawing.Size(222, 25);
             this.lbVerificacion.TabIndex = 17;
-            this.lbVerificacion.Text = "Codigo de verificación";
+            this.lbVerificacion.Text = "Codigo de administrador";
             // 
             // cmbRol_user
             // 
@@ -204,9 +205,9 @@
             this.btnVLogin.BackColor = System.Drawing.Color.WhiteSmoke;
             this.btnVLogin.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVLogin.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnVLogin.Location = new System.Drawing.Point(73, 681);
+            this.btnVLogin.Location = new System.Drawing.Point(78, 719);
             this.btnVLogin.Name = "btnVLogin";
-            this.btnVLogin.Size = new System.Drawing.Size(412, 31);
+            this.btnVLogin.Size = new System.Drawing.Size(412, 41);
             this.btnVLogin.TabIndex = 7;
             this.btnVLogin.Text = "¿Ya tienes cuenta?, inicia sesión aqui.";
             this.btnVLogin.UseVisualStyleBackColor = false;
@@ -217,9 +218,9 @@
             this.btnCrearcuenta.BackColor = System.Drawing.Color.DarkSlateGray;
             this.btnCrearcuenta.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCrearcuenta.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnCrearcuenta.Location = new System.Drawing.Point(73, 625);
+            this.btnCrearcuenta.Location = new System.Drawing.Point(78, 647);
             this.btnCrearcuenta.Name = "btnCrearcuenta";
-            this.btnCrearcuenta.Size = new System.Drawing.Size(412, 41);
+            this.btnCrearcuenta.Size = new System.Drawing.Size(412, 53);
             this.btnCrearcuenta.TabIndex = 6;
             this.btnCrearcuenta.Text = "Crear Cuenta";
             this.btnCrearcuenta.UseVisualStyleBackColor = false;
@@ -274,7 +275,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1181, 724);
+            this.ClientSize = new System.Drawing.Size(1202, 792);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;

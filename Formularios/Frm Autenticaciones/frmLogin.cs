@@ -141,9 +141,12 @@ namespace Port_manager
         {
             try
             {
-                frmCrear_cuenta frmCrear_Cuenta = new frmCrear_cuenta();
-                frmCrear_Cuenta.Show();
                 this.Hide();
+                frmCrear_cuenta login = new frmCrear_cuenta();
+                login.StartPosition = FormStartPosition.CenterScreen;
+                login.Size = new System.Drawing.Size(1005, 720); // Cambiado de System.Windows.Size a System.Drawing.Size  
+                login.Show();
+                
             }
             catch (Exception ex)
             {

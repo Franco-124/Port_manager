@@ -189,7 +189,9 @@ namespace Port_manager.Formularios
             }
         }
 
+        private void btnCamcelar_Click(object sender, EventArgs e)
+        {
 
-
+        }
     }
 }

@@ -376,10 +376,17 @@ END;
 
 ---SCRIPTS DE MUELLE
 
-INSERT INTO Muelle(id_muelle, capacidad_muelle, tipo_muelle, estado)  VALUES ('Zona A', 650, 'Graneleros', 0)
-INSERT INTO Muelle(id_muelle, capacidad_muelle, tipo_muelle, estado)  VALUES ('Zona B', 750, 'Petroleros', 0)
-INSERT INTO Muelle(id_muelle, capacidad_muelle, tipo_muelle, estado)  VALUES ('Zona C', 600, 'Porta Contenedores', 0)
-INSERT INTO Muelle(id_muelle, capacidad_muelle, tipo_muelle, estado)  VALUES ('Zona D', 600, 'Porta Contenedores', 0)
-INSERT INTO Muelle(id_muelle, capacidad_muelle, tipo_muelle, estado)  VALUES ('Zona E', 550, 'Vehiculos', 0)
-INSERT INTO Muelle(id_muelle, capacidad_muelle, tipo_muelle, estado)  VALUES ('Zona F', 450, 'Frigorificos', 0)
-INSERT INTO Muelle(id_muelle, capacidad_muelle, tipo_muelle, estado)  VALUES ('Zona G', 480, 'Carga General', 0)
+INSERT INTO Muelle(id_muelle, capacidad_muelle, tipo_muelle, estado)  VALUES ('Zona A', 650, 'Graneleros', 'disponible')
+INSERT INTO Muelle(id_muelle, capacidad_muelle, tipo_muelle, estado)  VALUES ('Zona B', 750, 'Petroleros', 'disponible')
+INSERT INTO Muelle(id_muelle, capacidad_muelle, tipo_muelle, estado)  VALUES ('Zona C', 600, 'Porta Contenedores', 'disponible')
+INSERT INTO Muelle(id_muelle, capacidad_muelle, tipo_muelle, estado)  VALUES ('Zona D', 600, 'Porta Contenedores', 'disponible')
+INSERT INTO Muelle(id_muelle, capacidad_muelle, tipo_muelle, estado)  VALUES ('Zona E', 550, 'Vehiculos', 'disponible')
+INSERT INTO Muelle(id_muelle, capacidad_muelle, tipo_muelle, estado)  VALUES ('Zona F', 450, 'Frigorificos', 'disponible')
+INSERT INTO Muelle(id_muelle, capacidad_muelle, tipo_muelle, estado)  VALUES ('Zona G', 480, 'Carga General', 'disponible')
+
+-------------NEW CHANGE
+ALTER TABLE Muelle
+ALTER COLUMN estado VARCHAR(30) not null
+
+
+update Muelle set estado = 'disponible'

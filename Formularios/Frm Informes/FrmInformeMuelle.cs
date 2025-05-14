@@ -9,10 +9,13 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Word = Microsoft.Office.Interop.Word;
 using System.IO;
+using SqlConnectiondb;
+using System.Data.SqlClient;
 namespace Port_manager.Formularios
 {
     public partial class FrmInformeMuelle : Form
     {
+        private DataTable tablaOriginal;
         public FrmInformeMuelle()
         {
             InitializeComponent();
@@ -122,5 +125,71 @@ namespace Port_manager.Formularios
                 ObjWord.Quit(false);
             }
         }
+     
+
+        public DataTable cargar_datos()
+        {
+            string consulta = "select id_muelle,capacidad_muelle,tipo_muelle,estado from Muelle";
+            using (SqlConnection conexion = DatabaseHelper.GetConnection())
+            {
+                SqlDataAdapter adaptador = new SqlDataAdapter(consulta, conexion);
+                DataTable tabla = new DataTable();
+                adaptador.Fill(tabla);
+
+                dtgMuelles.AutoGenerateColumns = false;
+
+
+                dtgMuelles.DataSource = tabla;
+
+                dtgMuelles.Columns["id_muelle"].DataPropertyName = "id_muelle";
+                dtgMuelles.Columns["capacidad_muelle"].DataPropertyName = "capacidad_muelle";
+                dtgMuelles.Columns["tipo_muelle"].DataPropertyName = "tipo_muelle";
+                dtgMuelles.Columns["estado"].DataPropertyName = "estado";
+            
+
+                return tabla;
+
+
+
+            }
+        }
+
+        private void FrmInformeMuelle_Load(object sender, EventArgs e)
+        {
+            tablaOriginal = cargar_datos();
+        }
+
+        private void btnMostrar_Click(object sender, EventArgs e)
+        {
+            cargar_datos();
+        }
+
+        private void cmbEstado_SelectedValueChanged(object sender, EventArgs e)
+        {
+            string estado = cmbEstado.SelectedItem?.ToString();
+
+
+            try
+            {
+                var tablaFiltrada = tablaOriginal.AsEnumerable()
+                    .Where(row => row.Field<string>("estado").Equals(estado));
+
+                if (tablaFiltrada.Any())
+                {
+                    dtgMuelles.DataSource = tablaFiltrada.CopyToDataTable();
+                }
+                else
+                {
+                    dtgMuelles.DataSource = tablaOriginal.Clone(); // Muestra tabla vacía con columnas
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al filtrar la tabla: " + ex.Message);
+
+            }
+        }
     }
+
+
 }

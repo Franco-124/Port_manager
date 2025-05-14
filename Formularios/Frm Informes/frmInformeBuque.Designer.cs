@@ -28,8 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnMostrarDatos = new System.Windows.Forms.Button();
             this.btnImprimir = new FontAwesome.Sharp.IconButton();
             this.dtpFecha = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
@@ -42,7 +43,6 @@
             this.capacidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblBuques = new System.Windows.Forms.Label();
-            this.btnMostrarDatos = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgBuque)).BeginInit();
             this.panel2.SuspendLayout();
@@ -65,18 +65,35 @@
             this.panel1.TabIndex = 1;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
+            // btnMostrarDatos
+            // 
+            this.btnMostrarDatos.BackColor = System.Drawing.Color.LightCoral;
+            this.btnMostrarDatos.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnMostrarDatos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMostrarDatos.Location = new System.Drawing.Point(479, 486);
+            this.btnMostrarDatos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnMostrarDatos.Name = "btnMostrarDatos";
+            this.btnMostrarDatos.Size = new System.Drawing.Size(133, 43);
+            this.btnMostrarDatos.TabIndex = 7;
+            this.btnMostrarDatos.Text = "Mostrar Todos";
+            this.btnMostrarDatos.UseVisualStyleBackColor = false;
+            this.btnMostrarDatos.Click += new System.EventHandler(this.btnMostrarDatos_Click);
+            // 
             // btnImprimir
             // 
+            this.btnImprimir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btnImprimir.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnImprimir.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnImprimir.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnImprimir.IconColor = System.Drawing.Color.Black;
             this.btnImprimir.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnImprimir.Location = new System.Drawing.Point(20, 486);
+            this.btnImprimir.Location = new System.Drawing.Point(295, 486);
             this.btnImprimir.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnImprimir.Name = "btnImprimir";
             this.btnImprimir.Size = new System.Drawing.Size(115, 43);
             this.btnImprimir.TabIndex = 6;
             this.btnImprimir.Text = "Imprimir";
-            this.btnImprimir.UseVisualStyleBackColor = true;
+            this.btnImprimir.UseVisualStyleBackColor = false;
             this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
             // 
             // dtpFecha
@@ -103,9 +120,10 @@
             // 
             // dtgBuque
             // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtgBuque.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.dtgBuque.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dtgBuque.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(60)))));
             this.dtgBuque.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgBuque.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -178,24 +196,14 @@
             // lblBuques
             // 
             this.lblBuques.AutoSize = true;
-            this.lblBuques.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBuques.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBuques.ForeColor = System.Drawing.Color.White;
             this.lblBuques.Location = new System.Drawing.Point(323, 11);
             this.lblBuques.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblBuques.Name = "lblBuques";
-            this.lblBuques.Size = new System.Drawing.Size(458, 36);
+            this.lblBuques.Size = new System.Drawing.Size(489, 36);
             this.lblBuques.TabIndex = 3;
             this.lblBuques.Text = "Informe de Buques Administrador";
-            // 
-            // btnMostrarDatos
-            // 
-            this.btnMostrarDatos.Location = new System.Drawing.Point(186, 486);
-            this.btnMostrarDatos.Name = "btnMostrarDatos";
-            this.btnMostrarDatos.Size = new System.Drawing.Size(134, 43);
-            this.btnMostrarDatos.TabIndex = 7;
-            this.btnMostrarDatos.Text = "Mostrar Todos";
-            this.btnMostrarDatos.UseVisualStyleBackColor = true;
-            this.btnMostrarDatos.Click += new System.EventHandler(this.btnMostrarDatos_Click);
             // 
             // frmInformeBuque
             // 

@@ -31,8 +31,6 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblBuques = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnGuardar = new System.Windows.Forms.Button();
-            this.btnCamcelar = new System.Windows.Forms.Button();
             this.dtgBuque = new System.Windows.Forms.DataGridView();
             this.serial_buque = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.capitan = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -68,8 +66,6 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
-            this.panel1.Controls.Add(this.btnGuardar);
-            this.panel1.Controls.Add(this.btnCamcelar);
             this.panel1.Controls.Add(this.dtgBuque);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -77,31 +73,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(962, 450);
             this.panel1.TabIndex = 2;
-            // 
-            // btnGuardar
-            // 
-            this.btnGuardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(168)))), ((int)(((byte)(83)))));
-            this.btnGuardar.FlatAppearance.BorderSize = 3;
-            this.btnGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
-            this.btnGuardar.ForeColor = System.Drawing.Color.Black;
-            this.btnGuardar.Location = new System.Drawing.Point(346, 382);
-            this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(97, 42);
-            this.btnGuardar.TabIndex = 8;
-            this.btnGuardar.Text = "Guardar 💾";
-            this.btnGuardar.UseVisualStyleBackColor = false;
-            // 
-            // btnCamcelar
-            // 
-            this.btnCamcelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(115)))), ((int)(((byte)(232)))));
-            this.btnCamcelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
-            this.btnCamcelar.ForeColor = System.Drawing.Color.Black;
-            this.btnCamcelar.Location = new System.Drawing.Point(510, 383);
-            this.btnCamcelar.Name = "btnCamcelar";
-            this.btnCamcelar.Size = new System.Drawing.Size(93, 41);
-            this.btnCamcelar.TabIndex = 7;
-            this.btnCamcelar.Text = "Cancelar ⛔";
-            this.btnCamcelar.UseVisualStyleBackColor = false;
             // 
             // dtgBuque
             // 
@@ -194,7 +165,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn origen;
         private System.Windows.Forms.DataGridViewTextBoxColumn fecha_ingreso;
         private System.Windows.Forms.DataGridViewTextBoxColumn capacidad;
-        private System.Windows.Forms.Button btnGuardar;
-        private System.Windows.Forms.Button btnCamcelar;
     }
 }

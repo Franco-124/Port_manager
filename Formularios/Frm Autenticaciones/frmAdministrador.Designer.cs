@@ -34,7 +34,6 @@
             this.pnlInformes = new System.Windows.Forms.Panel();
             this.btnGraficos = new FontAwesome.Sharp.IconButton();
             this.btnInformeBuques = new FontAwesome.Sharp.IconButton();
-            this.btnInformePendientes = new FontAwesome.Sharp.IconButton();
             this.btnInformeMuelles = new FontAwesome.Sharp.IconButton();
             this.btnInformeUsuario = new FontAwesome.Sharp.IconButton();
             this.btnGestionAdb = new FontAwesome.Sharp.IconButton();
@@ -87,7 +86,7 @@
             this.btnCambioContra.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnCambioContra.IconSize = 40;
             this.btnCambioContra.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCambioContra.Location = new System.Drawing.Point(0, 660);
+            this.btnCambioContra.Location = new System.Drawing.Point(0, 645);
             this.btnCambioContra.Name = "btnCambioContra";
             this.btnCambioContra.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
             this.btnCambioContra.Size = new System.Drawing.Size(220, 60);
@@ -102,13 +101,12 @@
             // 
             this.pnlInformes.Controls.Add(this.btnGraficos);
             this.pnlInformes.Controls.Add(this.btnInformeBuques);
-            this.pnlInformes.Controls.Add(this.btnInformePendientes);
             this.pnlInformes.Controls.Add(this.btnInformeMuelles);
             this.pnlInformes.Controls.Add(this.btnInformeUsuario);
             this.pnlInformes.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlInformes.Location = new System.Drawing.Point(0, 440);
             this.pnlInformes.Name = "pnlInformes";
-            this.pnlInformes.Size = new System.Drawing.Size(220, 220);
+            this.pnlInformes.Size = new System.Drawing.Size(220, 205);
             this.pnlInformes.TabIndex = 6;
             // 
             // btnGraficos
@@ -123,10 +121,10 @@
             this.btnGraficos.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnGraficos.IconSize = 30;
             this.btnGraficos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnGraficos.Location = new System.Drawing.Point(0, 160);
+            this.btnGraficos.Location = new System.Drawing.Point(0, 150);
             this.btnGraficos.Name = "btnGraficos";
             this.btnGraficos.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
-            this.btnGraficos.Size = new System.Drawing.Size(220, 40);
+            this.btnGraficos.Size = new System.Drawing.Size(220, 50);
             this.btnGraficos.TabIndex = 9;
             this.btnGraficos.Text = "Graficos";
             this.btnGraficos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -146,39 +144,16 @@
             this.btnInformeBuques.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnInformeBuques.IconSize = 30;
             this.btnInformeBuques.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnInformeBuques.Location = new System.Drawing.Point(0, 120);
+            this.btnInformeBuques.Location = new System.Drawing.Point(0, 100);
             this.btnInformeBuques.Name = "btnInformeBuques";
             this.btnInformeBuques.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
-            this.btnInformeBuques.Size = new System.Drawing.Size(220, 40);
+            this.btnInformeBuques.Size = new System.Drawing.Size(220, 50);
             this.btnInformeBuques.TabIndex = 8;
             this.btnInformeBuques.Text = "Buques Registrados";
             this.btnInformeBuques.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnInformeBuques.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnInformeBuques.UseVisualStyleBackColor = true;
             this.btnInformeBuques.Click += new System.EventHandler(this.btnInformeBuques_Click);
-            // 
-            // btnInformePendientes
-            // 
-            this.btnInformePendientes.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnInformePendientes.FlatAppearance.BorderSize = 0;
-            this.btnInformePendientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnInformePendientes.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnInformePendientes.ForeColor = System.Drawing.Color.White;
-            this.btnInformePendientes.IconChar = FontAwesome.Sharp.IconChar.Folder;
-            this.btnInformePendientes.IconColor = System.Drawing.Color.White;
-            this.btnInformePendientes.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnInformePendientes.IconSize = 30;
-            this.btnInformePendientes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnInformePendientes.Location = new System.Drawing.Point(0, 80);
-            this.btnInformePendientes.Name = "btnInformePendientes";
-            this.btnInformePendientes.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
-            this.btnInformePendientes.Size = new System.Drawing.Size(220, 40);
-            this.btnInformePendientes.TabIndex = 7;
-            this.btnInformePendientes.Text = "Carga y Descarga";
-            this.btnInformePendientes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnInformePendientes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnInformePendientes.UseVisualStyleBackColor = true;
-            this.btnInformePendientes.Click += new System.EventHandler(this.btnInformePendientes_Click);
             // 
             // btnInformeMuelles
             // 
@@ -192,10 +167,10 @@
             this.btnInformeMuelles.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnInformeMuelles.IconSize = 30;
             this.btnInformeMuelles.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnInformeMuelles.Location = new System.Drawing.Point(0, 40);
+            this.btnInformeMuelles.Location = new System.Drawing.Point(0, 50);
             this.btnInformeMuelles.Name = "btnInformeMuelles";
             this.btnInformeMuelles.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
-            this.btnInformeMuelles.Size = new System.Drawing.Size(220, 40);
+            this.btnInformeMuelles.Size = new System.Drawing.Size(220, 50);
             this.btnInformeMuelles.TabIndex = 6;
             this.btnInformeMuelles.Text = "Disponibilidad Muelles";
             this.btnInformeMuelles.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -218,7 +193,7 @@
             this.btnInformeUsuario.Location = new System.Drawing.Point(0, 0);
             this.btnInformeUsuario.Name = "btnInformeUsuario";
             this.btnInformeUsuario.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
-            this.btnInformeUsuario.Size = new System.Drawing.Size(220, 40);
+            this.btnInformeUsuario.Size = new System.Drawing.Size(220, 50);
             this.btnInformeUsuario.TabIndex = 5;
             this.btnInformeUsuario.Text = "Usuarios Registrados";
             this.btnInformeUsuario.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -490,7 +465,6 @@
         private FontAwesome.Sharp.IconButton btnCerrarSesion;
         private System.Windows.Forms.Panel panelLogo;
         private System.Windows.Forms.Panel pnlInformes;
-        private FontAwesome.Sharp.IconButton btnInformePendientes;
         private FontAwesome.Sharp.IconButton btnInformeMuelles;
         private FontAwesome.Sharp.IconButton btnInformeUsuario;
         private FontAwesome.Sharp.IconButton btnInformeBuques;

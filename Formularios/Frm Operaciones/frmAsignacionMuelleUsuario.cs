@@ -137,5 +137,10 @@ namespace Port_manager.Formularios.Frm_Operaciones
         {
             ReubicarBotones();
         }
+
+        private void lblRegistro_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -218,6 +218,12 @@ namespace Port_manager.Formularios
                         if (filasAfectadas > 0)
                         {
                             MessageBox.Show("Los datos del buque se actualizaron correctamente.");
+                            txtSerial.Clear();
+                            txtCapacidad.Clear();
+                            txtCapitan.Clear();
+                            txtEmpresa.Clear();
+                            txtOrigen.Clear();
+
                         }
                         else
                         {

@@ -128,6 +128,22 @@ namespace Port_manager.Formularios
             cmbSerialBarco.SelectedIndex = -1;
             txtOrigen.Clear();
 
+            string consulta = "SELECT serial_buque FROM RegistroLlegadaBuque WHERE serial_buque = @serial_buque";
+            using (SqlConnection conexion = DatabaseHelper.GetConnection())
+            {
+                using (SqlCommand cmd = new SqlCommand(consulta, conexion))
+                {
+                    cmd.Parameters.AddWithValue("@serial_buque", serial_buque);
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    if (reader.HasRows)
+                    {
+                        MessageBox.Show("❌ la llegada de este buque ya ha sido registrada.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                       
+                    }
+                }
+            }
+
             if (string.IsNullOrEmpty(serial_buque))
             {
                 MessageBox.Show("Debe seleccionar un serial de buque válido.");
@@ -137,7 +153,7 @@ namespace Port_manager.Formularios
 
 
 
-            if (string.IsNullOrEmpty(serial_buque) || string.IsNullOrEmpty(origen))                
+            if (string.IsNullOrEmpty(serial_buque) || string.IsNullOrEmpty(origen) || string.IsNullOrEmpty(responsable))                
             {
                 MessageBox.Show("Por favor, complete todos los campos.");
                 
@@ -158,7 +174,7 @@ namespace Port_manager.Formularios
 
             else
             {
-                MessageBox.Show("Error al ingresar. Por favor, inténtelo de nuevo.");
+                MessageBox.Show("❌ la llegada de este buque ya ha sido registrada o hubo un error en el sistema", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

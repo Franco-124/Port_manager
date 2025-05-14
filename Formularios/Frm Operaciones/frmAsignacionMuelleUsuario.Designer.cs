@@ -58,14 +58,15 @@
             // lblRegistro
             // 
             this.lblRegistro.AutoSize = true;
-            this.lblRegistro.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRegistro.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRegistro.ForeColor = System.Drawing.Color.White;
-            this.lblRegistro.Location = new System.Drawing.Point(408, 9);
+            this.lblRegistro.Location = new System.Drawing.Point(330, 9);
             this.lblRegistro.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblRegistro.Name = "lblRegistro";
-            this.lblRegistro.Size = new System.Drawing.Size(233, 36);
+            this.lblRegistro.Size = new System.Drawing.Size(416, 36);
             this.lblRegistro.TabIndex = 2;
-            this.lblRegistro.Text = "Mapa del Muelle";
+            this.lblRegistro.Text = "Acceso a Terminal Portuaria";
+            this.lblRegistro.Click += new System.EventHandler(this.lblRegistro_Click);
             // 
             // panel2
             // 
@@ -90,16 +91,18 @@
             // 
             // buttonEntrada
             // 
+            this.buttonEntrada.BackColor = System.Drawing.Color.White;
+            this.buttonEntrada.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonEntrada.IconChar = FontAwesome.Sharp.IconChar.None;
             this.buttonEntrada.IconColor = System.Drawing.Color.Black;
             this.buttonEntrada.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.buttonEntrada.Location = new System.Drawing.Point(191, 52);
+            this.buttonEntrada.Location = new System.Drawing.Point(163, 50);
             this.buttonEntrada.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonEntrada.Name = "buttonEntrada";
-            this.buttonEntrada.Size = new System.Drawing.Size(100, 34);
+            this.buttonEntrada.Size = new System.Drawing.Size(128, 34);
             this.buttonEntrada.TabIndex = 7;
             this.buttonEntrada.Text = "ENTRADA";
-            this.buttonEntrada.UseVisualStyleBackColor = true;
+            this.buttonEntrada.UseVisualStyleBackColor = false;
             // 
             // btnZonaF
             // 
@@ -116,6 +119,8 @@
             // 
             // btnZonaE
             // 
+            this.btnZonaE.BackColor = System.Drawing.Color.White;
+            this.btnZonaE.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnZonaE.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnZonaE.IconColor = System.Drawing.Color.Black;
             this.btnZonaE.IconFont = FontAwesome.Sharp.IconFont.Auto;
@@ -125,10 +130,12 @@
             this.btnZonaE.Size = new System.Drawing.Size(100, 41);
             this.btnZonaE.TabIndex = 5;
             this.btnZonaE.Text = "Zona E";
-            this.btnZonaE.UseVisualStyleBackColor = true;
+            this.btnZonaE.UseVisualStyleBackColor = false;
             // 
             // btnZonaG
             // 
+            this.btnZonaG.BackColor = System.Drawing.Color.White;
+            this.btnZonaG.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnZonaG.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnZonaG.IconColor = System.Drawing.Color.Black;
             this.btnZonaG.IconFont = FontAwesome.Sharp.IconFont.Auto;
@@ -138,10 +145,12 @@
             this.btnZonaG.Size = new System.Drawing.Size(100, 41);
             this.btnZonaG.TabIndex = 4;
             this.btnZonaG.Text = "Zona  G";
-            this.btnZonaG.UseVisualStyleBackColor = true;
+            this.btnZonaG.UseVisualStyleBackColor = false;
             // 
             // btnZonaD
             // 
+            this.btnZonaD.BackColor = System.Drawing.Color.White;
+            this.btnZonaD.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnZonaD.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnZonaD.IconColor = System.Drawing.Color.Black;
             this.btnZonaD.IconFont = FontAwesome.Sharp.IconFont.Auto;
@@ -151,10 +160,12 @@
             this.btnZonaD.Size = new System.Drawing.Size(100, 38);
             this.btnZonaD.TabIndex = 3;
             this.btnZonaD.Text = "Zona D";
-            this.btnZonaD.UseVisualStyleBackColor = true;
+            this.btnZonaD.UseVisualStyleBackColor = false;
             // 
             // btnZonaC
             // 
+            this.btnZonaC.BackColor = System.Drawing.Color.White;
+            this.btnZonaC.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnZonaC.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnZonaC.IconColor = System.Drawing.Color.Black;
             this.btnZonaC.IconFont = FontAwesome.Sharp.IconFont.Auto;
@@ -164,10 +175,12 @@
             this.btnZonaC.Size = new System.Drawing.Size(100, 38);
             this.btnZonaC.TabIndex = 2;
             this.btnZonaC.Text = "Zona C";
-            this.btnZonaC.UseVisualStyleBackColor = true;
+            this.btnZonaC.UseVisualStyleBackColor = false;
             // 
             // btnZonaB
             // 
+            this.btnZonaB.BackColor = System.Drawing.Color.White;
+            this.btnZonaB.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnZonaB.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnZonaB.IconColor = System.Drawing.Color.Black;
             this.btnZonaB.IconFont = FontAwesome.Sharp.IconFont.Auto;
@@ -177,10 +190,12 @@
             this.btnZonaB.Size = new System.Drawing.Size(100, 38);
             this.btnZonaB.TabIndex = 1;
             this.btnZonaB.Text = "Zona B";
-            this.btnZonaB.UseVisualStyleBackColor = true;
+            this.btnZonaB.UseVisualStyleBackColor = false;
             // 
             // btnZonaA
             // 
+            this.btnZonaA.BackColor = System.Drawing.Color.White;
+            this.btnZonaA.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnZonaA.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnZonaA.IconColor = System.Drawing.Color.Black;
             this.btnZonaA.IconFont = FontAwesome.Sharp.IconFont.Auto;
@@ -190,7 +205,7 @@
             this.btnZonaA.Size = new System.Drawing.Size(100, 36);
             this.btnZonaA.TabIndex = 0;
             this.btnZonaA.Text = "Zona A";
-            this.btnZonaA.UseVisualStyleBackColor = true;
+            this.btnZonaA.UseVisualStyleBackColor = false;
             // 
             // pictureBox1
             // 
@@ -219,7 +234,7 @@
             this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmAsignacionMuelleUsuario";
-            this.Text = "frmAsignacionMuelleUsuario";
+            this.Text = "Asignacion Muelle Usuario";
             this.Load += new System.EventHandler(this.frmAsignacionMuelleUsuario_Load);
             this.Resize += new System.EventHandler(this.frmAsignacionMuelleUsuario_Resize);
             this.panel1.ResumeLayout(false);

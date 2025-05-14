@@ -14,6 +14,7 @@ using FontAwesome.Sharp;
 using Port_manager.Formularios.Frm_Informes;
 using SqlConnectiondb;
 using Color = System.Drawing.Color;
+using Size = System.Windows.Size;
 
 namespace Port_manager.Formularios
 {
@@ -298,11 +299,12 @@ namespace Port_manager.Formularios
 
         private void btnCerrarSesion_Click(object sender, EventArgs e)
         {
+            this.Hide();
             frmLogin login = new frmLogin();
+            login.StartPosition = FormStartPosition.CenterScreen;
+            login.Size = new System.Drawing.Size(1005, 720); // Cambiado de System.Windows.Size a System.Drawing.Size  
             login.Show();
             this.Close();
-            
-
         }
 
         private void frmMain_Load(object sender, EventArgs e)
@@ -344,8 +346,7 @@ namespace Port_manager.Formularios
 
         private void btnInformePendientes_Click(object sender, EventArgs e)
         {
-            ActivateButton(sender, RGBColors.color3);
-            AbrirFormularioHijo(new frmInformePendientes());
+          
         }
 
         private void btnInformeBuques_Click(object sender, EventArgs e)
@@ -369,14 +370,7 @@ namespace Port_manager.Formularios
             }
         }
 
-        public frmInformePendientes frmInformePendientes
-        {
-            get => default;
-            set
-            {
-            }
-        }
-
+  
         private void iconButton1_Click(object sender, EventArgs e)
         {
 

@@ -12,8 +12,8 @@ using System.Windows.Forms;
 
 namespace Port_manager.Formularios
 {
-   
-    public partial class frmClasificacionAsignacion: Form
+
+    public partial class frmClasificacionAsignacion : Form
     {
         private ToolTip toolTipZonas = new ToolTip();
         public frmClasificacionAsignacion()
@@ -43,7 +43,7 @@ namespace Port_manager.Formularios
 
         private void frmClasificacionAsignacion_Load(object sender, EventArgs e)
         {
-            // Asegúrate de que estos botones existen en el formulario
+            
             pictureBox1.Controls.Add(btnZonaA);
             pictureBox1.Controls.Add(btnZonaB);
             pictureBox1.Controls.Add(btnZonaC);
@@ -52,15 +52,16 @@ namespace Port_manager.Formularios
             pictureBox1.Controls.Add(btnZonaF);
             pictureBox1.Controls.Add(btnZonaG);
 
-            ReubicarBotones(); // Ajustar posiciones iniciales// Asegúrate de que estos botones existen en el formulario
+            ReubicarBotones(); // Ajustar posiciones iniciales
         }
 
 
         private DataTable ObtenerInfoZonas()
         {
             string query = @"
-        SELECT id_muelle, serial_buque, tipo_carga, capacidad, accion, descripcion, fecha_operacion
-        FROM Registro_Operacion";
+            SELECT ro.id_muelle, ro.serial_buque, ro.tipo_carga, ib.capacidad, ro.accion, ro.descripcion, ro.fecha_operacion
+            FROM Registro_Operacion ro
+            JOIN IngresoBuque ib ON ro.serial_buque = ib.serial_buque";
 
             using (SqlConnection conn = DatabaseHelper.GetConnection())
             using (SqlDataAdapter da = new SqlDataAdapter(query, conn))
@@ -105,7 +106,41 @@ namespace Port_manager.Formularios
                     btn.Text = $"Zona {letra}";
                     btn.BackColor = Color.LightGray;
 
-                    if (zonasAgrupadas.ContainsKey(idMuelle))
+                    // Consultar el estado del muelle
+                    string estadoMuelle = "";
+                    try
+                    {
+                        using (SqlConnection conn = DatabaseHelper.GetConnection())
+                        {
+                            string consultaEstado = "SELECT estado FROM Muelle WHERE id_muelle = @idMuelle";
+                            using (SqlCommand cmd = new SqlCommand(consultaEstado, conn))
+                            {
+                                cmd.Parameters.AddWithValue("@idMuelle", idMuelle);
+                                object result = cmd.ExecuteScalar();
+                                if (result != null)
+                                    estadoMuelle = result.ToString();
+                            }
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        // Si hay error, dejar el color por defecto y continuar
+                    }
+
+                    if (estadoMuelle == "ocupado")
+                    {
+                        btn.BackColor = Color.Red;
+                        if (zonasAgrupadas.ContainsKey(idMuelle))
+                        {
+                            string tooltipText = string.Join("\n\n", zonasAgrupadas[idMuelle]);
+                            toolTipZonas.SetToolTip(btn, tooltipText);
+                        }
+                        else
+                        {
+                            toolTipZonas.SetToolTip(btn, "Sin información registrada.");
+                        }
+                    }
+                    else if (zonasAgrupadas.ContainsKey(idMuelle))
                     {
                         string tooltipText = string.Join("\n\n", zonasAgrupadas[idMuelle]);
                         toolTipZonas.SetToolTip(btn, tooltipText);
@@ -161,5 +196,209 @@ namespace Port_manager.Formularios
         {
             ReubicarBotones();
         }
+
+        private DataTable ObtenerBarcosEnMuelles()
+        {
+            string consulta = @"
+            SELECT serial_buque, id_muelle, capacidad
+            FROM Registro_Operacion";
+
+            using (SqlConnection conexion = DatabaseHelper.GetConnection())
+            using (SqlDataAdapter da = new SqlDataAdapter(consulta, conexion))
+            {
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                return dt;
+            }
+        }
+
+
+        private void iconButton9_Click(object sender, EventArgs e)
+        {
+            // Mostrar una lista de barcos en los muelles
+            DataTable barcosEnMuelles = ObtenerBarcosEnMuelles();
+            if (barcosEnMuelles.Rows.Count == 0)
+            {
+                MessageBox.Show("No hay barcos en los muelles para despachar.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            // Crear un formulario para seleccionar el barco
+            using (Form seleccionBarcoForm = new Form())
+            {
+                seleccionBarcoForm.Text = "Seleccionar Barco para Despachar";
+                seleccionBarcoForm.Size = new Size(400, 300);
+
+                ListBox listBoxBarcos = new ListBox
+                {
+                    Dock = DockStyle.Fill,
+                    DisplayMember = "DisplayText",
+                    ValueMember = "serial_buque",
+                    DataSource = barcosEnMuelles.AsEnumerable().Select(row => new
+                    {
+                        serial_buque = row["serial_buque"].ToString(),
+                        DisplayText = $"Buque: {row["serial_buque"]}, Muelle: {row["id_muelle"]}"
+                    }).ToList()
+                };
+
+                Button btnAceptar = new Button
+                {
+                    Text = "Aceptar",
+                    Dock = DockStyle.Bottom
+                };
+
+                seleccionBarcoForm.Controls.Add(listBoxBarcos);
+                seleccionBarcoForm.Controls.Add(btnAceptar);
+
+                string serialBuqueSeleccionado = null;
+                string idMuelleSeleccionado = null;
+                float capacidadBuque = 0;
+
+                btnAceptar.Click += (s, args) =>
+                {
+                    if (listBoxBarcos.SelectedItem != null)
+                    {
+                        var seleccionado = (dynamic)listBoxBarcos.SelectedItem;
+                        serialBuqueSeleccionado = seleccionado.serial_buque;
+                        idMuelleSeleccionado = barcosEnMuelles.AsEnumerable()
+                            .First(row => row["serial_buque"].ToString() == serialBuqueSeleccionado)["id_muelle"].ToString();
+                        seleccionBarcoForm.DialogResult = DialogResult.OK;
+                        seleccionBarcoForm.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Debe seleccionar un barco.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                };
+
+                if (seleccionBarcoForm.ShowDialog() != DialogResult.OK)
+                {
+                    return;
+                }
+
+                // Obtener la capacidad del buque desde la tabla IngresoBuque
+                try
+                {
+                    string consultaCapacidadBuque = @"
+                    SELECT capacidad
+                    FROM IngresoBuque
+                    WHERE serial_buque = @serial_buque";
+
+                    using (SqlConnection conexion = DatabaseHelper.GetConnection())
+                    {
+                        using (SqlCommand cmd = new SqlCommand(consultaCapacidadBuque, conexion))
+                        {
+                            cmd.Parameters.AddWithValue("@serial_buque", serialBuqueSeleccionado);
+
+                            using (SqlDataReader reader = cmd.ExecuteReader())
+                            {
+                                if (reader.Read())
+                                {
+                                    capacidadBuque = Convert.ToSingle(reader["capacidad"]);
+                                }
+                                else
+                                {
+                                    MessageBox.Show("No se encontró la capacidad del buque en la tabla IngresoBuque.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                    return;
+                                }
+                            }
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al obtener la capacidad del buque: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                // Eliminar el registro del barco en Registro_Operacion
+                try
+                {
+                    string consultaEliminarRegistro = @"
+                    DELETE FROM Registro_Operacion
+                    WHERE serial_buque = @serial_buque";
+
+                    using (SqlConnection conexion = DatabaseHelper.GetConnection())
+                    {
+                        using (SqlCommand cmd = new SqlCommand(consultaEliminarRegistro, conexion))
+                        {
+                            cmd.Parameters.AddWithValue("@serial_buque", serialBuqueSeleccionado);
+                            int filasEliminadas = cmd.ExecuteNonQuery();
+                            if (filasEliminadas > 0)
+                            {
+                                MessageBox.Show("Registro del barco eliminado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            }
+                            else
+                            {
+                                MessageBox.Show("No se encontró el registro del barco para eliminar.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                return;
+                            }
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al eliminar el registro del barco: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                // Restablecer la capacidad original del muelle sumando la capacidad del barco
+                try
+                {
+                    string consultaActualizarCapacidad = @"
+                    UPDATE Muelle
+                    SET capacidad_muelle = capacidad_muelle +          @capacidadBuque
+                    WHERE id_muelle = @id_muelle";
+
+                    using (SqlConnection conexion = DatabaseHelper.GetConnection())
+                    {
+                        using (SqlCommand cmd = new SqlCommand(consultaActualizarCapacidad, conexion))
+                        {
+                            cmd.Parameters.AddWithValue("@capacidadBuque", capacidadBuque); // Capacidad del barco
+                            cmd.Parameters.AddWithValue("@id_muelle", idMuelleSeleccionado); // ID del muelle
+                            int filasAfectadas = cmd.ExecuteNonQuery();
+                            if (filasAfectadas > 0)
+                            {
+                                MessageBox.Show("Capacidad del muelle restablecida correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                // Actualizar el estado del muelle a 'disponible'
+                                try
+                                {
+                                    string consultaActualizarEstado = @"
+                                    UPDATE Muelle
+                                    SET estado = 'disponible'
+                                    WHERE id_muelle = @id_muelle";
+
+                                    using (SqlCommand cmdEstado = new SqlCommand(consultaActualizarEstado, conexion))
+                                    {
+                                        cmdEstado.Parameters.AddWithValue("@id_muelle", idMuelleSeleccionado);
+                                        cmdEstado.ExecuteNonQuery();
+                                    }
+                                }
+                                catch (Exception exEstado)
+                                {
+                                    MessageBox.Show("Error al actualizar el estado del muelle: " + exEstado.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                }
+                            }
+                            else
+                            {
+                                MessageBox.Show("No se pudo restablecer la capacidad del muelle.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al restablecer la capacidad del muelle: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+
+            // Recargar la información de las zonas
+            CargarInfoZonas();
+
+
+        }
+
+
+
     }
 }

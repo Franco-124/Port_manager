@@ -177,7 +177,8 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(115)))), ((int)(((byte)(232)))));
+            this.btnCancelar.BackColor = System.Drawing.Color.Red;
+            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnCancelar.IconColor = System.Drawing.Color.Black;
@@ -185,7 +186,7 @@
             this.btnCancelar.Location = new System.Drawing.Point(593, 455);
             this.btnCancelar.Margin = new System.Windows.Forms.Padding(4);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(134, 44);
+            this.btnCancelar.Size = new System.Drawing.Size(177, 44);
             this.btnCancelar.TabIndex = 23;
             this.btnCancelar.Text = "Cancelar ⛔";
             this.btnCancelar.UseVisualStyleBackColor = false;
@@ -194,14 +195,15 @@
             // btnGuardar
             // 
             this.btnGuardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(168)))), ((int)(((byte)(83)))));
+            this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardar.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnGuardar.IconColor = System.Drawing.Color.Black;
             this.btnGuardar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnGuardar.Location = new System.Drawing.Point(379, 455);
+            this.btnGuardar.Location = new System.Drawing.Point(357, 455);
             this.btnGuardar.Margin = new System.Windows.Forms.Padding(4);
             this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(130, 44);
+            this.btnGuardar.Size = new System.Drawing.Size(159, 44);
             this.btnGuardar.TabIndex = 22;
             this.btnGuardar.Text = "Guardar 💾";
             this.btnGuardar.UseVisualStyleBackColor = false;

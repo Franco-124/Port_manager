@@ -24,7 +24,6 @@
       <Property Name="frmLogin" />
       <Property Name="FrmRecuperarcontraseña" />
       <Property Name="frmInformeBuque" />
-      <Property Name="frmInformePendientes" />
     </ShowAsAssociation>
   </Class>
   <Class Name="Port_manager.Formularios.frmCambiocontraseña">
@@ -59,7 +58,6 @@
       <FileName>Formularios\Frm Operaciones\frmCargaDescarga.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
-      <Property Name="frmInformePendientes" />
     </ShowAsAssociation>
   </Class>
   <Class Name="Port_manager.Formularios.frmClasificacionAsignacion">
@@ -259,16 +257,6 @@
     <TypeIdentifier>
       <HashCode>AIAACAAAAKgAABAQAACADAACIAAAAAAAAAAAAQAAAAA=</HashCode>
       <FileName>Formularios\Frm Informes\FrmInformeMuelle.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="Port_manager.Formularios.frmInformePendientes">
-    <Position X="11.5" Y="6.25" Width="2" />
-    <Compartments>
-      <Compartment Name="Fields" Collapsed="true" />
-    </Compartments>
-    <TypeIdentifier>
-      <HashCode>AAAAJAAAACAAACAAAACAiAACIAAAAAAAIAAAAQAAAAA=</HashCode>
-      <FileName>Formularios\Frm Informes\frmInformePendientes.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Port_manager.Formularios.frmIngresoBuque">

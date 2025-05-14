@@ -29,7 +29,8 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.btnMostrar = new System.Windows.Forms.Button();
+            this.cmbEstado = new System.Windows.Forms.ComboBox();
             this.btnImprimir = new FontAwesome.Sharp.IconButton();
             this.label1 = new System.Windows.Forms.Label();
             this.dtgMuelles = new System.Windows.Forms.DataGridView();
@@ -47,39 +48,60 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
-            this.panel1.Controls.Add(this.comboBox1);
+            this.panel1.Controls.Add(this.btnMostrar);
+            this.panel1.Controls.Add(this.cmbEstado);
             this.panel1.Controls.Add(this.btnImprimir);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.dtgMuelles);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1067, 554);
             this.panel1.TabIndex = 1;
             // 
-            // comboBox1
+            // btnMostrar
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(264, 87);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(185, 24);
-            this.comboBox1.TabIndex = 8;
+            this.btnMostrar.BackColor = System.Drawing.Color.IndianRed;
+            this.btnMostrar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnMostrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMostrar.Location = new System.Drawing.Point(509, 497);
+            this.btnMostrar.Name = "btnMostrar";
+            this.btnMostrar.Size = new System.Drawing.Size(121, 43);
+            this.btnMostrar.TabIndex = 9;
+            this.btnMostrar.Text = "Mostrar";
+            this.btnMostrar.UseVisualStyleBackColor = false;
+            this.btnMostrar.Click += new System.EventHandler(this.btnMostrar_Click);
+            // 
+            // cmbEstado
+            // 
+            this.cmbEstado.FormattingEnabled = true;
+            this.cmbEstado.Items.AddRange(new object[] {
+            "disponible",
+            "ocupado"});
+            this.cmbEstado.Location = new System.Drawing.Point(264, 87);
+            this.cmbEstado.Margin = new System.Windows.Forms.Padding(4);
+            this.cmbEstado.Name = "cmbEstado";
+            this.cmbEstado.Size = new System.Drawing.Size(185, 24);
+            this.cmbEstado.TabIndex = 8;
+            this.cmbEstado.SelectedValueChanged += new System.EventHandler(this.cmbEstado_SelectedValueChanged);
             // 
             // btnImprimir
             // 
+            this.btnImprimir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btnImprimir.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnImprimir.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnImprimir.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnImprimir.IconColor = System.Drawing.Color.Black;
             this.btnImprimir.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnImprimir.Location = new System.Drawing.Point(125, 497);
+            this.btnImprimir.Location = new System.Drawing.Point(344, 497);
             this.btnImprimir.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnImprimir.Name = "btnImprimir";
             this.btnImprimir.Size = new System.Drawing.Size(115, 43);
             this.btnImprimir.TabIndex = 7;
             this.btnImprimir.Text = "Imprimir";
-            this.btnImprimir.UseVisualStyleBackColor = true;
+            this.btnImprimir.UseVisualStyleBackColor = false;
             this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
             // 
             // label1
@@ -103,12 +125,12 @@
             this.capacidad_muelle,
             this.tipo_muelle,
             this.estado});
-            this.dtgMuelles.Location = new System.Drawing.Point(125, 138);
-            this.dtgMuelles.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtgMuelles.Location = new System.Drawing.Point(98, 136);
+            this.dtgMuelles.Margin = new System.Windows.Forms.Padding(4);
             this.dtgMuelles.Name = "dtgMuelles";
             this.dtgMuelles.RowHeadersVisible = false;
             this.dtgMuelles.RowHeadersWidth = 51;
-            this.dtgMuelles.Size = new System.Drawing.Size(832, 330);
+            this.dtgMuelles.Size = new System.Drawing.Size(874, 330);
             this.dtgMuelles.TabIndex = 3;
             // 
             // id_muelle
@@ -144,7 +166,7 @@
             this.panel2.Controls.Add(this.lblMuelles);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1067, 69);
             this.panel2.TabIndex = 2;
@@ -167,9 +189,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1067, 554);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmInformeMuelle";
             this.Text = "Disponibilidad Muelles";
+            this.Load += new System.EventHandler(this.FrmInformeMuelle_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgMuelles)).EndInit();
@@ -190,7 +213,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn tipo_muelle;
         private System.Windows.Forms.DataGridViewTextBoxColumn estado;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cmbEstado;
         private FontAwesome.Sharp.IconButton btnImprimir;
+        private System.Windows.Forms.Button btnMostrar;
     }
 }

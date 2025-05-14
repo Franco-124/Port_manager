@@ -71,8 +71,8 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
-            this.panel1.Controls.Add(this.dtgIncidencias);
             this.panel1.Controls.Add(this.btnImprimir);
+            this.panel1.Controls.Add(this.dtgIncidencias);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -150,17 +150,19 @@
             // 
             // btnImprimir
             // 
-            this.btnImprimir.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btnImprimir.BackColor = System.Drawing.Color.Tomato;
+            this.btnImprimir.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnImprimir.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnImprimir.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnImprimir.IconColor = System.Drawing.Color.Black;
             this.btnImprimir.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnImprimir.Location = new System.Drawing.Point(0, 492);
+            this.btnImprimir.Location = new System.Drawing.Point(16, 468);
             this.btnImprimir.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnImprimir.Name = "btnImprimir";
-            this.btnImprimir.Size = new System.Drawing.Size(1127, 62);
+            this.btnImprimir.Size = new System.Drawing.Size(235, 57);
             this.btnImprimir.TabIndex = 3;
             this.btnImprimir.Text = "Imprimir";
-            this.btnImprimir.UseVisualStyleBackColor = true;
+            this.btnImprimir.UseVisualStyleBackColor = false;
             this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
             // 
             // frmInformeIncidencias
